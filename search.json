@@ -788,5 +788,105 @@
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
     ]
+  },
+  {
+    "objectID": "12_Quiz.html",
+    "href": "12_Quiz.html",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "",
+    "text": "12.1 Wie einfügen?\nIn diesem Kapitel bekommst du fertige Bausteine für kleine Quizfragen mit Autokorrektur in Quarto. Du musst nichts programmieren – kopiere die Beispiele und tausche nur Text und Antwortoptionen aus. Außerdem zeigen wir kurz, wie du H5P (z. B. in ILIAS) oder Google/Microsoft Forms einbindest.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#wie-einfügen",
+    "href": "12_Quiz.html#wie-einfügen",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "",
+    "text": "Öffne deine .qmd-Seite.\nKopiere einen der Bausteine in den Text.\nErsetze die Beispieltexte (Frage, Antworten).\nRender klicken – fertig.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#baustein-1-single-choice-eine-richtige-antwort",
+    "href": "12_Quiz.html#baustein-1-single-choice-eine-richtige-antwort",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.2 Baustein 1: Single-Choice (eine richtige Antwort)",
+    "text": "12.2 Baustein 1: Single-Choice (eine richtige Antwort)\nDieser Block zeigt sofort, ob die Antwort richtig ist.\n\n  Frage: Welcher Begriff passt am besten zu „produktives Scheitern“?\n   Zufällige Fehler ohne Auswertung\n   Bewusst schwierige Aufgabe vor der Instruktion\n   Reines Auswendiglernen vor der Prüfung\n  Prüfen\n  \n\nAnpassen:\n- data-correct=\"b\" legt die richtige Option fest (a, b, c …).\n- Texte in &lt;p&gt; und &lt;label&gt; austauschen.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#baustein-2-multiple-choice-mehrere-richtige-antworten",
+    "href": "12_Quiz.html#baustein-2-multiple-choice-mehrere-richtige-antworten",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.3 Baustein 2: Multiple-Choice (mehrere richtige Antworten)",
+    "text": "12.3 Baustein 2: Multiple-Choice (mehrere richtige Antworten)\nWähle alle richtigen Aussagen; die Auswertung vergleicht exakt mit der Lösung.\n\n  Frage: Welche Aussagen zu „Flipped Classroom“ treffen zu?\n   Vorwissen wird zu Hause aktiviert.\n   Präsenzzeit ist primär für Hausaufgaben gedacht.\n   Unterrichtszeit dient vertiefender Anwendung/Interaktion.\n  Prüfen\n  \n\nAnpassen:\n- data-correct=\"a,c\" enthält alle richtigen Buchstaben, kommasepariert.\n- Aussagen anpassen.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#baustein-3-kurzantwort-exakte-lösung-oder-variantenliste",
+    "href": "12_Quiz.html#baustein-3-kurzantwort-exakte-lösung-oder-variantenliste",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.4 Baustein 3: Kurzantwort (exakte Lösung oder Variantenliste)",
+    "text": "12.4 Baustein 3: Kurzantwort (exakte Lösung oder Variantenliste)\nDie Antwort wird mit einer Liste möglicher Lösungen verglichen (Groß-/Kleinschreibung wird ignoriert).\n\n  Frage: Wie heißt das didaktische Prinzip, bei dem Lernende zunächst an herausfordernden Problemen arbeiten und erst danach eine Instruktion erhalten?\n  \n  Prüfen\n  \n\nAnpassen:\n- In data-answers mehrere gültige Lösungen mit ; trennen.\n- Frage und Platzhalter anpassen.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#einmalige-einbindung-mini-skript-für-die-auswertung",
+    "href": "12_Quiz.html#einmalige-einbindung-mini-skript-für-die-auswertung",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.5 Einmalige Einbindung: Mini-Skript für die Auswertung",
+    "text": "12.5 Einmalige Einbindung: Mini-Skript für die Auswertung\nFüge dieses eine Mal pro Seite ganz unten ein (oder in ein eigenes Include). Es wertet alle Quiz-Blöcke oben aus.\n\nOptional kannst du die Anzeige mit einfachem CSS minimal schöner machen:\n\n\nHinweis: Die Bausteine funktionieren in HTML-Ausgaben (Website, RevealJS). In DOCX/PDF sind interaktive Elemente nicht verfügbar.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#h5p-z.-b.-in-ilias-einbinden",
+    "href": "12_Quiz.html#h5p-z.-b.-in-ilias-einbinden",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.6 H5P (z. B. in ILIAS) einbinden",
+    "text": "12.6 H5P (z. B. in ILIAS) einbinden\nWenn du bereits H5P-Inhalte (z. B. Multiple Choice, Drag & Drop) in ILIAS erstellt hast, kannst du sie in Quarto verlinken oder einbetten (wenn ein Embed-Code verfügbar ist).\nVariante A: Link\nWeitere Übungen findest du im ILIAS-Kurs: [H5P-Aufgaben](https://…).\nVariante B: Einbetten per iframe\n\n\nVorteil: Automatische Auswertung und ggf. Tracking bleiben bei H5P/ILIAS.\n\nNachteil: Inhalte liegen außerhalb deiner Quarto-Seite.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#google-forms-oder-microsoft-forms-einbetten",
+    "href": "12_Quiz.html#google-forms-oder-microsoft-forms-einbetten",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.7 Google Forms oder Microsoft Forms einbetten",
+    "text": "12.7 Google Forms oder Microsoft Forms einbetten\nBeide bieten Selbstkorrektur und automatische Auswertung. Erstelle dein Formular und nutze den Einbettungs‑Code.\nWird geladen…\n\nVorteil: Sehr einfach, automatische Auswertung/Tabellen.\n\nNachteil: Externe Plattform, Design passt nicht immer perfekt.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#praxisempfehlung",
+    "href": "12_Quiz.html#praxisempfehlung",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.8 Praxisempfehlung",
+    "text": "12.8 Praxisempfehlung\n\nFür kleine, schnelle Checks in einer Quarto‑Seite: nutze die Bausteine oben (Single‑Choice, Multiple‑Choice, Kurzantwort).\n\nFür umfangreiche Übungssets mit Noten/Tracking: nutze H5P in ILIAS oder Forms und bette die Inhalte ein.\n\nTeste die Seite im Browser, nicht nur in der Vorschau.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
+  },
+  {
+    "objectID": "12_Quiz.html#zusammenfassung",
+    "href": "12_Quiz.html#zusammenfassung",
+    "title": "12  Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)",
+    "section": "12.9 Zusammenfassung",
+    "text": "12.9 Zusammenfassung\n\nFertige, kopierbare Bausteine liefern Autokorrektur direkt in deiner Quarto‑Webseite.\n\nFür größere, auswertbare Quizze sind H5P/ILIAS oder Forms sinnvoll.\n\nInteraktive Elemente funktionieren nur in HTML‑Ausgaben.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span>"
+    ]
   }
 ]

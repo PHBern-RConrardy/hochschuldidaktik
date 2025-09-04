@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quiz – Quarto für die PHBern</title>
+<title>12&nbsp; Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse) – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_Quiz.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">12_Quiz.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_Quiz.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -175,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_Quiz.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">12_Quiz.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span></span></a>
   </div>
 </li>
     </ul>
@@ -183,15 +218,202 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#wie-einfügen" id="toc-wie-einfügen" class="nav-link active" data-scroll-target="#wie-einfügen"><span class="header-section-number">12.1</span> Wie einfügen?</a></li>
+  <li><a href="#baustein-1-single-choice-eine-richtige-antwort" id="toc-baustein-1-single-choice-eine-richtige-antwort" class="nav-link" data-scroll-target="#baustein-1-single-choice-eine-richtige-antwort"><span class="header-section-number">12.2</span> Baustein 1: Single-Choice (eine richtige Antwort)</a></li>
+  <li><a href="#baustein-2-multiple-choice-mehrere-richtige-antworten" id="toc-baustein-2-multiple-choice-mehrere-richtige-antworten" class="nav-link" data-scroll-target="#baustein-2-multiple-choice-mehrere-richtige-antworten"><span class="header-section-number">12.3</span> Baustein 2: Multiple-Choice (mehrere richtige Antworten)</a></li>
+  <li><a href="#baustein-3-kurzantwort-exakte-lösung-oder-variantenliste" id="toc-baustein-3-kurzantwort-exakte-lösung-oder-variantenliste" class="nav-link" data-scroll-target="#baustein-3-kurzantwort-exakte-lösung-oder-variantenliste"><span class="header-section-number">12.4</span> Baustein 3: Kurzantwort (exakte Lösung oder Variantenliste)</a></li>
+  <li><a href="#einmalige-einbindung-mini-skript-für-die-auswertung" id="toc-einmalige-einbindung-mini-skript-für-die-auswertung" class="nav-link" data-scroll-target="#einmalige-einbindung-mini-skript-für-die-auswertung"><span class="header-section-number">12.5</span> Einmalige Einbindung: Mini-Skript für die Auswertung</a></li>
+  <li><a href="#h5p-z.-b.-in-ilias-einbinden" id="toc-h5p-z.-b.-in-ilias-einbinden" class="nav-link" data-scroll-target="#h5p-z.-b.-in-ilias-einbinden"><span class="header-section-number">12.6</span> H5P (z. B. in ILIAS) einbinden</a></li>
+  <li><a href="#google-forms-oder-microsoft-forms-einbetten" id="toc-google-forms-oder-microsoft-forms-einbetten" class="nav-link" data-scroll-target="#google-forms-oder-microsoft-forms-einbetten"><span class="header-section-number">12.7</span> Google Forms oder Microsoft Forms einbetten</a></li>
+  <li><a href="#praxisempfehlung" id="toc-praxisempfehlung" class="nav-link" data-scroll-target="#praxisempfehlung"><span class="header-section-number">12.8</span> Praxisempfehlung</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">12.9</span> Zusammenfassung</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p>In diesem Kapitel bekommst du <strong>fertige Bausteine</strong> für kleine Quizfragen mit <strong>Autokorrektur</strong> in Quarto. Du musst nichts programmieren – kopiere die Beispiele und tausche nur Text und Antwortoptionen aus. Außerdem zeigen wir kurz, wie du <strong>H5P</strong> (z. B. in ILIAS) oder <strong>Google/Microsoft Forms</strong> einbindest.</p>
+<section id="wie-einfügen" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="wie-einfügen"><span class="header-section-number">12.1</span> Wie einfügen?</h2>
+<ol type="1">
+<li>Öffne deine <code>.qmd</code>-Seite.</li>
+<li>Kopiere einen der Bausteine in den Text.</li>
+<li>Ersetze die Beispieltexte (Frage, Antworten).</li>
+<li><strong>Render</strong> klicken – fertig.</li>
+</ol>
+<hr>
+</section>
+<section id="baustein-1-single-choice-eine-richtige-antwort" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="baustein-1-single-choice-eine-richtige-antwort"><span class="header-section-number">12.2</span> Baustein 1: Single-Choice (eine richtige Antwort)</h2>
+<p>Dieser Block zeigt sofort, ob die Antwort richtig ist.</p>
+<div class="quiz mcq" data-correct="b">
+  <p><strong>Frage:</strong> Welcher Begriff passt am besten zu „produktives Scheitern“?</p>
+  <label><input type="radio" name="q1" value="a"> Zufällige Fehler ohne Auswertung</label><br>
+  <label><input type="radio" name="q1" value="b"> Bewusst schwierige Aufgabe vor der Instruktion</label><br>
+  <label><input type="radio" name="q1" value="c"> Reines Auswendiglernen vor der Prüfung</label><br>
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+<p><strong>Anpassen:</strong><br>
+- <code>data-correct="b"</code> legt die <strong>richtige Option</strong> fest (<code>a</code>, <code>b</code>, <code>c</code> …).<br>
+- Texte in <code>&lt;p&gt;</code> und <code>&lt;label&gt;</code> austauschen.</p>
+<hr>
+</section>
+<section id="baustein-2-multiple-choice-mehrere-richtige-antworten" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="baustein-2-multiple-choice-mehrere-richtige-antworten"><span class="header-section-number">12.3</span> Baustein 2: Multiple-Choice (mehrere richtige Antworten)</h2>
+<p>Wähle alle richtigen Aussagen; die Auswertung vergleicht exakt mit der Lösung.</p>
+<div class="quiz mcq-multi" data-correct="a,c">
+  <p><strong>Frage:</strong> Welche Aussagen zu „Flipped Classroom“ treffen zu?</p>
+  <label><input type="checkbox" value="a"> Vorwissen wird zu Hause aktiviert.</label><br>
+  <label><input type="checkbox" value="b"> Präsenzzeit ist primär für Hausaufgaben gedacht.</label><br>
+  <label><input type="checkbox" value="c"> Unterrichtszeit dient vertiefender Anwendung/Interaktion.</label><br>
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+<p><strong>Anpassen:</strong><br>
+- <code>data-correct="a,c"</code> enthält alle <strong>richtigen Buchstaben</strong>, kommasepariert.<br>
+- Aussagen anpassen.</p>
+<hr>
+</section>
+<section id="baustein-3-kurzantwort-exakte-lösung-oder-variantenliste" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="baustein-3-kurzantwort-exakte-lösung-oder-variantenliste"><span class="header-section-number">12.4</span> Baustein 3: Kurzantwort (exakte Lösung oder Variantenliste)</h2>
+<p>Die Antwort wird mit einer Liste möglicher Lösungen verglichen (Groß-/Kleinschreibung wird ignoriert).</p>
+<div class="quiz short-answer" data-answers="productive failure; produktives scheitern">
+  <p><strong>Frage:</strong> Wie heißt das didaktische Prinzip, bei dem Lernende zunächst an herausfordernden Problemen arbeiten und erst danach eine Instruktion erhalten?</p>
+  <input type="text" class="quiz-input" placeholder="Antwort eingeben">
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+<p><strong>Anpassen:</strong><br>
+- In <code>data-answers</code> mehrere <strong>gültige Lösungen</strong> mit <code>;</code> trennen.<br>
+- Frage und Platzhalter anpassen.</p>
+<hr>
+</section>
+<section id="einmalige-einbindung-mini-skript-für-die-auswertung" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="einmalige-einbindung-mini-skript-für-die-auswertung"><span class="header-section-number">12.5</span> Einmalige Einbindung: Mini-Skript für die Auswertung</h2>
+<p>Füge dieses <strong>eine Mal pro Seite</strong> ganz unten ein (oder in ein eigenes Include). Es wertet alle Quiz-Blöcke oben aus.</p>
+<script>
+(function () {
+  function text(n){return (n||'').trim().toLowerCase();}
+
+  function checkSingle(div) {
+    const correct = div.dataset.correct;
+    const chosen = div.querySelector('input[type=radio]:checked');
+    const fb = div.querySelector('.quiz-feedback');
+    if (!chosen) { fb.textContent = 'Bitte eine Antwort wählen.'; return; }
+    fb.textContent = (chosen.value === correct) ? 'Richtig!' : 'Leider falsch.';
+  }
+
+  function checkMulti(div) {
+    const correct = (div.dataset.correct || '').split(',').map(s=>s.trim()).filter(Boolean).sort().join(',');
+    const chosen = Array.from(div.querySelectorAll('input[type=checkbox]:checked')).map(i=>i.value).sort().join(',');
+    const fb = div.querySelector('.quiz-feedback');
+    if (!chosen) { fb.textContent = 'Bitte mindestens eine Antwort wählen.'; return; }
+    fb.textContent = (chosen === correct) ? 'Richtig!' : 'Nicht ganz. Prüfe deine Auswahl.';
+  }
+
+  function checkShort(div) {
+    const answers = (div.dataset.answers || '').split(';').map(text).filter(Boolean);
+    const val = text(div.querySelector('.quiz-input').value);
+    const fb = div.querySelector('.quiz-feedback');
+    if (!val) { fb.textContent = 'Bitte eine Antwort eingeben.'; return; }
+    fb.textContent = answers.includes(val) ? 'Richtig!' : 'Leider nicht korrekt.';
+  }
+
+  function onClick(e) {
+    if (!e.target.classList.contains('quiz-check')) return;
+    const div = e.target.closest('.quiz');
+    if (div.classList.contains('mcq')) return checkSingle(div);
+    if (div.classList.contains('mcq-multi')) return checkMulti(div);
+    if (div.classList.contains('short-answer')) return checkShort(div);
+  }
+
+  document.addEventListener('click', onClick);
+})();
+</script>
+<p>Optional kannst du die Anzeige mit einfachem CSS minimal schöner machen:</p>
+<style>
+.quiz { padding: .5rem .75rem; border: 1px solid #ddd; border-radius: .5rem; margin: 1rem 0; }
+.quiz button.quiz-check { margin-top: .4rem; }
+.quiz .quiz-feedback { margin-left: .6rem; font-weight: 600; }
+</style>
+<blockquote class="blockquote">
+<p>Hinweis: Die Bausteine funktionieren in <strong>HTML-Ausgaben</strong> (Website, RevealJS). In <strong>DOCX/PDF</strong> sind interaktive Elemente nicht verfügbar.</p>
+</blockquote>
+<hr>
+</section>
+<section id="h5p-z.-b.-in-ilias-einbinden" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="h5p-z.-b.-in-ilias-einbinden"><span class="header-section-number">12.6</span> H5P (z. B. in ILIAS) einbinden</h2>
+<p>Wenn du bereits <strong>H5P-Inhalte</strong> (z. B. Multiple Choice, Drag &amp; Drop) in ILIAS erstellt hast, kannst du sie in Quarto <strong>verlinken</strong> oder <strong>einbetten</strong> (wenn ein Embed-Code verfügbar ist).</p>
+<p><strong>Variante A: Link</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">Weitere Übungen findest du im ILIAS-Kurs:</span><span class="co"> [H5P-Aufgaben](https://…).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Variante B: Einbetten per iframe</strong></p>
+<iframe src="https://…/h5p/embed/ID" width="100%" height="480" frameborder="0" allowfullscreen=""></iframe>
+<ul>
+<li>Vorteil: <strong>Automatische Auswertung</strong> und ggf. <strong>Tracking</strong> bleiben bei H5P/ILIAS.<br>
+</li>
+<li>Nachteil: Inhalte liegen <strong>außerhalb</strong> deiner Quarto-Seite.</li>
+</ul>
+<hr>
+</section>
+<section id="google-forms-oder-microsoft-forms-einbetten" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="google-forms-oder-microsoft-forms-einbetten"><span class="header-section-number">12.7</span> Google Forms oder Microsoft Forms einbetten</h2>
+<p>Beide bieten <strong>Selbstkorrektur</strong> und automatische Auswertung. Erstelle dein Formular und nutze den <strong>Einbettungs‑Code</strong>.</p>
+<iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" width="100%" height="800" frameborder="0">Wird geladen…</iframe>
+<ul>
+<li>Vorteil: Sehr einfach, automatische Auswertung/Tabellen.<br>
+</li>
+<li>Nachteil: Externe Plattform, Design passt nicht immer perfekt.</li>
+</ul>
+<hr>
+</section>
+<section id="praxisempfehlung" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="praxisempfehlung"><span class="header-section-number">12.8</span> Praxisempfehlung</h2>
+<ul>
+<li>Für <strong>kleine, schnelle Checks</strong> in einer Quarto‑Seite: nutze die <strong>Bausteine oben</strong> (Single‑Choice, Multiple‑Choice, Kurzantwort).<br>
+</li>
+<li>Für <strong>umfangreiche Übungssets mit Noten/Tracking</strong>: nutze <strong>H5P in ILIAS</strong> oder <strong>Forms</strong> und <strong>bette</strong> die Inhalte ein.<br>
+</li>
+<li>Teste die Seite im <strong>Browser</strong>, nicht nur in der Vorschau.</li>
+</ul>
+</section>
+<section id="zusammenfassung" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">12.9</span> Zusammenfassung</h2>
+<ul>
+<li>Fertige, kopierbare Bausteine liefern <strong>Autokorrektur</strong> direkt in deiner Quarto‑Webseite.<br>
+</li>
+<li>Für größere, auswertbare Quizze sind <strong>H5P/ILIAS</strong> oder <strong>Forms</strong> sinnvoll.<br>
+</li>
+<li>Interaktive Elemente funktionieren nur in <strong>HTML‑Ausgaben</strong>.</li>
+</ul>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
