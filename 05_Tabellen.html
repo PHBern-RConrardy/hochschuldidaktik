@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richard Conrardy">
-<meta name="dcterms.date" content="2025-09-04">
 
-<title>Quarto für die PHBern</title>
+<title>5&nbsp; Tabellen, Formeln und interaktive Inhalte – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -87,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_wo_schreibe_ich.html" rel="next">
+<link href="./06_Webseiten.html" rel="next">
+<link href="./04_Formatieren.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -126,6 +105,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -138,7 +146,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_Tabellen.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tabellen, Formeln und interaktive Inhalte</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +173,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></span></a>
   </div>
 </li>
@@ -189,7 +197,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_Tabellen.html" class="sidebar-item-text sidebar-link">
+  <a href="./05_Tabellen.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tabellen, Formeln und interaktive Inhalte</span></span></a>
   </div>
 </li>
@@ -239,16 +247,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#was-ist-quarto" id="toc-was-ist-quarto" class="nav-link active" data-scroll-target="#was-ist-quarto"><span class="header-section-number">1</span> Was ist Quarto?</a>
+  <li><a href="#tabellen-erstellen" id="toc-tabellen-erstellen" class="nav-link active" data-scroll-target="#tabellen-erstellen"><span class="header-section-number">5.1</span> Tabellen erstellen</a></li>
+  <li><a href="#mathematische-formeln" id="toc-mathematische-formeln" class="nav-link" data-scroll-target="#mathematische-formeln"><span class="header-section-number">5.2</span> Mathematische Formeln</a>
   <ul class="collapse">
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele"><span class="header-section-number">1.1</span> Lernziele</a></li>
-  <li><a href="#was-ist-quarto-1" id="toc-was-ist-quarto-1" class="nav-link" data-scroll-target="#was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</a></li>
-  <li><a href="#was-kann-ich-mit-quarto-erstellen" id="toc-was-kann-ich-mit-quarto-erstellen" class="nav-link" data-scroll-target="#was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</a></li>
-  <li><a href="#beispiel-lehr-slides-mit-quellenangaben" id="toc-beispiel-lehr-slides-mit-quellenangaben" class="nav-link" data-scroll-target="#beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</a></li>
-  <li><a href="#beispiel-statische-webseite-für-ihre-lehrveranstaltung" id="toc-beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="nav-link" data-scroll-target="#beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</a></li>
-  <li><a href="#vorteile-für-dozierende" id="toc-vorteile-für-dozierende" class="nav-link" data-scroll-target="#vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur"><span class="header-section-number">1.7</span> Literatur</a></li>
+  <li><a href="#formeln-im-text" id="toc-formeln-im-text" class="nav-link" data-scroll-target="#formeln-im-text"><span class="header-section-number">5.2.1</span> Formeln im Text</a></li>
+  <li><a href="#formeln-als-block" id="toc-formeln-als-block" class="nav-link" data-scroll-target="#formeln-als-block"><span class="header-section-number">5.2.2</span> Formeln als Block</a></li>
   </ul></li>
+  <li><a href="#interaktive-inhalte-quizzes-und-code" id="toc-interaktive-inhalte-quizzes-und-code" class="nav-link" data-scroll-target="#interaktive-inhalte-quizzes-und-code"><span class="header-section-number">5.3</span> Interaktive Inhalte: Quizzes und Code</a>
+  <ul class="collapse">
+  <li><a href="#quiz-fragen" id="toc-quiz-fragen" class="nav-link" data-scroll-target="#quiz-fragen"><span class="header-section-number">5.3.1</span> Quiz-Fragen</a></li>
+  <li><a href="#code-einfügen" id="toc-code-einfügen" class="nav-link" data-scroll-target="#code-einfügen"><span class="header-section-number">5.3.2</span> Code einfügen</a></li>
+  </ul></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">5.4</span> Zusammenfassung</a></li>
   </ul>
 </nav>
     </div>
@@ -257,27 +267,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto für die PHBern</h1>
-<p class="subtitle lead">Eine Gebrauchsanweisung aus der Praxis</p>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tabellen, Formeln und interaktive Inhalte</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Richard Conrardy </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 4, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -287,157 +284,105 @@ div.csl-indent {
 </header>
 
 
-<section id="was-ist-quarto" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Was ist Quarto?</h1>
-<section id="lernziele" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="lernziele"><span class="header-section-number">1.1</span> Lernziele</h2>
-<p>Nach diesem Kapitel verstehst du:</p>
-<ul>
-<li>was Quarto ist und wie es sich von anderen Tools unterscheidet,</li>
-<li>wofür es in der Lehre sinnvoll eingesetzt werden kann,</li>
-<li>welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von <strong>Folien mit Quellenangaben</strong> und <strong>statischen Webseiten</strong>.</li>
-</ul>
+<p>In diesem Kapitel lernst du, wie du in Quarto Tabellen, mathematische Formeln und einfache interaktive Inhalte einbauen kannst.</p>
 <hr>
-</section>
-<section id="was-ist-quarto-1" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</h2>
-<blockquote class="blockquote">
-<p><strong>Quarto</strong> ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.</p>
-</blockquote>
-<p>Quarto basiert auf <strong>Markdown</strong>, einem leicht erlernbaren Textformat, und kann sowohl <strong>statischen Inhalt</strong> (Text, Bilder, Tabellen) als auch <strong>dynamischen Inhalt</strong> (z. B. R- oder Python-Code) integrieren.</p>
-<p>Quarto ist der offizielle Nachfolger von <a href="https://rmarkdown.rstudio.com/">R Markdown</a> und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.</p>
-<hr>
-</section>
-<section id="was-kann-ich-mit-quarto-erstellen" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</h2>
+<section id="tabellen-erstellen" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="tabellen-erstellen"><span class="header-section-number">5.1</span> Tabellen erstellen</h2>
+<p>Tabellen lassen sich in Quarto sehr einfach schreiben. Hier ein Beispiel:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Name       <span class="pp">|</span> Fach        <span class="pp">|</span> Klasse <span class="pp">|</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------|-------------|--------|</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Anna Meyer <span class="pp">|</span> Mathematik  <span class="pp">|</span> 7A     <span class="pp">|</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tom Berger <span class="pp">|</span> Deutsch     <span class="pp">|</span> 8B     <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ergebnis:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Format</th>
-<th>Anwendung in der Lehre</th>
+<th>Name</th>
+<th>Fach</th>
+<th>Klasse</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Präsentationen</strong></td>
-<td>Slides für Lerngelegenheiten</td>
+<td>Anna Meyer</td>
+<td>Mathematik</td>
+<td>7A</td>
 </tr>
 <tr class="even">
-<td><strong>PDF / Word</strong></td>
-<td>Handouts, Prüfungen, Skripte</td>
-</tr>
-<tr class="odd">
-<td><strong>Webseiten</strong></td>
-<td>Kurswebseiten, Forschungsprojekte, ePortfolios</td>
+<td>Tom Berger</td>
+<td>Deutsch</td>
+<td>8B</td>
 </tr>
 </tbody>
 </table>
-<blockquote class="blockquote">
-<p><strong>Alles</strong> aus <strong>einer einzigen <code>.qmd</code>-Datei</strong>!</p>
-</blockquote>
 <hr>
 </section>
-<section id="beispiel-lehr-slides-mit-quellenangaben" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</h2>
-<p>Quarto-Präsentationen lassen sich in wenigen Sekunden in <strong>HTML</strong>, <strong>Reveal.js</strong>, <strong>PowerPoint</strong> oder <strong>PDF (Beamer)</strong> umwandeln – inklusive:</p>
-<ul>
-<li>automatischer <strong>Quellenangaben</strong> (z. B. mit <code>literatur.bib</code>)</li>
-<li>eingebetteter <strong>Bilder</strong>, <strong>Diagramme</strong> und <strong>Formeln</strong></li>
-<li>optional: interaktive Inhalte (Diagramme, Code-Ausgabe)</li>
+<section id="mathematische-formeln" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="mathematische-formeln"><span class="header-section-number">5.2</span> Mathematische Formeln</h2>
+<p>Quarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichtig:</p>
+<section id="formeln-im-text" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="formeln-im-text"><span class="header-section-number">5.2.1</span> Formeln im Text</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Die Fläche berechnet sich mit $A = a \times b$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ergebnis: Die Fläche berechnet sich mit <span class="math inline">\(A = a \times b\)</span>.</p>
+</section>
+<section id="formeln-als-block" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="formeln-als-block"><span class="header-section-number">5.2.2</span> Formeln als Block</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>E = mc^2</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ergebnis:</p>
+<p><span class="math display">\[
+E = mc^2
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="interaktive-inhalte-quizzes-und-code" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="interaktive-inhalte-quizzes-und-code"><span class="header-section-number">5.3</span> Interaktive Inhalte: Quizzes und Code</h2>
+<p>Mit Quarto kannst du sogar kleine interaktive Elemente einbauen.</p>
+<section id="quiz-fragen" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="quiz-fragen"><span class="header-section-number">5.3.1</span> Quiz-Fragen</h3>
+<p>Ein einfaches Multiple-Choice-Beispiel:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Kleine Quizfrage</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Welche Zahl ist prim?</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> 8</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> 7</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> 9</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Beim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">8</label></li>
+<li><label><input type="checkbox" checked="">7</label></li>
+<li><label><input type="checkbox">9</label></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Einführung in Statistik"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> literatur.bib</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mittelwert, Median, Modus</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standardabweichung, Varianz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Statistics is the grammar of science." – Karl Pearson </span><span class="co">[</span><span class="ot">@pearson1901</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Die Quelle <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.</p>
+<hr>
 </section>
-<section id="beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</h2>
-<p>Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.</p>
-<p>Projektstruktur:</p>
-<pre><code>📁 mein-kurs/
-├── _quarto.yml
-├── index.qmd         # Startseite
-├── literatur.qmd     # Literaturverzeichnis
-├── sitzung1.qmd
-├── sitzung2.qmd
-└── ...</code></pre>
-<p>Beispielhafte Konfiguration (<code>_quarto.yml</code>):</p>
-<pre><code>project:
-  type: website
-
-website:
-  title: "Digitale Didaktik"
-  navbar:
-    left:
-      - text: "Start"
-        file: index.qmd
-      - text: "Literatur"
-        file: literatur.qmd</code></pre>
-<p>Nach dem Ausführen von:</p>
-<pre class="terminal"><code>quarto render</code></pre>
-<p>oder durch Klicken auf “Render” in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.</p>
+<section id="code-einfügen" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="code-einfügen"><span class="header-section-number">5.3.2</span> Code einfügen</h3>
+<p>Wenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>```</p>
+<p>Das wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.</p>
+<hr>
 </section>
-<section id="vorteile-für-dozierende" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 71%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Vorteil</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Effizienz</strong></td>
-<td>Ein Dokument, viele Ausgabeformate</td>
-</tr>
-<tr class="even">
-<td><strong>Wissenschaftlich</strong></td>
-<td>Automatische Literaturverweise, APA, MLA, Chicago etc.</td>
-</tr>
-<tr class="odd">
-<td><strong>Wiederverwendbar</strong></td>
-<td>Inhalte lassen sich modular aufbauen</td>
-</tr>
-<tr class="even">
-<td><strong>Offen &amp; nachhaltig</strong></td>
-<td>Offenes Textformat, langfristig lesbar, versionierbar</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="literatur" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="literatur"><span class="header-section-number">1.7</span> Literatur</h2>
-<p>Quellen werden automatisch aus der Datei <code>literatur.bib</code> geladen.</p>
-<p>Beispielinhalt für <code>literatur.bib</code>:</p>
-<pre><code>@book{pearson1901,
-  author = {Karl Pearson},
-  title = {The Grammar of Science},
-  year = {1901},
-  publisher = {Adam and Charles Black}
-}</code></pre>
+<section id="zusammenfassung" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">5.4</span> Zusammenfassung</h2>
+<ul>
+<li>Tabellen sind einfach mit Strichen und Pipes (<code>|</code>) zu schreiben.<br>
+</li>
+<li>Formeln funktionieren mit LaTeX-Syntax (<code>$...$</code>).<br>
+</li>
+<li>Interaktive Elemente wie Quizzes oder Codeblöcke machen deine Materialien lebendig.</li>
+</ul>
+<p>Im nächsten Kapitel schauen wir uns an, wie man <strong>Quarto Book</strong> noch besser organisiert und Kapitel miteinander verknüpft.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +787,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04_Formatieren.html" class="pagination-link" aria-label="Texte gestalten mit Quarto">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Texte gestalten mit Quarto</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_wo_schreibe_ich.html" class="pagination-link" aria-label="Quarto starten ohne Terminal">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06_Webseiten.html" class="pagination-link" aria-label="Quarto Webseite organisieren">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quarto Webseite organisieren</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

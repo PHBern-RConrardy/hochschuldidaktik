@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richard Conrardy">
-<meta name="dcterms.date" content="2025-09-04">
 
-<title>Quarto für die PHBern</title>
+<title>3&nbsp; Dein erstes Quarto-Dokument – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -87,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_wo_schreibe_ich.html" rel="next">
+<link href="./04_Formatieren.html" rel="next">
+<link href="./02_wo_schreibe_ich.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -138,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_erstes_Dokument.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dein erstes Quarto-Dokument</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +144,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></span></a>
   </div>
 </li>
@@ -177,7 +156,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_erstes_Dokument.html" class="sidebar-item-text sidebar-link">
+  <a href="./03_erstes_Dokument.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dein erstes Quarto-Dokument</span></span></a>
   </div>
 </li>
@@ -239,15 +218,13 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#was-ist-quarto" id="toc-was-ist-quarto" class="nav-link active" data-scroll-target="#was-ist-quarto"><span class="header-section-number">1</span> Was ist Quarto?</a>
+  <li><a href="#starte-rstudio" id="toc-starte-rstudio" class="nav-link active" data-scroll-target="#starte-rstudio"><span class="header-section-number">3.1</span> 1. Starte RStudio</a></li>
+  <li><a href="#neues-quarto-dokument-erstellen" id="toc-neues-quarto-dokument-erstellen" class="nav-link" data-scroll-target="#neues-quarto-dokument-erstellen"><span class="header-section-number">3.2</span> 2. Neues Quarto-Dokument erstellen</a></li>
+  <li><a href="#überblick-über-das-dokument" id="toc-überblick-über-das-dokument" class="nav-link" data-scroll-target="#überblick-über-das-dokument"><span class="header-section-number">3.3</span> 3. Überblick über das Dokument</a></li>
+  <li><a href="#dokument-rendern-also-erstellen" id="toc-dokument-rendern-also-erstellen" class="nav-link" data-scroll-target="#dokument-rendern-also-erstellen"><span class="header-section-number">3.4</span> Dokument „rendern“ (also erstellen)</a></li>
+  <li><a href="#zusatz-andere-dateiformate-docx-pptx-präsentationen" id="toc-zusatz-andere-dateiformate-docx-pptx-präsentationen" class="nav-link" data-scroll-target="#zusatz-andere-dateiformate-docx-pptx-präsentationen"><span class="header-section-number">3.5</span> Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)</a>
   <ul class="collapse">
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele"><span class="header-section-number">1.1</span> Lernziele</a></li>
-  <li><a href="#was-ist-quarto-1" id="toc-was-ist-quarto-1" class="nav-link" data-scroll-target="#was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</a></li>
-  <li><a href="#was-kann-ich-mit-quarto-erstellen" id="toc-was-kann-ich-mit-quarto-erstellen" class="nav-link" data-scroll-target="#was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</a></li>
-  <li><a href="#beispiel-lehr-slides-mit-quellenangaben" id="toc-beispiel-lehr-slides-mit-quellenangaben" class="nav-link" data-scroll-target="#beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</a></li>
-  <li><a href="#beispiel-statische-webseite-für-ihre-lehrveranstaltung" id="toc-beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="nav-link" data-scroll-target="#beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</a></li>
-  <li><a href="#vorteile-für-dozierende" id="toc-vorteile-für-dozierende" class="nav-link" data-scroll-target="#vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur"><span class="header-section-number">1.7</span> Literatur</a></li>
+  <li><a href="#format-ändern" id="toc-format-ändern" class="nav-link" data-scroll-target="#format-ändern"><span class="header-section-number">3.5.1</span> Format ändern</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -257,27 +234,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto für die PHBern</h1>
-<p class="subtitle lead">Eine Gebrauchsanweisung aus der Praxis</p>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dein erstes Quarto-Dokument</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Richard Conrardy </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 4, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -287,156 +251,100 @@ div.csl-indent {
 </header>
 
 
-<section id="was-ist-quarto" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Was ist Quarto?</h1>
-<section id="lernziele" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="lernziele"><span class="header-section-number">1.1</span> Lernziele</h2>
-<p>Nach diesem Kapitel verstehst du:</p>
+<p>Nun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!</p>
+<p>Wir arbeiten Schritt für Schritt.</p>
+<hr>
+<section id="starte-rstudio" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="starte-rstudio"><span class="header-section-number">3.1</span> 1. Starte RStudio</h2>
+<p>Öffne RStudio auf deinem Computer.</p>
+<p>📸 <em>Screenshot: RStudio Startbildschirm</em></p>
+<hr>
+</section>
+<section id="neues-quarto-dokument-erstellen" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="neues-quarto-dokument-erstellen"><span class="header-section-number">3.2</span> 2. Neues Quarto-Dokument erstellen</h2>
+<p>Klicke oben links auf <strong>File</strong> → <strong>New File</strong> → <strong>Quarto Document…</strong></p>
+<p>📸 <em>Screenshot: File &gt; New File &gt; Quarto Document…</em></p>
+<p>Ein neues Fenster erscheint. Dort kannst du folgende Angaben machen:</p>
 <ul>
-<li>was Quarto ist und wie es sich von anderen Tools unterscheidet,</li>
-<li>wofür es in der Lehre sinnvoll eingesetzt werden kann,</li>
-<li>welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von <strong>Folien mit Quellenangaben</strong> und <strong>statischen Webseiten</strong>.</li>
+<li><strong>Title</strong>: Gib z. B. „Mein erstes Quarto-Dokument“ ein<br>
+</li>
+<li><strong>Author</strong>: Deinen Namen<br>
+</li>
+<li><strong>Format</strong>: Wähle „HTML“<br>
+</li>
+<li>Klicke auf <strong>Create</strong></li>
 </ul>
+<p>📸 <em>Screenshot: Quarto-Dokument erstellen (mit ausgefüllten Feldern)</em></p>
 <hr>
 </section>
-<section id="was-ist-quarto-1" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</h2>
-<blockquote class="blockquote">
-<p><strong>Quarto</strong> ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.</p>
-</blockquote>
-<p>Quarto basiert auf <strong>Markdown</strong>, einem leicht erlernbaren Textformat, und kann sowohl <strong>statischen Inhalt</strong> (Text, Bilder, Tabellen) als auch <strong>dynamischen Inhalt</strong> (z. B. R- oder Python-Code) integrieren.</p>
-<p>Quarto ist der offizielle Nachfolger von <a href="https://rmarkdown.rstudio.com/">R Markdown</a> und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.</p>
-<hr>
-</section>
-<section id="was-kann-ich-mit-quarto-erstellen" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>Anwendung in der Lehre</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Präsentationen</strong></td>
-<td>Slides für Lerngelegenheiten</td>
-</tr>
-<tr class="even">
-<td><strong>PDF / Word</strong></td>
-<td>Handouts, Prüfungen, Skripte</td>
-</tr>
-<tr class="odd">
-<td><strong>Webseiten</strong></td>
-<td>Kurswebseiten, Forschungsprojekte, ePortfolios</td>
-</tr>
-</tbody>
-</table>
-<blockquote class="blockquote">
-<p><strong>Alles</strong> aus <strong>einer einzigen <code>.qmd</code>-Datei</strong>!</p>
-</blockquote>
-<hr>
-</section>
-<section id="beispiel-lehr-slides-mit-quellenangaben" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</h2>
-<p>Quarto-Präsentationen lassen sich in wenigen Sekunden in <strong>HTML</strong>, <strong>Reveal.js</strong>, <strong>PowerPoint</strong> oder <strong>PDF (Beamer)</strong> umwandeln – inklusive:</p>
-<ul>
-<li>automatischer <strong>Quellenangaben</strong> (z. B. mit <code>literatur.bib</code>)</li>
-<li>eingebetteter <strong>Bilder</strong>, <strong>Diagramme</strong> und <strong>Formeln</strong></li>
-<li>optional: interaktive Inhalte (Diagramme, Code-Ausgabe)</li>
-</ul>
+<section id="überblick-über-das-dokument" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="überblick-über-das-dokument"><span class="header-section-number">3.3</span> 3. Überblick über das Dokument</h2>
+<p>Quarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Einführung in Statistik"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> literatur.bib</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mittelwert, Median, Modus</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standardabweichung, Varianz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Statistics is the grammar of science." – Karl Pearson </span><span class="co">[</span><span class="ot">@pearson1901</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Die Quelle <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.</p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Mein erstes Quarto-Dokument"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Max Muster"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Einführung</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Dies ist mein erstes Quarto-Dokument.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Was wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Was du oben siehst, nennt sich YAML-Header (der Teil zwischen <code>---</code>), da stehen Titel, Autor:in und das gewünschte Format. Du musst ihn meistens nicht verändern.</p>
+<p>Der Rest ist Text, den du einfach schreiben kannst.</p>
 </section>
-<section id="beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</h2>
-<p>Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.</p>
-<p>Projektstruktur:</p>
-<pre><code>📁 mein-kurs/
-├── _quarto.yml
-├── index.qmd         # Startseite
-├── literatur.qmd     # Literaturverzeichnis
-├── sitzung1.qmd
-├── sitzung2.qmd
-└── ...</code></pre>
-<p>Beispielhafte Konfiguration (<code>_quarto.yml</code>):</p>
-<pre><code>project:
-  type: website
-
-website:
-  title: "Digitale Didaktik"
-  navbar:
-    left:
-      - text: "Start"
-        file: index.qmd
-      - text: "Literatur"
-        file: literatur.qmd</code></pre>
-<p>Nach dem Ausführen von:</p>
-<pre class="terminal"><code>quarto render</code></pre>
-<p>oder durch Klicken auf “Render” in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.</p>
+<section id="dokument-rendern-also-erstellen" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="dokument-rendern-also-erstellen"><span class="header-section-number">3.4</span> Dokument „rendern“ (also erstellen)</h2>
+<p>Klicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch im Browser geöffnet wird.</p>
+<p>📸 Screenshot: Render-Button</p>
+<p>Du solltest nun dein erstes Quarto-Dokument im Browser sehen – gratuliere!</p>
+<ol start="5" type="1">
+<li>Nächste Schritte</li>
+</ol>
+<p>Du kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Meine Themen</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Ich unterrichte gerne Mathematik.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Warum ich Quarto nutze</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Weil es einfach ist und schön aussieht.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Klicke wieder auf Render, um das aktualisierte Dokument zu sehen.</p>
+<p>Tipp: Speichern nicht vergessen</p>
+<p>Vergiss nicht, dein Dokument unter einem passenden Namen zu speichern: File → Save As…</p>
+<p>📸 Screenshot: Speichern unter Dialog</p>
 </section>
-<section id="vorteile-für-dozierende" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 71%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Vorteil</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Effizienz</strong></td>
-<td>Ein Dokument, viele Ausgabeformate</td>
-</tr>
-<tr class="even">
-<td><strong>Wissenschaftlich</strong></td>
-<td>Automatische Literaturverweise, APA, MLA, Chicago etc.</td>
-</tr>
-<tr class="odd">
-<td><strong>Wiederverwendbar</strong></td>
-<td>Inhalte lassen sich modular aufbauen</td>
-</tr>
-<tr class="even">
-<td><strong>Offen &amp; nachhaltig</strong></td>
-<td>Offenes Textformat, langfristig lesbar, versionierbar</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="literatur" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="literatur"><span class="header-section-number">1.7</span> Literatur</h2>
-<p>Quellen werden automatisch aus der Datei <code>literatur.bib</code> geladen.</p>
-<p>Beispielinhalt für <code>literatur.bib</code>:</p>
-<pre><code>@book{pearson1901,
-  author = {Karl Pearson},
-  title = {The Grammar of Science},
-  year = {1901},
-  publisher = {Adam and Charles Black}
-}</code></pre>
+<section id="zusatz-andere-dateiformate-docx-pptx-präsentationen" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="zusatz-andere-dateiformate-docx-pptx-präsentationen"><span class="header-section-number">3.5</span> Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)</h2>
+<p>Du kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch <strong>als Word-Datei (docx)</strong>, <strong>PowerPoint-Folie (pptx)</strong> oder sogar als <strong>interaktive Präsentation (reveal.js)</strong> ausgeben – und zwar mit einem kleinen Trick:</p>
+<section id="format-ändern" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="format-ändern"><span class="header-section-number">3.5.1</span> Format ändern</h3>
+<p>Im oberen Teil deines Dokuments (dem YAML-Header) steht so etwas wie:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Mein erstes Quarto-Dokument"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Max Muster"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wenn du nun statt <code>html</code> z. B. <code>docx</code> einträgst, wird dein Dokument beim Rendern als Word-Datei erstellt:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> docx</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dasselbe geht auch für PowerPoint:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> pptx</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Oder für eine schöne interaktive Präsentation mit „reveal.js“:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert. Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).</p>
+<p>📸 Screenshot: YAML-Header mit unterschiedlichen Formaten</p>
+<p>##&nbsp;Mehrere Formate auf einmal?</p>
+<p>Ja, sogar das geht – einfach so schreiben:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  html: default</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  docx: default</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  pptx: default</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dann erzeugt Quarto beim Rendern alle drei Dateien gleichzeitig.</p>
+<p>📸 Screenshot: Render mit mehreren Formaten</p>
+<p>In den nächsten Kapiteln zeigen wir dir, wie du Inhalte noch schöner gestalten kannst – z. B. mit Listen, Bildern, Tabellen oder eingebauten Übungsfragen.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
 </section>
 </section>
 
@@ -842,10 +750,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./02_wo_schreibe_ich.html" class="pagination-link" aria-label="Quarto starten ohne Terminal">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_wo_schreibe_ich.html" class="pagination-link" aria-label="Quarto starten ohne Terminal">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04_Formatieren.html" class="pagination-link" aria-label="Texte gestalten mit Quarto">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Texte gestalten mit Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

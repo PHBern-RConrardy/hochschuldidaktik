@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richard Conrardy">
-<meta name="dcterms.date" content="2025-09-04">
 
-<title>Quarto für die PHBern</title>
+<title>10&nbsp; Callouts, Figures und weitere :::- Elemente – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -87,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_wo_schreibe_ich.html" rel="next">
+<link href="./11_Mermaid.html" rel="next">
+<link href="./09_Zitieren.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -138,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_Divs.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Callouts, Figures und weitere <code>:::-</code> Elemente</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +144,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></span></a>
   </div>
 </li>
@@ -219,7 +198,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_Divs.html" class="sidebar-item-text sidebar-link">
+  <a href="./10_Divs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Callouts, Figures und weitere <code>:::-</code> Elemente</span></span></a>
   </div>
 </li>
@@ -239,16 +218,20 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#was-ist-quarto" id="toc-was-ist-quarto" class="nav-link active" data-scroll-target="#was-ist-quarto"><span class="header-section-number">1</span> Was ist Quarto?</a>
+  <li><a href="#grundprinzip-divs-mit-öffnen-und-schliessen" id="toc-grundprinzip-divs-mit-öffnen-und-schliessen" class="nav-link active" data-scroll-target="#grundprinzip-divs-mit-öffnen-und-schliessen"><span class="header-section-number">10.1</span> Grundprinzip: Divs mit <code>:::</code> öffnen und schliessen</a></li>
+  <li><a href="#callouts-hinweisboxen" id="toc-callouts-hinweisboxen" class="nav-link" data-scroll-target="#callouts-hinweisboxen"><span class="header-section-number">10.2</span> Callouts (Hinweisboxen)</a></li>
+  <li><a href="#figures-bilder-mit-bildunterschrift-grösse-ausrichtung" id="toc-figures-bilder-mit-bildunterschrift-grösse-ausrichtung" class="nav-link" data-scroll-target="#figures-bilder-mit-bildunterschrift-grösse-ausrichtung"><span class="header-section-number">10.3</span> Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)</a>
   <ul class="collapse">
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele"><span class="header-section-number">1.1</span> Lernziele</a></li>
-  <li><a href="#was-ist-quarto-1" id="toc-was-ist-quarto-1" class="nav-link" data-scroll-target="#was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</a></li>
-  <li><a href="#was-kann-ich-mit-quarto-erstellen" id="toc-was-kann-ich-mit-quarto-erstellen" class="nav-link" data-scroll-target="#was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</a></li>
-  <li><a href="#beispiel-lehr-slides-mit-quellenangaben" id="toc-beispiel-lehr-slides-mit-quellenangaben" class="nav-link" data-scroll-target="#beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</a></li>
-  <li><a href="#beispiel-statische-webseite-für-ihre-lehrveranstaltung" id="toc-beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="nav-link" data-scroll-target="#beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</a></li>
-  <li><a href="#vorteile-für-dozierende" id="toc-vorteile-für-dozierende" class="nav-link" data-scroll-target="#vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur"><span class="header-section-number">1.7</span> Literatur</a></li>
+  <li><a href="#weg-1-markdown-bild-mit-bildunterschrift-und-attributen" id="toc-weg-1-markdown-bild-mit-bildunterschrift-und-attributen" class="nav-link" data-scroll-target="#weg-1-markdown-bild-mit-bildunterschrift-und-attributen"><span class="header-section-number">10.3.1</span> Weg 1: Markdown-Bild mit Bildunterschrift und Attributen</a></li>
+  <li><a href="#weg-2-div-mit-figure-rolle" id="toc-weg-2-div-mit-figure-rolle" class="nav-link" data-scroll-target="#weg-2-div-mit-figure-rolle"><span class="header-section-number">10.3.2</span> Weg 2: Div mit <code>figure</code>-Rolle</a></li>
   </ul></li>
+  <li><a href="#columns-inhalte-nebeneinander" id="toc-columns-inhalte-nebeneinander" class="nav-link" data-scroll-target="#columns-inhalte-nebeneinander"><span class="header-section-number">10.4</span> Columns (Inhalte nebeneinander)</a></li>
+  <li><a href="#tabsets-reiter" id="toc-tabsets-reiter" class="nav-link" data-scroll-target="#tabsets-reiter"><span class="header-section-number">10.5</span> Tabsets (Reiter)</a></li>
+  <li><a href="#eigene-divs-für-gestaltung-oder-logik" id="toc-eigene-divs-für-gestaltung-oder-logik" class="nav-link" data-scroll-target="#eigene-divs-für-gestaltung-oder-logik"><span class="header-section-number">10.6</span> Eigene Divs für Gestaltung oder Logik</a></li>
+  <li><a href="#kombinationen" id="toc-kombinationen" class="nav-link" data-scroll-target="#kombinationen"><span class="header-section-number">10.7</span> Kombinationen</a></li>
+  <li><a href="#häufige-fehler-und-lösungen" id="toc-häufige-fehler-und-lösungen" class="nav-link" data-scroll-target="#häufige-fehler-und-lösungen"><span class="header-section-number">10.8</span> Häufige Fehler und Lösungen</a></li>
+  <li><a href="#mini-vorlage-zum-kopieren" id="toc-mini-vorlage-zum-kopieren" class="nav-link" data-scroll-target="#mini-vorlage-zum-kopieren"><span class="header-section-number">10.9</span> Mini-Vorlage zum Kopieren</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">10.10</span> Zusammenfassung</a></li>
   </ul>
 </nav>
     </div>
@@ -257,27 +240,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto für die PHBern</h1>
-<p class="subtitle lead">Eine Gebrauchsanweisung aus der Praxis</p>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Callouts, Figures und weitere <code>:::-</code> Elemente</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Richard Conrardy </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 4, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -287,157 +257,200 @@ div.csl-indent {
 </header>
 
 
-<section id="was-ist-quarto" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Was ist Quarto?</h1>
-<section id="lernziele" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="lernziele"><span class="header-section-number">1.1</span> Lernziele</h2>
-<p>Nach diesem Kapitel verstehst du:</p>
+<p>In diesem Kapitel lernst du die wichtigsten „Baukasten“-Elemente mit <code>:::</code> kennen: <strong>Callouts</strong> (Hinweisboxen), <strong>Figures</strong> (Bilder mit Beschriftung), <strong>Columns</strong> (Inhalte nebeneinander), <strong>Tabsets</strong> (Reiter) und <strong>eigene Divs</strong>. Du brauchst dafür keine HTML-Kenntnisse.</p>
+<section id="grundprinzip-divs-mit-öffnen-und-schliessen" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="grundprinzip-divs-mit-öffnen-und-schliessen"><span class="header-section-number">10.1</span> Grundprinzip: Divs mit <code>:::</code> öffnen und schliessen</h2>
+<p>Viele erweiterte Elemente beginnen mit <code>:::</code> und enden mit <code>:::</code>. Die <strong>Art</strong> des Elements steuerst du mit einer <strong>Klasse</strong> in geschweiften Klammern:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.meine-klasse}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Inhalt hier …</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Quarto erkennt an der Klasse (z. B. <code>.callout-note</code>), was daraus werden soll.</p>
+</section>
+<section id="callouts-hinweisboxen" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="callouts-hinweisboxen"><span class="header-section-number">10.2</span> Callouts (Hinweisboxen)</h2>
+<p>Callouts eignen sich für Tipps, Warnungen oder Beispiele. Häufige Varianten sind: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>important</code>, <code>caution</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Hinweis</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>So fügst du eine kurze Erklärung ein.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tipp</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Das ist besonders praktisch beim Erklären von Arbeitsschritten.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">### Achtung</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Hier bitte genau lesen, sonst klappt es nicht.</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Du kannst Überschriften weglassen oder kürzer schreiben – wichtig ist die Klasse <code>.callout-…</code>.</p>
+<p>📸 Screenshot: Drei Callouts nebeneinander/untereinander</p>
+</section>
+<section id="figures-bilder-mit-bildunterschrift-grösse-ausrichtung" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="figures-bilder-mit-bildunterschrift-grösse-ausrichtung"><span class="header-section-number">10.3</span> Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)</h2>
+<p>Es gibt zwei bequeme Wege. Wähle einen und bleibe dabei konsistent.</p>
+<section id="weg-1-markdown-bild-mit-bildunterschrift-und-attributen" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="weg-1-markdown-bild-mit-bildunterschrift-und-attributen"><span class="header-section-number">10.3.1</span> Weg 1: Markdown-Bild mit Bildunterschrift und Attributen</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Bildunterschrift: Logo PHBern](images/phbern-logo.png)</span>{fig-align="center" width="50%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>was Quarto ist und wie es sich von anderen Tools unterscheidet,</li>
-<li>wofür es in der Lehre sinnvoll eingesetzt werden kann,</li>
-<li>welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von <strong>Folien mit Quellenangaben</strong> und <strong>statischen Webseiten</strong>.</li>
+<li><code>fig-align="center"</code> zentriert das Bild.<br>
+</li>
+<li><code>width="50%"</code> skaliert die Breite relativ zur Seite.</li>
 </ul>
-<hr>
 </section>
-<section id="was-ist-quarto-1" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</h2>
-<blockquote class="blockquote">
-<p><strong>Quarto</strong> ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.</p>
-</blockquote>
-<p>Quarto basiert auf <strong>Markdown</strong>, einem leicht erlernbaren Textformat, und kann sowohl <strong>statischen Inhalt</strong> (Text, Bilder, Tabellen) als auch <strong>dynamischen Inhalt</strong> (z. B. R- oder Python-Code) integrieren.</p>
-<p>Quarto ist der offizielle Nachfolger von <a href="https://rmarkdown.rstudio.com/">R Markdown</a> und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.</p>
-<hr>
-</section>
-<section id="was-kann-ich-mit-quarto-erstellen" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>Anwendung in der Lehre</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Präsentationen</strong></td>
-<td>Slides für Lerngelegenheiten</td>
-</tr>
-<tr class="even">
-<td><strong>PDF / Word</strong></td>
-<td>Handouts, Prüfungen, Skripte</td>
-</tr>
-<tr class="odd">
-<td><strong>Webseiten</strong></td>
-<td>Kurswebseiten, Forschungsprojekte, ePortfolios</td>
-</tr>
-</tbody>
-</table>
-<blockquote class="blockquote">
-<p><strong>Alles</strong> aus <strong>einer einzigen <code>.qmd</code>-Datei</strong>!</p>
-</blockquote>
-<hr>
-</section>
-<section id="beispiel-lehr-slides-mit-quellenangaben" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</h2>
-<p>Quarto-Präsentationen lassen sich in wenigen Sekunden in <strong>HTML</strong>, <strong>Reveal.js</strong>, <strong>PowerPoint</strong> oder <strong>PDF (Beamer)</strong> umwandeln – inklusive:</p>
-<ul>
-<li>automatischer <strong>Quellenangaben</strong> (z. B. mit <code>literatur.bib</code>)</li>
-<li>eingebetteter <strong>Bilder</strong>, <strong>Diagramme</strong> und <strong>Formeln</strong></li>
-<li>optional: interaktive Inhalte (Diagramme, Code-Ausgabe)</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Einführung in Statistik"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> literatur.bib</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mittelwert, Median, Modus</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standardabweichung, Varianz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Statistics is the grammar of science." – Karl Pearson </span><span class="co">[</span><span class="ot">@pearson1901</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Die Quelle <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.</p>
-</section>
-<section id="beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</h2>
-<p>Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.</p>
-<p>Projektstruktur:</p>
-<pre><code>📁 mein-kurs/
-├── _quarto.yml
-├── index.qmd         # Startseite
-├── literatur.qmd     # Literaturverzeichnis
-├── sitzung1.qmd
-├── sitzung2.qmd
-└── ...</code></pre>
-<p>Beispielhafte Konfiguration (<code>_quarto.yml</code>):</p>
-<pre><code>project:
-  type: website
-
-website:
-  title: "Digitale Didaktik"
-  navbar:
-    left:
-      - text: "Start"
-        file: index.qmd
-      - text: "Literatur"
-        file: literatur.qmd</code></pre>
-<p>Nach dem Ausführen von:</p>
-<pre class="terminal"><code>quarto render</code></pre>
-<p>oder durch Klicken auf “Render” in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.</p>
-</section>
-<section id="vorteile-für-dozierende" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 71%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Vorteil</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Effizienz</strong></td>
-<td>Ein Dokument, viele Ausgabeformate</td>
-</tr>
-<tr class="even">
-<td><strong>Wissenschaftlich</strong></td>
-<td>Automatische Literaturverweise, APA, MLA, Chicago etc.</td>
-</tr>
-<tr class="odd">
-<td><strong>Wiederverwendbar</strong></td>
-<td>Inhalte lassen sich modular aufbauen</td>
-</tr>
-<tr class="even">
-<td><strong>Offen &amp; nachhaltig</strong></td>
-<td>Offenes Textformat, langfristig lesbar, versionierbar</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="literatur" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="literatur"><span class="header-section-number">1.7</span> Literatur</h2>
-<p>Quellen werden automatisch aus der Datei <code>literatur.bib</code> geladen.</p>
-<p>Beispielinhalt für <code>literatur.bib</code>:</p>
-<pre><code>@book{pearson1901,
-  author = {Karl Pearson},
-  title = {The Grammar of Science},
-  year = {1901},
-  publisher = {Adam and Charles Black}
-}</code></pre>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+<section id="weg-2-div-mit-figure-rolle" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="weg-2-div-mit-figure-rolle"><span class="header-section-number">10.3.2</span> Weg 2: Div mit <code>figure</code>-Rolle</h3>
+<div id="fig-logo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="screenshots/gui_projekt.png" class="img-fluid figure-img" style="width:45.0%"></p>
+<figcaption>Logo PHBern</figcaption>
+</figure>
 </div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.1: <em>Logo der PHBern</em>
+</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {#fig-logo phbern .figure}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo PHBern](screenshots/gui_projekt.png)</span>{width="45%"}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>*Logo der PHBern*</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Die letzte Zeile ist die Bildunterschrift (kursiv).<br>
+</li>
+<li>Mit einer ID wie <code>{#fig-logo}</code> kannst du <strong>verweisen</strong>: <em>siehe <a href="#fig-logo" class="quarto-xref">Figure&nbsp;<span>10.1</span></a></em>.</li>
+</ul>
 </section>
+</section>
+<section id="columns-inhalte-nebeneinander" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="columns-inhalte-nebeneinander"><span class="header-section-number">10.4</span> Columns (Inhalte nebeneinander)</h2>
+<p>Mit Columns kannst du Text und Bild oder zwei Texte <strong>nebeneinander</strong> darstellen.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>::: {.column width="60%"}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>**Text links:** Hier steht der Hauptinhalt. Du kannst Überschriften, Listen und Bilder verwenden.</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>::: {.column width="40%"}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>**Rechts:** Ein Bild oder eine Liste.</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo](screenshots/gui_projekt.png)</span>{width="80%"}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Die Summe der Breiten sollte ungefähr 100 % ergeben.<br>
+</li>
+<li>Ohne <code>width</code> teilt Quarto den Platz automatisch.</li>
+</ul>
+</section>
+<section id="tabsets-reiter" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="tabsets-reiter"><span class="header-section-number">10.5</span> Tabsets (Reiter)</h2>
+<p>Tabsets sind nützlich, wenn du Varianten oder Beispiele trennen willst (z. B. zwei Lösungswege).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variante A</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Kurze Erklärung für die erste Variante.</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variante B</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>Alternative Darstellung mit anderem Beispiel.</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Häufige Fragen</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Antworten zu typischen Rückfragen.</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jede <strong>Überschrift der Ebene 2</strong> (<code>##</code>) wird zu einem Tab.<br>
+</li>
+<li>Du kannst innerhalb der Tabs ganz normalen Markdown verwenden.</li>
+</ul>
+</section>
+<section id="eigene-divs-für-gestaltung-oder-logik" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="eigene-divs-für-gestaltung-oder-logik"><span class="header-section-number">10.6</span> Eigene Divs für Gestaltung oder Logik</h2>
+<p>Wenn du später mit CSS arbeitest oder Abschnitte gezielt ansprechen willst, kannst du eigene Klassen vergeben:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: {.lernziel}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>**Lernziele**</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ich kann Callouts einsetzen.</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ich kann Bilder mit Bildunterschriften zentrieren.</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Später könntest du <code>.lernziel</code> in <code>styles.css</code> gestalten (z. B. Rahmen, Hintergrund).</p>
+</section>
+<section id="kombinationen" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="kombinationen"><span class="header-section-number">10.7</span> Kombinationen</h2>
+<p>Elemente lassen sich kombinieren – zum Beispiel ein Callout <strong>mit</strong> Columns:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beispiel mit zwei Spalten</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>::: {.column}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Punkt A</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Punkt B</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>::: {.column}</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="al">![Skizze](screenshots/gui_projekt.png)</span>{width="90%"}</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Achte beim Verschachteln auf die <strong>Reihenfolge</strong> und schließe jedes <code>:::</code>.</p>
+</section>
+<section id="häufige-fehler-und-lösungen" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="häufige-fehler-und-lösungen"><span class="header-section-number">10.8</span> Häufige Fehler und Lösungen</h2>
+<ul>
+<li><strong>„Unerwartetes Ende“ oder komisches Layout</strong>: Meist fehlt ein schließendes <code>:::</code>. Zähle die Blöcke und schließe sie von innen nach außen.<br>
+</li>
+<li><strong>Klasse wirkt nicht</strong>: Stimmt die Schreibweise? (<code>.callout-tip</code>, <code>.panel-tabset</code>, <code>.columns</code>, <code>.column</code>)<br>
+</li>
+<li><strong>Bilder zu groß/klein</strong>: Mit <code>width="…"</code> anpassen (z. B. <code>width="60%"</code>).<br>
+</li>
+<li><strong>Verweise auf Figures</strong> funktionieren nicht: Verwende eine <strong>ID</strong> (z. B. <code>{#fig-logo}</code>) und verweise mit <code>@fig-logo</code>.</li>
+</ul>
+</section>
+<section id="mini-vorlage-zum-kopieren" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="mini-vorlage-zum-kopieren"><span class="header-section-number">10.9</span> Mini-Vorlage zum Kopieren</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Titel</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Einführungstext …</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tipp</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Kurzer Hinweis für die Studierenden.</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Beispiel mit Bild</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="al">![Beispielbild](screenshots/gui_positron_inception.png)</span>{fig-align="center" width="60%"}</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Zwei Spalten</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>::: {.column width="55%"}</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>Text hier …</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>::: {.column width="45%"}</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="al">![Grafik](screenshots/gui_positron_inception.png)</span>{width="90%"}</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Varianten im Tabset</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variante 1</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>Erklärung …</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variante 2</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>Alternative …</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="zusammenfassung" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">10.10</span> Zusammenfassung</h2>
+<ul>
+<li><code>:::</code> eröffnet/endet einen <strong>Div-Block</strong> – die Klasse in <code>{…}</code> steuert die Art.<br>
+</li>
+<li><strong>Callouts</strong> für Hinweise, <strong>Figures</strong> für Bilder mit Beschriftungen, <strong>Columns</strong> für zwei Spalten, <strong>Tabsets</strong> für Reiter.<br>
+</li>
+<li>Saubere Verschachtelung und korrekte Klassen sind entscheidend.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +855,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./09_Zitieren.html" class="pagination-link" aria-label="Zotero: automatischer Export nach .bib und Einbindung in Quarto">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zotero: automatischer Export nach .bib und Einbindung in Quarto</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_wo_schreibe_ich.html" class="pagination-link" aria-label="Quarto starten ohne Terminal">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11_Mermaid.html" class="pagination-link" aria-label="Diagramme mit Mermaid.js in Quarto">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diagramme mit Mermaid.js in Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

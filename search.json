@@ -44,7 +44,7 @@
     "href": "index.html#beispiel-lehr-slides-mit-quellenangaben",
     "title": "Quarto für die PHBern",
     "section": "1.4 Beispiel: Lehr-Slides mit Quellenangaben",
-    "text": "1.4 Beispiel: Lehr-Slides mit Quellenangaben\nQuarto-Präsentationen lassen sich in wenigen Sekunden in HTML, Reveal.js, PowerPoint oder PDF (Beamer) umwandeln – inklusive:\n\nautomatischer Quellenangaben (z. B. mit literatur.bib)\neingebetteter Bilder, Diagramme und Formeln\noptional: interaktive Inhalte (Diagramme, Code-Ausgabe)\n\n---\ntitle: \"Einführung in Statistik\"\nformat: revealjs\nbibliography: literatur.bib\ncsl: apa.csl\n---\n\n## Deskriptive Statistik\n\n- Mittelwert, Median, Modus\n- Standardabweichung, Varianz\n\n&gt; \"Statistics is the grammar of science.\" – Karl Pearson [@pearson1901]\nDie Quelle (pearson1901?) wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.",
+    "text": "1.4 Beispiel: Lehr-Slides mit Quellenangaben\nQuarto-Präsentationen lassen sich in wenigen Sekunden in HTML, Reveal.js, PowerPoint oder PDF (Beamer) umwandeln – inklusive:\n\nautomatischer Quellenangaben (z. B. mit literatur.bib)\neingebetteter Bilder, Diagramme und Formeln\noptional: interaktive Inhalte (Diagramme, Code-Ausgabe)\n\n---\ntitle: \"Einführung in Statistik\"\nformat: revealjs\nbibliography: literatur.bib\ncsl: apa.csl\n---\n\n## Deskriptive Statistik\n\n- Mittelwert, Median, Modus\n- Standardabweichung, Varianz\n\n&gt; \"Statistics is the grammar of science.\" – Karl Pearson [@pearson1901]\nDie Quelle (Knuth 1984) wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
@@ -74,39 +74,719 @@
     "href": "index.html#literatur",
     "title": "Quarto für die PHBern",
     "section": "1.7 Literatur",
-    "text": "1.7 Literatur\nQuellen werden automatisch aus der Datei literatur.bib geladen.\nBeispielinhalt für literatur.bib:\n@book{pearson1901,\n  author = {Karl Pearson},\n  title = {The Grammar of Science},\n  year = {1901},\n  publisher = {Adam and Charles Black}\n}",
+    "text": "1.7 Literatur\nQuellen werden automatisch aus der Datei literatur.bib geladen.\nBeispielinhalt für literatur.bib:\n@book{pearson1901,\n  author = {Karl Pearson},\n  title = {The Grammar of Science},\n  year = {1901},\n  publisher = {Adam and Charles Black}\n}\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "2  Introduction",
+    "objectID": "02_wo_schreibe_ich.html",
+    "href": "02_wo_schreibe_ich.html",
+    "title": "2  Quarto starten ohne Terminal",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "2.1 Lernziele\nNach diesem Kapitel verstehst du:",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "3  Summary",
+    "objectID": "02_wo_schreibe_ich.html#lernziele",
+    "href": "02_wo_schreibe_ich.html#lernziele",
+    "title": "2  Quarto starten ohne Terminal",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "text": "was ein Terminal ist und warum es für Quarto technisch notwendig ist,\nwie du Quarto auch ohne Terminalwissen nutzen können,\nwelche Programme du dafür brauchst (RStudio, VS Code, Positron),",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "02_wo_schreibe_ich.html#was-ist-ein-terminal",
+    "href": "02_wo_schreibe_ich.html#was-ist-ein-terminal",
+    "title": "2  Quarto starten ohne Terminal",
+    "section": "2.2 Was ist ein Terminal?",
+    "text": "2.2 Was ist ein Terminal?\nEin Terminal (auch “Befehlszeile” oder “Konsole”) ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst.\nEin typisches Beispiel (unter Windows): `quarto render dokument.qmd``\nDieser Befehl sagt Quarto: “Bitte render das Dokument dokument.qmd.”\nFür viele Lehrende ist das Terminal ungewohnt oder abschreckend. Die gute Nachricht:\n\nDu musst das Terminal nicht nutzen, um mit Quarto zu arbeiten!",
     "crumbs": [
-      "References"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "02_wo_schreibe_ich.html#warum-braucht-quarto-trotzdem-das-terminal",
+    "href": "02_wo_schreibe_ich.html#warum-braucht-quarto-trotzdem-das-terminal",
+    "title": "2  Quarto starten ohne Terminal",
+    "section": "2.3 Warum braucht Quarto trotzdem das Terminal?",
+    "text": "2.3 Warum braucht Quarto trotzdem das Terminal?\nQuarto selbst ist ein sogenanntes CLI-Programm (Command Line Interface). Es läuft im Hintergrund über die Befehlszeile – selbst wenn du es über RStudio oder VS Code bedienst.\nDas bedeutet: - Die Benutzeroberfläche (GUI) ist nicht in Quarto selbst enthalten. - Aber: Viele moderne Editoren können Quarto einbetten – damit wird alles bequem klickbar.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "02_wo_schreibe_ich.html#option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops",
+    "href": "02_wo_schreibe_ich.html#option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops",
+    "title": "2  Quarto starten ohne Terminal",
+    "section": "2.4 Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)",
+    "text": "2.4 Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)\nRStudio ist besonders für Lehrende geeignet, da es:\n\nleicht zu bedienen ist,\nQuarto automatisch erkennt,\nVorschau & Render-Button enthält.\n\n\n2.4.1 Schritt-für-Schritt:\n\nInstallier R und RStudio (falls noch nicht vorhanden)\n\nhttps://posit.co/download/rstudio-desktop/\n\nInstallier Quarto:\n\nhttps://quarto.org/docs/get-started/\nQuarto wird systemweit installiert und von RStudio erkannt.\n\nNeues Projekt anlegen (File &gt; New Project)\nNeue Quarto-Datei erstellen (File &gt; New File &gt; Quarto Document)\nRendern durch Klick auf den “Render”-Button\n\n\n\n\n\n\n\nFigure 2.1: GUI in Rstudio wenn du ein neues Projekt mit File &gt; New Project erstellst",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "02_wo_schreibe_ich.html#option-2-quarto-in-visual-studio-code-vs-code-nutzen",
+    "href": "02_wo_schreibe_ich.html#option-2-quarto-in-visual-studio-code-vs-code-nutzen",
+    "title": "2  Quarto starten ohne Terminal",
+    "section": "2.5 Option 2: Quarto in Visual Studio Code (VS Code) nutzen",
+    "text": "2.5 Option 2: Quarto in Visual Studio Code (VS Code) nutzen\nVS Code ist ein sehr mächtiger Editor, aber technisch etwas komplexer.\n\n2.5.1 Voraussetzungen:\n\nVisual Studio Code\nQuarto CLI (muss installiert sein)\nQuarto VS Code Extension\n\n\n\n2.5.2 Schritt-für-Schritt:\n\nQuarto installieren (wie oben)\nVS Code installieren\nQuarto-Erweiterung installieren:\n\nÖffne den Extensions-Tab (Symbol: Blöcke)\nSuche nach “Quarto”\nKlicke auf „Installieren“\n\n\n\n\n\n\n\n\nFigure 2.2: GUI in VSCode mit der installierten Quarto Extension\n\n\n\n\nNeue .qmd-Datei erstellen → Datei &gt; Neu\nOben erscheint eine “Render”-Schaltfläche, sobald eine .qmd-Datei aktiv ist\n\n📷 Screenshot: Quarto-Datei in VS Code mit Render-Button → screenshot-vscode-render.png",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "02_wo_schreibe_ich.html#positron",
+    "href": "02_wo_schreibe_ich.html#positron",
+    "title": "2  Quarto starten ohne Terminal",
+    "section": "2.6 Positron",
+    "text": "2.6 Positron\nPositron ist ein neuer, schlanker Editor speziell für Quarto – noch in Entwicklung (Stand: 2025), aber vielversprechend für didaktische Kontexte.\nVorteile: - Minimalistisch, kein R oder VS Code nötig - Fokus auf .qmd-Dateien - Eingebaute Quarto-Unterstützung\n\n\n\n\n\n\nFigure 2.3: Positron-Fenster in welchem in grerade diese Anleitung schreibe",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "02_wo_schreibe_ich.html#test-ist-quarto-installiert",
+    "href": "02_wo_schreibe_ich.html#test-ist-quarto-installiert",
+    "title": "2  Quarto starten ohne Terminal",
+    "section": "2.7 Test: Ist Quarto installiert?",
+    "text": "2.7 Test: Ist Quarto installiert?\nWenn du dir nicht sicher sind, ob Quarto korrekt installiert ist, kannst du das Terminal öffnen und folgendes eingeben:\nquarto check",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html",
+    "href": "03_erstes_Dokument.html",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "",
+    "text": "3.1 1. Starte RStudio\nNun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!\nWir arbeiten Schritt für Schritt.\nÖffne RStudio auf deinem Computer.\n📸 Screenshot: RStudio Startbildschirm",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#neues-quarto-dokument-erstellen",
+    "href": "03_erstes_Dokument.html#neues-quarto-dokument-erstellen",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "3.2 2. Neues Quarto-Dokument erstellen",
+    "text": "3.2 2. Neues Quarto-Dokument erstellen\nKlicke oben links auf File → New File → Quarto Document…\n📸 Screenshot: File &gt; New File &gt; Quarto Document…\nEin neues Fenster erscheint. Dort kannst du folgende Angaben machen:\n\nTitle: Gib z. B. „Mein erstes Quarto-Dokument“ ein\n\nAuthor: Deinen Namen\n\nFormat: Wähle „HTML“\n\nKlicke auf Create\n\n📸 Screenshot: Quarto-Dokument erstellen (mit ausgefüllten Feldern)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#überblick-über-das-dokument",
+    "href": "03_erstes_Dokument.html#überblick-über-das-dokument",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "3.3 3. Überblick über das Dokument",
+    "text": "3.3 3. Überblick über das Dokument\nQuarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:\n---\ntitle: \"Mein erstes Quarto-Dokument\"\nauthor: \"Max Muster\"\nformat: html\n---\n\n## Einführung\n\nDies ist mein erstes Quarto-Dokument.\n\nWas wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.\nWas du oben siehst, nennt sich YAML-Header (der Teil zwischen ---), da stehen Titel, Autor:in und das gewünschte Format. Du musst ihn meistens nicht verändern.\nDer Rest ist Text, den du einfach schreiben kannst.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#dokument-rendern-also-erstellen",
+    "href": "03_erstes_Dokument.html#dokument-rendern-also-erstellen",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "3.4 Dokument „rendern“ (also erstellen)",
+    "text": "3.4 Dokument „rendern“ (also erstellen)\nKlicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch im Browser geöffnet wird.\n📸 Screenshot: Render-Button\nDu solltest nun dein erstes Quarto-Dokument im Browser sehen – gratuliere!\n\nNächste Schritte\n\nDu kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:\n## Meine Themen\n\nIch unterrichte gerne Mathematik.\n\n## Warum ich Quarto nutze\n\nWeil es einfach ist und schön aussieht.\nKlicke wieder auf Render, um das aktualisierte Dokument zu sehen.\nTipp: Speichern nicht vergessen\nVergiss nicht, dein Dokument unter einem passenden Namen zu speichern: File → Save As…\n📸 Screenshot: Speichern unter Dialog",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#zusatz-andere-dateiformate-docx-pptx-präsentationen",
+    "href": "03_erstes_Dokument.html#zusatz-andere-dateiformate-docx-pptx-präsentationen",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "3.5 Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)",
+    "text": "3.5 Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)\nDu kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch als Word-Datei (docx), PowerPoint-Folie (pptx) oder sogar als interaktive Präsentation (reveal.js) ausgeben – und zwar mit einem kleinen Trick:\n\n3.5.1 Format ändern\nIm oberen Teil deines Dokuments (dem YAML-Header) steht so etwas wie:\n---\ntitle: \"Mein erstes Quarto-Dokument\"\nauthor: \"Max Muster\"\nformat: html\n---\nWenn du nun statt html z. B. docx einträgst, wird dein Dokument beim Rendern als Word-Datei erstellt:\nformat: docx\nDasselbe geht auch für PowerPoint:\nformat: pptx\nOder für eine schöne interaktive Präsentation mit „reveal.js“:\nformat: revealjs\nHinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert. Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).\n📸 Screenshot: YAML-Header mit unterschiedlichen Formaten\n## Mehrere Formate auf einmal?\nJa, sogar das geht – einfach so schreiben:\nformat:\n  html: default\n  docx: default\n  pptx: default\nDann erzeugt Quarto beim Rendern alle drei Dateien gleichzeitig.\n📸 Screenshot: Render mit mehreren Formaten\nIn den nächsten Kapiteln zeigen wir dir, wie du Inhalte noch schöner gestalten kannst – z. B. mit Listen, Bildern, Tabellen oder eingebauten Übungsfragen.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "04_Formatieren.html",
+    "href": "04_Formatieren.html",
+    "title": "4  Texte gestalten mit Quarto",
+    "section": "",
+    "text": "4.1 Überschriften\nJetzt, wo du dein erstes Quarto-Dokument erstellt hast, schauen wir uns an, wie du den Text schön und übersichtlich gestalten kannst.\nÜberschriften helfen dabei, deinen Text zu strukturieren. Sie funktionieren ganz einfach:\nJe mehr #, desto kleiner die Überschrift.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "04_Formatieren.html#überschriften",
+    "href": "04_Formatieren.html#überschriften",
+    "title": "4  Texte gestalten mit Quarto",
+    "section": "",
+    "text": "# Titel (ganz oben)\n## Kapitelüberschrift\n### Unterkapitel",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "04_Formatieren.html#textformatierungen",
+    "href": "04_Formatieren.html#textformatierungen",
+    "title": "4  Texte gestalten mit Quarto",
+    "section": "4.2 ✍️ Textformatierungen",
+    "text": "4.2 ✍️ Textformatierungen\nHier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:\n\n\n\nFormat\nSo schreibst du es\nErgebnis\n\n\n\n\nFett\n**dieser Text**\ndieser Text\n\n\nKursiv\n*dieser Text*\ndieser Text\n\n\nCode\n`dieser Text`\ndieser Text\n\n\nLink\n[Text](https://example.com)\nText",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "04_Formatieren.html#listen",
+    "href": "04_Formatieren.html#listen",
+    "title": "4  Texte gestalten mit Quarto",
+    "section": "4.3 📋 Listen",
+    "text": "4.3 📋 Listen\nListen sind super, um Dinge übersichtlich darzustellen.\n\n4.3.1 Ungeordnete Liste (•):\n- Apfel\n- Banane\n- Orange\nErgibt:\n\nApfel\n\nBanane\n\nOrange\n\n\n\n4.3.2 Geordnete Liste (1., 2., 3.):\n1. Einschalten\n2. Rendern\n3. Speichern\nErgibt:\n\nEinschalten\n\nRendern\n\nSpeichern",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "04_Formatieren.html#bilder-einfügen",
+    "href": "04_Formatieren.html#bilder-einfügen",
+    "title": "4  Texte gestalten mit Quarto",
+    "section": "4.4 Bilder einfügen",
+    "text": "4.4 Bilder einfügen\nBilder lassen sich ganz einfach einfügen – ähnlich wie Links:\n![Beschreibung](bildname.png)\nBeispiel:\n![Logo PHBern](phbern-logo.png)\n\n📸 Tipp: Lege dein Bild in denselben Ordner wie dein .qmd-Dokument.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "04_Formatieren.html#nächster-schritt",
+    "href": "04_Formatieren.html#nächster-schritt",
+    "title": "4  Texte gestalten mit Quarto",
+    "section": "4.5 Nächster Schritt",
+    "text": "4.5 Nächster Schritt\nIm nächsten Kapitel lernst du, wie du Tabellen, Matheformeln und sogar interaktive Inhalte wie Quiz oder Codeblöcke nutzen kannst. Quarto kann viel – aber alles Schritt für Schritt.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "05_Tabellen.html",
+    "href": "05_Tabellen.html",
+    "title": "5  Tabellen, Formeln und interaktive Inhalte",
+    "section": "",
+    "text": "5.1 Tabellen erstellen\nIn diesem Kapitel lernst du, wie du in Quarto Tabellen, mathematische Formeln und einfache interaktive Inhalte einbauen kannst.\nTabellen lassen sich in Quarto sehr einfach schreiben. Hier ein Beispiel:\nErgebnis:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
+    ]
+  },
+  {
+    "objectID": "05_Tabellen.html#tabellen-erstellen",
+    "href": "05_Tabellen.html#tabellen-erstellen",
+    "title": "5  Tabellen, Formeln und interaktive Inhalte",
+    "section": "",
+    "text": "| Name       | Fach        | Klasse |\n|------------|-------------|--------|\n| Anna Meyer | Mathematik  | 7A     |\n| Tom Berger | Deutsch     | 8B     |\n\n\n\n\nName\nFach\nKlasse\n\n\n\n\nAnna Meyer\nMathematik\n7A\n\n\nTom Berger\nDeutsch\n8B",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
+    ]
+  },
+  {
+    "objectID": "05_Tabellen.html#mathematische-formeln",
+    "href": "05_Tabellen.html#mathematische-formeln",
+    "title": "5  Tabellen, Formeln und interaktive Inhalte",
+    "section": "5.2 Mathematische Formeln",
+    "text": "5.2 Mathematische Formeln\nQuarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichtig:\n\n5.2.1 Formeln im Text\nDie Fläche berechnet sich mit $A = a \\times b$.\nErgebnis: Die Fläche berechnet sich mit \\(A = a \\times b\\).\n\n\n5.2.2 Formeln als Block\n$$\nE = mc^2\n$$\nErgebnis:\n\\[\nE = mc^2\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
+    ]
+  },
+  {
+    "objectID": "05_Tabellen.html#interaktive-inhalte-quizzes-und-code",
+    "href": "05_Tabellen.html#interaktive-inhalte-quizzes-und-code",
+    "title": "5  Tabellen, Formeln und interaktive Inhalte",
+    "section": "5.3 Interaktive Inhalte: Quizzes und Code",
+    "text": "5.3 Interaktive Inhalte: Quizzes und Code\nMit Quarto kannst du sogar kleine interaktive Elemente einbauen.\n\n5.3.1 Quiz-Fragen\nEin einfaches Multiple-Choice-Beispiel:\n::: {.callout-tip}\n### Kleine Quizfrage\n\nWelche Zahl ist prim?\n\n- [ ] 8\n- [x] 7\n- [ ] 9\n:::\nBeim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.\n\n8\n7\n9\n\n\n\n\n5.3.2 Code einfügen\nWenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:\n```r\nx &lt;- 1:5\nmean(x)\n```\nDas wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
+    ]
+  },
+  {
+    "objectID": "05_Tabellen.html#zusammenfassung",
+    "href": "05_Tabellen.html#zusammenfassung",
+    "title": "5  Tabellen, Formeln und interaktive Inhalte",
+    "section": "5.4 Zusammenfassung",
+    "text": "5.4 Zusammenfassung\n\nTabellen sind einfach mit Strichen und Pipes (|) zu schreiben.\n\nFormeln funktionieren mit LaTeX-Syntax ($...$).\n\nInteraktive Elemente wie Quizzes oder Codeblöcke machen deine Materialien lebendig.\n\nIm nächsten Kapitel schauen wir uns an, wie man Quarto Book noch besser organisiert und Kapitel miteinander verknüpft.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html",
+    "href": "06_Webseiten.html",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "",
+    "text": "6.1 Projektstruktur anlegen\nIn diesem Kapitel lernst du, wie du eine einfache Quarto-Webseite strukturierst: Ordner anlegen, Seiten verknüpfen, Navigation steuern und das Aussehen festlegen. Alles ohne Terminal.\nFür eine kleine Webseite genügt eine überschaubare Struktur:\n📸 Screenshot: Explorer mit den Dateien und Ordnern",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#projektstruktur-anlegen",
+    "href": "06_Webseiten.html#projektstruktur-anlegen",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "",
+    "text": "mein-webprojekt/\n├─ _quarto.yml\n├─ index.qmd\n├─ about.qmd\n├─ material/\n│  ├─ index.qmd\n│  └─ arbeitsblatt.qmd\n├─ images/\n│  └─ phbern-logo.png\n└─ styles.css\n\nindex.qmd: Startseite\nabout.qmd: Über mich oder Kontakt\nmaterial/: Unterordner für Materialien\nimages/: Grafiken und Logos\nstyles.css: Eigene Gestaltung (optional)\n_quarto.yml: Zentrale Steuerdatei für die ganze Webseite",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#die-zentrale-datei-_quarto.yml",
+    "href": "06_Webseiten.html#die-zentrale-datei-_quarto.yml",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.2 Die zentrale Datei _quarto.yml",
+    "text": "6.2 Die zentrale Datei _quarto.yml\nIn dieser Datei sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:\nproject:\n  type: website\n\nwebsite:\n  title: \"Meine Unterrichtswebseite\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Start\n      - href: about.qmd\n        text: Über mich\n      - text: Materialien\n        menu:\n          - href: material/index.qmd\n            text: Übersicht\n          - href: material/arbeitsblatt.qmd\n            text: Arbeitsblatt\n  page-navigation: true   # Vor/Zurück-Navigation am Seitenende\n\nformat:\n  html:\n    theme: cosmo          # Ein helles Bootstrap-Thema\n    toc: true             # Inhaltsverzeichnis rechts\n    number-sections: false\n    css: styles.css       # Optional eigene CSS-Datei\nHinweise: - project.type: website macht aus dem Ordner eine Webseite. - website.navbar steuert die Menüleiste oben. - format.html definiert Aussehen und Optionen für alle Seiten.\n📸 Screenshot: _quarto.yml in Positron geöffnet",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#seiten-anlegen-und-verlinken",
+    "href": "06_Webseiten.html#seiten-anlegen-und-verlinken",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.3 Seiten anlegen und verlinken",
+    "text": "6.3 Seiten anlegen und verlinken\nBeispiel für eine Startseite index.qmd:\n---\ntitle: \"Willkommen\"\n---\n\n## Was dich erwartet\n\nHier findest du Materialien, Hinweise und Termine zum Unterricht.\n\n- [Über mich](about.qmd)\n- [Materialien](material/index.qmd)\nBeispiel für eine Material-Übersicht material/index.qmd mit automatischem Listing:\n---\ntitle: \"Materialien\"\nlisting:\n  contents: .\n  sort: \"date desc\"\n  type: default\n---\n\nHier erscheinen automatisch die Unterseiten in diesem Ordner.\nTipp: Neue Seiten einfach mit File → New File → Quarto Document… erstellen und an passender Stelle speichern.\n📸 Screenshot: Neues Quarto-Dokument anlegen",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#navigation-steuern",
+    "href": "06_Webseiten.html#navigation-steuern",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.4 Navigation steuern",
+    "text": "6.4 Navigation steuern\nDie Reihenfolge im Menü bestimmst du in _quarto.yml unter website.navbar.left. Alles, was dort steht, erscheint oben. Unterpunkte legst du mit menu: an (siehe Beispiel oben).\nOptional kannst du statt einer Top-Navigation links eine Seitenleiste nutzen:\nwebsite:\n  sidebar:\n    style: \"docked\"\n    search: true\n    contents:\n      - index.qmd\n      - about.qmd\n      - section: \"Materialien\"\n        contents:\n          - material/index.qmd\n          - material/arbeitsblatt.qmd\nNur eine der beiden Varianten gleichzeitig verwenden (Navbar oder Sidebar), sonst wirkt es unruhig.\n📸 Screenshot: Darstellung mit Sidebar",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#einstellungen-pro-seite",
+    "href": "06_Webseiten.html#einstellungen-pro-seite",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.5 Einstellungen pro Seite",
+    "text": "6.5 Einstellungen pro Seite\nJede .qmd-Seite kann eigene Optionen im Kopfbereich bekommen, zum Beispiel:\n---\ntitle: \"Arbeitsblatt Prozentrechnung\"\ntoc: true\npage-layout: article\n---\n\nHier steht der Inhalt.\nHäufig genutzte Einstellungen: - title: Seitentitel in der Kopfzeile und im Browser-Tab - toc: true: Inhaltsverzeichnis auf der Seite - page-layout: z. B. article, full, custom",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#aussehen-anpassen",
+    "href": "06_Webseiten.html#aussehen-anpassen",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.6 Aussehen anpassen",
+    "text": "6.6 Aussehen anpassen\nDu kannst ein Thema und eigenes CSS kombinieren. Im Beispiel oben verwenden wir theme: cosmo und zusätzlich styles.css.\nBeispiel für styles.css:\n/* Überschriften etwas größer */\nh1 { font-size: 2.0rem; }\nh2 { font-size: 1.6rem; }\n\n/* Maximale Breite für bessere Lesbarkeit */\n.quarto-container { max-width: 980px; }\n📸 Screenshot: Browseransicht mit angepasstem Stil",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#webseite-bauen-und-anschauen",
+    "href": "06_Webseiten.html#webseite-bauen-und-anschauen",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.7 Webseite bauen und anschauen",
+    "text": "6.7 Webseite bauen und anschauen\nOhne Terminal, direkt in Positron oder RStudio:\n\nÖffne index.qmd.\nKlicke oben rechts auf Render.\nQuarto baut die gesamte Seite und legt die Ergebnisse im Ordner _site/ ab.\nDie Startseite öffnet sich im Browser.\n\nWenn du später nur eine Seite änderst, genügt erneut Render. Quarto aktualisiert die Webseite.\n📸 Screenshot: Render-Button und fertige Seite im Browser",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#häufige-fragen",
+    "href": "06_Webseiten.html#häufige-fragen",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.8 Häufige Fragen",
+    "text": "6.8 Häufige Fragen\nWo liegen die fertigen Dateien?\nIm Ordner _site/. Dort befindet sich eine index.html und alle zugehörigen Dateien.\nWie bekomme ich die Seite ins Netz?\nEinfacher Start: Den gesamten Ordner _site/ auf deinen Webspace kopieren. Fortgeschrittene Möglichkeiten sind Quarto Pub oder GitHub Pages. Für den Einstieg reicht lokales Testen und ggf. ein Webspace-Upload.\nWas mache ich bei Fehlern in der Navigation?\nPrüfe Schreibweisen der Dateinamen und die Einrückungen in _quarto.yml. YAML reagiert empfindlich auf Einrückungen mit Leerzeichen.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "06_Webseiten.html#zusammenfassung",
+    "href": "06_Webseiten.html#zusammenfassung",
+    "title": "6  Quarto Webseite organisieren",
+    "section": "6.9 Zusammenfassung",
+    "text": "6.9 Zusammenfassung\n\nMit _quarto.yml steuerst du Navigation, Titel und Design der gesamten Webseite.\nJede Seite ist eine .qmd-Datei mit optionalen Seiteneinstellungen im Kopfbereich.\nOrdne Inhalte in Ordnern wie material/ und images/.\nMit Render baust du die komplette Webseite, die im Ordner _site/ landet.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quarto Webseite organisieren</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html",
+    "href": "08_Publizieren.html",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "",
+    "text": "8.1 Überblick: Welche Option passt?\nIn diesem Kapitel siehst du drei Wege, um deine Quarto-Webseite für Studierende und Kolleginnen und Kollegen zugänglich zu machen. Wir gehen Schritt für Schritt vor – ohne Git-Vorkenntnisse.\nHinweis: Mit deiner (phbern.ch?)-Adresse bekommst du in der Regel Zugang zu einer Campus-/Education-Version bei GitHub (zusätzliche Vorteile). Falls etwas nicht klappt, wende dich an den IT-Support der PHBern.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#überblick-welche-option-passt",
+    "href": "08_Publizieren.html#überblick-welche-option-passt",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "",
+    "text": "Ziel\nVorteile\nAufwand beim Aktualisieren\n\n\n\n\nQuarto Pub\nSehr einfach, direkter Upload aus Positron/RStudio; schöne URL\nNeu rendern und erneut veröffentlichen\n\n\nGitHub Pages\nKostenlos, öffentlich erreichbar; guter Standardweg fürs Web\nNeu rendern, Dateien erneut in GitHub hochladen\n\n\nILIAS (HTML-Objekt)\nIntern in ILIAS verfügbar\nNeu rendern, ZIP neu hochladen (kein „Push“)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#vorbereitung-für-alle-wege",
+    "href": "08_Publizieren.html#vorbereitung-für-alle-wege",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.2 Vorbereitung (für alle Wege)",
+    "text": "8.2 Vorbereitung (für alle Wege)\n\nÖffne dein Projekt (z. B. die Website aus dem Kapitel „Webseite organisieren“).\n\nKlicke auf Render.\n\nDie fertigen Dateien liegen im Ordner _site/ (Startseite: index.html).\n\n\nTipp: Teste lokal, indem du die index.html aus _site/ im Browser öffnest.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#a-veröffentlichen-mit-quarto-pub-sehr-einfach",
+    "href": "08_Publizieren.html#a-veröffentlichen-mit-quarto-pub-sehr-einfach",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.3 A) Veröffentlichen mit Quarto Pub (sehr einfach)",
+    "text": "8.3 A) Veröffentlichen mit Quarto Pub (sehr einfach)\nOhne Terminal, direkt aus Positron:\n\nÖffne das Projekt in Positron.\n\nÖffne die Command Palette (z. B. Ctrl+Shift+P / Cmd+Shift+P).\n\nWähle „Quarto: Publish“.\n\nZiel: Quarto Pub.\n\nMelde dich an (einmalig Konto erstellen).\n\nBestätige die Veröffentlichung. Quarto Pub erstellt die Seite und zeigt dir den Link.\n\nOptional (falls du lieber die Kommandozeile nutzt):\nquarto publish quarto-pub\nDu wirst einmalig gefragt, dich anzumelden. Danach kannst du mit einem Klick bzw. Befehl neu veröffentlichen.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse",
+    "href": "08_Publizieren.html#b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.4 B) Veröffentlichen mit GitHub Pages (ohne Git-Kenntnisse)",
+    "text": "8.4 B) Veröffentlichen mit GitHub Pages (ohne Git-Kenntnisse)\nDu brauchst ein kostenloses GitHub-Konto. Mit der (phbern.ch-Adresse?) erhältst du in der Regel Education-/Campus-Vorteile.\nSchritt 1: Repository anlegen\n1. Auf github.com anmelden.\n2. Oben rechts „+“ → New repository“.\n3. Name vergeben (z. B. meine-quarto-webseite).\n4. Sichtbarkeit: Public (für offenen Zugang) oder Private (nur für dich/Team).\n5. Create repository.\nSchritt 2: Fertige Website-Dateien hochladen\n1. Öffne deinen neuen Repository-Startbildschirm.\n2. Klicke „Add file → Upload files“.\n3. Wechsle lokal in deinen Projektordner _site/.\n4. Markiere alle Inhalte von _site/ (nicht den Ordner selbst) und ziehe sie ins Upload-Feld.\n5. Scrolle nach unten und klicke „Commit changes“.\nSchritt 3: GitHub Pages aktivieren\n1. Im Repo auf „Settings“ klicken.\n2. Links „Pages“ auswählen.\n3. Unter „Build and deployment“ wähle „Deploy from a branch“.\n4. Branch: main — Folder: / (root) (Root-Ebene).\n5. Speichern. GitHub baut die Seite und zeigt nach kurzer Zeit den Link an.\nAktualisieren\n- Lokal neu Rendern → Ordner _site/ → wieder „Add file → Upload files“ → alle Dateien ersetzen → Commit changes.\n- Git muss dafür nicht installiert sein; du nutzt nur die GitHub-Weboberfläche.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#c-in-ilias-als-html-objekt-bereitstellen",
+    "href": "08_Publizieren.html#c-in-ilias-als-html-objekt-bereitstellen",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.5 C) In ILIAS als HTML-Objekt bereitstellen",
+    "text": "8.5 C) In ILIAS als HTML-Objekt bereitstellen\nSo bringst du die Seite in einen ILIAS-Kurs – ohne externe Veröffentlichung.\nSchritt 1: ZIP erstellen\n1. Öffne den Ordner _site/.\n2. Wähle alle Inhalte von _site/ aus (nicht den Ordner selbst).\n3. Erstelle daraus ein ZIP (z. B. Rechtsklick → „Senden an → ZIP“).\nSchritt 2: In ILIAS hochladen\n1. Im gewünschten ILIAS-Kurs: Neues Objekt hinzufügen.\n2. Wähle „HTML-Lernmodul“ (Bezeichnung kann je nach ILIAS-Version leicht abweichen).\n3. Lade die ZIP-Datei hoch.\n4. Speichern/Veröffentlichen.\nWichtig zum Aktualisieren\n- Für jede Änderung: lokal neu Rendern, neues ZIP aus den Inhalten von _site/ erstellen und in ILIAS neu hochladen.\n- Es gibt kein direktes „Push“/Synchronisieren wie bei Quarto Pub oder GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#kurzer-exkurs-was-ist-gitgithub-optional",
+    "href": "08_Publizieren.html#kurzer-exkurs-was-ist-gitgithub-optional",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.6 Kurzer Exkurs: Was ist Git/GitHub? (optional)",
+    "text": "8.6 Kurzer Exkurs: Was ist Git/GitHub? (optional)\n\nGit ist ein Versionierungssystem: Es merkt sich Änderungen an Dateien.\n\nGitHub ist ein Online-Dienst, der Git-Projekte hostet und Websites (GitHub Pages) bereitstellt.\n\nFür dieses Kapitel brauchst du kein Git-Programm – die GitHub-Weboberfläche reicht.\n\nSpäter lohnt es sich, Git zu lernen (bessere Zusammenarbeit, schnellere Updates).\n\nWenn du Git irgendwann nutzen möchtest, können wir ein extra Kapitel mit der minimalen Praxis (3–4 Befehle) schreiben.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#typische-fehlerquellen-und-lösungen",
+    "href": "08_Publizieren.html#typische-fehlerquellen-und-lösungen",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.7 Typische Fehlerquellen und Lösungen",
+    "text": "8.7 Typische Fehlerquellen und Lösungen\n\nLeere/weiße Seite: Prüfe, ob wirklich die Inhalte von _site/ hochgeladen wurden (nicht der Ordner).\n\nFalsche Links/Bilder: Verwende relative Pfade (z. B. images/logo.png) und achte auf exakte Dateinamen.\n\nNavigation kaputt: YAML-Einrückungen in _quarto.yml kontrollieren (nur Leerzeichen, gleiche Ebene).\n\nGitHub Pages-Link fehlt: In den Repo-Settings → Pages prüfen; ggf. noch einmal auf „Save“ klicken und kurz warten.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "08_Publizieren.html#zusammenfassung",
+    "href": "08_Publizieren.html#zusammenfassung",
+    "title": "8  Publizieren: Quarto Pub, GitHub Pages und ILIAS",
+    "section": "8.8 Zusammenfassung",
+    "text": "8.8 Zusammenfassung\n\nQuarto Pub: Schnellster Weg, sehr einfach.\n\nGitHub Pages: Kostenlos, ideal fürs öffentliche Web. Upload per Browser reicht.\n\nILIAS: Für interne Nutzung; Updates erfordern neues ZIP.\n\nBei Fragen zur Campus-/Education-Nutzung mit (phbern.ch?) unterstützt dich der PHBern-IT-Support.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Publizieren: Quarto Pub, GitHub Pages und ILIAS</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html",
+    "href": "09_Zitieren.html",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "",
+    "text": "9.1 Zielbild\nIn diesem Kapitel richtest du Zotero so ein, dass deine Literatur automatisch als .bib-Datei exportiert wird und in Quarto korrekt zitiert wird – ideal für wissenschaftliches Arbeiten. Du brauchst keine Vorkenntnisse in LaTeX oder BibTeX.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#zielbild",
+    "href": "09_Zitieren.html#zielbild",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "",
+    "text": "Zotero verwaltet deine Quellen.\nEine Datei refs/references.bib wird automatisch aktuell gehalten.\nQuarto nutzt diese .bib-Datei und erzeugt Zitate im Text und ein Literaturverzeichnis am Ende.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#voraussetzungen",
+    "href": "09_Zitieren.html#voraussetzungen",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.2 Voraussetzungen",
+    "text": "9.2 Voraussetzungen\n\nZotero ist installiert.\nEmpfohlen: Better BibTeX (BBT)-Erweiterung für Zotero (für stabile Zitier-Keys und Auto-Export).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#schritt-a-automatischen-export-aus-zotero-einrichten",
+    "href": "09_Zitieren.html#schritt-a-automatischen-export-aus-zotero-einrichten",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.3 Schritt A: Automatischen Export aus Zotero einrichten",
+    "text": "9.3 Schritt A: Automatischen Export aus Zotero einrichten\nEs gibt zwei einfache Wege. Nutze den, der dir besser liegt.\n\n9.3.1 Weg 1: Export direkt auf einer Sammlung\n\nÖffne Zotero.\n\nRechtsklick auf die gewünschte Sammlung (z. B. „Masterarbeit“).\n\n„Export Library…“ wählen.\n\nFormat: Better BibTeX auswählen.\n\nHäkchen setzen: Keep updated (automatisch aktuell halten).\n\nSpeicherort wählen: in deinem Quarto-Projekt, z. B. refs/references.bib.\n\nOK. Fertig.\n\nJede Änderung in der Sammlung landet nun automatisch in references.bib.\n\n\n9.3.2 Weg 2: Zentral in den Better‑BibTeX‑Einstellungen\n\nZotero → Einstellungen → Better BibTeX.\n\nReiter Automatic export.\n\n„+“ klicken, die Sammlung wählen und als Zielpfad refs/references.bib angeben.\n\nOn change aktivieren (bei Änderungen automatisch exportieren).\n\n\nTipp: Lege im Projekt einen Ordner refs/ an und speichere alle Literatur-Dateien (z. B. references.bib, style.csl) dort.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#schritt-b-quarto-für-literatur-konfigurieren",
+    "href": "09_Zitieren.html#schritt-b-quarto-für-literatur-konfigurieren",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.4 Schritt B: Quarto für Literatur konfigurieren",
+    "text": "9.4 Schritt B: Quarto für Literatur konfigurieren\nDu kannst die Literatur global in _quarto.yml oder pro Seite/Document im YAML‑Kopf einstellen.\n\n9.4.1 Global (für Website oder Book empfohlen)\nproject:\n  type: website\n\nformat:\n  html:\n    toc: true\n\nbibliography: refs/references.bib\ncsl: refs/apa.csl        # optional: Zitationsstil (z. B. APA 7)\nlink-citations: true     # verlinkt Zitate mit dem Literaturverzeichnis\n\n\n9.4.2 Pro Seite (im Kopf der .qmd-Datei)\n---\ntitle: \"Methode\"\nbibliography: refs/references.bib\ncsl: refs/apa.csl\nlink-citations: true\n---\nWenn du keinen csl angibst, nutzt Quarto einen Standardstil. Mit einer .csl-Datei (z. B. apa.csl, chicago-author-date.csl) bestimmst du den genauen Zitationsstil. Lege die Datei in refs/ ab.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#schritt-c-zitieren-im-text",
+    "href": "09_Zitieren.html#schritt-c-zitieren-im-text",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.5 Schritt C: Zitieren im Text",
+    "text": "9.5 Schritt C: Zitieren im Text\nVerwende die Zitier-Keys aus Zotero (Better BibTeX erzeugt sie automatisch, z. B. müller2021lernen).\nGrundformen:\nNachweis im Fließtext: @mueller2021lernen zeigt, dass …\n\nKlammernachweis: … wie mehrfach gezeigt wurde [@mueller2021lernen].\n\nMehrere Quellen: [@mueller2021lernen; @meier2020; @smith2019]\n\nSeitenzahlen: [@mueller2021lernen, S. 23–25]  # „p.“/„S.“ ist nur Text\n\nPräfix/Suffix: Vgl. @mueller2021lernen, siehe auch [@smith2019, Kap. 3].\nBeim Rendern erzeugt Quarto die korrekten Zitate und am Dokumentende automatisch das Literaturverzeichnis.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#option-literaturverzeichnis-sortieren-und-steuern",
+    "href": "09_Zitieren.html#option-literaturverzeichnis-sortieren-und-steuern",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.6 Option: Literaturverzeichnis sortieren und steuern",
+    "text": "9.6 Option: Literaturverzeichnis sortieren und steuern\n\nDie Sortierung und Formatierung übernimmt der CSL‑Stil (Datei *.csl).\n\nFalls du Quellen im Verzeichnis aufführen, aber nicht zitieren willst, nutze nocite im YAML‑Kopf:\n\n---\nnocite: |\n  @mueller2021lernen, @smith2019\n---",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#arbeitsweise-in-der-praxis",
+    "href": "09_Zitieren.html#arbeitsweise-in-der-praxis",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.7 Arbeitsweise in der Praxis",
+    "text": "9.7 Arbeitsweise in der Praxis\n\nQuellen in Zotero sammeln (PDFs, DOIs, Webseiten).\n\nSicherstellen, dass der Auto‑Export aktiv ist (Ziel: refs/references.bib).\n\nIn Quarto bibliography (und optional csl) setzen.\n\nMit (key?) im Text zitieren.\n\nRendern → Zitate und Literaturverzeichnis erscheinen automatisch.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#typische-probleme-und-lösungen",
+    "href": "09_Zitieren.html#typische-probleme-und-lösungen",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.8 Typische Probleme und Lösungen",
+    "text": "9.8 Typische Probleme und Lösungen\n\n„Missing citation“ / Key wird nicht gefunden\n\nStimmt der Pfad zu refs/references.bib?\n\nLiegt die .bib wirklich im Projekt und heißt so wie im YAML?\n\nWurde Zotero gerade aktualisiert (Auto‑Export lief schon durch)? Notfalls in Zotero „Refresh“ bzw. einmal manuell exportieren.\n\nFalscher Zitierstil\n\nCSL‑Datei prüfen (liegt sie in refs/?), Pfad in _quarto.yml korrekt?\n\nNach Änderung an csl neu rendern.\n\nUmlaute/Zeichensatz\n\nIn Zotero Datensätze sauber pflegen (Autoren, Titel).\n\nBetter BibTeX sorgt normalerweise für korrekte Unicode‑Ausgabe.\n\nUnklare Zitier-Keys\n\nIn Zotero (BBT) kannst du den Key pinnen: Rechtsklick auf Eintrag → Better BibTeX → Pin Citation Key (ändert sich dann nicht mehr).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#beispiel-miniprojekt-struktur",
+    "href": "09_Zitieren.html#beispiel-miniprojekt-struktur",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.9 Beispiel-Miniprojekt (Struktur)",
+    "text": "9.9 Beispiel-Miniprojekt (Struktur)\nmein-projekt/\n├─ _quarto.yml\n├─ index.qmd\n├─ text.qmd\n└─ refs/\n   ├─ references.bib\n   └─ apa.csl\nIn index.qmd zitierst du z. B. so:\n---\ntitle: \"Beispiel\"\nbibliography: refs/references.bib\ncsl: refs/apa.csl\nlink-citations: true\n---\n\nEin klassisches Ergebnis ist @smith2019. Für Details siehe [@mueller2021lernen, S. 45].",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "09_Zitieren.html#zusammenfassung",
+    "href": "09_Zitieren.html#zusammenfassung",
+    "title": "9  Zotero: automatischer Export nach .bib und Einbindung in Quarto",
+    "section": "9.10 Zusammenfassung",
+    "text": "9.10 Zusammenfassung\n\nRichte in Zotero (mit Better BibTeX) einen Auto‑Export deiner Sammlung nach refs/references.bib ein.\n\nVerweise in Quarto per bibliography: (und optional csl:) auf diese Dateien.\n\nZitiere mit (key?) – Quarto erzeugt Zitate und Literaturverzeichnis automatisch.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Zotero: automatischer Export nach .bib und Einbindung in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html",
+    "href": "10_Divs.html",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "",
+    "text": "10.1 Grundprinzip: Divs mit ::: öffnen und schliessen\nIn diesem Kapitel lernst du die wichtigsten „Baukasten“-Elemente mit ::: kennen: Callouts (Hinweisboxen), Figures (Bilder mit Beschriftung), Columns (Inhalte nebeneinander), Tabsets (Reiter) und eigene Divs. Du brauchst dafür keine HTML-Kenntnisse.\nViele erweiterte Elemente beginnen mit ::: und enden mit :::. Die Art des Elements steuerst du mit einer Klasse in geschweiften Klammern:\nQuarto erkennt an der Klasse (z. B. .callout-note), was daraus werden soll.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#grundprinzip-divs-mit-öffnen-und-schliessen",
+    "href": "10_Divs.html#grundprinzip-divs-mit-öffnen-und-schliessen",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "",
+    "text": "::: {.meine-klasse}\nInhalt hier …\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#callouts-hinweisboxen",
+    "href": "10_Divs.html#callouts-hinweisboxen",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.2 Callouts (Hinweisboxen)",
+    "text": "10.2 Callouts (Hinweisboxen)\nCallouts eignen sich für Tipps, Warnungen oder Beispiele. Häufige Varianten sind: note, tip, warning, important, caution.\n::: {.callout-note}\n### Hinweis\nSo fügst du eine kurze Erklärung ein.\n:::\n\n::: {.callout-tip}\n### Tipp\nDas ist besonders praktisch beim Erklären von Arbeitsschritten.\n:::\n\n::: {.callout-warning}\n### Achtung\nHier bitte genau lesen, sonst klappt es nicht.\n:::\nDu kannst Überschriften weglassen oder kürzer schreiben – wichtig ist die Klasse .callout-….\n📸 Screenshot: Drei Callouts nebeneinander/untereinander",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#figures-bilder-mit-bildunterschrift-grösse-ausrichtung",
+    "href": "10_Divs.html#figures-bilder-mit-bildunterschrift-grösse-ausrichtung",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.3 Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)",
+    "text": "10.3 Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)\nEs gibt zwei bequeme Wege. Wähle einen und bleibe dabei konsistent.\n\n10.3.1 Weg 1: Markdown-Bild mit Bildunterschrift und Attributen\n![Bildunterschrift: Logo PHBern](images/phbern-logo.png){fig-align=\"center\" width=\"50%\"}\n\nfig-align=\"center\" zentriert das Bild.\n\nwidth=\"50%\" skaliert die Breite relativ zur Seite.\n\n\n\n10.3.2 Weg 2: Div mit figure-Rolle\n\n\n\n\n\n\nLogo PHBern\n\n\n\n\nFigure 10.1: Logo der PHBern\n\n\n\n::: {#fig-logo phbern .figure}\n![Logo PHBern](screenshots/gui_projekt.png){width=\"45%\"}\n\n*Logo der PHBern*\n:::\n\nDie letzte Zeile ist die Bildunterschrift (kursiv).\n\nMit einer ID wie {#fig-logo} kannst du verweisen: siehe Figure 10.1.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#columns-inhalte-nebeneinander",
+    "href": "10_Divs.html#columns-inhalte-nebeneinander",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.4 Columns (Inhalte nebeneinander)",
+    "text": "10.4 Columns (Inhalte nebeneinander)\nMit Columns kannst du Text und Bild oder zwei Texte nebeneinander darstellen.\n::: {.columns}\n::: {.column width=\"60%\"}\n**Text links:** Hier steht der Hauptinhalt. Du kannst Überschriften, Listen und Bilder verwenden.\n:::\n::: {.column width=\"40%\"}\n**Rechts:** Ein Bild oder eine Liste.\n![Logo](screenshots/gui_projekt.png){width=\"80%\"}\n:::\n:::\n\nDie Summe der Breiten sollte ungefähr 100 % ergeben.\n\nOhne width teilt Quarto den Platz automatisch.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#tabsets-reiter",
+    "href": "10_Divs.html#tabsets-reiter",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.5 Tabsets (Reiter)",
+    "text": "10.5 Tabsets (Reiter)\nTabsets sind nützlich, wenn du Varianten oder Beispiele trennen willst (z. B. zwei Lösungswege).\n::: {.panel-tabset}\n## Variante A\nKurze Erklärung für die erste Variante.\n\n## Variante B\nAlternative Darstellung mit anderem Beispiel.\n\n## Häufige Fragen\nAntworten zu typischen Rückfragen.\n:::\n\nJede Überschrift der Ebene 2 (##) wird zu einem Tab.\n\nDu kannst innerhalb der Tabs ganz normalen Markdown verwenden.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#eigene-divs-für-gestaltung-oder-logik",
+    "href": "10_Divs.html#eigene-divs-für-gestaltung-oder-logik",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.6 Eigene Divs für Gestaltung oder Logik",
+    "text": "10.6 Eigene Divs für Gestaltung oder Logik\nWenn du später mit CSS arbeitest oder Abschnitte gezielt ansprechen willst, kannst du eigene Klassen vergeben:\n::: {.lernziel}\n**Lernziele**\n- Ich kann Callouts einsetzen.\n- Ich kann Bilder mit Bildunterschriften zentrieren.\n:::\nSpäter könntest du .lernziel in styles.css gestalten (z. B. Rahmen, Hintergrund).",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#kombinationen",
+    "href": "10_Divs.html#kombinationen",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.7 Kombinationen",
+    "text": "10.7 Kombinationen\nElemente lassen sich kombinieren – zum Beispiel ein Callout mit Columns:\n::: {.callout-note}\n### Beispiel mit zwei Spalten\n\n::: {.columns}\n::: {.column}\n- Punkt A\n- Punkt B\n:::\n::: {.column}\n![Skizze](screenshots/gui_projekt.png){width=\"90%\"}\n:::\n:::\n:::\nAchte beim Verschachteln auf die Reihenfolge und schließe jedes :::.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#häufige-fehler-und-lösungen",
+    "href": "10_Divs.html#häufige-fehler-und-lösungen",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.8 Häufige Fehler und Lösungen",
+    "text": "10.8 Häufige Fehler und Lösungen\n\n„Unerwartetes Ende“ oder komisches Layout: Meist fehlt ein schließendes :::. Zähle die Blöcke und schließe sie von innen nach außen.\n\nKlasse wirkt nicht: Stimmt die Schreibweise? (.callout-tip, .panel-tabset, .columns, .column)\n\nBilder zu groß/klein: Mit width=\"…\" anpassen (z. B. width=\"60%\").\n\nVerweise auf Figures funktionieren nicht: Verwende eine ID (z. B. {#fig-logo}) und verweise mit @fig-logo.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#mini-vorlage-zum-kopieren",
+    "href": "10_Divs.html#mini-vorlage-zum-kopieren",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.9 Mini-Vorlage zum Kopieren",
+    "text": "10.9 Mini-Vorlage zum Kopieren\n# Titel\n\nEinführungstext …\n\n::: {.callout-tip}\n### Tipp\nKurzer Hinweis für die Studierenden.\n:::\n\n## Beispiel mit Bild\n\n![Beispielbild](screenshots/gui_positron_inception.png){fig-align=\"center\" width=\"60%\"}\n\n## Zwei Spalten\n\n::: {.columns}\n::: {.column width=\"55%\"}\nText hier …\n:::\n::: {.column width=\"45%\"}\n![Grafik](screenshots/gui_positron_inception.png){width=\"90%\"}\n:::\n:::\n\n## Varianten im Tabset\n\n::: {.panel-tabset}\n### Variante 1\nErklärung …\n\n### Variante 2\nAlternative …\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "10_Divs.html#zusammenfassung",
+    "href": "10_Divs.html#zusammenfassung",
+    "title": "10  Callouts, Figures und weitere :::- Elemente",
+    "section": "10.10 Zusammenfassung",
+    "text": "10.10 Zusammenfassung\n\n::: eröffnet/endet einen Div-Block – die Klasse in {…} steuert die Art.\n\nCallouts für Hinweise, Figures für Bilder mit Beschriftungen, Columns für zwei Spalten, Tabsets für Reiter.\n\nSaubere Verschachtelung und korrekte Klassen sind entscheidend.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
+    ]
+  },
+  {
+    "objectID": "11_Mermaid.html",
+    "href": "11_Mermaid.html",
+    "title": "11  Diagramme mit Mermaid.js in Quarto",
+    "section": "",
+    "text": "11.1 Grundidee\nQuarto unterstützt Mermaid.js – eine einfache Sprache, um Diagramme direkt im Text zu beschreiben. Beim Rendern wird daraus automatisch eine saubere Grafik. Das ist praktisch für Unterricht, Forschung und Präsentationen, ohne externe Programme.\nDu schreibst einen Codeblock mit der Sprache mermaid:\nBeim Rendern entsteht ein Flussdiagramm.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "11_Mermaid.html#grundidee",
+    "href": "11_Mermaid.html#grundidee",
+    "title": "11  Diagramme mit Mermaid.js in Quarto",
+    "section": "",
+    "text": "```mermaid\ngraph TD\n    A[Start] --&gt; B[Unterrichtsphase]\n    B --&gt; C{Frage gestellt?}\n    C --&gt;|Ja| D[Austausch in Gruppen]\n    C --&gt;|Nein| E[Input durch Lehrperson]\n    D --&gt; F[Zusammenfassung]\n    E --&gt; F[Zusammenfassung]\n```",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "11_Mermaid.html#beispiele-für-die-lehre",
+    "href": "11_Mermaid.html#beispiele-für-die-lehre",
+    "title": "11  Diagramme mit Mermaid.js in Quarto",
+    "section": "11.2 Beispiele für die Lehre",
+    "text": "11.2 Beispiele für die Lehre\n\n11.2.1 1. Unterrichtsablauf darstellen (Flowchart)\n\n\n\n\n\ngraph TD\n    A[Einführung] --&gt; B[Gruppenarbeit]\n    B --&gt; C[Präsentation]\n    C --&gt; D[Reflexion]\n\n\n\n\n\n\nSo kannst du den Ablauf einer Lektion oder eines Moduls skizzieren.\n\n\n11.2.2 2. Entscheidungsdiagramm\n\n\n\n\n\ngraph LR\n    A[Problem] --&gt; B{Kenntnisse vorhanden?}\n    B --&gt;|Ja| C[Selbstständig lösen]\n    B --&gt;|Nein| D[Unterstützung durch LP]\n\n\n\n\n\n\nIdeal, um didaktische Entscheidungswege oder Lernstrategien zu visualisieren.\n\n\n11.2.3 3. Organigramm oder Rollen im Projekt\n\n\n\n\n\ngraph TB\n    Leitung[Projektleitung] --&gt; Doz1[Dozent:in A]\n    Leitung --&gt; Doz2[Dozent:in B]\n    Doz1 --&gt; Stud1[Studierende Gruppe 1]\n    Doz2 --&gt; Stud2[Studierende Gruppe 2]\n\n\n\n\n\n\nGut für Kursorganisation oder Projekte.\n\n\n11.2.4 4. Zeitachse (Gantt-Diagramm)\nMermaid kann auch Gantt-Diagramme – für Semesterplanungen oder Projektphasen.\n\n\n\n\n\ngantt\n    dateFormat  YYYY-MM-DD\n    title Semesterplan\n    section Modul A\n    Einführung       :a1, 2025-09-15, 7d\n    Übungen          :after a1, 14d\n    Leistungsnachweis:2025-10-15, 7d\n    section Modul B\n    Start            :2025-11-01, 14d\n    Projektarbeit    :2025-11-15, 21d\n\n\n\n\n\n\n\n\n11.2.5 5. Konzeptkarten (mindmap-ähnlich)\nMermaid unterstützt einfache Hierarchien mit graph:\n\n\n\n\n\ngraph TD\n    Lernen --&gt; Motivation\n    Lernen --&gt; Strategien\n    Motivation --&gt; Intrinsisch\n    Motivation --&gt; Extrinsisch\n    Strategien --&gt; Wiederholen\n    Strategien --&gt; Verstehen\n\n\n\n\n\n\nDas ist nützlich für Begriffsnetze oder didaktische Modelle.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "11_Mermaid.html#tipps-für-die-praxis",
+    "href": "11_Mermaid.html#tipps-für-die-praxis",
+    "title": "11  Diagramme mit Mermaid.js in Quarto",
+    "section": "11.3 Tipps für die Praxis",
+    "text": "11.3 Tipps für die Praxis\n\nJeder Codeblock beginnt mit ```{mermaid} und endet mit  ```\n\nNutze eckige Klammern [Text] für Kästen, geschweifte {Frage?} für Entscheidungsdiamanten.\n\ngraph TD = Top → Down (oben nach unten), graph LR = Left → Right (links nach rechts).\n\nBei Gantt-Diagrammen: Datumsformat YYYY-MM-DD.\n\nKürzere Texte in Kästen halten die Diagramme übersichtlich.\n\nFür komplexere Strukturen ist es oft besser, mehrere kleine Diagramme statt ein sehr großes zu verwenden.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "11_Mermaid.html#häufige-fehler",
+    "href": "11_Mermaid.html#häufige-fehler",
+    "title": "11  Diagramme mit Mermaid.js in Quarto",
+    "section": "11.4 Häufige Fehler",
+    "text": "11.4 Häufige Fehler\n\nDiagramm wird nicht angezeigt: Prüfe, ob der Codeblock wirklich mit ```{mermaid} beginnt.\n\nMerkwürdige Zeichen oder Layout: Weniger Sonderzeichen verwenden, ggf. kurze Labels.\n\nSehr große Diagramme: Besser in zwei kleinere Diagramme teilen.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "11_Mermaid.html#zusammenfassung",
+    "href": "11_Mermaid.html#zusammenfassung",
+    "title": "11  Diagramme mit Mermaid.js in Quarto",
+    "section": "11.5 Zusammenfassung",
+    "text": "11.5 Zusammenfassung\n\nMit mermaid-Codeblöcken kannst du Diagramme direkt in Quarto schreiben.\n\nNützlich für Unterricht: Abläufe, Entscheidungsbäume, Organigramme, Zeitpläne, Konzeptkarten.\n\nSyntax ist einfach, Ergebnisse sind sofort im Dokument sichtbar.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diagramme mit Mermaid.js in Quarto</span>"
     ]
   }
 ]

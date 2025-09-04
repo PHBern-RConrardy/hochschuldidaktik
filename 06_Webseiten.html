@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richard Conrardy">
-<meta name="dcterms.date" content="2025-09-04">
 
-<title>Quarto für die PHBern</title>
+<title>6&nbsp; Quarto Webseite organisieren – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -87,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_wo_schreibe_ich.html" rel="next">
+<link href="./07_Layouten.html" rel="next">
+<link href="./05_Tabellen.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -138,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Webseiten.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quarto Webseite organisieren</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +144,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></span></a>
   </div>
 </li>
@@ -195,7 +174,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06_Webseiten.html" class="sidebar-item-text sidebar-link">
+  <a href="./06_Webseiten.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quarto Webseite organisieren</span></span></a>
   </div>
 </li>
@@ -239,16 +218,15 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#was-ist-quarto" id="toc-was-ist-quarto" class="nav-link active" data-scroll-target="#was-ist-quarto"><span class="header-section-number">1</span> Was ist Quarto?</a>
-  <ul class="collapse">
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele"><span class="header-section-number">1.1</span> Lernziele</a></li>
-  <li><a href="#was-ist-quarto-1" id="toc-was-ist-quarto-1" class="nav-link" data-scroll-target="#was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</a></li>
-  <li><a href="#was-kann-ich-mit-quarto-erstellen" id="toc-was-kann-ich-mit-quarto-erstellen" class="nav-link" data-scroll-target="#was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</a></li>
-  <li><a href="#beispiel-lehr-slides-mit-quellenangaben" id="toc-beispiel-lehr-slides-mit-quellenangaben" class="nav-link" data-scroll-target="#beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</a></li>
-  <li><a href="#beispiel-statische-webseite-für-ihre-lehrveranstaltung" id="toc-beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="nav-link" data-scroll-target="#beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</a></li>
-  <li><a href="#vorteile-für-dozierende" id="toc-vorteile-für-dozierende" class="nav-link" data-scroll-target="#vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur"><span class="header-section-number">1.7</span> Literatur</a></li>
-  </ul></li>
+  <li><a href="#projektstruktur-anlegen" id="toc-projektstruktur-anlegen" class="nav-link active" data-scroll-target="#projektstruktur-anlegen"><span class="header-section-number">6.1</span> Projektstruktur anlegen</a></li>
+  <li><a href="#die-zentrale-datei-_quarto.yml" id="toc-die-zentrale-datei-_quarto.yml" class="nav-link" data-scroll-target="#die-zentrale-datei-_quarto.yml"><span class="header-section-number">6.2</span> Die zentrale Datei _quarto.yml</a></li>
+  <li><a href="#seiten-anlegen-und-verlinken" id="toc-seiten-anlegen-und-verlinken" class="nav-link" data-scroll-target="#seiten-anlegen-und-verlinken"><span class="header-section-number">6.3</span> Seiten anlegen und verlinken</a></li>
+  <li><a href="#navigation-steuern" id="toc-navigation-steuern" class="nav-link" data-scroll-target="#navigation-steuern"><span class="header-section-number">6.4</span> Navigation steuern</a></li>
+  <li><a href="#einstellungen-pro-seite" id="toc-einstellungen-pro-seite" class="nav-link" data-scroll-target="#einstellungen-pro-seite"><span class="header-section-number">6.5</span> Einstellungen pro Seite</a></li>
+  <li><a href="#aussehen-anpassen" id="toc-aussehen-anpassen" class="nav-link" data-scroll-target="#aussehen-anpassen"><span class="header-section-number">6.6</span> Aussehen anpassen</a></li>
+  <li><a href="#webseite-bauen-und-anschauen" id="toc-webseite-bauen-und-anschauen" class="nav-link" data-scroll-target="#webseite-bauen-und-anschauen"><span class="header-section-number">6.7</span> Webseite bauen und anschauen</a></li>
+  <li><a href="#häufige-fragen" id="toc-häufige-fragen" class="nav-link" data-scroll-target="#häufige-fragen"><span class="header-section-number">6.8</span> Häufige Fragen</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">6.9</span> Zusammenfassung</a></li>
   </ul>
 </nav>
     </div>
@@ -257,27 +235,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto für die PHBern</h1>
-<p class="subtitle lead">Eine Gebrauchsanweisung aus der Praxis</p>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quarto Webseite organisieren</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Richard Conrardy </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 4, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -287,157 +252,169 @@ div.csl-indent {
 </header>
 
 
-<section id="was-ist-quarto" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Was ist Quarto?</h1>
-<section id="lernziele" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="lernziele"><span class="header-section-number">1.1</span> Lernziele</h2>
-<p>Nach diesem Kapitel verstehst du:</p>
+<p>In diesem Kapitel lernst du, wie du eine einfache Quarto-Webseite strukturierst: Ordner anlegen, Seiten verknüpfen, Navigation steuern und das Aussehen festlegen. Alles ohne Terminal.</p>
+<hr>
+<section id="projektstruktur-anlegen" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="projektstruktur-anlegen"><span class="header-section-number">6.1</span> Projektstruktur anlegen</h2>
+<p>Für eine kleine Webseite genügt eine überschaubare Struktur:</p>
+<pre><code>mein-webprojekt/
+├─ _quarto.yml
+├─ index.qmd
+├─ about.qmd
+├─ material/
+│  ├─ index.qmd
+│  └─ arbeitsblatt.qmd
+├─ images/
+│  └─ phbern-logo.png
+└─ styles.css</code></pre>
 <ul>
-<li>was Quarto ist und wie es sich von anderen Tools unterscheidet,</li>
-<li>wofür es in der Lehre sinnvoll eingesetzt werden kann,</li>
-<li>welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von <strong>Folien mit Quellenangaben</strong> und <strong>statischen Webseiten</strong>.</li>
+<li><code>index.qmd</code>: Startseite</li>
+<li><code>about.qmd</code>: Über mich oder Kontakt</li>
+<li><code>material/</code>: Unterordner für Materialien</li>
+<li><code>images/</code>: Grafiken und Logos</li>
+<li><code>styles.css</code>: Eigene Gestaltung (optional)</li>
+<li><code>_quarto.yml</code>: Zentrale Steuerdatei für die ganze Webseite</li>
 </ul>
+<p>📸 Screenshot: Explorer mit den Dateien und Ordnern</p>
 <hr>
 </section>
-<section id="was-ist-quarto-1" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</h2>
-<blockquote class="blockquote">
-<p><strong>Quarto</strong> ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.</p>
-</blockquote>
-<p>Quarto basiert auf <strong>Markdown</strong>, einem leicht erlernbaren Textformat, und kann sowohl <strong>statischen Inhalt</strong> (Text, Bilder, Tabellen) als auch <strong>dynamischen Inhalt</strong> (z. B. R- oder Python-Code) integrieren.</p>
-<p>Quarto ist der offizielle Nachfolger von <a href="https://rmarkdown.rstudio.com/">R Markdown</a> und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.</p>
+<section id="die-zentrale-datei-_quarto.yml" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="die-zentrale-datei-_quarto.yml"><span class="header-section-number">6.2</span> Die zentrale Datei _quarto.yml</h2>
+<p>In dieser Datei sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Meine Unterrichtswebseite"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Start</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Über mich</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Materialien</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> material/index.qmd</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Übersicht</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> material/arbeitsblatt.qmd</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Arbeitsblatt</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">page-navigation</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">   # Vor/Zurück-Navigation am Seitenende</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span><span class="co">          # Ein helles Bootstrap-Thema</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">             # Inhaltsverzeichnis rechts</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span><span class="co">       # Optional eigene CSS-Datei</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hinweise: - <code>project.type: website</code> macht aus dem Ordner eine Webseite. - <code>website.navbar</code> steuert die Menüleiste oben. - <code>format.html</code> definiert Aussehen und Optionen für alle Seiten.</p>
+<p>📸 Screenshot: _quarto.yml in Positron geöffnet</p>
 <hr>
 </section>
-<section id="was-kann-ich-mit-quarto-erstellen" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>Anwendung in der Lehre</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Präsentationen</strong></td>
-<td>Slides für Lerngelegenheiten</td>
-</tr>
-<tr class="even">
-<td><strong>PDF / Word</strong></td>
-<td>Handouts, Prüfungen, Skripte</td>
-</tr>
-<tr class="odd">
-<td><strong>Webseiten</strong></td>
-<td>Kurswebseiten, Forschungsprojekte, ePortfolios</td>
-</tr>
-</tbody>
-</table>
-<blockquote class="blockquote">
-<p><strong>Alles</strong> aus <strong>einer einzigen <code>.qmd</code>-Datei</strong>!</p>
-</blockquote>
+<section id="seiten-anlegen-und-verlinken" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="seiten-anlegen-und-verlinken"><span class="header-section-number">6.3</span> Seiten anlegen und verlinken</h2>
+<p>Beispiel für eine Startseite <code>index.qmd</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Willkommen"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Was dich erwartet</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Hier findest du Materialien, Hinweise und Termine zum Unterricht.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Über mich</span><span class="co">](about.qmd)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Materialien</span><span class="co">](material/index.qmd)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Beispiel für eine Material-Übersicht <code>material/index.qmd</code> mit automatischem Listing:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Materialien"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: .</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  type: default</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>Hier erscheinen automatisch die Unterseiten in diesem Ordner.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tipp: Neue Seiten einfach mit <code>File → New File → Quarto Document…</code> erstellen und an passender Stelle speichern.</p>
+<p>📸 Screenshot: Neues Quarto-Dokument anlegen</p>
 <hr>
 </section>
-<section id="beispiel-lehr-slides-mit-quellenangaben" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</h2>
-<p>Quarto-Präsentationen lassen sich in wenigen Sekunden in <strong>HTML</strong>, <strong>Reveal.js</strong>, <strong>PowerPoint</strong> oder <strong>PDF (Beamer)</strong> umwandeln – inklusive:</p>
+<section id="navigation-steuern" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="navigation-steuern"><span class="header-section-number">6.4</span> Navigation steuern</h2>
+<p>Die Reihenfolge im Menü bestimmst du in <code>_quarto.yml</code> unter <code>website.navbar.left</code>. Alles, was dort steht, erscheint oben. Unterpunkte legst du mit <code>menu:</code> an (siehe Beispiel oben).</p>
+<p>Optional kannst du statt einer Top-Navigation links eine Seitenleiste nutzen:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"docked"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"Materialien"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> material/index.qmd</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> material/arbeitsblatt.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nur eine der beiden Varianten gleichzeitig verwenden (Navbar oder Sidebar), sonst wirkt es unruhig.</p>
+<p>📸 Screenshot: Darstellung mit Sidebar</p>
+<hr>
+</section>
+<section id="einstellungen-pro-seite" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="einstellungen-pro-seite"><span class="header-section-number">6.5</span> Einstellungen pro Seite</h2>
+<p>Jede <code>.qmd</code>-Seite kann eigene Optionen im Kopfbereich bekommen, zum Beispiel:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Arbeitsblatt Prozentrechnung"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> article</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Hier steht der Inhalt.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Häufig genutzte Einstellungen: - <code>title</code>: Seitentitel in der Kopfzeile und im Browser-Tab - <code>toc: true</code>: Inhaltsverzeichnis auf der Seite - <code>page-layout</code>: z. B. <code>article</code>, <code>full</code>, <code>custom</code></p>
+<hr>
+</section>
+<section id="aussehen-anpassen" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="aussehen-anpassen"><span class="header-section-number">6.6</span> Aussehen anpassen</h2>
+<p>Du kannst ein Thema und eigenes CSS kombinieren. Im Beispiel oben verwenden wir <code>theme: cosmo</code> und zusätzlich <code>styles.css</code>.</p>
+<p>Beispiel für <code>styles.css</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Überschriften etwas größer */</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>h1 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">2.0</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>h2 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.6</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* Maximale Breite für bessere Lesbarkeit */</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.quarto-container</span> { <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">980</span><span class="dt">px</span><span class="op">;</span> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>📸 Screenshot: Browseransicht mit angepasstem Stil</p>
+<hr>
+</section>
+<section id="webseite-bauen-und-anschauen" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="webseite-bauen-und-anschauen"><span class="header-section-number">6.7</span> Webseite bauen und anschauen</h2>
+<p>Ohne Terminal, direkt in Positron oder RStudio:</p>
+<ol type="1">
+<li>Öffne <code>index.qmd</code>.</li>
+<li>Klicke oben rechts auf <strong>Render</strong>.</li>
+<li>Quarto baut die gesamte Seite und legt die Ergebnisse im Ordner <code>_site/</code> ab.</li>
+<li>Die Startseite öffnet sich im Browser.</li>
+</ol>
+<p>Wenn du später nur eine Seite änderst, genügt erneut <strong>Render</strong>. Quarto aktualisiert die Webseite.</p>
+<p>📸 Screenshot: Render-Button und fertige Seite im Browser</p>
+<hr>
+</section>
+<section id="häufige-fragen" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="häufige-fragen"><span class="header-section-number">6.8</span> Häufige Fragen</h2>
+<p><strong>Wo liegen die fertigen Dateien?</strong><br>
+Im Ordner <code>_site/</code>. Dort befindet sich eine <code>index.html</code> und alle zugehörigen Dateien.</p>
+<p><strong>Wie bekomme ich die Seite ins Netz?</strong><br>
+Einfacher Start: Den gesamten Ordner <code>_site/</code> auf deinen Webspace kopieren. Fortgeschrittene Möglichkeiten sind Quarto Pub oder GitHub Pages. Für den Einstieg reicht lokales Testen und ggf. ein Webspace-Upload.</p>
+<p><strong>Was mache ich bei Fehlern in der Navigation?</strong><br>
+Prüfe Schreibweisen der Dateinamen und die Einrückungen in <code>_quarto.yml</code>. YAML reagiert empfindlich auf Einrückungen mit Leerzeichen.</p>
+<hr>
+</section>
+<section id="zusammenfassung" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">6.9</span> Zusammenfassung</h2>
 <ul>
-<li>automatischer <strong>Quellenangaben</strong> (z. B. mit <code>literatur.bib</code>)</li>
-<li>eingebetteter <strong>Bilder</strong>, <strong>Diagramme</strong> und <strong>Formeln</strong></li>
-<li>optional: interaktive Inhalte (Diagramme, Code-Ausgabe)</li>
+<li>Mit <code>_quarto.yml</code> steuerst du Navigation, Titel und Design der gesamten Webseite.</li>
+<li>Jede Seite ist eine <code>.qmd</code>-Datei mit optionalen Seiteneinstellungen im Kopfbereich.</li>
+<li>Ordne Inhalte in Ordnern wie <code>material/</code> und <code>images/</code>.</li>
+<li>Mit <strong>Render</strong> baust du die komplette Webseite, die im Ordner <code>_site/</code> landet.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Einführung in Statistik"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> literatur.bib</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mittelwert, Median, Modus</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standardabweichung, Varianz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Statistics is the grammar of science." – Karl Pearson </span><span class="co">[</span><span class="ot">@pearson1901</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Die Quelle <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.</p>
-</section>
-<section id="beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</h2>
-<p>Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.</p>
-<p>Projektstruktur:</p>
-<pre><code>📁 mein-kurs/
-├── _quarto.yml
-├── index.qmd         # Startseite
-├── literatur.qmd     # Literaturverzeichnis
-├── sitzung1.qmd
-├── sitzung2.qmd
-└── ...</code></pre>
-<p>Beispielhafte Konfiguration (<code>_quarto.yml</code>):</p>
-<pre><code>project:
-  type: website
-
-website:
-  title: "Digitale Didaktik"
-  navbar:
-    left:
-      - text: "Start"
-        file: index.qmd
-      - text: "Literatur"
-        file: literatur.qmd</code></pre>
-<p>Nach dem Ausführen von:</p>
-<pre class="terminal"><code>quarto render</code></pre>
-<p>oder durch Klicken auf “Render” in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.</p>
-</section>
-<section id="vorteile-für-dozierende" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 71%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Vorteil</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Effizienz</strong></td>
-<td>Ein Dokument, viele Ausgabeformate</td>
-</tr>
-<tr class="even">
-<td><strong>Wissenschaftlich</strong></td>
-<td>Automatische Literaturverweise, APA, MLA, Chicago etc.</td>
-</tr>
-<tr class="odd">
-<td><strong>Wiederverwendbar</strong></td>
-<td>Inhalte lassen sich modular aufbauen</td>
-</tr>
-<tr class="even">
-<td><strong>Offen &amp; nachhaltig</strong></td>
-<td>Offenes Textformat, langfristig lesbar, versionierbar</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="literatur" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="literatur"><span class="header-section-number">1.7</span> Literatur</h2>
-<p>Quellen werden automatisch aus der Datei <code>literatur.bib</code> geladen.</p>
-<p>Beispielinhalt für <code>literatur.bib</code>:</p>
-<pre><code>@book{pearson1901,
-  author = {Karl Pearson},
-  title = {The Grammar of Science},
-  year = {1901},
-  publisher = {Adam and Charles Black}
-}</code></pre>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +819,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05_Tabellen.html" class="pagination-link" aria-label="Tabellen, Formeln und interaktive Inhalte">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tabellen, Formeln und interaktive Inhalte</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_wo_schreibe_ich.html" class="pagination-link" aria-label="Quarto starten ohne Terminal">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07_Layouten.html" class="pagination-link" aria-label="07_Layouten.html">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07_Layouten.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richard Conrardy">
-<meta name="dcterms.date" content="2025-09-04">
 
-<title>Quarto für die PHBern</title>
+<title>8&nbsp; Publizieren: Quarto Pub, GitHub Pages und ILIAS – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -87,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_wo_schreibe_ich.html" rel="next">
+<link href="./09_Zitieren.html" rel="next">
+<link href="./07_Layouten.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -138,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_Publizieren.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Publizieren: Quarto Pub, GitHub Pages und ILIAS</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +144,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></span></a>
   </div>
 </li>
@@ -207,7 +186,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_Publizieren.html" class="sidebar-item-text sidebar-link">
+  <a href="./08_Publizieren.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Publizieren: Quarto Pub, GitHub Pages und ILIAS</span></span></a>
   </div>
 </li>
@@ -239,16 +218,14 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#was-ist-quarto" id="toc-was-ist-quarto" class="nav-link active" data-scroll-target="#was-ist-quarto"><span class="header-section-number">1</span> Was ist Quarto?</a>
-  <ul class="collapse">
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele"><span class="header-section-number">1.1</span> Lernziele</a></li>
-  <li><a href="#was-ist-quarto-1" id="toc-was-ist-quarto-1" class="nav-link" data-scroll-target="#was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</a></li>
-  <li><a href="#was-kann-ich-mit-quarto-erstellen" id="toc-was-kann-ich-mit-quarto-erstellen" class="nav-link" data-scroll-target="#was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</a></li>
-  <li><a href="#beispiel-lehr-slides-mit-quellenangaben" id="toc-beispiel-lehr-slides-mit-quellenangaben" class="nav-link" data-scroll-target="#beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</a></li>
-  <li><a href="#beispiel-statische-webseite-für-ihre-lehrveranstaltung" id="toc-beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="nav-link" data-scroll-target="#beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</a></li>
-  <li><a href="#vorteile-für-dozierende" id="toc-vorteile-für-dozierende" class="nav-link" data-scroll-target="#vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur"><span class="header-section-number">1.7</span> Literatur</a></li>
-  </ul></li>
+  <li><a href="#überblick-welche-option-passt" id="toc-überblick-welche-option-passt" class="nav-link active" data-scroll-target="#überblick-welche-option-passt"><span class="header-section-number">8.1</span> Überblick: Welche Option passt?</a></li>
+  <li><a href="#vorbereitung-für-alle-wege" id="toc-vorbereitung-für-alle-wege" class="nav-link" data-scroll-target="#vorbereitung-für-alle-wege"><span class="header-section-number">8.2</span> Vorbereitung (für alle Wege)</a></li>
+  <li><a href="#a-veröffentlichen-mit-quarto-pub-sehr-einfach" id="toc-a-veröffentlichen-mit-quarto-pub-sehr-einfach" class="nav-link" data-scroll-target="#a-veröffentlichen-mit-quarto-pub-sehr-einfach"><span class="header-section-number">8.3</span> A) Veröffentlichen mit Quarto Pub (sehr einfach)</a></li>
+  <li><a href="#b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse" id="toc-b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse" class="nav-link" data-scroll-target="#b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse"><span class="header-section-number">8.4</span> B) Veröffentlichen mit GitHub Pages (ohne Git-Kenntnisse)</a></li>
+  <li><a href="#c-in-ilias-als-html-objekt-bereitstellen" id="toc-c-in-ilias-als-html-objekt-bereitstellen" class="nav-link" data-scroll-target="#c-in-ilias-als-html-objekt-bereitstellen"><span class="header-section-number">8.5</span> C) In ILIAS als HTML-Objekt bereitstellen</a></li>
+  <li><a href="#kurzer-exkurs-was-ist-gitgithub-optional" id="toc-kurzer-exkurs-was-ist-gitgithub-optional" class="nav-link" data-scroll-target="#kurzer-exkurs-was-ist-gitgithub-optional"><span class="header-section-number">8.6</span> Kurzer Exkurs: Was ist Git/GitHub? (optional)</a></li>
+  <li><a href="#typische-fehlerquellen-und-lösungen" id="toc-typische-fehlerquellen-und-lösungen" class="nav-link" data-scroll-target="#typische-fehlerquellen-und-lösungen"><span class="header-section-number">8.7</span> Typische Fehlerquellen und Lösungen</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">8.8</span> Zusammenfassung</a></li>
   </ul>
 </nav>
     </div>
@@ -257,27 +234,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto für die PHBern</h1>
-<p class="subtitle lead">Eine Gebrauchsanweisung aus der Praxis</p>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Publizieren: Quarto Pub, GitHub Pages und ILIAS</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Richard Conrardy </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 4, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -287,157 +251,153 @@ div.csl-indent {
 </header>
 
 
-<section id="was-ist-quarto" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Was ist Quarto?</h1>
-<section id="lernziele" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="lernziele"><span class="header-section-number">1.1</span> Lernziele</h2>
-<p>Nach diesem Kapitel verstehst du:</p>
-<ul>
-<li>was Quarto ist und wie es sich von anderen Tools unterscheidet,</li>
-<li>wofür es in der Lehre sinnvoll eingesetzt werden kann,</li>
-<li>welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von <strong>Folien mit Quellenangaben</strong> und <strong>statischen Webseiten</strong>.</li>
-</ul>
-<hr>
-</section>
-<section id="was-ist-quarto-1" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="was-ist-quarto-1"><span class="header-section-number">1.2</span> Was ist Quarto?</h2>
-<blockquote class="blockquote">
-<p><strong>Quarto</strong> ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.</p>
-</blockquote>
-<p>Quarto basiert auf <strong>Markdown</strong>, einem leicht erlernbaren Textformat, und kann sowohl <strong>statischen Inhalt</strong> (Text, Bilder, Tabellen) als auch <strong>dynamischen Inhalt</strong> (z. B. R- oder Python-Code) integrieren.</p>
-<p>Quarto ist der offizielle Nachfolger von <a href="https://rmarkdown.rstudio.com/">R Markdown</a> und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.</p>
-<hr>
-</section>
-<section id="was-kann-ich-mit-quarto-erstellen" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="was-kann-ich-mit-quarto-erstellen"><span class="header-section-number">1.3</span> Was kann ich mit Quarto erstellen?</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>Anwendung in der Lehre</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Präsentationen</strong></td>
-<td>Slides für Lerngelegenheiten</td>
-</tr>
-<tr class="even">
-<td><strong>PDF / Word</strong></td>
-<td>Handouts, Prüfungen, Skripte</td>
-</tr>
-<tr class="odd">
-<td><strong>Webseiten</strong></td>
-<td>Kurswebseiten, Forschungsprojekte, ePortfolios</td>
-</tr>
-</tbody>
-</table>
-<blockquote class="blockquote">
-<p><strong>Alles</strong> aus <strong>einer einzigen <code>.qmd</code>-Datei</strong>!</p>
-</blockquote>
-<hr>
-</section>
-<section id="beispiel-lehr-slides-mit-quellenangaben" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="beispiel-lehr-slides-mit-quellenangaben"><span class="header-section-number">1.4</span> Beispiel: Lehr-Slides mit Quellenangaben</h2>
-<p>Quarto-Präsentationen lassen sich in wenigen Sekunden in <strong>HTML</strong>, <strong>Reveal.js</strong>, <strong>PowerPoint</strong> oder <strong>PDF (Beamer)</strong> umwandeln – inklusive:</p>
-<ul>
-<li>automatischer <strong>Quellenangaben</strong> (z. B. mit <code>literatur.bib</code>)</li>
-<li>eingebetteter <strong>Bilder</strong>, <strong>Diagramme</strong> und <strong>Formeln</strong></li>
-<li>optional: interaktive Inhalte (Diagramme, Code-Ausgabe)</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Einführung in Statistik"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> literatur.bib</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mittelwert, Median, Modus</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standardabweichung, Varianz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Statistics is the grammar of science." – Karl Pearson </span><span class="co">[</span><span class="ot">@pearson1901</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Die Quelle <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.</p>
-</section>
-<section id="beispiel-statische-webseite-für-ihre-lehrveranstaltung" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="beispiel-statische-webseite-für-ihre-lehrveranstaltung"><span class="header-section-number">1.5</span> Beispiel: Statische Webseite für Ihre Lehrveranstaltung</h2>
-<p>Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.</p>
-<p>Projektstruktur:</p>
-<pre><code>📁 mein-kurs/
-├── _quarto.yml
-├── index.qmd         # Startseite
-├── literatur.qmd     # Literaturverzeichnis
-├── sitzung1.qmd
-├── sitzung2.qmd
-└── ...</code></pre>
-<p>Beispielhafte Konfiguration (<code>_quarto.yml</code>):</p>
-<pre><code>project:
-  type: website
-
-website:
-  title: "Digitale Didaktik"
-  navbar:
-    left:
-      - text: "Start"
-        file: index.qmd
-      - text: "Literatur"
-        file: literatur.qmd</code></pre>
-<p>Nach dem Ausführen von:</p>
-<pre class="terminal"><code>quarto render</code></pre>
-<p>oder durch Klicken auf “Render” in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.</p>
-</section>
-<section id="vorteile-für-dozierende" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="vorteile-für-dozierende"><span class="header-section-number">1.6</span> Vorteile für Dozierende</h2>
+<p>In diesem Kapitel siehst du drei Wege, um deine Quarto-Webseite für Studierende und Kolleginnen und Kollegen zugänglich zu machen. Wir gehen Schritt für Schritt vor – ohne Git-Vorkenntnisse.</p>
+<section id="überblick-welche-option-passt" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="überblick-welche-option-passt"><span class="header-section-number">8.1</span> Überblick: Welche Option passt?</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 28%">
-<col style="width: 71%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Vorteil</th>
-<th>Beschreibung</th>
+<th>Ziel</th>
+<th>Vorteile</th>
+<th>Aufwand beim Aktualisieren</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Effizienz</strong></td>
-<td>Ein Dokument, viele Ausgabeformate</td>
+<td><strong>Quarto Pub</strong></td>
+<td>Sehr einfach, direkter Upload aus Positron/RStudio; schöne URL</td>
+<td>Neu rendern und erneut veröffentlichen</td>
 </tr>
 <tr class="even">
-<td><strong>Wissenschaftlich</strong></td>
-<td>Automatische Literaturverweise, APA, MLA, Chicago etc.</td>
+<td><strong>GitHub Pages</strong></td>
+<td>Kostenlos, öffentlich erreichbar; guter Standardweg fürs Web</td>
+<td>Neu rendern, Dateien erneut in GitHub hochladen</td>
 </tr>
 <tr class="odd">
-<td><strong>Wiederverwendbar</strong></td>
-<td>Inhalte lassen sich modular aufbauen</td>
-</tr>
-<tr class="even">
-<td><strong>Offen &amp; nachhaltig</strong></td>
-<td>Offenes Textformat, langfristig lesbar, versionierbar</td>
+<td><strong>ILIAS (HTML-Objekt)</strong></td>
+<td>Intern in ILIAS verfügbar</td>
+<td>Neu rendern, ZIP neu hochladen (kein „Push“)</td>
 </tr>
 </tbody>
 </table>
+<p>Hinweis: Mit deiner <strong><span class="citation" data-cites="phbern.ch">(<a href="#ref-phbern.ch" role="doc-biblioref"><strong>phbern.ch?</strong></a>)</span></strong>-Adresse bekommst du in der Regel Zugang zu einer <strong>Campus-/Education-Version</strong> bei GitHub (zusätzliche Vorteile). Falls etwas nicht klappt, wende dich an den IT-Support der PHBern.</p>
 </section>
-<section id="literatur" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="literatur"><span class="header-section-number">1.7</span> Literatur</h2>
-<p>Quellen werden automatisch aus der Datei <code>literatur.bib</code> geladen.</p>
-<p>Beispielinhalt für <code>literatur.bib</code>:</p>
-<pre><code>@book{pearson1901,
-  author = {Karl Pearson},
-  title = {The Grammar of Science},
-  year = {1901},
-  publisher = {Adam and Charles Black}
-}</code></pre>
+<section id="vorbereitung-für-alle-wege" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="vorbereitung-für-alle-wege"><span class="header-section-number">8.2</span> Vorbereitung (für alle Wege)</h2>
+<ol type="1">
+<li>Öffne dein Projekt (z. B. die Website aus dem Kapitel „Webseite organisieren“).<br>
+</li>
+<li>Klicke auf <strong>Render</strong>.<br>
+</li>
+<li>Die fertigen Dateien liegen im Ordner <strong><code>_site/</code></strong> (Startseite: <code>index.html</code>).</li>
+</ol>
+<blockquote class="blockquote">
+<p>Tipp: Teste lokal, indem du die <code>index.html</code> aus <code>_site/</code> im Browser öffnest.</p>
+</blockquote>
+</section>
+<section id="a-veröffentlichen-mit-quarto-pub-sehr-einfach" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="a-veröffentlichen-mit-quarto-pub-sehr-einfach"><span class="header-section-number">8.3</span> A) Veröffentlichen mit Quarto Pub (sehr einfach)</h2>
+<p><strong>Ohne Terminal</strong>, direkt aus Positron:</p>
+<ol type="1">
+<li>Öffne das Projekt in <strong>Positron</strong>.<br>
+</li>
+<li>Öffne die <strong>Command Palette</strong> (z. B. <code>Ctrl+Shift+P</code> / <code>Cmd+Shift+P</code>).<br>
+</li>
+<li>Wähle <strong>„Quarto: Publish“</strong>.<br>
+</li>
+<li>Ziel: <strong>Quarto Pub</strong>.<br>
+</li>
+<li>Melde dich an (einmalig Konto erstellen).<br>
+</li>
+<li>Bestätige die Veröffentlichung. Quarto Pub erstellt die Seite und zeigt dir den Link.</li>
+</ol>
+<p>Optional (falls du lieber die Kommandozeile nutzt):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Du wirst einmalig gefragt, dich anzumelden. Danach kannst du mit einem Klick bzw. Befehl neu veröffentlichen.</p>
+</section>
+<section id="b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="b-veröffentlichen-mit-github-pages-ohne-git-kenntnisse"><span class="header-section-number">8.4</span> B) Veröffentlichen mit GitHub Pages (ohne Git-Kenntnisse)</h2>
+<p>Du brauchst ein kostenloses <strong>GitHub-Konto</strong>. Mit der <span class="citation" data-cites="phbern.ch-Adresse">(<a href="#ref-phbern.ch-Adresse" role="doc-biblioref"><strong>phbern.ch-Adresse?</strong></a>)</span> erhältst du in der Regel <strong>Education-/Campus-Vorteile</strong>.</p>
+<p><strong>Schritt 1: Repository anlegen</strong><br>
+1. Auf github.com anmelden.<br>
+2. Oben rechts <strong>„+“ → New repository“</strong>.<br>
+3. Name vergeben (z. B. <code>meine-quarto-webseite</code>).<br>
+4. Sichtbarkeit: <strong>Public</strong> (für offenen Zugang) oder <strong>Private</strong> (nur für dich/Team).<br>
+5. <strong>Create repository</strong>.</p>
+<p><strong>Schritt 2: Fertige Website-Dateien hochladen</strong><br>
+1. Öffne deinen neuen Repository-Startbildschirm.<br>
+2. Klicke <strong>„Add file → Upload files“</strong>.<br>
+3. Wechsle lokal in deinen Projektordner <strong><code>_site/</code></strong>.<br>
+4. Markiere <strong>alle Inhalte von <code>_site/</code></strong> (nicht den Ordner selbst) und <strong>ziehe</strong> sie ins Upload-Feld.<br>
+5. Scrolle nach unten und klicke <strong>„Commit changes“</strong>.</p>
+<p><strong>Schritt 3: GitHub Pages aktivieren</strong><br>
+1. Im Repo auf <strong>„Settings“</strong> klicken.<br>
+2. Links <strong>„Pages“</strong> auswählen.<br>
+3. Unter <strong>„Build and deployment“</strong> wähle <strong>„Deploy from a branch“</strong>.<br>
+4. <strong>Branch:</strong> <code>main</code> — <strong>Folder:</strong> <code>/ (root)</code> (Root-Ebene).<br>
+5. Speichern. GitHub baut die Seite und zeigt nach kurzer Zeit den Link an.</p>
+<p><strong>Aktualisieren</strong><br>
+- Lokal neu <strong>Rendern</strong> → Ordner <strong><code>_site/</code></strong> → wieder <strong>„Add file → Upload files“</strong> → alle Dateien ersetzen → <strong>Commit changes</strong>.<br>
+- Git muss dafür nicht installiert sein; du nutzt nur die GitHub-Weboberfläche.</p>
+</section>
+<section id="c-in-ilias-als-html-objekt-bereitstellen" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="c-in-ilias-als-html-objekt-bereitstellen"><span class="header-section-number">8.5</span> C) In ILIAS als HTML-Objekt bereitstellen</h2>
+<p>So bringst du die Seite in einen ILIAS-Kurs – ohne externe Veröffentlichung.</p>
+<p><strong>Schritt 1: ZIP erstellen</strong><br>
+1. Öffne den Ordner <strong><code>_site/</code></strong>.<br>
+2. Wähle <strong>alle Inhalte</strong> von <code>_site/</code> aus (nicht den Ordner selbst).<br>
+3. Erstelle daraus ein <strong>ZIP</strong> (z. B. Rechtsklick → „Senden an → ZIP“).</p>
+<p><strong>Schritt 2: In ILIAS hochladen</strong><br>
+1. Im gewünschten ILIAS-Kurs: <strong>Neues Objekt</strong> hinzufügen.<br>
+2. Wähle <strong>„HTML-Lernmodul“</strong> (Bezeichnung kann je nach ILIAS-Version leicht abweichen).<br>
+3. Lade die <strong>ZIP-Datei</strong> hoch.<br>
+4. Speichern/Veröffentlichen.</p>
+<p><strong>Wichtig zum Aktualisieren</strong><br>
+- Für jede Änderung: lokal neu <strong>Rendern</strong>, <strong>neues ZIP</strong> aus den Inhalten von <code>_site/</code> erstellen und in ILIAS <strong>neu hochladen</strong>.<br>
+- Es gibt <strong>kein direktes „Push“/Synchronisieren</strong> wie bei Quarto Pub oder GitHub.</p>
+</section>
+<section id="kurzer-exkurs-was-ist-gitgithub-optional" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="kurzer-exkurs-was-ist-gitgithub-optional"><span class="header-section-number">8.6</span> Kurzer Exkurs: Was ist Git/GitHub? (optional)</h2>
+<ul>
+<li><strong>Git</strong> ist ein Versionierungssystem: Es merkt sich Änderungen an Dateien.<br>
+</li>
+<li><strong>GitHub</strong> ist ein Online-Dienst, der Git-Projekte hostet und Websites (GitHub Pages) bereitstellt.<br>
+</li>
+<li>Für dieses Kapitel brauchst du <strong>kein Git-Programm</strong> – die GitHub-Weboberfläche reicht.<br>
+</li>
+<li>Später lohnt es sich, Git zu lernen (bessere Zusammenarbeit, schnellere Updates).</li>
+</ul>
+<p>Wenn du Git irgendwann nutzen möchtest, können wir ein extra Kapitel mit der <strong>minimalen Praxis</strong> (3–4 Befehle) schreiben.</p>
+</section>
+<section id="typische-fehlerquellen-und-lösungen" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="typische-fehlerquellen-und-lösungen"><span class="header-section-number">8.7</span> Typische Fehlerquellen und Lösungen</h2>
+<ul>
+<li><strong>Leere/weiße Seite</strong>: Prüfe, ob wirklich die <strong>Inhalte von <code>_site/</code></strong> hochgeladen wurden (nicht der Ordner).<br>
+</li>
+<li><strong>Falsche Links/Bilder</strong>: Verwende relative Pfade (z. B. <code>images/logo.png</code>) und achte auf exakte Dateinamen.<br>
+</li>
+<li><strong>Navigation kaputt</strong>: YAML-Einrückungen in <code>_quarto.yml</code> kontrollieren (nur Leerzeichen, gleiche Ebene).<br>
+</li>
+<li><strong>GitHub Pages-Link fehlt</strong>: In den Repo-<strong>Settings → Pages</strong> prüfen; ggf. noch einmal auf <strong>„Save“</strong> klicken und kurz warten.</li>
+</ul>
+</section>
+<section id="zusammenfassung" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">8.8</span> Zusammenfassung</h2>
+<ul>
+<li><strong>Quarto Pub</strong>: Schnellster Weg, sehr einfach.<br>
+</li>
+<li><strong>GitHub Pages</strong>: Kostenlos, ideal fürs öffentliche Web. Upload per Browser reicht.<br>
+</li>
+<li><strong>ILIAS</strong>: Für interne Nutzung; Updates erfordern neues ZIP.</li>
+</ul>
+<p>Bei Fragen zur Campus-/Education-Nutzung mit <strong><span class="citation" data-cites="phbern.ch">(<a href="#ref-phbern.ch" role="doc-biblioref"><strong>phbern.ch?</strong></a>)</span></strong> unterstützt dich der <strong>PHBern-IT-Support</strong>.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +802,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./07_Layouten.html" class="pagination-link" aria-label="07_Layouten.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07_Layouten.html</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_wo_schreibe_ich.html" class="pagination-link" aria-label="Quarto starten ohne Terminal">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09_Zitieren.html" class="pagination-link" aria-label="Zotero: automatischer Export nach .bib und Einbindung in Quarto">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zotero: automatischer Export nach .bib und Einbindung in Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
