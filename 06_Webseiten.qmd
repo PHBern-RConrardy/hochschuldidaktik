@@ -1,0 +1,212 @@
+# Quarto Webseite organisieren
+
+In diesem Kapitel lernst du, wie du eine einfache Quarto-Webseite strukturierst: Ordner anlegen, Seiten verknüpfen, Navigation steuern und das Aussehen festlegen. Alles ohne Terminal.
+
+---
+
+## Projektstruktur anlegen
+
+Für eine kleine Webseite genügt eine überschaubare Struktur:
+
+```
+mein-webprojekt/
+├─ _quarto.yml
+├─ index.qmd
+├─ about.qmd
+├─ material/
+│  ├─ index.qmd
+│  └─ arbeitsblatt.qmd
+├─ images/
+│  └─ phbern-logo.png
+└─ styles.css
+```
+
+- `index.qmd`: Startseite
+- `about.qmd`: Über mich oder Kontakt
+- `material/`: Unterordner für Materialien
+- `images/`: Grafiken und Logos
+- `styles.css`: Eigene Gestaltung (optional)
+- `_quarto.yml`: Zentrale Steuerdatei für die ganze Webseite
+
+📸 Screenshot: Explorer mit den Dateien und Ordnern
+
+---
+
+## Die zentrale Datei _quarto.yml
+
+In dieser Datei sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:
+
+```yaml
+project:
+  type: website
+
+website:
+  title: "Meine Unterrichtswebseite"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Start
+      - href: about.qmd
+        text: Über mich
+      - text: Materialien
+        menu:
+          - href: material/index.qmd
+            text: Übersicht
+          - href: material/arbeitsblatt.qmd
+            text: Arbeitsblatt
+  page-navigation: true   # Vor/Zurück-Navigation am Seitenende
+
+format:
+  html:
+    theme: cosmo          # Ein helles Bootstrap-Thema
+    toc: true             # Inhaltsverzeichnis rechts
+    number-sections: false
+    css: styles.css       # Optional eigene CSS-Datei
+```
+
+Hinweise:
+- `project.type: website` macht aus dem Ordner eine Webseite.
+- `website.navbar` steuert die Menüleiste oben.
+- `format.html` definiert Aussehen und Optionen für alle Seiten.
+
+📸 Screenshot: _quarto.yml in Positron geöffnet
+
+---
+
+## Seiten anlegen und verlinken
+
+Beispiel für eine Startseite `index.qmd`:
+
+```markdown
+---
+title: "Willkommen"
+---
+
+## Was dich erwartet
+
+Hier findest du Materialien, Hinweise und Termine zum Unterricht.
+
+- [Über mich](about.qmd)
+- [Materialien](material/index.qmd)
+```
+
+Beispiel für eine Material-Übersicht `material/index.qmd` mit automatischem Listing:
+
+```markdown
+---
+title: "Materialien"
+listing:
+  contents: .
+  sort: "date desc"
+  type: default
+---
+
+Hier erscheinen automatisch die Unterseiten in diesem Ordner.
+```
+
+Tipp: Neue Seiten einfach mit `File → New File → Quarto Document…` erstellen und an passender Stelle speichern.
+
+📸 Screenshot: Neues Quarto-Dokument anlegen
+
+---
+
+## Navigation steuern
+
+Die Reihenfolge im Menü bestimmst du in `_quarto.yml` unter `website.navbar.left`. Alles, was dort steht, erscheint oben. Unterpunkte legst du mit `menu:` an (siehe Beispiel oben).
+
+Optional kannst du statt einer Top-Navigation links eine Seitenleiste nutzen:
+
+```yaml
+website:
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - index.qmd
+      - about.qmd
+      - section: "Materialien"
+        contents:
+          - material/index.qmd
+          - material/arbeitsblatt.qmd
+```
+
+Nur eine der beiden Varianten gleichzeitig verwenden (Navbar oder Sidebar), sonst wirkt es unruhig.
+
+📸 Screenshot: Darstellung mit Sidebar
+
+---
+
+## Einstellungen pro Seite
+
+Jede `.qmd`-Seite kann eigene Optionen im Kopfbereich bekommen, zum Beispiel:
+
+```markdown
+---
+title: "Arbeitsblatt Prozentrechnung"
+toc: true
+page-layout: article
+---
+
+Hier steht der Inhalt.
+```
+
+Häufig genutzte Einstellungen:
+- `title`: Seitentitel in der Kopfzeile und im Browser-Tab
+- `toc: true`: Inhaltsverzeichnis auf der Seite
+- `page-layout`: z. B. `article`, `full`, `custom`
+
+---
+
+## Aussehen anpassen
+
+Du kannst ein Thema und eigenes CSS kombinieren. Im Beispiel oben verwenden wir `theme: cosmo` und zusätzlich `styles.css`.
+
+Beispiel für `styles.css`:
+
+```css
+/* Überschriften etwas größer */
+h1 { font-size: 2.0rem; }
+h2 { font-size: 1.6rem; }
+
+/* Maximale Breite für bessere Lesbarkeit */
+.quarto-container { max-width: 980px; }
+```
+
+📸 Screenshot: Browseransicht mit angepasstem Stil
+
+---
+
+## Webseite bauen und anschauen
+
+Ohne Terminal, direkt in Positron oder RStudio:
+
+1. Öffne `index.qmd`.
+2. Klicke oben rechts auf **Render**.
+3. Quarto baut die gesamte Seite und legt die Ergebnisse im Ordner `_site/` ab.
+4. Die Startseite öffnet sich im Browser.
+
+Wenn du später nur eine Seite änderst, genügt erneut **Render**. Quarto aktualisiert die Webseite.
+
+📸 Screenshot: Render-Button und fertige Seite im Browser
+
+---
+
+## Häufige Fragen
+
+**Wo liegen die fertigen Dateien?**  
+Im Ordner `_site/`. Dort befindet sich eine `index.html` und alle zugehörigen Dateien.
+
+**Wie bekomme ich die Seite ins Netz?**  
+Einfacher Start: Den gesamten Ordner `_site/` auf deinen Webspace kopieren. Fortgeschrittene Möglichkeiten sind Quarto Pub oder GitHub Pages. Für den Einstieg reicht lokales Testen und ggf. ein Webspace-Upload.
+
+**Was mache ich bei Fehlern in der Navigation?**  
+Prüfe Schreibweisen der Dateinamen und die Einrückungen in `_quarto.yml`. YAML reagiert empfindlich auf Einrückungen mit Leerzeichen.
+
+---
+
+## Zusammenfassung
+
+- Mit `_quarto.yml` steuerst du Navigation, Titel und Design der gesamten Webseite.
+- Jede Seite ist eine `.qmd`-Datei mit optionalen Seiteneinstellungen im Kopfbereich.
+- Ordne Inhalte in Ordnern wie `material/` und `images/`.
+- Mit **Render** baust du die komplette Webseite, die im Ordner `_site/` landet.

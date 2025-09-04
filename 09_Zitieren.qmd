@@ -1,0 +1,170 @@
+# Zotero: automatischer Export nach .bib und Einbindung in Quarto
+
+In diesem Kapitel richtest du Zotero so ein, dass deine Literatur **automatisch** als `.bib`-Datei exportiert wird und in Quarto korrekt zitiert wird – ideal für wissenschaftliches Arbeiten. Du brauchst keine Vorkenntnisse in LaTeX oder BibTeX.
+
+
+## Zielbild
+
+- Zotero verwaltet deine Quellen.
+- Eine Datei `refs/references.bib` wird **automatisch aktuell gehalten**.
+- Quarto nutzt diese `.bib`-Datei und erzeugt Zitate im Text und ein Literaturverzeichnis am Ende.
+
+
+## Voraussetzungen
+
+- Zotero ist installiert.
+- Empfohlen: **Better BibTeX (BBT)**-Erweiterung für Zotero (für stabile Zitier-Keys und Auto-Export).
+
+
+## Schritt A: Automatischen Export aus Zotero einrichten
+
+Es gibt zwei einfache Wege. Nutze den, der dir besser liegt.
+
+### Weg 1: Export direkt auf einer Sammlung
+
+1. Öffne Zotero.  
+2. Rechtsklick auf die **gewünschte Sammlung** (z. B. „Masterarbeit“).  
+3. **„Export Library…“** wählen.  
+4. **Format:** *Better BibTeX* auswählen.  
+5. **Häkchen setzen:** *Keep updated* (automatisch aktuell halten).  
+6. **Speicherort wählen:** in deinem Quarto-Projekt, z. B. `refs/references.bib`.  
+7. **OK**. Fertig.
+
+Jede Änderung in der Sammlung landet nun automatisch in `references.bib`.
+
+### Weg 2: Zentral in den Better‑BibTeX‑Einstellungen
+
+1. Zotero → **Einstellungen** → **Better BibTeX**.  
+2. Reiter **Automatic export**.  
+3. **„+“** klicken, die Sammlung wählen und als **Zielpfad** `refs/references.bib` angeben.  
+4. **On change** aktivieren (bei Änderungen automatisch exportieren).
+
+> Tipp: Lege im Projekt einen Ordner **`refs/`** an und speichere alle Literatur-Dateien (z. B. `references.bib`, `style.csl`) dort.
+
+
+## Schritt B: Quarto für Literatur konfigurieren
+
+Du kannst die Literatur **global** in `_quarto.yml` oder **pro Seite/Document** im YAML‑Kopf einstellen.
+
+### Global (für Website oder Book empfohlen)
+
+```yaml
+project:
+  type: website
+
+format:
+  html:
+    toc: true
+
+bibliography: refs/references.bib
+csl: refs/apa.csl        # optional: Zitationsstil (z. B. APA 7)
+link-citations: true     # verlinkt Zitate mit dem Literaturverzeichnis
+```
+
+### Pro Seite (im Kopf der .qmd-Datei)
+
+```markdown
+---
+title: "Methode"
+bibliography: refs/references.bib
+csl: refs/apa.csl
+link-citations: true
+---
+```
+
+Wenn du keinen `csl` angibst, nutzt Quarto einen Standardstil. Mit einer `.csl`-Datei (z. B. `apa.csl`, `chicago-author-date.csl`) bestimmst du den genauen Zitationsstil. Lege die Datei in `refs/` ab.
+
+
+## Schritt C: Zitieren im Text
+
+Verwende die **Zitier-Keys** aus Zotero (Better BibTeX erzeugt sie automatisch, z. B. `müller2021lernen`).
+
+Grundformen:
+
+```markdown
+Nachweis im Fließtext: @mueller2021lernen zeigt, dass …
+
+Klammernachweis: … wie mehrfach gezeigt wurde [@mueller2021lernen].
+
+Mehrere Quellen: [@mueller2021lernen; @meier2020; @smith2019]
+
+Seitenzahlen: [@mueller2021lernen, S. 23–25]  # „p.“/„S.“ ist nur Text
+
+Präfix/Suffix: Vgl. @mueller2021lernen, siehe auch [@smith2019, Kap. 3].
+```
+
+Beim **Rendern** erzeugt Quarto die korrekten Zitate und am Dokumentende automatisch das **Literaturverzeichnis**.
+
+
+## Option: Literaturverzeichnis sortieren und steuern
+
+- Die Sortierung und Formatierung übernimmt der **CSL‑Stil** (Datei `*.csl`).  
+- Falls du Quellen im Verzeichnis **aufführen, aber nicht zitieren** willst, nutze `nocite` im YAML‑Kopf:
+
+```markdown
+---
+nocite: |
+  @mueller2021lernen, @smith2019
+---
+```
+
+
+## Arbeitsweise in der Praxis
+
+1. Quellen **in Zotero sammeln** (PDFs, DOIs, Webseiten).  
+2. Sicherstellen, dass der **Auto‑Export** aktiv ist (Ziel: `refs/references.bib`).  
+3. In Quarto **`bibliography`** (und optional `csl`) setzen.  
+4. Mit **@key** im Text zitieren.  
+5. **Rendern** → Zitate und Literaturverzeichnis erscheinen automatisch.
+
+
+## Typische Probleme und Lösungen
+
+- **„Missing citation“ / Key wird nicht gefunden**  
+  - Stimmt der **Pfad** zu `refs/references.bib`?  
+  - Liegt die `.bib` wirklich **im Projekt** und heißt so wie im YAML?  
+  - Wurde Zotero **gerade aktualisiert** (Auto‑Export lief schon durch)? Notfalls in Zotero **„Refresh“** bzw. einmal manuell exportieren.
+
+- **Falscher Zitierstil**  
+  - CSL‑Datei prüfen (liegt sie in `refs/`?), Pfad in `_quarto.yml` korrekt?  
+  - Nach Änderung an `csl` **neu rendern**.
+
+- **Umlaute/Zeichensatz**  
+  - In Zotero Datensätze sauber pflegen (Autoren, Titel).  
+  - Better BibTeX sorgt normalerweise für korrekte Unicode‑Ausgabe.
+
+- **Unklare Zitier-Keys**  
+  - In Zotero (BBT) kannst du den Key **pinnen**: Rechtsklick auf Eintrag → *Better BibTeX → Pin Citation Key* (ändert sich dann nicht mehr).
+
+
+## Beispiel-Miniprojekt (Struktur)
+
+```
+mein-projekt/
+├─ _quarto.yml
+├─ index.qmd
+├─ text.qmd
+└─ refs/
+   ├─ references.bib
+   └─ apa.csl
+```
+
+In `index.qmd` zitierst du z. B. so:
+
+```markdown
+---
+title: "Beispiel"
+bibliography: refs/references.bib
+csl: refs/apa.csl
+link-citations: true
+---
+
+Ein klassisches Ergebnis ist @smith2019. Für Details siehe [@mueller2021lernen, S. 45].
+```
+
+
+## Zusammenfassung
+
+- Richte in Zotero (mit Better BibTeX) einen **Auto‑Export** deiner Sammlung nach `refs/references.bib` ein.  
+- Verweise in Quarto per `bibliography:` (und optional `csl:`) auf diese Dateien.  
+- Zitiere mit **@key** – Quarto erzeugt Zitate und Literaturverzeichnis automatisch.

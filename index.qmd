@@ -1,5 +1,118 @@
-# Preface {.unnumbered}
+# Was ist Quarto?
 
-This is a Quarto book.
+## Lernziele
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Nach diesem Kapitel verstehst du:
+
+- was Quarto ist und wie es sich von anderen Tools unterscheidet,
+- wofür es in der Lehre sinnvoll eingesetzt werden kann,
+- welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von **Folien mit Quellenangaben** und **statischen Webseiten**.
+
+---
+
+## Was ist Quarto?
+
+> **Quarto** ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.
+
+Quarto basiert auf **Markdown**, einem leicht erlernbaren Textformat, und kann sowohl **statischen Inhalt** (Text, Bilder, Tabellen) als auch **dynamischen Inhalt** (z. B. R- oder Python-Code) integrieren.
+
+Quarto ist der offizielle Nachfolger von [R Markdown](https://rmarkdown.rstudio.com/) und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.
+
+---
+
+## Was kann ich mit Quarto erstellen?
+
+| Format         | Anwendung in der Lehre                            |
+|----------------|----------------------------------------------------|
+| **Präsentationen** | Slides für Lerngelegenheiten |
+| **PDF / Word**     | Handouts, Prüfungen, Skripte                   |
+| **Webseiten**      | Kurswebseiten, Forschungsprojekte, ePortfolios |
+
+> **Alles** aus **einer einzigen `.qmd`-Datei**!
+
+---
+
+## Beispiel: Lehr-Slides mit Quellenangaben
+
+Quarto-Präsentationen lassen sich in wenigen Sekunden in **HTML**, **Reveal.js**, **PowerPoint** oder **PDF (Beamer)** umwandeln – inklusive:
+
+- automatischer **Quellenangaben** (z. B. mit `literatur.bib`)
+- eingebetteter **Bilder**, **Diagramme** und **Formeln**
+- optional: interaktive Inhalte (Diagramme, Code-Ausgabe)
+
+````markdown
+---
+title: "Einführung in Statistik"
+format: revealjs
+bibliography: literatur.bib
+csl: apa.csl
+---
+
+## Deskriptive Statistik
+
+- Mittelwert, Median, Modus
+- Standardabweichung, Varianz
+
+> "Statistics is the grammar of science." – Karl Pearson [@pearson1901]
+````
+Die Quelle [@knuth84] wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.
+
+## Beispiel: Statische Webseite für Ihre Lehrveranstaltung
+
+Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.
+
+Projektstruktur:
+
+````
+📁 mein-kurs/
+├── _quarto.yml
+├── index.qmd         # Startseite
+├── literatur.qmd     # Literaturverzeichnis
+├── sitzung1.qmd
+├── sitzung2.qmd
+└── ...
+````
+Beispielhafte Konfiguration (`_quarto.yml`):
+
+````
+project:
+  type: website
+
+website:
+  title: "Digitale Didaktik"
+  navbar:
+    left:
+      - text: "Start"
+        file: index.qmd
+      - text: "Literatur"
+        file: literatur.qmd
+````
+Nach dem Ausführen von:
+```terminal
+quarto render
+```
+
+oder durch Klicken auf "Render" in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.
+
+## Vorteile für Dozierende
+
+| Vorteil                | Beschreibung                                           |
+| ---------------------- | ------------------------------------------------------ |
+| **Effizienz**          | Ein Dokument, viele Ausgabeformate                     |
+| **Wissenschaftlich**   | Automatische Literaturverweise, APA, MLA, Chicago etc. |
+| **Wiederverwendbar**   | Inhalte lassen sich modular aufbauen                   |
+| **Offen & nachhaltig** | Offenes Textformat, langfristig lesbar, versionierbar  |
+
+## Literatur
+Quellen werden automatisch aus der Datei `literatur.bib` geladen.
+
+Beispielinhalt für `literatur.bib`:
+
+````
+@book{pearson1901,
+  author = {Karl Pearson},
+  title = {The Grammar of Science},
+  year = {1901},
+  publisher = {Adam and Charles Black}
+}
+````

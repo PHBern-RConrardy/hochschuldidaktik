@@ -1,0 +1,141 @@
+# Dein erstes Quarto-Dokument
+
+Nun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!
+
+Wir arbeiten Schritt für Schritt.
+
+---
+
+## 1. Starte RStudio
+
+Öffne RStudio auf deinem Computer.
+
+📸 *Screenshot: RStudio Startbildschirm*
+
+---
+
+## 2. Neues Quarto-Dokument erstellen
+
+Klicke oben links auf **File** → **New File** → **Quarto Document...**
+
+📸 *Screenshot: File > New File > Quarto Document...*
+
+Ein neues Fenster erscheint. Dort kannst du folgende Angaben machen:
+
+- **Title**: Gib z. B. „Mein erstes Quarto-Dokument“ ein  
+- **Author**: Deinen Namen  
+- **Format**: Wähle „HTML“  
+- Klicke auf **Create**
+
+📸 *Screenshot: Quarto-Dokument erstellen (mit ausgefüllten Feldern)*
+
+---
+
+## 3. Überblick über das Dokument
+
+Quarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:
+
+```markdown
+---
+title: "Mein erstes Quarto-Dokument"
+author: "Max Muster"
+format: html
+---
+
+## Einführung
+
+Dies ist mein erstes Quarto-Dokument.
+
+Was wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.
+
+```
+
+Was du oben siehst, nennt sich YAML-Header (der Teil zwischen `---`), da stehen Titel, Autor:in und das gewünschte Format. Du musst ihn meistens nicht verändern.
+
+Der Rest ist Text, den du einfach schreiben kannst.
+
+## Dokument „rendern“ (also erstellen)
+
+Klicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch im Browser geöffnet wird.
+
+📸 Screenshot: Render-Button
+
+Du solltest nun dein erstes Quarto-Dokument im Browser sehen – gratuliere!
+
+5. Nächste Schritte
+
+Du kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:
+
+```markdown
+## Meine Themen
+
+Ich unterrichte gerne Mathematik.
+
+## Warum ich Quarto nutze
+
+Weil es einfach ist und schön aussieht.
+```
+
+Klicke wieder auf Render, um das aktualisierte Dokument zu sehen.
+
+Tipp: Speichern nicht vergessen
+
+Vergiss nicht, dein Dokument unter einem passenden Namen zu speichern:
+File → Save As...
+
+📸 Screenshot: Speichern unter Dialog
+
+## Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)
+
+Du kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch **als Word-Datei (docx)**, **PowerPoint-Folie (pptx)** oder sogar als **interaktive Präsentation (reveal.js)** ausgeben – und zwar mit einem kleinen Trick:
+
+### Format ändern
+
+Im oberen Teil deines Dokuments (dem YAML-Header) steht so etwas wie:
+
+```markdown
+---
+title: "Mein erstes Quarto-Dokument"
+author: "Max Muster"
+format: html
+---
+```
+
+Wenn du nun statt `html` z. B. `docx` einträgst, wird dein Dokument beim Rendern als Word-Datei erstellt:
+
+```markdown
+format: docx
+```
+
+Dasselbe geht auch für PowerPoint:
+
+```markdown
+format: pptx
+```
+
+Oder für eine schöne interaktive Präsentation mit „reveal.js“:
+
+```markdown
+format: revealjs
+```
+
+Hinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert.
+Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).
+
+📸 Screenshot: YAML-Header mit unterschiedlichen Formaten
+
+## Mehrere Formate auf einmal?
+
+Ja, sogar das geht – einfach so schreiben:
+
+```markdown
+format:
+  html: default
+  docx: default
+  pptx: default
+```
+Dann erzeugt Quarto beim Rendern alle drei Dateien gleichzeitig.
+
+📸 Screenshot: Render mit mehreren Formaten
+
+In den nächsten Kapiteln zeigen wir dir, wie du Inhalte noch schöner gestalten kannst – z. B. mit Listen, Bildern, Tabellen oder eingebauten Übungsfragen.

@@ -1,0 +1,127 @@
+# Diagramme mit Mermaid.js in Quarto
+
+Quarto unterstützt **Mermaid.js** – eine einfache Sprache, um Diagramme direkt im Text zu beschreiben. Beim Rendern wird daraus automatisch eine saubere Grafik. Das ist praktisch für Unterricht, Forschung und Präsentationen, ohne externe Programme.
+
+---
+
+## Grundidee
+
+Du schreibst einen Codeblock mit der Sprache `mermaid`:
+
+````markdown
+```mermaid
+graph TD
+    A[Start] --> B[Unterrichtsphase]
+    B --> C{Frage gestellt?}
+    C -->|Ja| D[Austausch in Gruppen]
+    C -->|Nein| E[Input durch Lehrperson]
+    D --> F[Zusammenfassung]
+    E --> F[Zusammenfassung]
+```
+````
+
+Beim Rendern entsteht ein Flussdiagramm.
+
+
+## Beispiele für die Lehre
+
+### 1. Unterrichtsablauf darstellen (Flowchart)
+
+```{mermaid}
+graph TD
+    A[Einführung] --> B[Gruppenarbeit]
+    B --> C[Präsentation]
+    C --> D[Reflexion]
+```
+
+So kannst du den Ablauf einer Lektion oder eines Moduls skizzieren.
+
+
+### 2. Entscheidungsdiagramm
+
+```{mermaid}
+graph LR
+    A[Problem] --> B{Kenntnisse vorhanden?}
+    B -->|Ja| C[Selbstständig lösen]
+    B -->|Nein| D[Unterstützung durch LP]
+```
+
+Ideal, um **didaktische Entscheidungswege** oder **Lernstrategien** zu visualisieren.
+
+
+### 3. Organigramm oder Rollen im Projekt
+
+```{mermaid}
+graph TB
+    Leitung[Projektleitung] --> Doz1[Dozent:in A]
+    Leitung --> Doz2[Dozent:in B]
+    Doz1 --> Stud1[Studierende Gruppe 1]
+    Doz2 --> Stud2[Studierende Gruppe 2]
+```
+
+Gut für Kursorganisation oder Projekte.
+
+
+### 4. Zeitachse (Gantt-Diagramm)
+
+Mermaid kann auch Gantt-Diagramme – für Semesterplanungen oder Projektphasen.
+
+```{mermaid}
+gantt
+    dateFormat  YYYY-MM-DD
+    title Semesterplan
+    section Modul A
+    Einführung       :a1, 2025-09-15, 7d
+    Übungen          :after a1, 14d
+    Leistungsnachweis:2025-10-15, 7d
+    section Modul B
+    Start            :2025-11-01, 14d
+    Projektarbeit    :2025-11-15, 21d
+```
+
+
+### 5. Konzeptkarten (mindmap-ähnlich)
+
+Mermaid unterstützt einfache Hierarchien mit `graph`:
+
+```{mermaid}
+graph TD
+    Lernen --> Motivation
+    Lernen --> Strategien
+    Motivation --> Intrinsisch
+    Motivation --> Extrinsisch
+    Strategien --> Wiederholen
+    Strategien --> Verstehen
+```
+
+Das ist nützlich für **Begriffsnetze** oder **didaktische Modelle**.
+
+
+---
+
+## Tipps für die Praxis
+
+- Jeder Codeblock beginnt mit ```` ```{mermaid} ```` und endet mit ``` ``` ```  
+- Nutze eckige Klammern `[Text]` für Kästen, geschweifte `{Frage?}` für Entscheidungsdiamanten.  
+- `graph TD` = Top → Down (oben nach unten), `graph LR` = Left → Right (links nach rechts).  
+- Bei Gantt-Diagrammen: Datumsformat `YYYY-MM-DD`.  
+- Kürzere Texte in Kästen halten die Diagramme übersichtlich.  
+- Für komplexere Strukturen ist es oft besser, mehrere kleine Diagramme statt ein sehr großes zu verwenden.
+
+
+---
+
+## Häufige Fehler
+
+- **Diagramm wird nicht angezeigt**: Prüfe, ob der Codeblock wirklich mit ```` ```{mermaid} ```` beginnt.  
+- **Merkwürdige Zeichen oder Layout**: Weniger Sonderzeichen verwenden, ggf. kurze Labels.  
+- **Sehr große Diagramme**: Besser in zwei kleinere Diagramme teilen.
+
+
+---
+
+## Zusammenfassung
+
+- Mit `mermaid`-Codeblöcken kannst du **Diagramme direkt in Quarto** schreiben.  
+- Nützlich für Unterricht: **Abläufe, Entscheidungsbäume, Organigramme, Zeitpläne, Konzeptkarten**.  
+- Syntax ist einfach, Ergebnisse sind sofort im Dokument sichtbar.

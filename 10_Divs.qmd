@@ -1,0 +1,208 @@
+# Callouts, Figures und weitere `:::-` Elemente
+
+In diesem Kapitel lernst du die wichtigsten „Baukasten“-Elemente mit `:::` kennen: **Callouts** (Hinweisboxen), **Figures** (Bilder mit Beschriftung), **Columns** (Inhalte nebeneinander), **Tabsets** (Reiter) und **eigene Divs**. Du brauchst dafür keine HTML-Kenntnisse.
+
+
+## Grundprinzip: Divs mit `:::` öffnen und schliessen
+
+Viele erweiterte Elemente beginnen mit `:::` und enden mit `:::`. Die **Art** des Elements steuerst du mit einer **Klasse** in geschweiften Klammern:
+
+```markdown
+::: {.meine-klasse}
+Inhalt hier …
+:::
+```
+
+Quarto erkennt an der Klasse (z. B. `.callout-note`), was daraus werden soll.
+
+
+## Callouts (Hinweisboxen)
+
+Callouts eignen sich für Tipps, Warnungen oder Beispiele. Häufige Varianten sind: `note`, `tip`, `warning`, `important`, `caution`.
+
+```markdown
+::: {.callout-note}
+### Hinweis
+So fügst du eine kurze Erklärung ein.
+:::
+
+::: {.callout-tip}
+### Tipp
+Das ist besonders praktisch beim Erklären von Arbeitsschritten.
+:::
+
+::: {.callout-warning}
+### Achtung
+Hier bitte genau lesen, sonst klappt es nicht.
+:::
+```
+
+Du kannst Überschriften weglassen oder kürzer schreiben – wichtig ist die Klasse `.callout-…`.
+
+📸 Screenshot: Drei Callouts nebeneinander/untereinander
+
+
+## Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)
+
+Es gibt zwei bequeme Wege. Wähle einen und bleibe dabei konsistent.
+
+### Weg 1: Markdown-Bild mit Bildunterschrift und Attributen
+
+```markdown
+![Bildunterschrift: Logo PHBern](images/phbern-logo.png){fig-align="center" width="50%"}
+```
+
+- `fig-align="center"` zentriert das Bild.  
+- `width="50%"` skaliert die Breite relativ zur Seite.
+
+### Weg 2: Div mit `figure`-Rolle
+
+::: {#fig-logo}
+![Logo PHBern](screenshots/gui_projekt.png){width="45%"}
+
+*Logo der PHBern*
+:::
+
+```markdown
+::: {#fig-logo phbern .figure}
+![Logo PHBern](screenshots/gui_projekt.png){width="45%"}
+
+*Logo der PHBern*
+:::
+```
+
+- Die letzte Zeile ist die Bildunterschrift (kursiv).  
+- Mit einer ID wie `{#fig-logo}` kannst du **verweisen**: *siehe @fig-logo*.
+
+
+## Columns (Inhalte nebeneinander)
+
+Mit Columns kannst du Text und Bild oder zwei Texte **nebeneinander** darstellen.
+
+```markdown
+::: {.columns}
+::: {.column width="60%"}
+**Text links:** Hier steht der Hauptinhalt. Du kannst Überschriften, Listen und Bilder verwenden.
+:::
+::: {.column width="40%"}
+**Rechts:** Ein Bild oder eine Liste.
+![Logo](screenshots/gui_projekt.png){width="80%"}
+:::
+:::
+```
+
+- Die Summe der Breiten sollte ungefähr 100 % ergeben.  
+- Ohne `width` teilt Quarto den Platz automatisch.
+
+
+## Tabsets (Reiter)
+
+Tabsets sind nützlich, wenn du Varianten oder Beispiele trennen willst (z. B. zwei Lösungswege).
+
+```markdown
+::: {.panel-tabset}
+## Variante A
+Kurze Erklärung für die erste Variante.
+
+## Variante B
+Alternative Darstellung mit anderem Beispiel.
+
+## Häufige Fragen
+Antworten zu typischen Rückfragen.
+:::
+```
+
+- Jede **Überschrift der Ebene 2** (`##`) wird zu einem Tab.  
+- Du kannst innerhalb der Tabs ganz normalen Markdown verwenden.
+
+
+## Eigene Divs für Gestaltung oder Logik
+
+Wenn du später mit CSS arbeitest oder Abschnitte gezielt ansprechen willst, kannst du eigene Klassen vergeben:
+
+```markdown
+::: {.lernziel}
+**Lernziele**
+- Ich kann Callouts einsetzen.
+- Ich kann Bilder mit Bildunterschriften zentrieren.
+:::
+```
+
+Später könntest du `.lernziel` in `styles.css` gestalten (z. B. Rahmen, Hintergrund).
+
+
+## Kombinationen
+
+Elemente lassen sich kombinieren – zum Beispiel ein Callout **mit** Columns:
+
+```markdown
+::: {.callout-note}
+### Beispiel mit zwei Spalten
+
+::: {.columns}
+::: {.column}
+- Punkt A
+- Punkt B
+:::
+::: {.column}
+![Skizze](screenshots/gui_projekt.png){width="90%"}
+:::
+:::
+:::
+```
+
+Achte beim Verschachteln auf die **Reihenfolge** und schließe jedes `:::`.
+
+
+## Häufige Fehler und Lösungen
+
+- **„Unerwartetes Ende“ oder komisches Layout**: Meist fehlt ein schließendes `:::`. Zähle die Blöcke und schließe sie von innen nach außen.  
+- **Klasse wirkt nicht**: Stimmt die Schreibweise? (`.callout-tip`, `.panel-tabset`, `.columns`, `.column`)  
+- **Bilder zu groß/klein**: Mit `width="…"` anpassen (z. B. `width="60%"`).  
+- **Verweise auf Figures** funktionieren nicht: Verwende eine **ID** (z. B. `{#fig-logo}`) und verweise mit `@fig-logo`.
+
+
+## Mini-Vorlage zum Kopieren
+
+```markdown
+# Titel
+
+Einführungstext …
+
+::: {.callout-tip}
+### Tipp
+Kurzer Hinweis für die Studierenden.
+:::
+
+## Beispiel mit Bild
+
+![Beispielbild](screenshots/gui_positron_inception.png){fig-align="center" width="60%"}
+
+## Zwei Spalten
+
+::: {.columns}
+::: {.column width="55%"}
+Text hier …
+:::
+::: {.column width="45%"}
+![Grafik](screenshots/gui_positron_inception.png){width="90%"}
+:::
+:::
+
+## Varianten im Tabset
+
+::: {.panel-tabset}
+### Variante 1
+Erklärung …
+
+### Variante 2
+Alternative …
+:::
+```
+
+
+## Zusammenfassung
+
+- `:::` eröffnet/endet einen **Div-Block** – die Klasse in `{…}` steuert die Art.  
+- **Callouts** für Hinweise, **Figures** für Bilder mit Beschriftungen, **Columns** für zwei Spalten, **Tabsets** für Reiter.  
+- Saubere Verschachtelung und korrekte Klassen sind entscheidend.

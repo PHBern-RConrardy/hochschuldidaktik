@@ -1,0 +1,106 @@
+# Tabellen, Formeln und interaktive Inhalte
+
+In diesem Kapitel lernst du, wie du in Quarto Tabellen, mathematische Formeln und einfache interaktive Inhalte einbauen kannst.
+
+---
+
+## Tabellen erstellen
+
+Tabellen lassen sich in Quarto sehr einfach schreiben. Hier ein Beispiel:
+
+```markdown
+| Name       | Fach        | Klasse |
+|------------|-------------|--------|
+| Anna Meyer | Mathematik  | 7A     |
+| Tom Berger | Deutsch     | 8B     |
+```
+
+Ergebnis:
+
+| Name       | Fach        | Klasse |
+|------------|-------------|--------|
+| Anna Meyer | Mathematik  | 7A     |
+| Tom Berger | Deutsch     | 8B     |
+
+---
+
+## Mathematische Formeln
+
+Quarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichtig:
+
+### Formeln im Text
+
+```markdown
+Die Fläche berechnet sich mit $A = a \times b$.
+```
+
+Ergebnis: Die Fläche berechnet sich mit $A = a \times b$.
+
+### Formeln als Block
+
+```markdown
+$$
+E = mc^2
+$$
+```
+
+Ergebnis:
+
+$$
+E = mc^2
+$$
+
+---
+
+## Interaktive Inhalte: Quizzes und Code
+
+Mit Quarto kannst du sogar kleine interaktive Elemente einbauen.
+
+### Quiz-Fragen
+
+Ein einfaches Multiple-Choice-Beispiel:
+
+```markdown
+::: {.callout-tip}
+### Kleine Quizfrage
+
+Welche Zahl ist prim?
+
+- [ ] 8
+- [x] 7
+- [ ] 9
+:::
+```
+
+Beim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.
+
+- [ ] 8
+- [x] 7
+- [ ] 9
+
+---
+
+### Code einfügen
+
+Wenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:
+
+```markdown
+```r
+x <- 1:5
+mean(x)
+```
+```
+
+
+
+Das wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.
+
+---
+
+## Zusammenfassung
+
+- Tabellen sind einfach mit Strichen und Pipes (`|`) zu schreiben.  
+- Formeln funktionieren mit LaTeX-Syntax (`$...$`).  
+- Interaktive Elemente wie Quizzes oder Codeblöcke machen deine Materialien lebendig.
+
+Im nächsten Kapitel schauen wir uns an, wie man **Quarto Book** noch besser organisiert und Kapitel miteinander verknüpft.

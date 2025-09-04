@@ -1,0 +1,89 @@
+# Texte gestalten mit Quarto
+
+Jetzt, wo du dein erstes Quarto-Dokument erstellt hast, schauen wir uns an, wie du den Text schön und übersichtlich gestalten kannst.
+
+---
+
+## Überschriften
+
+Überschriften helfen dabei, deinen Text zu strukturieren. Sie funktionieren ganz einfach:
+
+```markdown
+# Titel (ganz oben)
+## Kapitelüberschrift
+### Unterkapitel
+```
+
+Je mehr `#`, desto kleiner die Überschrift.
+
+---
+
+## ✍️ Textformatierungen
+
+Hier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:
+
+| Format     | So schreibst du es          | Ergebnis             |
+|------------|-----------------------------|----------------------|
+| **Fett**   | `**dieser Text**`           | **dieser Text**      |
+| *Kursiv*   | `*dieser Text*`             | *dieser Text*        |
+| `Code`     | `` `dieser Text` ``         | `dieser Text`        |
+| Link       | `[Text](https://example.com)` | [Text](https://example.com) |
+
+---
+
+## 📋 Listen
+
+Listen sind super, um Dinge übersichtlich darzustellen.
+
+### Ungeordnete Liste (•):
+
+```markdown
+- Apfel
+- Banane
+- Orange
+```
+
+Ergibt:
+
+- Apfel  
+- Banane  
+- Orange
+
+### Geordnete Liste (1., 2., 3.):
+
+```markdown
+1. Einschalten
+2. Rendern
+3. Speichern
+```
+
+Ergibt:
+
+1. Einschalten  
+2. Rendern  
+3. Speichern
+
+---
+
+## Bilder einfügen
+
+Bilder lassen sich ganz einfach einfügen – ähnlich wie Links:
+
+```markdown
+![Beschreibung](bildname.png)
+```
+
+Beispiel:
+
+```markdown
+![Logo PHBern](phbern-logo.png)
+```
+
+> 📸 Tipp: Lege dein Bild in denselben Ordner wie dein `.qmd`-Dokument.
+
+---
+
+## Nächster Schritt
+
+Im nächsten Kapitel lernst du, wie du **Tabellen**, **Matheformeln** und sogar **interaktive Inhalte** wie Quiz oder Codeblöcke nutzen kannst. Quarto kann viel – aber alles Schritt für Schritt.
+

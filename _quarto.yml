@@ -3,21 +3,30 @@ project:
 
 book:
   title: "Quarto für die PHBern"
+  subtitle: "Eine Gebrauchsanweisung aus der Praxis"
   author: "Richard Conrardy"
   date: today
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - 02_wo_schreibe_ich.qmd
+    - 03_erstes_Dokument.qmd
+    - 04_Formatieren.qmd
+    - 05_Tabellen.qmd
+    - 06_Webseiten.qmd
+    - 07_Layouten.qmd
+    - 08_Publizieren.qmd
+    - 09_Zitieren.qmd
+    - 10_Divs.qmd
+    - 11_Mermaid.qmd
+    - 12_Quiz.qmd
 
 bibliography: references.bib
 
 format:
   html:
+    mermaid:
+      format: svg
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
 
 
 
