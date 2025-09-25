@@ -1,5 +1,11 @@
+---
+lightbox: true
+---
+
 # Was ist Quarto?
 
+
+:::{.callout-note}
 ## Lernziele
 
 Nach diesem Kapitel verstehst du:
@@ -7,18 +13,17 @@ Nach diesem Kapitel verstehst du:
 - was Quarto ist und wie es sich von anderen Tools unterscheidet,
 - wofür es in der Lehre sinnvoll eingesetzt werden kann,
 - welche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von **Folien mit Quellenangaben** und **statischen Webseiten**.
+:::
 
----
 
 ## Was ist Quarto?
 
-> **Quarto** ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.
+> **Quarto** ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst, z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr, alles aus einem einzigen Dokument.
 
-Quarto basiert auf **Markdown**, einem leicht erlernbaren Textformat, und kann sowohl **statischen Inhalt** (Text, Bilder, Tabellen) als auch **dynamischen Inhalt** (z. B. R- oder Python-Code) integrieren.
+Quarto basiert auf [Markdown](https://quarto.org/docs/authoring/markdown-basics.html), einem leicht erlernbaren Textformat, und kann sowohl **statischen Inhalt** (Text, Bilder, Tabellen) als auch **dynamischen Inhalt** (z. B. R- oder Python-Code) integrieren.
 
-Quarto ist der offizielle Nachfolger von [R Markdown](https://rmarkdown.rstudio.com/) und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.
+Quarto ist der offizielle Nachfolger von [R Markdown](https://rmarkdown.rstudio.com/) und wurde für eine grössere Zielgruppe entwickelt.
 
----
 
 ## Was kann ich mit Quarto erstellen?
 
@@ -28,17 +33,91 @@ Quarto ist der offizielle Nachfolger von [R Markdown](https://rmarkdown.rstudio.
 | **PDF / Word**     | Handouts, Prüfungen, Skripte                   |
 | **Webseiten**      | Kurswebseiten, Forschungsprojekte, ePortfolios |
 
-> **Alles** aus **einer einzigen `.qmd`-Datei**!
+Alles aus einer einzigen Textdatei!
 
+:::: {.columns}
+::: {.column}
+
+**Word**
+```markdown
 ---
+title: "Reichhaltige Motivation"
+author: Richard Conrardy
+format: docx
+---
+# Überschrift 1
+## Überschrift 1.1
+```
 
-## Beispiel: Lehr-Slides mit Quellenangaben
+:::
+::: {.column}
 
-Quarto-Präsentationen lassen sich in wenigen Sekunden in **HTML**, **Reveal.js**, **PowerPoint** oder **PDF (Beamer)** umwandeln – inklusive:
+**Webseite**
 
-- automatischer **Quellenangaben** (z. B. mit `literatur.bib`)
-- eingebetteter **Bilder**, **Diagramme** und **Formeln**
+```markdown
+---
+title: "Reichhaltige Motivation"
+author: Richard Conrardy
+format: html
+---
+# Überschrift 1
+## Überschrift 1.1
+```
+
+:::
+::: {.column}
+
+**Slides**
+```markdown
+---
+title: "Reichhaltige Motivation"
+author: Richard Conrardy
+format: revealjs
+---
+# Kapitel 1
+## Slide 1
+```
+:::
+
+::: {.column}
+
+**Powerpoint**
+```markdown
+---
+title: "Reichhaltige Motivation"
+author: Richard Conrardy
+format: pptx
+---
+# Kapitel 1
+## Slide 1
+```
+:::
+
+::::
+
+Du kannst sogar gleichzeitig mehrere Formate generieren und verlinken, so können Studierende den Inhalt der Präsentation sofort als Word downloaden:
+
+```markdown
+---
+title: "Reichhaltige Motivation"
+author: Richard Conrardy
+format: 
+  revealjs: default
+  docx: default
+---
+# Überschrift 1
+## Slide 1
+```
+
+## Beispiel 1: Lehr-Slides mit Quellenangaben
+
+Quarto-Präsentationen lassen sich in wenigen Sekunden in [Reveal.js](https://revealjs.com/), PowerPoint oder [PDF (Beamer)](https://www.overleaf.com/learn/latex/Beamer%23Creating_a_table_of_contents) umwandeln, inklusive:
+
+- automatischer **Quellenangaben** und verwalteter Zitationsstyl
+- eingebetteter **Bilder**, **Diagramme** und **Formeln** mit Aufzählung (*Abbildung 1: ...*)
 - optional: interaktive Inhalte (Diagramme, Code-Ausgabe)
+
+
 
 ````markdown
 ---
@@ -53,17 +132,33 @@ csl: apa.csl
 - Mittelwert, Median, Modus
 - Standardabweichung, Varianz
 
-> "Statistics is the grammar of science." – Karl Pearson [@pearson1901]
-````
-Die Quelle [@knuth84] wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.
+> Qualitative Inhaltsanalyse stellt eine Auswertungsmethode dar, [@Mayring2022, S.691]
 
-## Beispiel: Statische Webseite für Ihre Lehrveranstaltung
+::: {#refs}
+:::
+````
+Die Quelle [@Mayring2022, S.691] wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei `literatur.bib` vorhanden ist. Die `apa.csl` defniert den Zitationsstil (APA7, Chigago, ...). 
+
+Das Literaturverzeichnis wird automatisch an den Schluss gestellt oder wird explizit mit dem [Shortcode](https://quarto.org/docs/authoring/citations.html#bibliography-generation) `:::{#refs}`platziert.
+
+## Beispiel: Statische Webseite für deine Lehrveranstaltung
 
 Quarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.
 
+::: {#fig-elephants layout-ncol=2}
+
+![Webseite mit Linksammlungen für Eigengebrauch](screenshots/webseite_blau.png){#fig-webseite1}
+
+![Webseite für Lernende](screenshots/webseite_rot.png){#fig-webseite2}
+
+Beispiele von Webseiten
+:::
+
+Webseiten werden durch die Benutzung einer spezieller Ordnerstruktur angelegt. 
+
 Projektstruktur:
 
-````
+````markdown
 📁 mein-kurs/
 ├── _quarto.yml
 ├── index.qmd         # Startseite
@@ -72,9 +167,12 @@ Projektstruktur:
 ├── sitzung2.qmd
 └── ...
 ````
+
+Dabei ist `index.qmd` immer die Startseite und `_quarto.yml`(ausgesprochen *Yaml*) ist die Konfigurationsdatei, in der du Meta-Informationen zur Webseite angibst (z.B. Farben oder Literaturliste).
+
 Beispielhafte Konfiguration (`_quarto.yml`):
 
-````
+````markdown
 project:
   type: website
 
@@ -87,12 +185,16 @@ website:
       - text: "Literatur"
         file: literatur.qmd
 ````
-Nach dem Ausführen von:
+
+Diese Seite, welche du gerade liest, ist übrigens eine leichte Abwandlung einer Webseite, sie wurde mit `type: book`erstellt, weshalb die Kapitel auch nummeriert sind.
+
+Die fertige Webseite wird aufgrund der Textdateien (`.qmd`) mit einem Knopfdruck in einem speziellen Textprogramm erstellt (genauer: kompiliert). Alternativ kannst du es auch über einen Befehl im Terminal erstellen lassen: 
+
 ```terminal
 quarto render
 ```
 
-oder durch Klicken auf "Render" in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.
+Die Webseite kannst du problemlos gratis und werbefrei publizieren, auch das ist ein simpler Befehl im Terminal `quarto publish`. Beispielsweise kannst du es über [Github](https://github.com/) oder [Quartopub](https://quartopub.com/) publizieren.
 
 ## Vorteile für Dozierende
 
@@ -102,17 +204,4 @@ oder durch Klicken auf "Render" in RStudio entsteht eine vollständig verlinkte,
 | **Wissenschaftlich**   | Automatische Literaturverweise, APA, MLA, Chicago etc. |
 | **Wiederverwendbar**   | Inhalte lassen sich modular aufbauen                   |
 | **Offen & nachhaltig** | Offenes Textformat, langfristig lesbar, versionierbar  |
-
-## Literatur
-Quellen werden automatisch aus der Datei `literatur.bib` geladen.
-
-Beispielinhalt für `literatur.bib`:
-
-````
-@book{pearson1901,
-  author = {Karl Pearson},
-  title = {The Grammar of Science},
-  year = {1901},
-  publisher = {Adam and Charles Black}
-}
-````
+| **Erweiterungen** | Jedermann kann und darf Erweiterungen für Quarto schreiben und veröffentlichen|

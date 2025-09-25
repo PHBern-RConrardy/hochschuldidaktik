@@ -24,9 +24,11 @@ bibliography: references.bib
 
 format:
   html:
+    lang: de
     mermaid:
       format: svg
     theme: cosmo
+
 
 
 

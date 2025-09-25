@@ -1,5 +1,6 @@
 # Quarto starten ohne Terminal
 
+:::{.callout-note}
 ## Lernziele
 
 Nach diesem Kapitel verstehst du:
@@ -8,47 +9,54 @@ Nach diesem Kapitel verstehst du:
 - wie du Quarto **auch ohne Terminalwissen** nutzen können,
 - welche Programme du dafür brauchst (RStudio, VS Code, Positron),
 
----
+:::
 
 ## Was ist ein Terminal?
 
-Ein **Terminal** (auch "Befehlszeile" oder "Konsole") ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst.
+Ein **Terminal** (auch "Befehlszeile" oder "Konsole") ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst. Auf MacOS heisst das Programm tatsächlich `Terminal`, auf Windows kann auch die `Powershell`genutzt werden.
 
 Ein typisches Beispiel (unter Windows):
 `quarto render dokument.qmd``
 
-Dieser Befehl sagt Quarto: "Bitte render das Dokument `dokument.qmd`."
+Dieser Befehl sagt Quarto: "Bitte render (erstelle) das Dokument `dokument.qmd`."
+Die `.qmd`-Datei ist eine reine Textdatei, ähnlich `.txt`-Dateien, somit können sie grundsätzlich mit jedem Texteditor (ja, sogar Word) geöffnet und bearbeitet werden.
 
 Für viele Lehrende ist das Terminal ungewohnt oder abschreckend. Die gute Nachricht:
 
 > **Du musst das Terminal nicht nutzen**, um mit Quarto zu arbeiten!
 
-## Warum braucht Quarto trotzdem das Terminal?
+## Mit welchem Programm schreibe ich?
 
-Quarto selbst ist ein sogenanntes **CLI-Programm** (Command Line Interface). Es **läuft im Hintergrund** über die Befehlszeile – selbst wenn du es über RStudio oder VS Code bedienst.
+Quarto selbst ist ein sogenanntes **CLI-Programm** (Command Line Interface). Es **läuft im Hintergrund** über die Befehlszeile, selbst wenn du es über RStudio oder VS Code bedienst.
 
 Das bedeutet:
 - Die Benutzeroberfläche (GUI) ist nicht in Quarto selbst enthalten.
-- Aber: Viele moderne Editoren *können Quarto einbetten* – damit wird alles bequem klickbar.
+- Aber: Viele moderne Editoren können Quarto einbetten, damit wird alles bequem klickbar.
 
+Du arbeitest also vor allem mit einem Editor (spezielles Textprogramm) *deiner Wahl*.
 
-## Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)
+**Grobe Installationsanleitung:**
 
-RStudio ist besonders für Lehrende geeignet, da es:
+1.  Installiere [Quarto](https://quarto.org/docs/get-started/) wie du typischerweise Programme in deinem Betriebssystem installierst.
+2. Wähle einen Editor aus, z.B. ist [Visual Studio Code](https://code.visualstudio.com/) von Microsoft verbreitet, aber auch [Positron](https://positron.posit.co/) oder [R Studio](https://posit.co/downloads/), beides von den Machern von Quarot, ist beliebt.
+3. In deinem Editor installierst du eine *Extension* spezifisch für Quarto. (Bei R Studio ist Quarto bereits vorinstalliert.)
 
-- leicht zu bedienen ist,
-- Quarto **automatisch erkennt**,
-- Vorschau & Render-Button enthält.
+## User-Interface
 
-### Schritt-für-Schritt:
+Alle drei vorgeschlagenen Programme haben ein ähnliches Userinterface und eine Möglichkeit  den Quelltext (`.qmd`) neben dem Ausgabeformat (Webseite, Wordfile, etc.) anzeigen zu lassen.
+
+::: {.panel-tabset}
+
+## RStudio
+
+RStudio kann über den Softwareinstaller an der PHBern auf managed Geräten installiert werden. Quarto ist integriert im Installer. Somit hast du alles was du brauchst um Quarto zum laufen zu bringen. 
+
+RStudio ist eigentlich auf statistische Auswertungen mit R spezialisiert, das User-Interface sieht vielleicht etwas altbacken oder überlastet aus.
+
+**Schritt-für-Schritt Anleitung**
 
 1. **Installier R und RStudio** (falls noch nicht vorhanden)
    - [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
-
-2. **Installier Quarto**:
-   - [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
-   - Quarto wird systemweit installiert und von RStudio erkannt.
-
 3. **Neues Projekt anlegen** (`File > New Project`)
 4. **Neue Quarto-Datei erstellen** (`File > New File > Quarto Document`)
 5. **Rendern durch Klick auf den "Render"-Button**
@@ -56,19 +64,20 @@ RStudio ist besonders für Lehrende geeignet, da es:
 
 ![GUI in Rstudio wenn du ein neues Projekt mit File > New Project erstellst](screenshots/gui_projekt.png){#fig-gui}
 
+![Render-Button ](screenshots/gui_rstudio_render.png){#fig-gui}
 
 
-## Option 2: Quarto in Visual Studio Code (VS Code) nutzen
+## Visual Studio Code
 
-VS Code ist ein sehr mächtiger Editor, aber technisch etwas komplexer.
+VS Code ist ein sehr mächtiger Editor aber kann technisch einschüchternd wirken. 
 
-### Voraussetzungen:
+**Voraussetzungen:**
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Quarto CLI (muss installiert sein)
 - **Quarto VS Code Extension**
 
-### Schritt-für-Schritt:
+**Schritt-für-Schritt:**
 
 1. **Quarto installieren** (wie oben)
 2. **VS Code installieren**
@@ -82,13 +91,11 @@ VS Code ist ein sehr mächtiger Editor, aber technisch etwas komplexer.
 4. Neue `.qmd`-Datei erstellen → `Datei > Neu`
 5. Oben erscheint eine **"Render"-Schaltfläche**, sobald eine `.qmd`-Datei aktiv ist
 
-📷 *Screenshot: Quarto-Datei in VS Code mit Render-Button* → `screenshot-vscode-render.png`
-
----
+![Render-Button (Zeitungssymbol)](screenshots/gui_vscode_render.png){#fig-gui}
 
 ## Positron
 
-[Positron](https://posit.co/blog/positron/) ist ein neuer, schlanker Editor speziell für Quarto – noch in Entwicklung (Stand: 2025), aber **vielversprechend für didaktische Kontexte**.
+[Positron](https://posit.co/blog/positron/) ist ein neuer, schlanker Editor speziell für Quarto, noch in Entwicklung (Stand: 2025), aber **vielversprechend**.
 
 Vorteile:
 - Minimalistisch, kein R oder VS Code nötig
@@ -97,6 +104,9 @@ Vorteile:
 
 ![Positron-Fenster in welchem in grerade diese Anleitung schreibe](screenshots/gui_positron_inception.png){#fig-gui}
 
+![Render Button heisst hier "Preview" mit Zeitungssymbol](screenshots/gui_positron_preview.png){#fig-gui}
+
+:::
 
 ## Test: Ist Quarto installiert?
 
@@ -105,3 +115,9 @@ Wenn du dir nicht sicher sind, ob Quarto korrekt installiert ist, kannst du  das
 ```bash
 quarto check
 ```
+
+:::{.callout-tip}
+Die Anleitung wird R Studio als Basis nehmen, da es für viele Dozierende über den internen Appstore verfügbar ist. Der Autor bevorzugt jedoch Positron, da es leicht schneller startet und moderner aussieht. 
+
+Da Quarto ja eigentlich in der Befehlszeile existiert, spielt es aber gar keine Rolle und du kannst auch [Microsoft Notepad](https://en.wikipedia.org/wiki/Windows_Notepad) in MS-DOS nutzen.
+:::
