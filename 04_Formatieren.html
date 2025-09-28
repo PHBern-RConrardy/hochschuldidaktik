@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./03_erstes_Dokument.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -91,17 +92,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script>
 
@@ -114,13 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_Formatieren.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Texte gestalten mit Quarto</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -130,14 +131,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Quarto für die PHBern</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Suchen"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -221,18 +224,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
   <li><a href="#überschriften" id="toc-überschriften" class="nav-link active" data-scroll-target="#überschriften"><span class="header-section-number">4.1</span> Überschriften</a></li>
-  <li><a href="#textformatierungen" id="toc-textformatierungen" class="nav-link" data-scroll-target="#textformatierungen"><span class="header-section-number">4.2</span> ✍️ Textformatierungen</a></li>
-  <li><a href="#listen" id="toc-listen" class="nav-link" data-scroll-target="#listen"><span class="header-section-number">4.3</span> 📋 Listen</a>
+  <li><a href="#textformatierungen" id="toc-textformatierungen" class="nav-link" data-scroll-target="#textformatierungen"><span class="header-section-number">4.2</span> Textformatierungen</a></li>
+  <li><a href="#listen" id="toc-listen" class="nav-link" data-scroll-target="#listen"><span class="header-section-number">4.3</span> Listen</a>
   <ul class="collapse">
-  <li><a href="#ungeordnete-liste" id="toc-ungeordnete-liste" class="nav-link" data-scroll-target="#ungeordnete-liste"><span class="header-section-number">4.3.1</span> Ungeordnete Liste (•):</a></li>
-  <li><a href="#geordnete-liste-1.-2.-3." id="toc-geordnete-liste-1.-2.-3." class="nav-link" data-scroll-target="#geordnete-liste-1.-2.-3."><span class="header-section-number">4.3.2</span> Geordnete Liste (1., 2., 3.):</a></li>
+  <li><a href="#ungeordnete-liste" id="toc-ungeordnete-liste" class="nav-link" data-scroll-target="#ungeordnete-liste"><span class="header-section-number">4.3.1</span> Ungeordnete Liste:</a></li>
+  <li><a href="#geordnete-liste" id="toc-geordnete-liste" class="nav-link" data-scroll-target="#geordnete-liste"><span class="header-section-number">4.3.2</span> Geordnete Liste:</a></li>
   </ul></li>
   <li><a href="#bilder-einfügen" id="toc-bilder-einfügen" class="nav-link" data-scroll-target="#bilder-einfügen"><span class="header-section-number">4.4</span> Bilder einfügen</a></li>
-  <li><a href="#nächster-schritt" id="toc-nächster-schritt" class="nav-link" data-scroll-target="#nächster-schritt"><span class="header-section-number">4.5</span> Nächster Schritt</a></li>
+  <li><a href="#callout-boxen" id="toc-callout-boxen" class="nav-link" data-scroll-target="#callout-boxen"><span class="header-section-number">4.5</span> Callout-Boxen</a></li>
   </ul>
 </nav>
     </div>
@@ -258,19 +261,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach diesem Kapitel verstehst du:</p>
+<ul>
+<li>wie du Texte in Quarto fett oder kursiv formatierst.</li>
+<li>Listen, Hyperlinks und Callout-Boxes einfügst.</li>
+<li>wie du Bilder lokal oder aus dem Internet einbindest.</li>
+</ul>
+</div>
+</div>
 <p>Jetzt, wo du dein erstes Quarto-Dokument erstellt hast, schauen wir uns an, wie du den Text schön und übersichtlich gestalten kannst.</p>
-<hr>
+<p>Die hier gezeigten Methoden funktionieren in allen Dateiformaten. Empfehlung ist <code>html</code>und <code>revealjs</code> da beide auf den Websprachen html, css und js basieren und in jedem Webbrowser angezeigt werden können.</p>
 <section id="überschriften" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="überschriften"><span class="header-section-number">4.1</span> Überschriften</h2>
 <p>Überschriften helfen dabei, deinen Text zu strukturieren. Sie funktionieren ganz einfach:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Titel (ganz oben)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Kapitelüberschrift</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Unterkapitel</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Überschrift 1 (grösste Überschrift)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Überschrift 2 (zweitgrösste Überschrift)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Überschrift 3 ...</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Je mehr <code>#</code>, desto kleiner die Überschrift.</p>
 <hr>
 </section>
 <section id="textformatierungen" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="textformatierungen"><span class="header-section-number">4.2</span> ✍️ Textformatierungen</h2>
+<h2 data-number="4.2" class="anchored" data-anchor-id="textformatierungen"><span class="header-section-number">4.2</span> Textformatierungen</h2>
 <p>Hier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:</p>
 <table class="caption-top table">
 <thead>
@@ -306,13 +327,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 <section id="listen" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="listen"><span class="header-section-number">4.3</span> 📋 Listen</h2>
+<h2 data-number="4.3" class="anchored" data-anchor-id="listen"><span class="header-section-number">4.3</span> Listen</h2>
 <p>Listen sind super, um Dinge übersichtlich darzustellen.</p>
 <section id="ungeordnete-liste" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="ungeordnete-liste"><span class="header-section-number">4.3.1</span> Ungeordnete Liste (•):</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apfel</span>
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="ungeordnete-liste"><span class="header-section-number">4.3.1</span> Ungeordnete Liste:</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apfel</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Banane</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Orange</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Orange</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>oder</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Aple</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Banane</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Orange</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ergibt:</p>
 <ul>
 <li>Apfel<br>
@@ -321,12 +346,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>Orange</li>
 </ul>
+<p>Hinweis: Falls du andere Symbole am Anfang nutzen möchtest, geht das übers <code>YAML</code>.</p>
 </section>
-<section id="geordnete-liste-1.-2.-3." class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="geordnete-liste-1.-2.-3."><span class="header-section-number">4.3.2</span> Geordnete Liste (1., 2., 3.):</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Einschalten</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Rendern</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Speichern</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="geordnete-liste" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="geordnete-liste"><span class="header-section-number">4.3.2</span> Geordnete Liste:</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Einschalten</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Rendern</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Speichern</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ergibt:</p>
 <ol type="1">
 <li>Einschalten<br>
@@ -335,23 +361,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>Speichern</li>
 </ol>
-<hr>
+<p>Hinweis:</p>
+<p>Die Zahlen vorne sind eigentlich egal, Quarto zählt selbst auf. Folgendes wird also auch funktioneiren:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Einschalten</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Rndern</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Speichern</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="bilder-einfügen" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="bilder-einfügen"><span class="header-section-number">4.4</span> Bilder einfügen</h2>
-<p>Bilder lassen sich ganz einfach einfügen – ähnlich wie Links:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Beschreibung](bildname.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bilder lassen sich ganz einfach einfügen, ähnlich wie Links:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Beschreibung](bildname.png)</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Beispiel:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo PHBern](phbern-logo.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p>📸 Tipp: Lege dein Bild in denselben Ordner wie dein <code>.qmd</code>-Dokument.</p>
-</blockquote>
-<hr>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo PHBern](phbern-logo.png)</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Genau wie beim Link, muss in den runden Klammern ein Pfad stehen, hier ein Pfad zum Bild. Die Beispiele oben erwarten, dass das Bild im gleichen Ordner wie die <code>.qmd</code>-Datei liegt.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Unterordner:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo PHBern](Bilder/phbern-logo.png)</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Übergeorndneter Ordner</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo PHBern](../phbern-logo.png)</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Direkt aus dem Internet</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Logo PHBern](https://ttim.phbern.ch/wp-content/uploads/2022/06/phbern_logo_desktop_20220615.svg)</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Letzteres wird <em>live</em> geladen vom Benutzer, das heisst, dass es nur angezeigt werden kann, wenn der Benutzer Internetzugang hat.</p>
+</div>
+</div>
 </section>
-<section id="nächster-schritt" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="nächster-schritt"><span class="header-section-number">4.5</span> Nächster Schritt</h2>
-<p>Im nächsten Kapitel lernst du, wie du <strong>Tabellen</strong>, <strong>Matheformeln</strong> und sogar <strong>interaktive Inhalte</strong> wie Quiz oder Codeblöcke nutzen kannst. Quarto kann viel – aber alles Schritt für Schritt.</p>
+<section id="callout-boxen" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="callout-boxen"><span class="header-section-number">4.5</span> Callout-Boxen</h2>
+<p>Wie findest du die farblichen Kästchen? Auch die kannst du einfach mit etwas Syntax selbst einfügen</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Mein Text für einen Tipp hier:</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Und das beste ist, die Boxen sehen auch auf deinen <code>revealjs</code>-Slides gut aus.</p>
+<p>Es gibt einen grossen <a href="https://quarto.org/docs/guide/">Guide</a> mit allen möglichen Einstellungen zu Quarto. Falls du mehr Möglichkeiten möchtest, schau da mal rein.</p>
 
 
 </section>
@@ -382,12 +432,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Kopiert");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Kopiert");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -408,13 +458,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

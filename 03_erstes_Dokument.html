@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./02_wo_schreibe_ich.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -91,20 +95,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -114,13 +147,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_erstes_Dokument.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dein erstes Quarto-Dokument</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -130,14 +163,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Quarto für die PHBern</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Suchen"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -221,17 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#starte-rstudio" id="toc-starte-rstudio" class="nav-link active" data-scroll-target="#starte-rstudio"><span class="header-section-number">3.1</span> 1. Starte RStudio</a></li>
-  <li><a href="#neues-quarto-dokument-erstellen" id="toc-neues-quarto-dokument-erstellen" class="nav-link" data-scroll-target="#neues-quarto-dokument-erstellen"><span class="header-section-number">3.2</span> 2. Neues Quarto-Dokument erstellen</a></li>
-  <li><a href="#überblick-über-das-dokument" id="toc-überblick-über-das-dokument" class="nav-link" data-scroll-target="#überblick-über-das-dokument"><span class="header-section-number">3.3</span> 3. Überblick über das Dokument</a></li>
+  <li><a href="#starte-den-editor" id="toc-starte-den-editor" class="nav-link active" data-scroll-target="#starte-den-editor"><span class="header-section-number">3.1</span> Starte den Editor</a></li>
+  <li><a href="#neues-quarto-dokument-erstellen" id="toc-neues-quarto-dokument-erstellen" class="nav-link" data-scroll-target="#neues-quarto-dokument-erstellen"><span class="header-section-number">3.2</span> Neues Quarto-Dokument erstellen</a></li>
+  <li><a href="#überblick-über-das-dokument" id="toc-überblick-über-das-dokument" class="nav-link" data-scroll-target="#überblick-über-das-dokument"><span class="header-section-number">3.3</span> Überblick über das Dokument</a></li>
   <li><a href="#dokument-rendern-also-erstellen" id="toc-dokument-rendern-also-erstellen" class="nav-link" data-scroll-target="#dokument-rendern-also-erstellen"><span class="header-section-number">3.4</span> Dokument „rendern“ (also erstellen)</a></li>
-  <li><a href="#zusatz-andere-dateiformate-docx-pptx-präsentationen" id="toc-zusatz-andere-dateiformate-docx-pptx-präsentationen" class="nav-link" data-scroll-target="#zusatz-andere-dateiformate-docx-pptx-präsentationen"><span class="header-section-number">3.5</span> Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)</a>
+  <li><a href="#nächste-schritte" id="toc-nächste-schritte" class="nav-link" data-scroll-target="#nächste-schritte"><span class="header-section-number">3.5</span> Nächste Schritte</a></li>
+  <li><a href="#zusatz-andere-dateiformate-docx-pptx-präsentationen" id="toc-zusatz-andere-dateiformate-docx-pptx-präsentationen" class="nav-link" data-scroll-target="#zusatz-andere-dateiformate-docx-pptx-präsentationen"><span class="header-section-number">3.6</span> Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)</a>
   <ul class="collapse">
-  <li><a href="#format-ändern" id="toc-format-ändern" class="nav-link" data-scroll-target="#format-ändern"><span class="header-section-number">3.5.1</span> Format ändern</a></li>
+  <li><a href="#format-ändern" id="toc-format-ändern" class="nav-link" data-scroll-target="#format-ändern"><span class="header-section-number">3.6.1</span> Format ändern</a></li>
   </ul></li>
+  <li><a href="#mehrere-formate-auf-einmal" id="toc-mehrere-formate-auf-einmal" class="nav-link" data-scroll-target="#mehrere-formate-auf-einmal"><span class="header-section-number">3.7</span> Mehrere Formate auf einmal?</a></li>
   </ul>
 </nav>
     </div>
@@ -257,20 +294,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach diesem Kapitel verstehst du:</p>
+<ul>
+<li>wie du ein Quarto Dokument erstellst.</li>
+<li>wie du daraus eine Webseite, ein Worddokument oder eine Slideshow erstellst.</li>
+<li>wie die Dokumente im Filesystem angezeigt werden.</li>
+</ul>
+</div>
+</div>
 <p>Nun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!</p>
 <p>Wir arbeiten Schritt für Schritt.</p>
 <hr>
-<section id="starte-rstudio" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="starte-rstudio"><span class="header-section-number">3.1</span> 1. Starte RStudio</h2>
+<section id="starte-den-editor" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="starte-den-editor"><span class="header-section-number">3.1</span> Starte den Editor</h2>
 <p>Öffne RStudio auf deinem Computer.</p>
-<p>📸 <em>Screenshot: RStudio Startbildschirm</em></p>
-<hr>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_start.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;3.1: RStudio ohne geöffnetes Dokument"><img src="screenshots/rstudio_start.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3.1: RStudio ohne geöffnetes Dokument
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="neues-quarto-dokument-erstellen" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="neues-quarto-dokument-erstellen"><span class="header-section-number">3.2</span> 2. Neues Quarto-Dokument erstellen</h2>
+<h2 data-number="3.2" class="anchored" data-anchor-id="neues-quarto-dokument-erstellen"><span class="header-section-number">3.2</span> Neues Quarto-Dokument erstellen</h2>
 <p>Klicke oben links auf <strong>File</strong> → <strong>New File</strong> → <strong>Quarto Document…</strong></p>
-<p>📸 <em>Screenshot: File &gt; New File &gt; Quarto Document…</em></p>
-<p>Ein neues Fenster erscheint. Dort kannst du folgende Angaben machen:</p>
+<p><img src="screenshots/rstudio_newdocument.png" id="fig-gui" class="img-fluid" alt="RStudio ohne geöffnetes Dokument"> &nbsp; Ein neues Fenster erscheint. Dort kannst du folgende Angaben machen:</p>
 <ul>
 <li><strong>Title</strong>: Gib z. B. „Mein erstes Quarto-Dokument“ ein<br>
 </li>
@@ -278,15 +340,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li><strong>Format</strong>: Wähle „HTML“<br>
 </li>
+<li><strong>Use visual markdown editor</strong> darauf verzichten wir momentan. Es kann jederzeit später mit einem Mausklick geändert werden.</li>
 <li>Klicke auf <strong>Create</strong></li>
 </ul>
-<p>📸 <em>Screenshot: Quarto-Dokument erstellen (mit ausgefüllten Feldern)</em></p>
-<hr>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_erstesDokument.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;3.2: RStudio ohne geöffnetes Dokument"><img src="screenshots/rstudio_erstesDokument.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3.2: RStudio ohne geöffnetes Dokument
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="überblick-über-das-dokument" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="überblick-über-das-dokument"><span class="header-section-number">3.3</span> 3. Überblick über das Dokument</h2>
+<h2 data-number="3.3" class="anchored" data-anchor-id="überblick-über-das-dokument"><span class="header-section-number">3.3</span> Überblick über das Dokument</h2>
 <p>Quarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Mein erstes Quarto-Dokument"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Max Muster"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
@@ -296,62 +367,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Dies ist mein erstes Quarto-Dokument.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Was wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Was wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Was du oben siehst, nennt sich YAML-Header (der Teil zwischen <code>---</code>), da stehen Titel, Autor:in und das gewünschte Format. Du musst ihn meistens nicht verändern.</p>
 <p>Der Rest ist Text, den du einfach schreiben kannst.</p>
 </section>
 <section id="dokument-rendern-also-erstellen" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="dokument-rendern-also-erstellen"><span class="header-section-number">3.4</span> Dokument „rendern“ (also erstellen)</h2>
-<p>Klicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch im Browser geöffnet wird.</p>
-<p>📸 Screenshot: Render-Button</p>
-<p>Du solltest nun dein erstes Quarto-Dokument im Browser sehen – gratuliere!</p>
-<ol start="5" type="1">
-<li>Nächste Schritte</li>
-</ol>
+<p>Klicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch angezeigt wird.</p>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_rendereddocument.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;3.3: RStudio ohne geöffnetes Dokument"><img src="screenshots/rstudio_rendereddocument.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3.3: RStudio ohne geöffnetes Dokument
+</figcaption>
+</figure>
+</div>
+<p>Du solltest nun dein erstes Quarto-Dokument sehen – gratuliere! Die HTML Seite wird in R-Studio rechts im Viewer angezeigt, sie kann aber auch im Webbrowser geöffnet werden. Die Webseite ist noch nicht online (dazu kommen wir später) sondern es ist ein <code>.html</code>-Dokument im gleichen Ordner wie deine Originaldatei. Der Ordner mit gleichem Namen gehört ebenfalls zur Webseite, denn bei Webseiten werden typischerweise Inhalt und Layout getrennt abgespeichert.</p>
+</section>
+<section id="nächste-schritte" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="nächste-schritte"><span class="header-section-number">3.5</span> Nächste Schritte</h2>
 <p>Du kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Meine Themen</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Meine Themen</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Ich unterrichte gerne Mathematik.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Ich unterrichte *gerne* Mathematik.</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Warum ich Quarto nutze</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Weil es einfach ist und schön aussieht.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Weil es einfach ist und **schön** aussieht.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Ich kann auf <span class="co">[</span><span class="ot">Google</span><span class="co">](google.com)</span> verlinken oder auf die <span class="co">[</span><span class="ot">PHBern</span><span class="co">](phbern.ch)</span>.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Klicke wieder auf Render, um das aktualisierte Dokument zu sehen.</p>
-<p>Tipp: Speichern nicht vergessen</p>
-<p>Vergiss nicht, dein Dokument unter einem passenden Namen zu speichern: File → Save As…</p>
-<p>📸 Screenshot: Speichern unter Dialog</p>
 </section>
-<section id="zusatz-andere-dateiformate-docx-pptx-präsentationen" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="zusatz-andere-dateiformate-docx-pptx-präsentationen"><span class="header-section-number">3.5</span> Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)</h2>
-<p>Du kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch <strong>als Word-Datei (docx)</strong>, <strong>PowerPoint-Folie (pptx)</strong> oder sogar als <strong>interaktive Präsentation (reveal.js)</strong> ausgeben – und zwar mit einem kleinen Trick:</p>
-<section id="format-ändern" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="format-ändern"><span class="header-section-number">3.5.1</span> Format ändern</h3>
+<section id="zusatz-andere-dateiformate-docx-pptx-präsentationen" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="zusatz-andere-dateiformate-docx-pptx-präsentationen"><span class="header-section-number">3.6</span> Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)</h2>
+<p>Du kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch <strong>als Word-Datei (docx)</strong>, <strong>PowerPoint-Folie (pptx)</strong> oder sogar als <strong>interaktive Präsentation (reveal.js)</strong> ausgeben:</p>
+<section id="format-ändern" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="format-ändern"><span class="header-section-number">3.6.1</span> Format ändern</h3>
 <p>Im oberen Teil deines Dokuments (dem YAML-Header) steht so etwas wie:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Mein erstes Quarto-Dokument"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Max Muster"</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Wenn du nun statt <code>html</code> z. B. <code>docx</code> einträgst, wird dein Dokument beim Rendern als Word-Datei erstellt:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> docx</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> docx</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Dasselbe geht auch für PowerPoint:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> pptx</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> pptx</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Oder für eine schöne interaktive Präsentation mit „reveal.js“:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Hinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert. Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).</p>
-<p>📸 Screenshot: YAML-Header mit unterschiedlichen Formaten</p>
-<p>##&nbsp;Mehrere Formate auf einmal?</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vorsicht
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei jedem Format wird das Standardtemplate (Layout, Formatierung) verwendet. Das kann natürlich später alles geändert werden. Es führt auch dazu, dass revealjs Slides nicht identisch zu Powerpoint Slides aussehen.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="mehrere-formate-auf-einmal" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="mehrere-formate-auf-einmal"><span class="header-section-number">3.7</span> Mehrere Formate auf einmal?</h2>
 <p>Ja, sogar das geht – einfach so schreiben:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  html: default</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  docx: default</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  pptx: default</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Dann erzeugt Quarto beim Rendern alle drei Dateien gleichzeitig.</p>
-<p>📸 Screenshot: Render mit mehreren Formaten</p>
-<p>In den nächsten Kapiteln zeigen wir dir, wie du Inhalte noch schöner gestalten kannst – z. B. mit Listen, Bildern, Tabellen oder eingebauten Übungsfragen.</p>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  pptx: default</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_render_different.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Abbildung&nbsp;3.4: Wähle beim Rendern aus welches Dateiformat gerendert werden sollte"><img src="screenshots/rstudio_render_different.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3.4: Wähle beim Rendern aus welches Dateiformat gerendert werden sollte
+</figcaption>
+</figure>
+</div>
+<p>Gleichzeitig alle angegeben Formate rendern geht auch, schauen wir uns aber erst an, wenn wir eine ganze Webseite erstellen.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vorsicht
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Dokumentformat <code>pdf</code>gibt es ebenfalls und kann auch gut benutzt werden, hierfür wird jedoch <span class="math inline">\(\LaTeX\)</span> verwendet. Somit kann ein Meldung kommen, dass noch etwas nachinstalliert werden sollte.</p>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -380,12 +494,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Kopiert");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Kopiert");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -406,13 +520,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -767,6 +882,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

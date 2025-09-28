@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./04_Formatieren.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -91,17 +95,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script>
 
@@ -119,7 +123,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -143,13 +147,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_Tabellen.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tabellen, Formeln und interaktive Inhalte</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -159,14 +163,16 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Quarto für die PHBern</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Suchen"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -250,21 +256,25 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#tabellen-erstellen" id="toc-tabellen-erstellen" class="nav-link active" data-scroll-target="#tabellen-erstellen"><span class="header-section-number">5.1</span> Tabellen erstellen</a></li>
+  <li><a href="#tabellen-erstellen" id="toc-tabellen-erstellen" class="nav-link active" data-scroll-target="#tabellen-erstellen"><span class="header-section-number">5.1</span> Tabellen erstellen</a>
+  <ul class="collapse">
+  <li><a href="#visual-editor" id="toc-visual-editor" class="nav-link" data-scroll-target="#visual-editor"><span class="header-section-number">5.1.1</span> Visual Editor</a></li>
+  </ul></li>
   <li><a href="#mathematische-formeln" id="toc-mathematische-formeln" class="nav-link" data-scroll-target="#mathematische-formeln"><span class="header-section-number">5.2</span> Mathematische Formeln</a>
   <ul class="collapse">
   <li><a href="#formeln-im-text" id="toc-formeln-im-text" class="nav-link" data-scroll-target="#formeln-im-text"><span class="header-section-number">5.2.1</span> Formeln im Text</a></li>
   <li><a href="#formeln-als-block" id="toc-formeln-als-block" class="nav-link" data-scroll-target="#formeln-als-block"><span class="header-section-number">5.2.2</span> Formeln als Block</a></li>
   </ul></li>
-  <li><a href="#interaktive-inhalte-quizzes-und-code" id="toc-interaktive-inhalte-quizzes-und-code" class="nav-link" data-scroll-target="#interaktive-inhalte-quizzes-und-code"><span class="header-section-number">5.3</span> Interaktive Inhalte: Quizzes und Code</a>
+  <li><a href="#referenzieren" id="toc-referenzieren" class="nav-link" data-scroll-target="#referenzieren"><span class="header-section-number">5.3</span> Referenzieren</a></li>
+  <li><a href="#interaktive-inhalte-quizzes-und-code" id="toc-interaktive-inhalte-quizzes-und-code" class="nav-link" data-scroll-target="#interaktive-inhalte-quizzes-und-code"><span class="header-section-number">5.4</span> Interaktive Inhalte: Quizzes und Code</a>
   <ul class="collapse">
-  <li><a href="#quiz-fragen" id="toc-quiz-fragen" class="nav-link" data-scroll-target="#quiz-fragen"><span class="header-section-number">5.3.1</span> Quiz-Fragen</a></li>
-  <li><a href="#code-einfügen" id="toc-code-einfügen" class="nav-link" data-scroll-target="#code-einfügen"><span class="header-section-number">5.3.2</span> Code einfügen</a></li>
+  <li><a href="#quiz-fragen" id="toc-quiz-fragen" class="nav-link" data-scroll-target="#quiz-fragen"><span class="header-section-number">5.4.1</span> Quiz-Fragen</a></li>
+  <li><a href="#code-einfügen" id="toc-code-einfügen" class="nav-link" data-scroll-target="#code-einfügen"><span class="header-section-number">5.4.2</span> Code einfügen</a></li>
   </ul></li>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">5.4</span> Zusammenfassung</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">5.5</span> Zusammenfassung</a></li>
   </ul>
 </nav>
     </div>
@@ -290,15 +300,30 @@ window.Quarto = {
 </header>
 
 
-<p>In diesem Kapitel lernst du, wie du in Quarto Tabellen, mathematische Formeln und einfache interaktive Inhalte einbauen kannst.</p>
-<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach diesem Kapitel verstehst du:</p>
+<ul>
+<li>wie du mit dem visual Editor umgehst.</li>
+<li>wie du Tabellen und Abbildungen automatisch beschriften lässt.</li>
+</ul>
+</div>
+</div>
 <section id="tabellen-erstellen" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="tabellen-erstellen"><span class="header-section-number">5.1</span> Tabellen erstellen</h2>
 <p>Tabellen lassen sich in Quarto sehr einfach schreiben. Hier ein Beispiel:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Name       <span class="pp">|</span> Fach        <span class="pp">|</span> Klasse <span class="pp">|</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Name       <span class="pp">|</span> Fach        <span class="pp">|</span> Klasse <span class="pp">|</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------|-------------|--------|</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Anna Meyer <span class="pp">|</span> Mathematik  <span class="pp">|</span> 7A     <span class="pp">|</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tom Berger <span class="pp">|</span> Deutsch     <span class="pp">|</span> 8B     <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tom Berger <span class="pp">|</span> Deutsch     <span class="pp">|</span> 8B     <span class="pp">|</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ergebnis:</p>
 <table class="caption-top table">
 <thead>
@@ -321,43 +346,99 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<hr>
+<p>Die Leerstellen sind egal, es könnte übrigens auch so aussehen:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Name<span class="pp">|</span> Fach<span class="pp">|</span> Klasse <span class="pp">|</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>--<span class="pp">|</span>--<span class="pp">|</span>--<span class="pp">|</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Anna Meyer <span class="pp">|</span> Mathematik<span class="pp">|</span> 7A<span class="pp">|</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tom Berger <span class="pp">|</span> Deutsch<span class="pp">|</span> 8B<span class="pp">|</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Die Bindestriche geben die relative Länge, wenn in jeder Spalte zwei sind, sind alle Spalten gleich breit.</p>
+<section id="visual-editor" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="visual-editor"><span class="header-section-number">5.1.1</span> Visual Editor</h3>
+<p>Das Eintippen einer solchen Tabelle kann lästig sein. Einerseits kann jeder Chatbot (KI) dich beim Schreiprozess unterstützen, denn <code>Markdown</code>können die sehr gut. Andererseits kannst du auch den <em>Visual Editor</em> nutzen.</p>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_visual_editor.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;5.1: RStudio - Visual Editor"><img src="screenshots/rstudio_visual_editor.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.1: RStudio - Visual Editor
+</figcaption>
+</figure>
+</div>
+<p>Der Visual Editor ist näher an typischen Textverarbeitungsprogramm wie z.B. Word. Du kannst über klicken Tabellen oder Bilder einfügen, auch siehst du die meisten Formatierungen (z.B. Überschriften und fett) ähnlich wie sie später angezeigt werden. Falls du Quarto als Lerngelegenheit auffasst, etwas mehr über Computersprachen zu lernen, dann würde ich den Visual Editor vermeiden.</p>
+</section>
 </section>
 <section id="mathematische-formeln" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="mathematische-formeln"><span class="header-section-number">5.2</span> Mathematische Formeln</h2>
 <p>Quarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichtig:</p>
 <section id="formeln-im-text" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="formeln-im-text"><span class="header-section-number">5.2.1</span> Formeln im Text</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Die Fläche berechnet sich mit $A = a \times b$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ergebnis: Die Fläche berechnet sich mit <span class="math inline">\(A = a \times b\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Die Fläche berechnet sich mit $A = a \cdot b$.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ergebnis: Die Fläche berechnet sich mit <span class="math inline">\(A = a \cdot b\)</span>.</p>
 </section>
 <section id="formeln-als-block" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="formeln-als-block"><span class="header-section-number">5.2.2</span> Formeln als Block</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>E = mc^2</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>E = mc^2</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ergebnis:</p>
 <p><span class="math display">\[
 E = mc^2
 \]</span></p>
-<hr>
 </section>
 </section>
-<section id="interaktive-inhalte-quizzes-und-code" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="interaktive-inhalte-quizzes-und-code"><span class="header-section-number">5.3</span> Interaktive Inhalte: Quizzes und Code</h2>
+<section id="referenzieren" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="referenzieren"><span class="header-section-number">5.3</span> Referenzieren</h2>
+<p>Dir ist vielleicht Aufgefallen, dass die Abbildungen aufgezählt werden, auch das ist bereits in Quarto eingebaut.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Bildtitel](Bildquelle)</span>{#fig-beliebigerTeil}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Die <code>{#fig-}</code>hinten sorgen dafür, dass die Abbildung als solche erkannt wird.</p>
+<p>Alternative Schreibweise:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {#fig-beliebigerTeil}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="al">![](bild.png)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Bildtitel</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Um auf die Abbildung zu referenzieren, kannst du mit <code>@fig-beliebigerTeil</code>auf sie verlinken, z.B. mit <a href="index.html#fig-webseite1" class="quarto-xref">Abbildung&nbsp;<span>1.1 (a)</span></a> .</p>
+<p>Tabellen können auch einfach referenziert werden:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Col1 <span class="pp">|</span> Col2 <span class="pp">|</span> Col3 <span class="pp">|</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|------|------|</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> A    <span class="pp">|</span> B    <span class="pp">|</span> C    <span class="pp">|</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> E    <span class="pp">|</span> F    <span class="pp">|</span> G    <span class="pp">|</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> A    <span class="pp">|</span> G    <span class="pp">|</span> G    <span class="pp">|</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>: My Caption {#tbl-letters}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>See @tbl-letters.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>oder alternative Schreibweise</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: {#tbl-letters}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Col1 <span class="pp">|</span> Col2 <span class="pp">|</span> Col3 <span class="pp">|</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|------|------|</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> A    <span class="pp">|</span> B    <span class="pp">|</span> C    <span class="pp">|</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> E    <span class="pp">|</span> F    <span class="pp">|</span> G    <span class="pp">|</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> A    <span class="pp">|</span> G    <span class="pp">|</span> G    <span class="pp">|</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>My Caption</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>::: </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für mathematikaffine Personen</p>
+</section>
+<section id="interaktive-inhalte-quizzes-und-code" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="interaktive-inhalte-quizzes-und-code"><span class="header-section-number">5.4</span> Interaktive Inhalte: Quizzes und Code</h2>
 <p>Mit Quarto kannst du sogar kleine interaktive Elemente einbauen.</p>
-<section id="quiz-fragen" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="quiz-fragen"><span class="header-section-number">5.3.1</span> Quiz-Fragen</h3>
+<section id="quiz-fragen" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="quiz-fragen"><span class="header-section-number">5.4.1</span> Quiz-Fragen</h3>
 <p>Ein einfaches Multiple-Choice-Beispiel:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Kleine Quizfrage</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Welche Zahl ist prim?</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> 8</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> 7</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> 9</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Kleine Quizfrage</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>Welche Zahl ist prim?</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> 8</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> 7</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> 9</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Beim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.</p>
 <ul class="task-list">
 <li><label><input type="checkbox">8</label></li>
@@ -366,19 +447,19 @@ E = mc^2
 </ul>
 <hr>
 </section>
-<section id="code-einfügen" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="code-einfügen"><span class="header-section-number">5.3.2</span> Code einfügen</h3>
+<section id="code-einfügen" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="code-einfügen"><span class="header-section-number">5.4.2</span> Code einfügen</h3>
 <p>Wenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>```</p>
 <p>Das wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.</p>
 <hr>
 </section>
 </section>
-<section id="zusammenfassung" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">5.4</span> Zusammenfassung</h2>
+<section id="zusammenfassung" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">5.5</span> Zusammenfassung</h2>
 <ul>
 <li>Tabellen sind einfach mit Strichen und Pipes (<code>|</code>) zu schreiben.<br>
 </li>
@@ -417,12 +498,12 @@ E = mc^2
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Kopiert");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Kopiert");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -443,13 +524,14 @@ E = mc^2
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -804,6 +886,38 @@ E = mc^2
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

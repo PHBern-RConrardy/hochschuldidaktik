@@ -10,21 +10,11 @@
     ]
   },
   {
-    "objectID": "index.html#lernziele",
-    "href": "index.html#lernziele",
-    "title": "Quarto für die PHBern",
-    "section": "1.1 Lernziele",
-    "text": "1.1 Lernziele\nNach diesem Kapitel verstehst du:\n\nwas Quarto ist und wie es sich von anderen Tools unterscheidet,\nwofür es in der Lehre sinnvoll eingesetzt werden kann,\nwelche Vorteile Quarto für Dozierende bietet, insbesondere für die Erstellung von Folien mit Quellenangaben und statischen Webseiten.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
-    ]
-  },
-  {
     "objectID": "index.html#was-ist-quarto-1",
     "href": "index.html#was-ist-quarto-1",
     "title": "Quarto für die PHBern",
-    "section": "1.2 Was ist Quarto?",
-    "text": "1.2 Was ist Quarto?\n\nQuarto ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst – z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr – alles aus einem einzigen Dokument.\n\nQuarto basiert auf Markdown, einem leicht erlernbaren Textformat, und kann sowohl statischen Inhalt (Text, Bilder, Tabellen) als auch dynamischen Inhalt (z. B. R- oder Python-Code) integrieren.\nQuarto ist der offizielle Nachfolger von R Markdown und wurde für eine größere Zielgruppe, jenseits von R – entwickelt.",
+    "section": "1.1 Was ist Quarto?",
+    "text": "1.1 Was ist Quarto?\n\nQuarto ist ein modernes Open-Source-Publikationssystem, mit dem du wissenschaftliche Inhalte in verschiedenen Formaten erzeugen kannst, z. B. Webseiten, PDF-Dokumente, Präsentationen und mehr, alles aus einem einzigen Dokument.\n\nQuarto basiert auf Markdown, einem leicht erlernbaren Textformat, und kann sowohl statischen Inhalt (Text, Bilder, Tabellen) als auch dynamischen Inhalt (z. B. R- oder Python-Code) integrieren.\nQuarto ist der offizielle Nachfolger von R Markdown und wurde für eine grössere Zielgruppe entwickelt.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
@@ -33,28 +23,28 @@
     "objectID": "index.html#was-kann-ich-mit-quarto-erstellen",
     "href": "index.html#was-kann-ich-mit-quarto-erstellen",
     "title": "Quarto für die PHBern",
-    "section": "1.3 Was kann ich mit Quarto erstellen?",
-    "text": "1.3 Was kann ich mit Quarto erstellen?\n\n\n\nFormat\nAnwendung in der Lehre\n\n\n\n\nPräsentationen\nSlides für Lerngelegenheiten\n\n\nPDF / Word\nHandouts, Prüfungen, Skripte\n\n\nWebseiten\nKurswebseiten, Forschungsprojekte, ePortfolios\n\n\n\n\nAlles aus einer einzigen .qmd-Datei!",
+    "section": "1.2 Was kann ich mit Quarto erstellen?",
+    "text": "1.2 Was kann ich mit Quarto erstellen?\n\n\n\nFormat\nAnwendung in der Lehre\n\n\n\n\nPräsentationen\nSlides für Lerngelegenheiten\n\n\nPDF / Word\nHandouts, Prüfungen, Skripte\n\n\nWebseiten\nKurswebseiten, Forschungsprojekte, ePortfolios\n\n\n\nAlles aus einer einzigen Textdatei!\n\n\nWord\n---\ntitle: \"Reichhaltige Motivation\"\nauthor: Richard Conrardy\nformat: docx\n---\n# Überschrift 1\n## Überschrift 1.1\n\nWebseite\n---\ntitle: \"Reichhaltige Motivation\"\nauthor: Richard Conrardy\nformat: html\n---\n# Überschrift 1\n## Überschrift 1.1\n\nSlides\n---\ntitle: \"Reichhaltige Motivation\"\nauthor: Richard Conrardy\nformat: revealjs\n---\n# Kapitel 1\n## Slide 1\n\nPowerpoint\n---\ntitle: \"Reichhaltige Motivation\"\nauthor: Richard Conrardy\nformat: pptx\n---\n# Kapitel 1\n## Slide 1\n\n\nDu kannst sogar gleichzeitig mehrere Formate generieren und verlinken, so können Studierende den Inhalt der Präsentation sofort als Word downloaden:\n---\ntitle: \"Reichhaltige Motivation\"\nauthor: Richard Conrardy\nformat: \n  revealjs: default\n  docx: default\n---\n# Überschrift 1\n## Slide 1",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
   },
   {
-    "objectID": "index.html#beispiel-lehr-slides-mit-quellenangaben",
-    "href": "index.html#beispiel-lehr-slides-mit-quellenangaben",
+    "objectID": "index.html#beispiel-1-lehr-slides-mit-quellenangaben",
+    "href": "index.html#beispiel-1-lehr-slides-mit-quellenangaben",
     "title": "Quarto für die PHBern",
-    "section": "1.4 Beispiel: Lehr-Slides mit Quellenangaben",
-    "text": "1.4 Beispiel: Lehr-Slides mit Quellenangaben\nQuarto-Präsentationen lassen sich in wenigen Sekunden in HTML, Reveal.js, PowerPoint oder PDF (Beamer) umwandeln – inklusive:\n\nautomatischer Quellenangaben (z. B. mit literatur.bib)\neingebetteter Bilder, Diagramme und Formeln\noptional: interaktive Inhalte (Diagramme, Code-Ausgabe)\n\n---\ntitle: \"Einführung in Statistik\"\nformat: revealjs\nbibliography: literatur.bib\ncsl: apa.csl\n---\n\n## Deskriptive Statistik\n\n- Mittelwert, Median, Modus\n- Standardabweichung, Varianz\n\n&gt; \"Statistics is the grammar of science.\" – Karl Pearson [@pearson1901]\nDie Quelle (Knuth 1984) wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist.",
+    "section": "1.3 Beispiel 1: Lehr-Slides mit Quellenangaben",
+    "text": "1.3 Beispiel 1: Lehr-Slides mit Quellenangaben\nQuarto-Präsentationen lassen sich in wenigen Sekunden in Reveal.js, PowerPoint oder PDF (Beamer) umwandeln, inklusive:\n\nautomatischer Quellenangaben und verwalteter Zitationsstyl\neingebetteter Bilder, Diagramme und Formeln mit Aufzählung (Abbildung 1: …)\noptional: interaktive Inhalte (Diagramme, Code-Ausgabe)\n\n---\ntitle: \"Einführung in Statistik\"\nformat: revealjs\nbibliography: literatur.bib\ncsl: apa.csl\n---\n\n## Deskriptive Statistik\n\n- Mittelwert, Median, Modus\n- Standardabweichung, Varianz\n\n&gt; Qualitative Inhaltsanalyse stellt eine Auswertungsmethode dar, [@Mayring2022, S.691]\n\n::: {#refs}\n:::\nDie Quelle (Mayring2022?) wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei literatur.bib vorhanden ist. Die apa.csl defniert den Zitationsstil (APA7, Chigago, …).\nDas Literaturverzeichnis wird automatisch an den Schluss gestellt oder wird explizit mit dem Shortcode :::{#refs}platziert.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
   },
   {
-    "objectID": "index.html#beispiel-statische-webseite-für-ihre-lehrveranstaltung",
-    "href": "index.html#beispiel-statische-webseite-für-ihre-lehrveranstaltung",
+    "objectID": "index.html#beispiel-statische-webseite-für-deine-lehrveranstaltung",
+    "href": "index.html#beispiel-statische-webseite-für-deine-lehrveranstaltung",
     "title": "Quarto für die PHBern",
-    "section": "1.5 Beispiel: Statische Webseite für Ihre Lehrveranstaltung",
-    "text": "1.5 Beispiel: Statische Webseite für Ihre Lehrveranstaltung\nQuarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.\nProjektstruktur:\n📁 mein-kurs/\n├── _quarto.yml\n├── index.qmd         # Startseite\n├── literatur.qmd     # Literaturverzeichnis\n├── sitzung1.qmd\n├── sitzung2.qmd\n└── ...\nBeispielhafte Konfiguration (_quarto.yml):\nproject:\n  type: website\n\nwebsite:\n  title: \"Digitale Didaktik\"\n  navbar:\n    left:\n      - text: \"Start\"\n        file: index.qmd\n      - text: \"Literatur\"\n        file: literatur.qmd\nNach dem Ausführen von:\nquarto render\noder durch Klicken auf “Render” in RStudio entsteht eine vollständig verlinkte, responsive HTML-Website, welche du einfach auf dem Internet gratis veröffentlichen kannst.",
+    "section": "1.4 Beispiel: Statische Webseite für deine Lehrveranstaltung",
+    "text": "1.4 Beispiel: Statische Webseite für deine Lehrveranstaltung\nQuarto unterstützt den Aufbau vollständiger Webseitenprojekte, z. B. für Seminare oder Forschungsprojekte.\n\n\n\n\n\n\n\n\n\n\n\n(a) Webseite mit Linksammlungen für Eigengebrauch\n\n\n\n\n\n\n\n\n\n\n\n(b) Webseite für Lernende\n\n\n\n\n\n\n\nAbbildung 1.1: Beispiele von Webseiten\n\n\n\nWebseiten werden durch die Benutzung einer spezieller Ordnerstruktur angelegt.\nProjektstruktur:\n📁 mein-kurs/\n├── _quarto.yml\n├── index.qmd         # Startseite\n├── literatur.qmd     # Literaturverzeichnis\n├── sitzung1.qmd\n├── sitzung2.qmd\n└── ...\nDabei ist index.qmd immer die Startseite und _quarto.yml(ausgesprochen Yaml) ist die Konfigurationsdatei, in der du Meta-Informationen zur Webseite angibst (z.B. Farben oder Literaturliste).\nBeispielhafte Konfiguration (_quarto.yml):\nproject:\n  type: website\n\nwebsite:\n  title: \"Digitale Didaktik\"\n  navbar:\n    left:\n      - text: \"Start\"\n        file: index.qmd\n      - text: \"Literatur\"\n        file: literatur.qmd\nDiese Seite, welche du gerade liest, ist übrigens eine leichte Abwandlung einer Webseite, sie wurde mit type: bookerstellt, weshalb die Kapitel auch nummeriert sind.\nDie fertige Webseite wird aufgrund der Textdateien (.qmd) mit einem Knopfdruck in einem speziellen Textprogramm erstellt (genauer: kompiliert). Alternativ kannst du es auch über einen Befehl im Terminal erstellen lassen:\nquarto render\nDie Webseite kannst du problemlos gratis und werbefrei publizieren, auch das ist ein simpler Befehl im Terminal quarto publish. Beispielsweise kannst du es über Github oder Quartopub publizieren.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
@@ -63,18 +53,8 @@
     "objectID": "index.html#vorteile-für-dozierende",
     "href": "index.html#vorteile-für-dozierende",
     "title": "Quarto für die PHBern",
-    "section": "1.6 Vorteile für Dozierende",
-    "text": "1.6 Vorteile für Dozierende\n\n\n\n\n\n\n\nVorteil\nBeschreibung\n\n\n\n\nEffizienz\nEin Dokument, viele Ausgabeformate\n\n\nWissenschaftlich\nAutomatische Literaturverweise, APA, MLA, Chicago etc.\n\n\nWiederverwendbar\nInhalte lassen sich modular aufbauen\n\n\nOffen & nachhaltig\nOffenes Textformat, langfristig lesbar, versionierbar",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#literatur",
-    "href": "index.html#literatur",
-    "title": "Quarto für die PHBern",
-    "section": "1.7 Literatur",
-    "text": "1.7 Literatur\nQuellen werden automatisch aus der Datei literatur.bib geladen.\nBeispielinhalt für literatur.bib:\n@book{pearson1901,\n  author = {Karl Pearson},\n  title = {The Grammar of Science},\n  year = {1901},\n  publisher = {Adam and Charles Black}\n}\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "section": "1.5 Vorteile für Dozierende",
+    "text": "1.5 Vorteile für Dozierende\n\n\n\n\n\n\n\nVorteil\nBeschreibung\n\n\n\n\nEffizienz\nEin Dokument, viele Ausgabeformate\n\n\nWissenschaftlich\nAutomatische Literaturverweise, APA, MLA, Chicago etc.\n\n\nWiederverwendbar\nInhalte lassen sich modular aufbauen\n\n\nOffen & nachhaltig\nOffenes Textformat, langfristig lesbar, versionierbar\n\n\nErweiterungen\nJedermann kann und darf Erweiterungen für Quarto schreiben und veröffentlichen",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Was ist Quarto?</span>"
     ]
@@ -84,17 +64,7 @@
     "href": "02_wo_schreibe_ich.html",
     "title": "2  Quarto starten ohne Terminal",
     "section": "",
-    "text": "2.1 Lernziele\nNach diesem Kapitel verstehst du:",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
-    ]
-  },
-  {
-    "objectID": "02_wo_schreibe_ich.html#lernziele",
-    "href": "02_wo_schreibe_ich.html#lernziele",
-    "title": "2  Quarto starten ohne Terminal",
-    "section": "",
-    "text": "was ein Terminal ist und warum es für Quarto technisch notwendig ist,\nwie du Quarto auch ohne Terminalwissen nutzen können,\nwelche Programme du dafür brauchst (RStudio, VS Code, Positron),",
+    "text": "2.1 Was ist ein Terminal?\nEin Terminal (auch “Befehlszeile” oder “Konsole”) ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst. Auf MacOS heisst das Programm tatsächlich Terminal, auf Windows kann auch die Powershellgenutzt werden.\nEin typisches Beispiel (unter Windows): `quarto render dokument.qmd``\nDieser Befehl sagt Quarto: “Bitte render (erstelle) das Dokument dokument.qmd.” Die .qmd-Datei ist eine reine Textdatei, ähnlich .txt-Dateien, somit können sie grundsätzlich mit jedem Texteditor (ja, sogar Word) geöffnet und bearbeitet werden.\nFür viele Lehrende ist das Terminal ungewohnt oder abschreckend. Die gute Nachricht:",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
@@ -103,48 +73,28 @@
     "objectID": "02_wo_schreibe_ich.html#was-ist-ein-terminal",
     "href": "02_wo_schreibe_ich.html#was-ist-ein-terminal",
     "title": "2  Quarto starten ohne Terminal",
-    "section": "2.2 Was ist ein Terminal?",
-    "text": "2.2 Was ist ein Terminal?\nEin Terminal (auch “Befehlszeile” oder “Konsole”) ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst.\nEin typisches Beispiel (unter Windows): `quarto render dokument.qmd``\nDieser Befehl sagt Quarto: “Bitte render das Dokument dokument.qmd.”\nFür viele Lehrende ist das Terminal ungewohnt oder abschreckend. Die gute Nachricht:\n\nDu musst das Terminal nicht nutzen, um mit Quarto zu arbeiten!",
+    "section": "",
+    "text": "Du musst das Terminal nicht nutzen, um mit Quarto zu arbeiten!",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
   },
   {
-    "objectID": "02_wo_schreibe_ich.html#warum-braucht-quarto-trotzdem-das-terminal",
-    "href": "02_wo_schreibe_ich.html#warum-braucht-quarto-trotzdem-das-terminal",
+    "objectID": "02_wo_schreibe_ich.html#mit-welchem-programm-schreibe-ich",
+    "href": "02_wo_schreibe_ich.html#mit-welchem-programm-schreibe-ich",
     "title": "2  Quarto starten ohne Terminal",
-    "section": "2.3 Warum braucht Quarto trotzdem das Terminal?",
-    "text": "2.3 Warum braucht Quarto trotzdem das Terminal?\nQuarto selbst ist ein sogenanntes CLI-Programm (Command Line Interface). Es läuft im Hintergrund über die Befehlszeile – selbst wenn du es über RStudio oder VS Code bedienst.\nDas bedeutet: - Die Benutzeroberfläche (GUI) ist nicht in Quarto selbst enthalten. - Aber: Viele moderne Editoren können Quarto einbetten – damit wird alles bequem klickbar.",
+    "section": "2.2 Mit welchem Programm schreibe ich?",
+    "text": "2.2 Mit welchem Programm schreibe ich?\nQuarto selbst ist ein sogenanntes CLI-Programm (Command Line Interface). Es läuft im Hintergrund über die Befehlszeile, selbst wenn du es über RStudio oder VS Code bedienst.\nDas bedeutet: - Die Benutzeroberfläche (GUI) ist nicht in Quarto selbst enthalten. - Aber: Viele moderne Editoren können Quarto einbetten, damit wird alles bequem klickbar.\nDu arbeitest also vor allem mit einem Editor (spezielles Textprogramm) deiner Wahl.\nGrobe Installationsanleitung:\n\nInstalliere Quarto wie du typischerweise Programme in deinem Betriebssystem installierst.\nWähle einen Editor aus, z.B. ist Visual Studio Code von Microsoft verbreitet, aber auch Positron oder R Studio, beides von den Machern von Quarot, ist beliebt.\nIn deinem Editor installierst du eine Extension spezifisch für Quarto. (Bei R Studio ist Quarto bereits vorinstalliert.)",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
   },
   {
-    "objectID": "02_wo_schreibe_ich.html#option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops",
-    "href": "02_wo_schreibe_ich.html#option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops",
+    "objectID": "02_wo_schreibe_ich.html#user-interface",
+    "href": "02_wo_schreibe_ich.html#user-interface",
     "title": "2  Quarto starten ohne Terminal",
-    "section": "2.4 Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)",
-    "text": "2.4 Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)\nRStudio ist besonders für Lehrende geeignet, da es:\n\nleicht zu bedienen ist,\nQuarto automatisch erkennt,\nVorschau & Render-Button enthält.\n\n\n2.4.1 Schritt-für-Schritt:\n\nInstallier R und RStudio (falls noch nicht vorhanden)\n\nhttps://posit.co/download/rstudio-desktop/\n\nInstallier Quarto:\n\nhttps://quarto.org/docs/get-started/\nQuarto wird systemweit installiert und von RStudio erkannt.\n\nNeues Projekt anlegen (File &gt; New Project)\nNeue Quarto-Datei erstellen (File &gt; New File &gt; Quarto Document)\nRendern durch Klick auf den “Render”-Button\n\n\n\n\n\n\n\nFigure 2.1: GUI in Rstudio wenn du ein neues Projekt mit File &gt; New Project erstellst",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
-    ]
-  },
-  {
-    "objectID": "02_wo_schreibe_ich.html#option-2-quarto-in-visual-studio-code-vs-code-nutzen",
-    "href": "02_wo_schreibe_ich.html#option-2-quarto-in-visual-studio-code-vs-code-nutzen",
-    "title": "2  Quarto starten ohne Terminal",
-    "section": "2.5 Option 2: Quarto in Visual Studio Code (VS Code) nutzen",
-    "text": "2.5 Option 2: Quarto in Visual Studio Code (VS Code) nutzen\nVS Code ist ein sehr mächtiger Editor, aber technisch etwas komplexer.\n\n2.5.1 Voraussetzungen:\n\nVisual Studio Code\nQuarto CLI (muss installiert sein)\nQuarto VS Code Extension\n\n\n\n2.5.2 Schritt-für-Schritt:\n\nQuarto installieren (wie oben)\nVS Code installieren\nQuarto-Erweiterung installieren:\n\nÖffne den Extensions-Tab (Symbol: Blöcke)\nSuche nach “Quarto”\nKlicke auf „Installieren“\n\n\n\n\n\n\n\n\nFigure 2.2: GUI in VSCode mit der installierten Quarto Extension\n\n\n\n\nNeue .qmd-Datei erstellen → Datei &gt; Neu\nOben erscheint eine “Render”-Schaltfläche, sobald eine .qmd-Datei aktiv ist\n\n📷 Screenshot: Quarto-Datei in VS Code mit Render-Button → screenshot-vscode-render.png",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
-    ]
-  },
-  {
-    "objectID": "02_wo_schreibe_ich.html#positron",
-    "href": "02_wo_schreibe_ich.html#positron",
-    "title": "2  Quarto starten ohne Terminal",
-    "section": "2.6 Positron",
-    "text": "2.6 Positron\nPositron ist ein neuer, schlanker Editor speziell für Quarto – noch in Entwicklung (Stand: 2025), aber vielversprechend für didaktische Kontexte.\nVorteile: - Minimalistisch, kein R oder VS Code nötig - Fokus auf .qmd-Dateien - Eingebaute Quarto-Unterstützung\n\n\n\n\n\n\nFigure 2.3: Positron-Fenster in welchem in grerade diese Anleitung schreibe",
+    "section": "2.3 User-Interface",
+    "text": "2.3 User-Interface\nAlle drei vorgeschlagenen Programme haben ein ähnliches Userinterface und eine Möglichkeit den Quelltext (.qmd) neben dem Ausgabeformat (Webseite, Wordfile, etc.) anzeigen zu lassen.\n\nRStudioVisual Studio CodePositron\n\n\nRStudio kann über den Softwareinstaller an der PHBern auf managed Geräten installiert werden. Quarto ist integriert im Installer. Somit hast du alles was du brauchst um Quarto zum laufen zu bringen.\nRStudio ist eigentlich auf statistische Auswertungen mit R spezialisiert, das User-Interface sieht vielleicht etwas altbacken oder überlastet aus.\nSchritt-für-Schritt Anleitung\n\nInstallier R und RStudio (falls noch nicht vorhanden)\n\nhttps://posit.co/download/rstudio-desktop/\n\nNeues Projekt anlegen (File &gt; New Project)\nNeue Quarto-Datei erstellen (File &gt; New File &gt; Quarto Document)\nRendern durch Klick auf den “Render”-Button\n\n\n\n\n\n\n\nAbbildung 2.1: GUI in Rstudio wenn du ein neues Projekt mit File &gt; New Project erstellst\n\n\n\n\n\n\n\n\n\nAbbildung 2.2: Render-Button\n\n\n\n\n\nVS Code ist ein sehr mächtiger Editor aber kann technisch einschüchternd wirken.\nVoraussetzungen:\n\nVisual Studio Code\nQuarto CLI (muss installiert sein)\nQuarto VS Code Extension\n\nSchritt-für-Schritt:\n\nQuarto installieren (wie oben)\nVS Code installieren\nQuarto-Erweiterung installieren:\n\nÖffne den Extensions-Tab (Symbol: Blöcke)\nSuche nach “Quarto”\nKlicke auf „Installieren“\n\n\n\n\n\n\n\n\nAbbildung 2.3: GUI in VSCode mit der installierten Quarto Extension\n\n\n\n\nNeue .qmd-Datei erstellen → Datei &gt; Neu\nOben erscheint eine “Render”-Schaltfläche, sobald eine .qmd-Datei aktiv ist\n\n\n\n\n\n\n\nAbbildung 2.4: Render-Button (Zeitungssymbol)\n\n\n\n\n\nPositron ist ein neuer, schlanker Editor speziell für Quarto, noch in Entwicklung (Stand: 2025), aber vielversprechend.\nVorteile: - Minimalistisch, kein R oder VS Code nötig - Fokus auf .qmd-Dateien - Eingebaute Quarto-Unterstützung\n\n\n\n\n\n\nAbbildung 2.5: Positron-Fenster in welchem in grerade diese Anleitung schreibe\n\n\n\n\n\n\n\n\n\nAbbildung 2.6: Render Button heisst hier “Preview” mit Zeitungssymbol",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
@@ -153,8 +103,8 @@
     "objectID": "02_wo_schreibe_ich.html#test-ist-quarto-installiert",
     "href": "02_wo_schreibe_ich.html#test-ist-quarto-installiert",
     "title": "2  Quarto starten ohne Terminal",
-    "section": "2.7 Test: Ist Quarto installiert?",
-    "text": "2.7 Test: Ist Quarto installiert?\nWenn du dir nicht sicher sind, ob Quarto korrekt installiert ist, kannst du das Terminal öffnen und folgendes eingeben:\nquarto check",
+    "section": "2.4 Test: Ist Quarto installiert?",
+    "text": "2.4 Test: Ist Quarto installiert?\nWenn du dir nicht sicher sind, ob Quarto korrekt installiert ist, kannst du das Terminal öffnen und folgendes eingeben:\nquarto check\n\n\n\n\n\n\nTipp\n\n\n\nDie Anleitung wird R Studio als Basis nehmen, da es für viele Dozierende über den internen Appstore verfügbar ist. Der Autor bevorzugt jedoch Positron, da es leicht schneller startet und moderner aussieht.\nDa Quarto ja eigentlich in der Befehlszeile existiert, spielt es aber gar keine Rolle und du kannst auch Microsoft Notepad in MS-DOS nutzen.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto starten ohne Terminal</span>"
     ]
@@ -164,7 +114,17 @@
     "href": "03_erstes_Dokument.html",
     "title": "3  Dein erstes Quarto-Dokument",
     "section": "",
-    "text": "3.1 1. Starte RStudio\nNun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!\nWir arbeiten Schritt für Schritt.\nÖffne RStudio auf deinem Computer.\n📸 Screenshot: RStudio Startbildschirm",
+    "text": "3.1 Starte den Editor\nNun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!\nWir arbeiten Schritt für Schritt.\nÖffne RStudio auf deinem Computer.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#starte-den-editor",
+    "href": "03_erstes_Dokument.html#starte-den-editor",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "",
+    "text": "Abbildung 3.1: RStudio ohne geöffnetes Dokument",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
     ]
@@ -173,8 +133,8 @@
     "objectID": "03_erstes_Dokument.html#neues-quarto-dokument-erstellen",
     "href": "03_erstes_Dokument.html#neues-quarto-dokument-erstellen",
     "title": "3  Dein erstes Quarto-Dokument",
-    "section": "3.2 2. Neues Quarto-Dokument erstellen",
-    "text": "3.2 2. Neues Quarto-Dokument erstellen\nKlicke oben links auf File → New File → Quarto Document…\n📸 Screenshot: File &gt; New File &gt; Quarto Document…\nEin neues Fenster erscheint. Dort kannst du folgende Angaben machen:\n\nTitle: Gib z. B. „Mein erstes Quarto-Dokument“ ein\n\nAuthor: Deinen Namen\n\nFormat: Wähle „HTML“\n\nKlicke auf Create\n\n📸 Screenshot: Quarto-Dokument erstellen (mit ausgefüllten Feldern)",
+    "section": "3.2 Neues Quarto-Dokument erstellen",
+    "text": "3.2 Neues Quarto-Dokument erstellen\nKlicke oben links auf File → New File → Quarto Document…\n   Ein neues Fenster erscheint. Dort kannst du folgende Angaben machen:\n\nTitle: Gib z. B. „Mein erstes Quarto-Dokument“ ein\n\nAuthor: Deinen Namen\n\nFormat: Wähle „HTML“\n\nUse visual markdown editor darauf verzichten wir momentan. Es kann jederzeit später mit einem Mausklick geändert werden.\nKlicke auf Create\n\n\n\n\n\n\n\nAbbildung 3.2: RStudio ohne geöffnetes Dokument",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
     ]
@@ -183,8 +143,8 @@
     "objectID": "03_erstes_Dokument.html#überblick-über-das-dokument",
     "href": "03_erstes_Dokument.html#überblick-über-das-dokument",
     "title": "3  Dein erstes Quarto-Dokument",
-    "section": "3.3 3. Überblick über das Dokument",
-    "text": "3.3 3. Überblick über das Dokument\nQuarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:\n---\ntitle: \"Mein erstes Quarto-Dokument\"\nauthor: \"Max Muster\"\nformat: html\n---\n\n## Einführung\n\nDies ist mein erstes Quarto-Dokument.\n\nWas wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.\nWas du oben siehst, nennt sich YAML-Header (der Teil zwischen ---), da stehen Titel, Autor:in und das gewünschte Format. Du musst ihn meistens nicht verändern.\nDer Rest ist Text, den du einfach schreiben kannst.",
+    "section": "3.3 Überblick über das Dokument",
+    "text": "3.3 Überblick über das Dokument\nQuarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:\n---\ntitle: \"Mein erstes Quarto-Dokument\"\nauthor: \"Max Muster\"\nformat: html\n---\n\n## Einführung\n\nDies ist mein erstes Quarto-Dokument.\n\nWas wichtig ist schreibe ich *kursiv*, was sehr wichtig schreibe ich **fett**.\nWas du oben siehst, nennt sich YAML-Header (der Teil zwischen ---), da stehen Titel, Autor:in und das gewünschte Format. Du musst ihn meistens nicht verändern.\nDer Rest ist Text, den du einfach schreiben kannst.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
     ]
@@ -194,7 +154,17 @@
     "href": "03_erstes_Dokument.html#dokument-rendern-also-erstellen",
     "title": "3  Dein erstes Quarto-Dokument",
     "section": "3.4 Dokument „rendern“ (also erstellen)",
-    "text": "3.4 Dokument „rendern“ (also erstellen)\nKlicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch im Browser geöffnet wird.\n📸 Screenshot: Render-Button\nDu solltest nun dein erstes Quarto-Dokument im Browser sehen – gratuliere!\n\nNächste Schritte\n\nDu kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:\n## Meine Themen\n\nIch unterrichte gerne Mathematik.\n\n## Warum ich Quarto nutze\n\nWeil es einfach ist und schön aussieht.\nKlicke wieder auf Render, um das aktualisierte Dokument zu sehen.\nTipp: Speichern nicht vergessen\nVergiss nicht, dein Dokument unter einem passenden Namen zu speichern: File → Save As…\n📸 Screenshot: Speichern unter Dialog",
+    "text": "3.4 Dokument „rendern“ (also erstellen)\nKlicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch angezeigt wird.\n\n\n\n\n\n\nAbbildung 3.3: RStudio ohne geöffnetes Dokument\n\n\n\nDu solltest nun dein erstes Quarto-Dokument sehen – gratuliere! Die HTML Seite wird in R-Studio rechts im Viewer angezeigt, sie kann aber auch im Webbrowser geöffnet werden. Die Webseite ist noch nicht online (dazu kommen wir später) sondern es ist ein .html-Dokument im gleichen Ordner wie deine Originaldatei. Der Ordner mit gleichem Namen gehört ebenfalls zur Webseite, denn bei Webseiten werden typischerweise Inhalt und Layout getrennt abgespeichert.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#nächste-schritte",
+    "href": "03_erstes_Dokument.html#nächste-schritte",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "3.5 Nächste Schritte",
+    "text": "3.5 Nächste Schritte\nDu kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:\n## Meine Themen\n\nIch unterrichte *gerne* Mathematik.\n\n## Warum ich Quarto nutze\n\nWeil es einfach ist und **schön** aussieht.\n\nIch kann auf [Google](google.com) verlinken oder auf die [PHBern](phbern.ch).\nKlicke wieder auf Render, um das aktualisierte Dokument zu sehen.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
     ]
@@ -203,8 +173,18 @@
     "objectID": "03_erstes_Dokument.html#zusatz-andere-dateiformate-docx-pptx-präsentationen",
     "href": "03_erstes_Dokument.html#zusatz-andere-dateiformate-docx-pptx-präsentationen",
     "title": "3  Dein erstes Quarto-Dokument",
-    "section": "3.5 Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)",
-    "text": "3.5 Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)\nDu kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch als Word-Datei (docx), PowerPoint-Folie (pptx) oder sogar als interaktive Präsentation (reveal.js) ausgeben – und zwar mit einem kleinen Trick:\n\n3.5.1 Format ändern\nIm oberen Teil deines Dokuments (dem YAML-Header) steht so etwas wie:\n---\ntitle: \"Mein erstes Quarto-Dokument\"\nauthor: \"Max Muster\"\nformat: html\n---\nWenn du nun statt html z. B. docx einträgst, wird dein Dokument beim Rendern als Word-Datei erstellt:\nformat: docx\nDasselbe geht auch für PowerPoint:\nformat: pptx\nOder für eine schöne interaktive Präsentation mit „reveal.js“:\nformat: revealjs\nHinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert. Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).\n📸 Screenshot: YAML-Header mit unterschiedlichen Formaten\n## Mehrere Formate auf einmal?\nJa, sogar das geht – einfach so schreiben:\nformat:\n  html: default\n  docx: default\n  pptx: default\nDann erzeugt Quarto beim Rendern alle drei Dateien gleichzeitig.\n📸 Screenshot: Render mit mehreren Formaten\nIn den nächsten Kapiteln zeigen wir dir, wie du Inhalte noch schöner gestalten kannst – z. B. mit Listen, Bildern, Tabellen oder eingebauten Übungsfragen.",
+    "section": "3.6 Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)",
+    "text": "3.6 Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)\nDu kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch als Word-Datei (docx), PowerPoint-Folie (pptx) oder sogar als interaktive Präsentation (reveal.js) ausgeben:\n\n3.6.1 Format ändern\nIm oberen Teil deines Dokuments (dem YAML-Header) steht so etwas wie:\n---\ntitle: \"Mein erstes Quarto-Dokument\"\nauthor: \"Max Muster\"\nformat: html\n---\nWenn du nun statt html z. B. docx einträgst, wird dein Dokument beim Rendern als Word-Datei erstellt:\nformat: docx\nDasselbe geht auch für PowerPoint:\nformat: pptx\nOder für eine schöne interaktive Präsentation mit „reveal.js“:\nformat: revealjs\nHinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert. Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).\n\n\n\n\n\n\nVorsicht\n\n\n\nBei jedem Format wird das Standardtemplate (Layout, Formatierung) verwendet. Das kann natürlich später alles geändert werden. Es führt auch dazu, dass revealjs Slides nicht identisch zu Powerpoint Slides aussehen.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
+    ]
+  },
+  {
+    "objectID": "03_erstes_Dokument.html#mehrere-formate-auf-einmal",
+    "href": "03_erstes_Dokument.html#mehrere-formate-auf-einmal",
+    "title": "3  Dein erstes Quarto-Dokument",
+    "section": "3.7 Mehrere Formate auf einmal?",
+    "text": "3.7 Mehrere Formate auf einmal?\nJa, sogar das geht – einfach so schreiben:\nformat:\n  html: default\n  docx: default\n  pptx: default\n\n\n\n\n\n\nAbbildung 3.4: Wähle beim Rendern aus welches Dateiformat gerendert werden sollte\n\n\n\nGleichzeitig alle angegeben Formate rendern geht auch, schauen wir uns aber erst an, wenn wir eine ganze Webseite erstellen.\n\n\n\n\n\n\nVorsicht\n\n\n\nDas Dokumentformat pdfgibt es ebenfalls und kann auch gut benutzt werden, hierfür wird jedoch \\(\\LaTeX\\) verwendet. Somit kann ein Meldung kommen, dass noch etwas nachinstalliert werden sollte.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dein erstes Quarto-Dokument</span>"
     ]
@@ -214,7 +194,7 @@
     "href": "04_Formatieren.html",
     "title": "4  Texte gestalten mit Quarto",
     "section": "",
-    "text": "4.1 Überschriften\nJetzt, wo du dein erstes Quarto-Dokument erstellt hast, schauen wir uns an, wie du den Text schön und übersichtlich gestalten kannst.\nÜberschriften helfen dabei, deinen Text zu strukturieren. Sie funktionieren ganz einfach:\nJe mehr #, desto kleiner die Überschrift.",
+    "text": "4.1 Überschriften\nJetzt, wo du dein erstes Quarto-Dokument erstellt hast, schauen wir uns an, wie du den Text schön und übersichtlich gestalten kannst.\nDie hier gezeigten Methoden funktionieren in allen Dateiformaten. Empfehlung ist htmlund revealjs da beide auf den Websprachen html, css und js basieren und in jedem Webbrowser angezeigt werden können.\nÜberschriften helfen dabei, deinen Text zu strukturieren. Sie funktionieren ganz einfach:\nJe mehr #, desto kleiner die Überschrift.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
     ]
@@ -224,7 +204,7 @@
     "href": "04_Formatieren.html#überschriften",
     "title": "4  Texte gestalten mit Quarto",
     "section": "",
-    "text": "# Titel (ganz oben)\n## Kapitelüberschrift\n### Unterkapitel",
+    "text": "# Überschrift 1 (grösste Überschrift)\n## Überschrift 2 (zweitgrösste Überschrift)\n### Überschrift 3 ...",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
     ]
@@ -233,8 +213,8 @@
     "objectID": "04_Formatieren.html#textformatierungen",
     "href": "04_Formatieren.html#textformatierungen",
     "title": "4  Texte gestalten mit Quarto",
-    "section": "4.2 ✍️ Textformatierungen",
-    "text": "4.2 ✍️ Textformatierungen\nHier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:\n\n\n\nFormat\nSo schreibst du es\nErgebnis\n\n\n\n\nFett\n**dieser Text**\ndieser Text\n\n\nKursiv\n*dieser Text*\ndieser Text\n\n\nCode\n`dieser Text`\ndieser Text\n\n\nLink\n[Text](https://example.com)\nText",
+    "section": "4.2 Textformatierungen",
+    "text": "4.2 Textformatierungen\nHier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:\n\n\n\nFormat\nSo schreibst du es\nErgebnis\n\n\n\n\nFett\n**dieser Text**\ndieser Text\n\n\nKursiv\n*dieser Text*\ndieser Text\n\n\nCode\n`dieser Text`\ndieser Text\n\n\nLink\n[Text](https://example.com)\nText",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
     ]
@@ -243,8 +223,8 @@
     "objectID": "04_Formatieren.html#listen",
     "href": "04_Formatieren.html#listen",
     "title": "4  Texte gestalten mit Quarto",
-    "section": "4.3 📋 Listen",
-    "text": "4.3 📋 Listen\nListen sind super, um Dinge übersichtlich darzustellen.\n\n4.3.1 Ungeordnete Liste (•):\n- Apfel\n- Banane\n- Orange\nErgibt:\n\nApfel\n\nBanane\n\nOrange\n\n\n\n4.3.2 Geordnete Liste (1., 2., 3.):\n1. Einschalten\n2. Rendern\n3. Speichern\nErgibt:\n\nEinschalten\n\nRendern\n\nSpeichern",
+    "section": "4.3 Listen",
+    "text": "4.3 Listen\nListen sind super, um Dinge übersichtlich darzustellen.\n\n4.3.1 Ungeordnete Liste:\n- Apfel\n- Banane\n- Orange\noder\n* Aple\n* Banane\n* Orange\nErgibt:\n\nApfel\n\nBanane\n\nOrange\n\nHinweis: Falls du andere Symbole am Anfang nutzen möchtest, geht das übers YAML.\n\n\n4.3.2 Geordnete Liste:\n1. Einschalten\n2. Rendern\n3. Speichern\nErgibt:\n\nEinschalten\n\nRendern\n\nSpeichern\n\nHinweis:\nDie Zahlen vorne sind eigentlich egal, Quarto zählt selbst auf. Folgendes wird also auch funktioneiren:\n1. Einschalten\n1. Rndern\n1. Speichern",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
     ]
@@ -254,17 +234,17 @@
     "href": "04_Formatieren.html#bilder-einfügen",
     "title": "4  Texte gestalten mit Quarto",
     "section": "4.4 Bilder einfügen",
-    "text": "4.4 Bilder einfügen\nBilder lassen sich ganz einfach einfügen – ähnlich wie Links:\n![Beschreibung](bildname.png)\nBeispiel:\n![Logo PHBern](phbern-logo.png)\n\n📸 Tipp: Lege dein Bild in denselben Ordner wie dein .qmd-Dokument.",
+    "text": "4.4 Bilder einfügen\nBilder lassen sich ganz einfach einfügen, ähnlich wie Links:\n![Beschreibung](bildname.png)\nBeispiel:\n![Logo PHBern](phbern-logo.png)\nGenau wie beim Link, muss in den runden Klammern ein Pfad stehen, hier ein Pfad zum Bild. Die Beispiele oben erwarten, dass das Bild im gleichen Ordner wie die .qmd-Datei liegt.\n\n\n\n\n\n\nTipp\n\n\n\nUnterordner:\n![Logo PHBern](Bilder/phbern-logo.png)\nÜbergeorndneter Ordner\n![Logo PHBern](../phbern-logo.png)\nDirekt aus dem Internet\n![Logo PHBern](https://ttim.phbern.ch/wp-content/uploads/2022/06/phbern_logo_desktop_20220615.svg)\nLetzteres wird live geladen vom Benutzer, das heisst, dass es nur angezeigt werden kann, wenn der Benutzer Internetzugang hat.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
     ]
   },
   {
-    "objectID": "04_Formatieren.html#nächster-schritt",
-    "href": "04_Formatieren.html#nächster-schritt",
+    "objectID": "04_Formatieren.html#callout-boxen",
+    "href": "04_Formatieren.html#callout-boxen",
     "title": "4  Texte gestalten mit Quarto",
-    "section": "4.5 Nächster Schritt",
-    "text": "4.5 Nächster Schritt\nIm nächsten Kapitel lernst du, wie du Tabellen, Matheformeln und sogar interaktive Inhalte wie Quiz oder Codeblöcke nutzen kannst. Quarto kann viel – aber alles Schritt für Schritt.",
+    "section": "4.5 Callout-Boxen",
+    "text": "4.5 Callout-Boxen\nWie findest du die farblichen Kästchen? Auch die kannst du einfach mit etwas Syntax selbst einfügen\n:::{.callout-tip}\nMein Text für einen Tipp hier:\nUnd das beste ist, die Boxen sehen auch auf deinen revealjs-Slides gut aus.\nEs gibt einen grossen Guide mit allen möglichen Einstellungen zu Quarto. Falls du mehr Möglichkeiten möchtest, schau da mal rein.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Texte gestalten mit Quarto</span>"
     ]
@@ -274,7 +254,7 @@
     "href": "05_Tabellen.html",
     "title": "5  Tabellen, Formeln und interaktive Inhalte",
     "section": "",
-    "text": "5.1 Tabellen erstellen\nIn diesem Kapitel lernst du, wie du in Quarto Tabellen, mathematische Formeln und einfache interaktive Inhalte einbauen kannst.\nTabellen lassen sich in Quarto sehr einfach schreiben. Hier ein Beispiel:\nErgebnis:",
+    "text": "5.1 Tabellen erstellen\nTabellen lassen sich in Quarto sehr einfach schreiben. Hier ein Beispiel:\nErgebnis:\nDie Leerstellen sind egal, es könnte übrigens auch so aussehen:\nDie Bindestriche geben die relative Länge, wenn in jeder Spalte zwei sind, sind alle Spalten gleich breit.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
     ]
@@ -284,7 +264,7 @@
     "href": "05_Tabellen.html#tabellen-erstellen",
     "title": "5  Tabellen, Formeln und interaktive Inhalte",
     "section": "",
-    "text": "| Name       | Fach        | Klasse |\n|------------|-------------|--------|\n| Anna Meyer | Mathematik  | 7A     |\n| Tom Berger | Deutsch     | 8B     |\n\n\n\n\nName\nFach\nKlasse\n\n\n\n\nAnna Meyer\nMathematik\n7A\n\n\nTom Berger\nDeutsch\n8B",
+    "text": "| Name       | Fach        | Klasse |\n|------------|-------------|--------|\n| Anna Meyer | Mathematik  | 7A     |\n| Tom Berger | Deutsch     | 8B     |\n\n\n\n\nName\nFach\nKlasse\n\n\n\n\nAnna Meyer\nMathematik\n7A\n\n\nTom Berger\nDeutsch\n8B\n\n\n\n\n| Name| Fach| Klasse |\n|--|--|--|\n| Anna Meyer | Mathematik| 7A|\n| Tom Berger | Deutsch| 8B|\n\n\n5.1.1 Visual Editor\nDas Eintippen einer solchen Tabelle kann lästig sein. Einerseits kann jeder Chatbot (KI) dich beim Schreiprozess unterstützen, denn Markdownkönnen die sehr gut. Andererseits kannst du auch den Visual Editor nutzen.\n\n\n\n\n\n\nAbbildung 5.1: RStudio - Visual Editor\n\n\n\nDer Visual Editor ist näher an typischen Textverarbeitungsprogramm wie z.B. Word. Du kannst über klicken Tabellen oder Bilder einfügen, auch siehst du die meisten Formatierungen (z.B. Überschriften und fett) ähnlich wie sie später angezeigt werden. Falls du Quarto als Lerngelegenheit auffasst, etwas mehr über Computersprachen zu lernen, dann würde ich den Visual Editor vermeiden.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
     ]
@@ -294,7 +274,17 @@
     "href": "05_Tabellen.html#mathematische-formeln",
     "title": "5  Tabellen, Formeln und interaktive Inhalte",
     "section": "5.2 Mathematische Formeln",
-    "text": "5.2 Mathematische Formeln\nQuarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichtig:\n\n5.2.1 Formeln im Text\nDie Fläche berechnet sich mit $A = a \\times b$.\nErgebnis: Die Fläche berechnet sich mit \\(A = a \\times b\\).\n\n\n5.2.2 Formeln als Block\n$$\nE = mc^2\n$$\nErgebnis:\n\\[\nE = mc^2\n\\]",
+    "text": "5.2 Mathematische Formeln\nQuarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichtig:\n\n5.2.1 Formeln im Text\nDie Fläche berechnet sich mit $A = a \\cdot b$.\nErgebnis: Die Fläche berechnet sich mit \\(A = a \\cdot b\\).\n\n\n5.2.2 Formeln als Block\n$$\nE = mc^2\n$$\nErgebnis:\n\\[\nE = mc^2\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
+    ]
+  },
+  {
+    "objectID": "05_Tabellen.html#referenzieren",
+    "href": "05_Tabellen.html#referenzieren",
+    "title": "5  Tabellen, Formeln und interaktive Inhalte",
+    "section": "5.3 Referenzieren",
+    "text": "5.3 Referenzieren\nDir ist vielleicht Aufgefallen, dass die Abbildungen aufgezählt werden, auch das ist bereits in Quarto eingebaut.\n![Bildtitel](Bildquelle){#fig-beliebigerTeil}\nDie {#fig-}hinten sorgen dafür, dass die Abbildung als solche erkannt wird.\nAlternative Schreibweise:\n::: {#fig-beliebigerTeil}\n\n![](bild.png)\n\nBildtitel\n:::\nUm auf die Abbildung zu referenzieren, kannst du mit @fig-beliebigerTeilauf sie verlinken, z.B. mit Abbildung 1.1 (a) .\nTabellen können auch einfach referenziert werden:\n| Col1 | Col2 | Col3 |\n|------|------|------|\n| A    | B    | C    |\n| E    | F    | G    |\n| A    | G    | G    |\n\n: My Caption {#tbl-letters}\n\nSee @tbl-letters.\noder alternative Schreibweise\n::: {#tbl-letters}\n\n| Col1 | Col2 | Col3 |\n|------|------|------|\n| A    | B    | C    |\n| E    | F    | G    |\n| A    | G    | G    |\n\nMy Caption\n\n::: \nFür mathematikaffine Personen",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
     ]
@@ -303,8 +293,8 @@
     "objectID": "05_Tabellen.html#interaktive-inhalte-quizzes-und-code",
     "href": "05_Tabellen.html#interaktive-inhalte-quizzes-und-code",
     "title": "5  Tabellen, Formeln und interaktive Inhalte",
-    "section": "5.3 Interaktive Inhalte: Quizzes und Code",
-    "text": "5.3 Interaktive Inhalte: Quizzes und Code\nMit Quarto kannst du sogar kleine interaktive Elemente einbauen.\n\n5.3.1 Quiz-Fragen\nEin einfaches Multiple-Choice-Beispiel:\n::: {.callout-tip}\n### Kleine Quizfrage\n\nWelche Zahl ist prim?\n\n- [ ] 8\n- [x] 7\n- [ ] 9\n:::\nBeim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.\n\n8\n7\n9\n\n\n\n\n5.3.2 Code einfügen\nWenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:\n```r\nx &lt;- 1:5\nmean(x)\n```\nDas wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.",
+    "section": "5.4 Interaktive Inhalte: Quizzes und Code",
+    "text": "5.4 Interaktive Inhalte: Quizzes und Code\nMit Quarto kannst du sogar kleine interaktive Elemente einbauen.\n\n5.4.1 Quiz-Fragen\nEin einfaches Multiple-Choice-Beispiel:\n::: {.callout-tip}\n### Kleine Quizfrage\n\nWelche Zahl ist prim?\n\n- [ ] 8\n- [x] 7\n- [ ] 9\n:::\nBeim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.\n\n8\n7\n9\n\n\n\n\n5.4.2 Code einfügen\nWenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:\n```r\nx &lt;- 1:5\nmean(x)\n```\nDas wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
     ]
@@ -313,8 +303,8 @@
     "objectID": "05_Tabellen.html#zusammenfassung",
     "href": "05_Tabellen.html#zusammenfassung",
     "title": "5  Tabellen, Formeln und interaktive Inhalte",
-    "section": "5.4 Zusammenfassung",
-    "text": "5.4 Zusammenfassung\n\nTabellen sind einfach mit Strichen und Pipes (|) zu schreiben.\n\nFormeln funktionieren mit LaTeX-Syntax ($...$).\n\nInteraktive Elemente wie Quizzes oder Codeblöcke machen deine Materialien lebendig.\n\nIm nächsten Kapitel schauen wir uns an, wie man Quarto Book noch besser organisiert und Kapitel miteinander verknüpft.",
+    "section": "5.5 Zusammenfassung",
+    "text": "5.5 Zusammenfassung\n\nTabellen sind einfach mit Strichen und Pipes (|) zu schreiben.\n\nFormeln funktionieren mit LaTeX-Syntax ($...$).\n\nInteraktive Elemente wie Quizzes oder Codeblöcke machen deine Materialien lebendig.\n\nIm nächsten Kapitel schauen wir uns an, wie man Quarto Book noch besser organisiert und Kapitel miteinander verknüpft.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabellen, Formeln und interaktive Inhalte</span>"
     ]
@@ -654,7 +644,7 @@
     "href": "10_Divs.html#figures-bilder-mit-bildunterschrift-grösse-ausrichtung",
     "title": "10  Callouts, Figures und weitere :::- Elemente",
     "section": "10.3 Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)",
-    "text": "10.3 Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)\nEs gibt zwei bequeme Wege. Wähle einen und bleibe dabei konsistent.\n\n10.3.1 Weg 1: Markdown-Bild mit Bildunterschrift und Attributen\n![Bildunterschrift: Logo PHBern](images/phbern-logo.png){fig-align=\"center\" width=\"50%\"}\n\nfig-align=\"center\" zentriert das Bild.\n\nwidth=\"50%\" skaliert die Breite relativ zur Seite.\n\n\n\n10.3.2 Weg 2: Div mit figure-Rolle\n\n\n\n\n\n\nLogo PHBern\n\n\n\n\nFigure 10.1: Logo der PHBern\n\n\n\n::: {#fig-logo phbern .figure}\n![Logo PHBern](screenshots/gui_projekt.png){width=\"45%\"}\n\n*Logo der PHBern*\n:::\n\nDie letzte Zeile ist die Bildunterschrift (kursiv).\n\nMit einer ID wie {#fig-logo} kannst du verweisen: siehe Figure 10.1.",
+    "text": "10.3 Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)\nEs gibt zwei bequeme Wege. Wähle einen und bleibe dabei konsistent.\n\n10.3.1 Weg 1: Markdown-Bild mit Bildunterschrift und Attributen\n![Bildunterschrift: Logo PHBern](images/phbern-logo.png){fig-align=\"center\" width=\"50%\"}\n\nfig-align=\"center\" zentriert das Bild.\n\nwidth=\"50%\" skaliert die Breite relativ zur Seite.\n\n\n\n10.3.2 Weg 2: Div mit figure-Rolle\n\n\n\n\n\n\nLogo PHBern\n\n\n\n\nAbbildung 10.1: Logo der PHBern\n\n\n\n::: {#fig-logo phbern .figure}\n![Logo PHBern](screenshots/gui_projekt.png){width=\"45%\"}\n\n*Logo der PHBern*\n:::\n\nDie letzte Zeile ist die Bildunterschrift (kursiv).\n\nMit einer ID wie {#fig-logo} kannst du verweisen: siehe Abbildung 10.1.",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Callouts, Figures und weitere `:::-` Elemente</span>"
     ]

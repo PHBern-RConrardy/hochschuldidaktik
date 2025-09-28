@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -91,17 +95,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script>
 
@@ -114,13 +118,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_wo_schreibe_ich.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto starten ohne Terminal</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -130,14 +134,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Quarto für die PHBern</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Suchen"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -221,23 +227,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link active" data-scroll-target="#lernziele"><span class="header-section-number">2.1</span> Lernziele</a></li>
-  <li><a href="#was-ist-ein-terminal" id="toc-was-ist-ein-terminal" class="nav-link" data-scroll-target="#was-ist-ein-terminal"><span class="header-section-number">2.2</span> Was ist ein Terminal?</a></li>
-  <li><a href="#warum-braucht-quarto-trotzdem-das-terminal" id="toc-warum-braucht-quarto-trotzdem-das-terminal" class="nav-link" data-scroll-target="#warum-braucht-quarto-trotzdem-das-terminal"><span class="header-section-number">2.3</span> Warum braucht Quarto trotzdem das Terminal?</a></li>
-  <li><a href="#option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops" id="toc-option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops" class="nav-link" data-scroll-target="#option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops"><span class="header-section-number">2.4</span> Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)</a>
-  <ul class="collapse">
-  <li><a href="#schritt-für-schritt" id="toc-schritt-für-schritt" class="nav-link" data-scroll-target="#schritt-für-schritt"><span class="header-section-number">2.4.1</span> Schritt-für-Schritt:</a></li>
-  </ul></li>
-  <li><a href="#option-2-quarto-in-visual-studio-code-vs-code-nutzen" id="toc-option-2-quarto-in-visual-studio-code-vs-code-nutzen" class="nav-link" data-scroll-target="#option-2-quarto-in-visual-studio-code-vs-code-nutzen"><span class="header-section-number">2.5</span> Option 2: Quarto in Visual Studio Code (VS Code) nutzen</a>
-  <ul class="collapse">
-  <li><a href="#voraussetzungen" id="toc-voraussetzungen" class="nav-link" data-scroll-target="#voraussetzungen"><span class="header-section-number">2.5.1</span> Voraussetzungen:</a></li>
-  <li><a href="#schritt-für-schritt-1" id="toc-schritt-für-schritt-1" class="nav-link" data-scroll-target="#schritt-für-schritt-1"><span class="header-section-number">2.5.2</span> Schritt-für-Schritt:</a></li>
-  </ul></li>
-  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron"><span class="header-section-number">2.6</span> Positron</a></li>
-  <li><a href="#test-ist-quarto-installiert" id="toc-test-ist-quarto-installiert" class="nav-link" data-scroll-target="#test-ist-quarto-installiert"><span class="header-section-number">2.7</span> Test: Ist Quarto installiert?</a></li>
+  <li><a href="#was-ist-ein-terminal" id="toc-was-ist-ein-terminal" class="nav-link active" data-scroll-target="#was-ist-ein-terminal"><span class="header-section-number">2.1</span> Was ist ein Terminal?</a></li>
+  <li><a href="#mit-welchem-programm-schreibe-ich" id="toc-mit-welchem-programm-schreibe-ich" class="nav-link" data-scroll-target="#mit-welchem-programm-schreibe-ich"><span class="header-section-number">2.2</span> Mit welchem Programm schreibe ich?</a></li>
+  <li><a href="#user-interface" id="toc-user-interface" class="nav-link" data-scroll-target="#user-interface"><span class="header-section-number">2.3</span> User-Interface</a></li>
+  <li><a href="#test-ist-quarto-installiert" id="toc-test-ist-quarto-installiert" class="nav-link" data-scroll-target="#test-ist-quarto-installiert"><span class="header-section-number">2.4</span> Test: Ist Quarto installiert?</a></li>
   </ul>
 </nav>
     </div>
@@ -263,50 +259,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="lernziele" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="lernziele"><span class="header-section-number">2.1</span> Lernziele</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Nach diesem Kapitel verstehst du:</p>
 <ul>
 <li>was ein <em>Terminal</em> ist und warum es für Quarto technisch notwendig ist,</li>
 <li>wie du Quarto <strong>auch ohne Terminalwissen</strong> nutzen können,</li>
 <li>welche Programme du dafür brauchst (RStudio, VS Code, Positron),</li>
 </ul>
-<hr>
-</section>
-<section id="was-ist-ein-terminal" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="was-ist-ein-terminal"><span class="header-section-number">2.2</span> Was ist ein Terminal?</h2>
-<p>Ein <strong>Terminal</strong> (auch “Befehlszeile” oder “Konsole”) ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst.</p>
+</div>
+</div>
+<section id="was-ist-ein-terminal" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="was-ist-ein-terminal"><span class="header-section-number">2.1</span> Was ist ein Terminal?</h2>
+<p>Ein <strong>Terminal</strong> (auch “Befehlszeile” oder “Konsole”) ist ein Textfenster, in dem du direkt Befehle an den Computer schreibst. Auf MacOS heisst das Programm tatsächlich <code>Terminal</code>, auf Windows kann auch die <code>Powershell</code>genutzt werden.</p>
 <p>Ein typisches Beispiel (unter Windows): `quarto render dokument.qmd``</p>
-<p>Dieser Befehl sagt Quarto: “Bitte render das Dokument <code>dokument.qmd</code>.”</p>
+<p>Dieser Befehl sagt Quarto: “Bitte render (erstelle) das Dokument <code>dokument.qmd</code>.” Die <code>.qmd</code>-Datei ist eine reine Textdatei, ähnlich <code>.txt</code>-Dateien, somit können sie grundsätzlich mit jedem Texteditor (ja, sogar Word) geöffnet und bearbeitet werden.</p>
 <p>Für viele Lehrende ist das Terminal ungewohnt oder abschreckend. Die gute Nachricht:</p>
 <blockquote class="blockquote">
 <p><strong>Du musst das Terminal nicht nutzen</strong>, um mit Quarto zu arbeiten!</p>
 </blockquote>
 </section>
-<section id="warum-braucht-quarto-trotzdem-das-terminal" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="warum-braucht-quarto-trotzdem-das-terminal"><span class="header-section-number">2.3</span> Warum braucht Quarto trotzdem das Terminal?</h2>
-<p>Quarto selbst ist ein sogenanntes <strong>CLI-Programm</strong> (Command Line Interface). Es <strong>läuft im Hintergrund</strong> über die Befehlszeile – selbst wenn du es über RStudio oder VS Code bedienst.</p>
-<p>Das bedeutet: - Die Benutzeroberfläche (GUI) ist nicht in Quarto selbst enthalten. - Aber: Viele moderne Editoren <em>können Quarto einbetten</em> – damit wird alles bequem klickbar.</p>
+<section id="mit-welchem-programm-schreibe-ich" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="mit-welchem-programm-schreibe-ich"><span class="header-section-number">2.2</span> Mit welchem Programm schreibe ich?</h2>
+<p>Quarto selbst ist ein sogenanntes <strong>CLI-Programm</strong> (Command Line Interface). Es <strong>läuft im Hintergrund</strong> über die Befehlszeile, selbst wenn du es über RStudio oder VS Code bedienst.</p>
+<p>Das bedeutet: - Die Benutzeroberfläche (GUI) ist nicht in Quarto selbst enthalten. - Aber: Viele moderne Editoren können Quarto einbetten, damit wird alles bequem klickbar.</p>
+<p>Du arbeitest also vor allem mit einem Editor (spezielles Textprogramm) <em>deiner Wahl</em>.</p>
+<p><strong>Grobe Installationsanleitung:</strong></p>
+<ol type="1">
+<li>Installiere <a href="https://quarto.org/docs/get-started/">Quarto</a> wie du typischerweise Programme in deinem Betriebssystem installierst.</li>
+<li>Wähle einen Editor aus, z.B. ist <a href="https://code.visualstudio.com/">Visual Studio Code</a> von Microsoft verbreitet, aber auch <a href="https://positron.posit.co/">Positron</a> oder <a href="https://posit.co/downloads/">R Studio</a>, beides von den Machern von Quarot, ist beliebt.</li>
+<li>In deinem Editor installierst du eine <em>Extension</em> spezifisch für Quarto. (Bei R Studio ist Quarto bereits vorinstalliert.)</li>
+</ol>
 </section>
-<section id="option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="option-1-quarto-in-rstudio-nutzen-vermutlich-möglich-über-managed-windows-laptops"><span class="header-section-number">2.4</span> Option 1: Quarto in RStudio nutzen (vermutlich möglich über managed Windows Laptops)</h2>
-<p>RStudio ist besonders für Lehrende geeignet, da es:</p>
-<ul>
-<li>leicht zu bedienen ist,</li>
-<li>Quarto <strong>automatisch erkennt</strong>,</li>
-<li>Vorschau &amp; Render-Button enthält.</li>
-</ul>
-<section id="schritt-für-schritt" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="schritt-für-schritt"><span class="header-section-number">2.4.1</span> Schritt-für-Schritt:</h3>
+<section id="user-interface" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="user-interface"><span class="header-section-number">2.3</span> User-Interface</h2>
+<p>Alle drei vorgeschlagenen Programme haben ein ähnliches Userinterface und eine Möglichkeit den Quelltext (<code>.qmd</code>) neben dem Ausgabeformat (Webseite, Wordfile, etc.) anzeigen zu lassen.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Visual Studio Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Positron</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>RStudio kann über den Softwareinstaller an der PHBern auf managed Geräten installiert werden. Quarto ist integriert im Installer. Somit hast du alles was du brauchst um Quarto zum laufen zu bringen.</p>
+<p>RStudio ist eigentlich auf statistische Auswertungen mit R spezialisiert, das User-Interface sieht vielleicht etwas altbacken oder überlastet aus.</p>
+<p><strong>Schritt-für-Schritt Anleitung</strong></p>
 <ol type="1">
 <li><strong>Installier R und RStudio</strong> (falls noch nicht vorhanden)
 <ul>
 <li><a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></li>
-</ul></li>
-<li><strong>Installier Quarto</strong>:
-<ul>
-<li><a href="https://quarto.org/docs/get-started/">https://quarto.org/docs/get-started/</a></li>
-<li>Quarto wird systemweit installiert und von RStudio erkannt.</li>
 </ul></li>
 <li><strong>Neues Projekt anlegen</strong> (<code>File &gt; New Project</code>)</li>
 <li><strong>Neue Quarto-Datei erstellen</strong> (<code>File &gt; New File &gt; Quarto Document</code>)</li>
@@ -315,28 +321,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="screenshots/gui_projekt.png" class="img-fluid figure-img">
+<a href="screenshots/gui_projekt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;2.1: GUI in Rstudio wenn du ein neues Projekt mit File > New Project erstellst"><img src="screenshots/gui_projekt.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: GUI in Rstudio wenn du ein neues Projekt mit File &gt; New Project erstellst
+Abbildung&nbsp;2.1: GUI in Rstudio wenn du ein neues Projekt mit File &gt; New Project erstellst
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
-<section id="option-2-quarto-in-visual-studio-code-vs-code-nutzen" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="option-2-quarto-in-visual-studio-code-vs-code-nutzen"><span class="header-section-number">2.5</span> Option 2: Quarto in Visual Studio Code (VS Code) nutzen</h2>
-<p>VS Code ist ein sehr mächtiger Editor, aber technisch etwas komplexer.</p>
-<section id="voraussetzungen" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="voraussetzungen"><span class="header-section-number">2.5.1</span> Voraussetzungen:</h3>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/gui_rstudio_render.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2.2: Render-Button"><img src="screenshots/gui_rstudio_render.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.2: Render-Button
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>VS Code ist ein sehr mächtiger Editor aber kann technisch einschüchternd wirken.</p>
+<p><strong>Voraussetzungen:</strong></p>
 <ul>
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
 <li>Quarto CLI (muss installiert sein)</li>
 <li><strong>Quarto VS Code Extension</strong></li>
 </ul>
-</section>
-<section id="schritt-für-schritt-1" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="schritt-für-schritt-1"><span class="header-section-number">2.5.2</span> Schritt-für-Schritt:</h3>
+<p><strong>Schritt-für-Schritt:</strong></p>
 <ol type="1">
 <li><strong>Quarto installieren</strong> (wie oben)</li>
 <li><strong>VS Code installieren</strong></li>
@@ -350,10 +361,10 @@ Figure&nbsp;2.1: GUI in Rstudio wenn du ein neues Projekt mit File &gt; New Proj
 <div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="screenshots/gui_vscode.png" class="img-fluid figure-img">
+<a href="screenshots/gui_vscode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;2.3: GUI in VSCode mit der installierten Quarto Extension"><img src="screenshots/gui_vscode.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: GUI in VSCode mit der installierten Quarto Extension
+Abbildung&nbsp;2.3: GUI in VSCode mit der installierten Quarto Extension
 </figcaption>
 </figure>
 </div>
@@ -361,29 +372,62 @@ Figure&nbsp;2.2: GUI in VSCode mit der installierten Quarto Extension
 <li>Neue <code>.qmd</code>-Datei erstellen → <code>Datei &gt; Neu</code></li>
 <li>Oben erscheint eine <strong>“Render”-Schaltfläche</strong>, sobald eine <code>.qmd</code>-Datei aktiv ist</li>
 </ol>
-<p>📷 <em>Screenshot: Quarto-Datei in VS Code mit Render-Button</em> → <code>screenshot-vscode-render.png</code></p>
-<hr>
-</section>
-</section>
-<section id="positron" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="positron"><span class="header-section-number">2.6</span> Positron</h2>
-<p><a href="https://posit.co/blog/positron/">Positron</a> ist ein neuer, schlanker Editor speziell für Quarto – noch in Entwicklung (Stand: 2025), aber <strong>vielversprechend für didaktische Kontexte</strong>.</p>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/gui_vscode_render.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Abbildung&nbsp;2.4: Render-Button (Zeitungssymbol)"><img src="screenshots/gui_vscode_render.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.4: Render-Button (Zeitungssymbol)
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><a href="https://posit.co/blog/positron/">Positron</a> ist ein neuer, schlanker Editor speziell für Quarto, noch in Entwicklung (Stand: 2025), aber <strong>vielversprechend</strong>.</p>
 <p>Vorteile: - Minimalistisch, kein R oder VS Code nötig - Fokus auf <code>.qmd</code>-Dateien - Eingebaute Quarto-Unterstützung</p>
 <div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="screenshots/gui_positron_inception.png" class="img-fluid figure-img">
+<a href="screenshots/gui_positron_inception.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Abbildung&nbsp;2.5: Positron-Fenster in welchem in grerade diese Anleitung schreibe"><img src="screenshots/gui_positron_inception.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: Positron-Fenster in welchem in grerade diese Anleitung schreibe
+Abbildung&nbsp;2.5: Positron-Fenster in welchem in grerade diese Anleitung schreibe
 </figcaption>
 </figure>
 </div>
+<div id="fig-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/gui_positron_preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Abbildung&nbsp;2.6: Render Button heisst hier “Preview” mit Zeitungssymbol"><img src="screenshots/gui_positron_preview.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.6: Render Button heisst hier “Preview” mit Zeitungssymbol
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="test-ist-quarto-installiert" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="test-ist-quarto-installiert"><span class="header-section-number">2.7</span> Test: Ist Quarto installiert?</h2>
+<section id="test-ist-quarto-installiert" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="test-ist-quarto-installiert"><span class="header-section-number">2.4</span> Test: Ist Quarto installiert?</h2>
 <p>Wenn du dir nicht sicher sind, ob Quarto korrekt installiert ist, kannst du das Terminal öffnen und folgendes eingeben:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Anleitung wird R Studio als Basis nehmen, da es für viele Dozierende über den internen Appstore verfügbar ist. Der Autor bevorzugt jedoch Positron, da es leicht schneller startet und moderner aussieht.</p>
+<p>Da Quarto ja eigentlich in der Befehlszeile existiert, spielt es aber gar keine Rolle und du kannst auch <a href="https://en.wikipedia.org/wiki/Windows_Notepad">Microsoft Notepad</a> in MS-DOS nutzen.</p>
+</div>
+</div>
 
 
 </section>
@@ -414,12 +458,12 @@ Figure&nbsp;2.3: Positron-Fenster in welchem in grerade diese Anleitung schreibe
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Kopiert");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Kopiert");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -440,13 +484,14 @@ Figure&nbsp;2.3: Positron-Fenster in welchem in grerade diese Anleitung schreibe
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -801,6 +846,38 @@ Figure&nbsp;2.3: Positron-Fenster in welchem in grerade diese Anleitung schreibe
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
