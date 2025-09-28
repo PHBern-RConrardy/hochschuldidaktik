@@ -1,8 +1,15 @@
 # Tabellen, Formeln und interaktive Inhalte
 
-In diesem Kapitel lernst du, wie du in Quarto Tabellen, mathematische Formeln und einfache interaktive Inhalte einbauen kannst.
+:::{.callout-note}
+## Lernziele
 
----
+Nach diesem Kapitel verstehst du:
+
+- wie du mit dem visual Editor umgehst.
+- wie du Tabellen und Abbildungen automatisch beschriften lässt.
+
+
+:::
 
 ## Tabellen erstellen
 
@@ -22,7 +29,25 @@ Ergebnis:
 | Anna Meyer | Mathematik  | 7A     |
 | Tom Berger | Deutsch     | 8B     |
 
----
+Die Leerstellen sind egal, es könnte übrigens auch so aussehen:
+
+```markdown
+| Name| Fach| Klasse |
+|--|--|--|
+| Anna Meyer | Mathematik| 7A|
+| Tom Berger | Deutsch| 8B|
+```
+
+Die Bindestriche geben die relative Länge, wenn in jeder Spalte zwei sind, sind alle Spalten gleich breit.
+
+### Visual Editor
+
+Das Eintippen einer solchen Tabelle kann lästig sein. Einerseits kann jeder Chatbot (KI) dich beim Schreiprozess unterstützen, denn `Markdown`können die sehr gut. Andererseits kannst du auch den *Visual Editor* nutzen.
+
+![RStudio - Visual Editor](screenshots/rstudio_visual_editor.png){#fig-gui}
+
+Der Visual Editor ist näher an typischen Textverarbeitungsprogramm wie z.B. Word. Du kannst über klicken Tabellen oder Bilder einfügen, auch siehst du die meisten Formatierungen (z.B. Überschriften und fett) ähnlich wie sie später angezeigt werden. Falls du Quarto als Lerngelegenheit auffasst, etwas mehr über Computersprachen zu lernen, dann würde ich den Visual Editor vermeiden.
+
 
 ## Mathematische Formeln
 
@@ -31,10 +56,10 @@ Quarto unterstützt LaTeX für mathematische Formeln. Zwei Varianten sind wichti
 ### Formeln im Text
 
 ```markdown
-Die Fläche berechnet sich mit $A = a \times b$.
+Die Fläche berechnet sich mit $A = a \cdot b$.
 ```
 
-Ergebnis: Die Fläche berechnet sich mit $A = a \times b$.
+Ergebnis: Die Fläche berechnet sich mit $A = a \cdot b$.
 
 ### Formeln als Block
 
@@ -50,7 +75,59 @@ $$
 E = mc^2
 $$
 
----
+## Referenzieren
+
+Dir ist vielleicht Aufgefallen, dass die Abbildungen aufgezählt werden, auch das ist bereits in Quarto eingebaut. 
+
+```markdown
+![Bildtitel](Bildquelle){#fig-beliebigerTeil}
+```
+Die `{#fig-}`hinten sorgen dafür, dass die Abbildung als solche erkannt wird.
+
+Alternative Schreibweise:
+
+```markdown
+::: {#fig-beliebigerTeil}
+
+![](bild.png)
+
+Bildtitel
+:::
+```
+
+Um auf die Abbildung zu referenzieren, kannst du mit `@fig-beliebigerTeil`auf sie verlinken, z.B. mit @fig-webseite1 .
+
+Tabellen können auch einfach referenziert werden:
+
+```markdown
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: My Caption {#tbl-letters}
+
+See @tbl-letters.
+```
+
+oder alternative Schreibweise
+
+```markdown
+::: {#tbl-letters}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+My Caption
+
+::: 
+```
+
+Für mathematikaffine Personen 
 
 ## Interaktive Inhalte: Quizzes und Code
 

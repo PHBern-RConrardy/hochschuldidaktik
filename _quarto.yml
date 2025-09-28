@@ -28,7 +28,7 @@ format:
     mermaid:
       format: svg
     theme: cosmo
-
+    lightbox: true
 
 
 

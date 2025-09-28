@@ -1,24 +1,35 @@
 # Texte gestalten mit Quarto
 
+:::{.callout-note}
+## Lernziele
+
+Nach diesem Kapitel verstehst du:
+
+- wie du Texte in Quarto fett oder kursiv formatierst.
+- Listen, Hyperlinks und Callout-Boxes einfügst.
+- wie du Bilder lokal oder aus dem Internet einbindest.
+
+:::
+
 Jetzt, wo du dein erstes Quarto-Dokument erstellt hast, schauen wir uns an, wie du den Text schön und übersichtlich gestalten kannst.
 
----
+Die hier gezeigten Methoden funktionieren in allen Dateiformaten. Empfehlung ist `html`und `revealjs` da beide auf den Websprachen html, css und js basieren und in jedem Webbrowser angezeigt werden können.
 
 ## Überschriften
 
 Überschriften helfen dabei, deinen Text zu strukturieren. Sie funktionieren ganz einfach:
 
 ```markdown
-# Titel (ganz oben)
-## Kapitelüberschrift
-### Unterkapitel
+# Überschrift 1 (grösste Überschrift)
+## Überschrift 2 (zweitgrösste Überschrift)
+### Überschrift 3 ...
 ```
 
 Je mehr `#`, desto kleiner die Überschrift.
 
 ---
 
-## ✍️ Textformatierungen
+## Textformatierungen
 
 Hier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:
 
@@ -31,16 +42,23 @@ Hier ein paar nützliche Dinge, die du direkt im Text verwenden kannst:
 
 ---
 
-## 📋 Listen
+## Listen
 
 Listen sind super, um Dinge übersichtlich darzustellen.
 
-### Ungeordnete Liste (•):
+### Ungeordnete Liste:
 
 ```markdown
 - Apfel
 - Banane
 - Orange
+```
+
+oder 
+```markdown
+* Aple
+* Banane
+* Orange
 ```
 
 Ergibt:
@@ -49,7 +67,9 @@ Ergibt:
 - Banane  
 - Orange
 
-### Geordnete Liste (1., 2., 3.):
+Hinweis: Falls du andere Symbole am Anfang nutzen möchtest, geht das übers `YAML`.
+
+### Geordnete Liste:
 
 ```markdown
 1. Einschalten
@@ -63,11 +83,21 @@ Ergibt:
 2. Rendern  
 3. Speichern
 
----
+Hinweis:
+
+Die Zahlen vorne sind eigentlich egal, Quarto zählt selbst auf. Folgendes wird also auch funktioneiren:
+
+```markdown
+1. Einschalten
+1. Rndern
+1. Speichern
+```
+
+
 
 ## Bilder einfügen
 
-Bilder lassen sich ganz einfach einfügen – ähnlich wie Links:
+Bilder lassen sich ganz einfach einfügen, ähnlich wie Links:
 
 ```markdown
 ![Beschreibung](bildname.png)
@@ -79,11 +109,42 @@ Beispiel:
 ![Logo PHBern](phbern-logo.png)
 ```
 
-> 📸 Tipp: Lege dein Bild in denselben Ordner wie dein `.qmd`-Dokument.
+Genau wie beim Link, muss in den runden Klammern ein Pfad stehen, hier ein Pfad zum Bild. Die Beispiele oben erwarten, dass das Bild im gleichen Ordner wie die `.qmd`-Datei liegt. 
 
----
+:::{.callout-tip}
 
-## Nächster Schritt
+**Unterordner:**
 
-Im nächsten Kapitel lernst du, wie du **Tabellen**, **Matheformeln** und sogar **interaktive Inhalte** wie Quiz oder Codeblöcke nutzen kannst. Quarto kann viel – aber alles Schritt für Schritt.
+```markdown
+![Logo PHBern](Bilder/phbern-logo.png)
+```
 
+**Übergeorndneter Ordner**
+
+```markdown
+![Logo PHBern](../phbern-logo.png)
+```
+
+**Direkt aus dem Internet**
+
+```markdown
+![Logo PHBern](https://ttim.phbern.ch/wp-content/uploads/2022/06/phbern_logo_desktop_20220615.svg)
+```
+
+Letzteres wird *live* geladen vom Benutzer, das heisst, dass es nur angezeigt werden kann, wenn der Benutzer Internetzugang hat.
+
+:::
+
+## Callout-Boxen
+
+Wie findest du die farblichen Kästchen?
+Auch die kannst du einfach mit etwas Syntax selbst einfügen
+
+```markdown
+:::{.callout-tip}
+Mein Text für einen Tipp hier:
+```
+
+Und das beste ist, die Boxen sehen auch auf deinen `revealjs`-Slides gut aus.
+
+Es gibt einen grossen [Guide](https://quarto.org/docs/guide/) mit allen möglichen Einstellungen zu Quarto. Falls du mehr Möglichkeiten möchtest, schau da mal rein.

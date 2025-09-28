@@ -1,37 +1,46 @@
 # Dein erstes Quarto-Dokument
 
+:::{.callout-note}
+## Lernziele
+
+Nach diesem Kapitel verstehst du:
+
+- wie du ein Quarto Dokument erstellst.
+- wie du daraus eine Webseite, ein Worddokument oder eine Slideshow erstellst.
+- wie die Dokumente im Filesystem angezeigt werden.
+
+:::
+
 Nun, da Quarto installiert ist, machen wir gemeinsam dein erstes Dokument. Du brauchst dafür kein Vorwissen über Programmieren oder Fachbegriffe wie „Terminal“ – versprochen!
 
 Wir arbeiten Schritt für Schritt.
 
 ---
 
-## 1. Starte RStudio
+## Starte den Editor
 
 Öffne RStudio auf deinem Computer.
 
-📸 *Screenshot: RStudio Startbildschirm*
+![RStudio ohne geöffnetes Dokument](screenshots/rstudio_start.png){#fig-gui}
 
----
-
-## 2. Neues Quarto-Dokument erstellen
+## Neues Quarto-Dokument erstellen
 
 Klicke oben links auf **File** → **New File** → **Quarto Document...**
 
-📸 *Screenshot: File > New File > Quarto Document...*
-
+![RStudio ohne geöffnetes Dokument](screenshots/rstudio_newdocument.png){#fig-gui}
+ 
 Ein neues Fenster erscheint. Dort kannst du folgende Angaben machen:
 
 - **Title**: Gib z. B. „Mein erstes Quarto-Dokument“ ein  
 - **Author**: Deinen Namen  
 - **Format**: Wähle „HTML“  
+- **Use visual markdown editor** darauf verzichten wir momentan. Es kann jederzeit später mit einem Mausklick geändert werden. 
 - Klicke auf **Create**
 
-📸 *Screenshot: Quarto-Dokument erstellen (mit ausgefüllten Feldern)*
+![RStudio ohne geöffnetes Dokument](screenshots/rstudio_erstesDokument.png){#fig-gui}
 
----
 
-## 3. Überblick über das Dokument
+## Überblick über das Dokument
 
 Quarto zeigt dir nun ein neues Dokument mit etwas Text. So sieht der Anfang aus:
 
@@ -56,38 +65,38 @@ Der Rest ist Text, den du einfach schreiben kannst.
 
 ## Dokument „rendern“ (also erstellen)
 
-Klicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch im Browser geöffnet wird.
+Klicke nun auf den blauen Render-Button oben rechts. Quarto erstellt daraus eine Webseite (HTML-Datei), die automatisch angezeigt wird.
 
-📸 Screenshot: Render-Button
+![RStudio ohne geöffnetes Dokument](screenshots/rstudio_rendereddocument.png){#fig-gui}
 
-Du solltest nun dein erstes Quarto-Dokument im Browser sehen – gratuliere!
+Du solltest nun dein erstes Quarto-Dokument sehen – gratuliere! Die HTML Seite wird in R-Studio rechts im Viewer angezeigt, sie kann aber auch im Webbrowser geöffnet werden. Die Webseite ist noch nicht online (dazu kommen wir später) sondern es ist ein `.html`-Dokument im gleichen Ordner wie deine Originaldatei. Der Ordner mit gleichem Namen gehört ebenfalls zur Webseite, denn bei Webseiten werden typischerweise Inhalt und Layout getrennt abgespeichert.
 
-5. Nächste Schritte
+
+
+## Nächste Schritte
 
 Du kannst jetzt einfach weiter Text schreiben oder neue Überschriften hinzufügen. Hier ein paar Beispiele:
 
 ```markdown
 ## Meine Themen
 
-Ich unterrichte gerne Mathematik.
+Ich unterrichte *gerne* Mathematik.
 
 ## Warum ich Quarto nutze
 
-Weil es einfach ist und schön aussieht.
+Weil es einfach ist und **schön** aussieht.
+
+Ich kann auf [Google](google.com) verlinken oder auf die [PHBern](phbern.ch).
+
 ```
 
 Klicke wieder auf Render, um das aktualisierte Dokument zu sehen.
 
-Tipp: Speichern nicht vergessen
 
-Vergiss nicht, dein Dokument unter einem passenden Namen zu speichern:
-File → Save As...
-
-📸 Screenshot: Speichern unter Dialog
 
 ## Zusatz: Andere Dateiformate (docx, pptx, Präsentationen)
 
-Du kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch **als Word-Datei (docx)**, **PowerPoint-Folie (pptx)** oder sogar als **interaktive Präsentation (reveal.js)** ausgeben – und zwar mit einem kleinen Trick:
+Du kannst Quarto nicht nur für Webseiten nutzen. Es kann dein Dokument auch **als Word-Datei (docx)**, **PowerPoint-Folie (pptx)** oder sogar als **interaktive Präsentation (reveal.js)** ausgeben:
 
 ### Format ändern
 
@@ -122,9 +131,11 @@ format: revealjs
 Hinweis: Für PowerPoint oder Word brauchst du Microsoft Office auf deinem Gerät installiert.
 Für revealjs brauchst du nur einen Webbrowser (z.B. Chrome oder Firefox).
 
-📸 Screenshot: YAML-Header mit unterschiedlichen Formaten
+::: {.callout-caution}
+Bei jedem Format wird das Standardtemplate (Layout, Formatierung) verwendet. Das kann natürlich später alles geändert werden. Es führt auch dazu, dass revealjs Slides nicht identisch zu Powerpoint Slides aussehen.
+:::
 
-## Mehrere Formate auf einmal?
+## Mehrere Formate auf einmal?
 
 Ja, sogar das geht – einfach so schreiben:
 
@@ -134,8 +145,12 @@ format:
   docx: default
   pptx: default
 ```
-Dann erzeugt Quarto beim Rendern alle drei Dateien gleichzeitig.
 
-📸 Screenshot: Render mit mehreren Formaten
+![Wähle beim Rendern aus welches Dateiformat gerendert werden sollte](screenshots/rstudio_render_different.png){#fig-gui}
 
-In den nächsten Kapiteln zeigen wir dir, wie du Inhalte noch schöner gestalten kannst – z. B. mit Listen, Bildern, Tabellen oder eingebauten Übungsfragen.
+
+Gleichzeitig alle angegeben Formate rendern geht auch, schauen wir uns aber erst an, wenn wir eine ganze Webseite erstellen. 
+
+::: {.callout-caution}
+Das Dokumentformat `pdf`gibt es ebenfalls und kann auch gut benutzt werden, hierfür wird jedoch $\LaTeX$ verwendet. Somit kann ein Meldung kommen, dass noch etwas nachinstalliert werden sollte. 
+:::
