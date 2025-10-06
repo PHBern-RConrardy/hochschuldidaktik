@@ -93,8 +93,6 @@ Die Zahlen vorne sind eigentlich egal, Quarto zählt selbst auf. Folgendes wird 
 1. Speichern
 ```
 
-
-
 ## Bilder einfügen
 
 Bilder lassen sich ganz einfach einfügen, ähnlich wie Links:
@@ -142,7 +140,10 @@ Auch die kannst du einfach mit etwas Syntax selbst einfügen
 
 ```markdown
 :::{.callout-tip}
+
 Mein Text für einen Tipp hier:
+
+:::
 ```
 
 Und das beste ist, die Boxen sehen auch auf deinen `revealjs`-Slides gut aus.

@@ -97,7 +97,7 @@ Bildtitel
 
 Um auf die Abbildung zu referenzieren, kannst du mit `@fig-beliebigerTeil`auf sie verlinken, z.B. mit @fig-webseite1 .
 
-Tabellen können auch einfach referenziert werden:
+Tabellen können ebenfalls einfach referenziert werden:
 
 ```markdown
 | Col1 | Col2 | Col3 |
@@ -129,55 +129,41 @@ My Caption
 
 Für mathematikaffine Personen 
 
-## Interaktive Inhalte: Quizzes und Code
-
-Mit Quarto kannst du sogar kleine interaktive Elemente einbauen.
-
-### Quiz-Fragen
-
-Ein einfaches Multiple-Choice-Beispiel:
+gibt es ebenfalls die aus $\LaTeX$ üblichen Aufzählungen:
 
 ```markdown
-::: {.callout-tip}
-### Kleine Quizfrage
+::: {#def-line}
+## Nullteilerfrei
 
-Welche Zahl ist prim?
-
-- [ ] 8
-- [x] 7
-- [ ] 9
+Frei von Nullteilern.
 :::
 ```
 
-Beim Rendern entsteht eine kleine Box, in der die Antwort ausgewählt werden kann.
+::: {#def-line}
+## Nullteilerfrei
 
-- [ ] 8
-- [x] 7
-- [ ] 9
+Frei von Nullteilern.
+:::
 
----
+
 
 ### Code einfügen
 
 Wenn du Programmcode zeigen willst, geht das mit drei Backticks (```) und der Angabe der Sprache:
 
-```markdown
+````markdown
 ```r
 x <- 1:5
 mean(x)
 ```
-```
+````
 
 
+Das wird als R-Code angezeigt und kann, wenn du möchtest, sogar ausgeführt werden. Damit Code ausführt wird, schreibst du die Programmiersprache zwischen `{}`, z.B. `{r}`.
 
-Das wird als R-Code angezeigt und kann – wenn du möchtest – sogar ausgeführt werden.
+````{r}
+x <- 1:5
+mean(x)
+````
 
----
-
-## Zusammenfassung
-
-- Tabellen sind einfach mit Strichen und Pipes (`|`) zu schreiben.  
-- Formeln funktionieren mit LaTeX-Syntax (`$...$`).  
-- Interaktive Elemente wie Quizzes oder Codeblöcke machen deine Materialien lebendig.
-
-Im nächsten Kapitel schauen wir uns an, wie man **Quarto Book** noch besser organisiert und Kapitel miteinander verknüpft.
+Programmieren wirst du vermutlich selten, aber dieser Hinweis mit dem Programmiercode wird noch nützlich sein, wenn wir Mermaid.js anschauen.

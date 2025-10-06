@@ -1,8 +1,15 @@
 # Quarto Webseite organisieren
 
-In diesem Kapitel lernst du, wie du eine einfache Quarto-Webseite strukturierst: Ordner anlegen, Seiten verknüpfen, Navigation steuern und das Aussehen festlegen. Alles ohne Terminal.
+:::{.callout-note}
+## Lernziele
 
----
+Nach diesem Kapitel verstehst du:
+
+- wie du ein Quartoprojekt aufsetzt.
+- wie du Einstellungen vornimmst.
+- welche Vorteile ein Projekt gegenüber Einzeldateien hat.
+
+:::
 
 ## Projektstruktur anlegen
 
@@ -28,13 +35,33 @@ mein-webprojekt/
 - `styles.css`: Eigene Gestaltung (optional)
 - `_quarto.yml`: Zentrale Steuerdatei für die ganze Webseite
 
-📸 Screenshot: Explorer mit den Dateien und Ordnern
+Du kannst die Ordnerstruktur händisch anlegen, aber dein Textprogramm, z.B. Rstudio kann es auch für dich anlegen.
 
----
+Klicke dafür auf `file`-> `new project` -> `new directory` und wähle einen Ordner an einem passenden Ort auf deinem Festspeicher.
 
-## Die zentrale Datei _quarto.yml
+![Wähle hier "new website"](screenshots/rstudio_new_project.png){#fig-2}
 
-In dieser Datei sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:
+![Die Einstellungen kannst du so lassen](screenshots/rstudio_new_project_2.png){#fig-3}
+
+Jetzt hast du alles notwendigen Dateien mit ein paar Voreinstellungen im gewählten Ordner drin.
+
+![Wähle rechts unten das Tab "Files", dann behältst du den Überblick](screenshots/rstudio_new_project_3.png){#fig-3}
+
+Wenn du jetzt `render`klickst, dann erhältst du im "Viewer"-Tab die Webseite! 
+
+![Rechts die Webseite mit Menü oben und Hyperlink in blau](screenshots/rstudio_new_project_4.png){#fig-3}
+
+In deinen Files ist ein neuer Order `_site` hinzugekommen. Darin enthalten ist deine Webseite. Viele Webseite, sogenannte statische Webseiten, sind nichts weiter als ein Ordner voll mit Textdateien (html-Dateien), welche von deinem Internet-Browser angezeigt werden können. Später kannst du genau diese Webseite mühelos vom Internet aus zugänglich machen.
+
+![Der neue _site Ordner enthält deine Webseite](screenshots/rstudio_new_project_4.png){#fig-4}
+
+Du kannst auch die `html`-Dateien mit R-Studio öffnen, dann siehst du den Quellcode. Ist interessant, aber hilft uns jetzt nicht.
+
+## Einstellungen vornehmen _quarto.yml
+
+In Quarto ist alles über Text eingestellt. In einzelnen Dateien hast du oben das `Yaml` geschrieben. In Projekten, wie z.B. deine Webseite, gibt es eine zentrale `Yaml`-Datei, die sich automatisch auf alle Quarto-Dokumente auswirkt.  
+
+In der `_quarto.yml` sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:
 
 ```yaml
 project:
@@ -64,14 +91,14 @@ format:
     css: styles.css       # Optional eigene CSS-Datei
 ```
 
-Hinweise:
-- `project.type: website` macht aus dem Ordner eine Webseite.
-- `website.navbar` steuert die Menüleiste oben.
-- `format.html` definiert Aussehen und Optionen für alle Seiten.
 
-📸 Screenshot: _quarto.yml in Positron geöffnet
+![Die Yaml Datei in Rstudio](screenshots/rstudio_yaml.png){#fig-5}
 
----
+:::{.callout-caution}
+
+Benenne `_quarto.yml` und `index.qmd` nicht um. Deine Homepage, also die Startsteite, muss immer `index.qmd`heissen, sonst erhältst du einen Fehler.
+:::
+
 
 ## Seiten anlegen und verlinken
 
@@ -79,34 +106,77 @@ Beispiel für eine Startseite `index.qmd`:
 
 ```markdown
 ---
-title: "Willkommen"
+format: html
+title: "Meine_Kurswebseite"
+subtitle: intrinsische Motivation für Extrinsiker
+author: Richard Conrardy
+date: today
 ---
 
-## Was dich erwartet
+# Herzlich Willkommen im Kurs
 
-Hier findest du Materialien, Hinweise und Termine zum Unterricht.
+Freut mich, dass du hier bist.
 
-- [Über mich](about.qmd)
-- [Materialien](material/index.qmd)
+## Thema 1
+
+Informationen über mich findest auf [hier](about.qmd).
+
+## Thema 2
 ```
 
-Beispiel für eine Material-Übersicht `material/index.qmd` mit automatischem Listing:
+![Und so sieht die Index-Page aus](screenshots/rstudio_beispiel_hoempage.png){#fig-5}
+
+Nun ist das Datum noch auf Englisch eingestellt. Da du vermutlich global, also auf der gesamten Webseite, die Sprache auf Deutsch haben möchtest, änderst du die Einstellung in `_quarto.yml` und fügt an der **richtigen Stelle** `lang: de` hinzu. Achte auch auf die genauen Abstände.
+
+```markdown
+format:
+  html:
+    lang: de
+    theme:
+      - cosmo
+      - brand
+```
+
+Render die `index.qmd` neu und das Datum wird auf Deutsch angezeigt. Magst du das Datumformat nicht, kein Problem, füge noch ein `dateformat` hinzu:
+
+```markdown
+    lang: de
+    date-format: "DD.MM.YYYY"
+```
+
+Möchtest du im Dokument `index.qmd` ein spezifisches Datum angeben, musst du es im Iso-Format angeben:
+
+```markdown
+---
+format: html
+title: "Meine_Kurswebseite"
+subtitle: intrinsische Motivation für Extrinsiker
+author: Richard Conrardy
+date: 2025-10-31
+---
+```
+
+## Listings
+
+Du kannst selbstverständlich deine Seiten im Menü anzeigen lassen. Aber vielleicht ist es auch ganz praktisch eine Tabelle zu haben mit deinen Lerngelegenheiten.
+
+Erstelle zuerst einen Ordner mit den Namen "lerngelegenheiten", erstelle im Ordner mehrere `.qmd`-Files mit Titel.
+
+Im Yaml-Header der `index.qmd`-Datei kannst du nun folgendes hinzufügen:
 
 ```markdown
 ---
 title: "Materialien"
 listing:
-  contents: .
+  contents: lerngelegenheiten/*.qmd
   sort: "date desc"
-  type: default
+  type: table
 ---
-
-Hier erscheinen automatisch die Unterseiten in diesem Ordner.
 ```
 
-Tipp: Neue Seiten einfach mit `File → New File → Quarto Document…` erstellen und an passender Stelle speichern.
+Nun hast du eine tabellarische Liste mit allen `qmd`-Dateien im Ordner `lerngelegenheiten`.
 
-📸 Screenshot: Neues Quarto-Dokument anlegen
+![Links das Yaml, rechts die Webseite mit Tabelle, unten die Ordnerstruktur](screenshots/rstudio_listings.png){#fig-5}
 
 ---
 
