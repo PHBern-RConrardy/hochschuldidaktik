@@ -162,14 +162,13 @@ Du kannst selbstverständlich deine Seiten im Menü anzeigen lassen. Aber vielle
 
 Erstelle zuerst einen Ordner mit den Namen "lerngelegenheiten", erstelle im Ordner mehrere `.qmd`-Files mit Titel.
 
-Im Yaml-Header der `index.qmd`-Datei kannst du nun folgendes hinzufügen:
+Im Yaml-Header der `index.qmd`-Datei kannst du nun Folgendes hinzufügen:
 
 ```markdown
 ---
 title: "Materialien"
 listing:
   contents: lerngelegenheiten/*.qmd
-  sort: "date desc"
   type: table
 ---
 ```
@@ -178,7 +177,6 @@ Nun hast du eine tabellarische Liste mit allen `qmd`-Dateien im Ordner `lerngele
 
 ![Links das Yaml, rechts die Webseite mit Tabelle, unten die Ordnerstruktur](screenshots/rstudio_listings.png){#fig-5}
 
----
 
 ## Navigation steuern
 
@@ -194,19 +192,19 @@ website:
     contents:
       - index.qmd
       - about.qmd
-      - section: "Materialien"
+      - section: "Lerngelegenheiten"
         contents:
-          - material/index.qmd
-          - material/arbeitsblatt.qmd
+          - lerngelegenheiten/lg1.qmd
+          - lerngelegenheiten/lg2.qmd
 ```
 
 Nur eine der beiden Varianten gleichzeitig verwenden (Navbar oder Sidebar), sonst wirkt es unruhig.
 
-📸 Screenshot: Darstellung mit Sidebar
-
----
+![Yaml mit gerenderter index.qmd Seite](screenshots/rstudio_navigation.png){#fig-nav}
 
 ## Einstellungen pro Seite
+
+Globale Voreinstellungen werden in der `_quarto.yml`-Datei festgehalten. In einzelnen Dateien kann ich jedoch die Voreinstellungen übersteuern und umändern. 
 
 Jede `.qmd`-Seite kann eigene Optionen im Kopfbereich bekommen, zum Beispiel:
 
@@ -220,63 +218,106 @@ page-layout: article
 Hier steht der Inhalt.
 ```
 
-Häufig genutzte Einstellungen:
-- `title`: Seitentitel in der Kopfzeile und im Browser-Tab
-- `toc: true`: Inhaltsverzeichnis auf der Seite
-- `page-layout`: z. B. `article`, `full`, `custom`
+Neben der offiziellen [Quarto-Tutorial-Seite](https://quarto.org/docs/guide/) gibt es auch eine (mehrheitlich) [komplette Referenzliste](https://quarto.org/docs/reference/formats/html.html), mit allen möglichen Einstellungen.
 
----
+Hier sieht man nun auch den Unterschied zwischen Textbasierten Programmen und Programmen mit Menüführung. Im Menü sieht man übersichtlich seine Optionen, aber die Optionen müssen andererseits so eingeschränkt werden, dass man sie übersichtlich in einem Menü unterbringt. Bei textbasierten Programmen hat man keine Einschränkung an der Anzahl und am Detaillierungsgrad der Optionen, der Nutzer muss jedoch die Befehle kennen; die häufigsten kennt er auswendig, den Rest schaut er im Handbuch nach.
 
-## Aussehen anpassen
+## Styling
 
-Du kannst ein Thema und eigenes CSS kombinieren. Im Beispiel oben verwenden wir `theme: cosmo` und zusätzlich `styles.css`.
+Die Webseite sieht jetzt im gleich aus. Vielleicht möchtest du das Styling anpassen. Auch das Styling wird textbasiert festgehalten, dazu gibt es drei Optionen welche du auch parallel oder komplementär benutzen kannst. Mehrere Lösungen für das gleiche Problem ist nicht immer optimal, wenn du an einem Ort sagst die Schrift soll schwarz sein, am nächsten sie soll blau sein und am dritten, sie soll rot sein, ist unklar was du erhältst. Somit die allgemeine Empfehlung, nutze vorwiegend eine Option.
 
-Beispiel für `styles.css`:
+### Brand
 
-```css
-/* Überschriften etwas größer */
-h1 { font-size: 2.0rem; }
-h2 { font-size: 1.6rem; }
+Die einzige Möglichkeit mehrere Ausgabeformate (z.B. html, revealjs und pdf) gleichzeitig zu stylen ist die neuere Entwicklung `_brand.yml`. Es handelt sich um eine eigene Datei mit einem [spezifischen Definitionsschema](https://posit-dev.github.io/brand-yml/) in der Yaml-Syntax.
 
-/* Maximale Breite für bessere Lesbarkeit */
-.quarto-container { max-width: 980px; }
+In dieser Datei definierst du deine Farbpalette und was welche Farbe bekommt:
+
+1. Erstelle eine neue Datei mit dem Namen `_brand.yml` neben der Datei `_quarto.yml` im Ordner deiner Webseite.
+2. Schreib in die Datei z.B. rein: 
+
+```markdown
+color:
+  palette:
+    black: "#1A1A1A"
+    white: "#F9F9F9"
+    orange: "#FF6F20"
+    pink: "#FF3D7F"
+  foreground: black
+  background: white
+  primary: orange
+  danger: pink
+
+typography:
+  headings:
+    color: primary
+
+logo: 
+  medium: https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg
 ```
 
-📸 Screenshot: Browseransicht mit angepasstem Stil
+Falls du die Datei richtig benannt und am richtigen Ort hast, wird sie automatisch auf die Webseite angewandt. Falls du keine einzelne Dateien anders steuern möchtest, kannst du `brand: dateiname.yml` in der Yaml-Kopfzeile deines Dokuments angeben.
 
+![`_brand.yml` mit neu gerenderter `index.qmd` Datei](screenshots/rstudio_brand.png){#fig-nav}
+
+Die Einstellung wird nun für einige Ausgabeformate funktionieren:
+
+![Brand mit revealjs-Slides](screenshots/rstudio_brand_revealjs.png){#fig-nav}
+
+![Brand mit revealjs-Slides](screenshots/rstudio_brand_typst.png){#fig-nav}
+
+Stand 2025 werden noch keine anderen Ausgabeformate wie `docx` oder `pptx` unterstützt.
+
+**Hinweis:** Damit es nicht zu Überschneidungen kommt, wird die `_brand.yml`-Datei für die weiteren Ausführungen gelöscht.
+
+### Themes
+
+Es gibt auch vorgefertigte "Themes", z.B. kannst du eine Präsentationen im Dark-Mode (weisse Schrift auf schwarzem Hintergrund) erstellen mit 
+
+```markdown
 ---
-
-## Webseite bauen und anschauen
-
-Ohne Terminal, direkt in Positron oder RStudio:
-
-1. Öffne `index.qmd`.
-2. Klicke oben rechts auf **Render**.
-3. Quarto baut die gesamte Seite und legt die Ergebnisse im Ordner `_site/` ab.
-4. Die Startseite öffnet sich im Browser.
-
-Wenn du später nur eine Seite änderst, genügt erneut **Render**. Quarto aktualisiert die Webseite.
-
-📸 Screenshot: Render-Button und fertige Seite im Browser
-
+title: "Presentation"
+format:
+  html:
+    theme: darkly
 ---
+```
 
-## Häufige Fragen
+![Theme Darkly auf der Index-Seite](screenshots/rstudio_theme.png){#fig-nav}
 
-**Wo liegen die fertigen Dateien?**  
-Im Ordner `_site/`. Dort befindet sich eine `index.html` und alle zugehörigen Dateien.
+Es gibt diverse Themes, diese sind je nach Theme gültig für ein oder mehrere Formate. Themes für Revealjs-Slides findest du in der [Dokumentation](https://quarto.org/docs/presentations/revealjs/themes.html). Quarto ermöglicht beliebige Erweiterungen zu schreiben, so gibt es auch Erweiterungen mit weiteren Themes, wie z.B. das [*R-Ladies*-Theme](https://github.com/beatrizmilz/quarto-rladies-theme). 
 
-**Wie bekomme ich die Seite ins Netz?**  
-Einfacher Start: Den gesamten Ordner `_site/` auf deinen Webspace kopieren. Fortgeschrittene Möglichkeiten sind Quarto Pub oder GitHub Pages. Für den Einstieg reicht lokales Testen und ggf. ein Webspace-Upload.
+### Quarto.yml
 
-**Was mache ich bei Fehlern in der Navigation?**  
-Prüfe Schreibweisen der Dateinamen und die Einrückungen in `_quarto.yml`. YAML reagiert empfindlich auf Einrückungen mit Leerzeichen.
+Du kannst auch den Style direkt in der `_quarto.yml`-Datei einstellen. Alle möglichen Optionen findest du in der [offiziellen Referenzliste](https://quarto.org/docs/reference/projects/websites.html).
 
----
+Ergänze deine `_quarto.yml`-Datei um folgende Einträge:
 
-## Zusammenfassung
+```markdown
+website:
+  sidebar:
+    background: blue
+format:
+  html:
+    backgroundcolor: red
+```
 
-- Mit `_quarto.yml` steuerst du Navigation, Titel und Design der gesamten Webseite.
-- Jede Seite ist eine `.qmd`-Datei mit optionalen Seiteneinstellungen im Kopfbereich.
-- Ordne Inhalte in Ordnern wie `material/` und `images/`.
-- Mit **Render** baust du die komplette Webseite, die im Ordner `_site/` landet.
+![Styling über quarto.yml](screenshots/rstudio_styling_yml.png){#fig-nav}
+
+
+### CSS
+
+Cascading Style Sheets (CSS-Dateien) werden in html genutzt um Webseiten zu stylen. 
+Es handelt sich um eine eigene Computersprache unabhängig von Quarto. Hier werden ein paar Beispiele gezeigt; KI-Chatbots können dir auch gut weiterhelfen die korrekte Syntax zu schreiben.
+
+Quarto hat für deine Webseite bereits eine leere `styles.css`-Datei angelegt und sie für html auch in `_quarto.yml` explizit angegeben mit `css: styles.css`. Öffne letztere und schreib:
+
+```css
+h1 { font-size: 4.0rem; }
+h2 { font-size: 2.0rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #800020 ;
+}
+```
+
+![Überschriften in Bordeau-Rot und grösser](screenshots/rstudio_css.png){#fig-nav}

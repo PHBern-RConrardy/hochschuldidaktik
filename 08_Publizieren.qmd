@@ -1,15 +1,26 @@
 # Publizieren: Quarto Pub, GitHub Pages und ILIAS
 
-In diesem Kapitel siehst du drei Wege, um deine Quarto-Webseite für Studierende und Kolleginnen und Kollegen zugänglich zu machen. Wir gehen Schritt für Schritt vor – ohne Git-Vorkenntnisse.
+:::{.callout-note}
+## Lernziele
+
+Nach diesem Kapitel verstehst du:
+
+- wie du deine Webseite gratis und werbefrei online bringst, so dass andere sie übers Internet anschauen können
+
+:::
+
+
 
 
 ## Überblick: Welche Option passt?
 
-| Ziel | Vorteile | Aufwand beim Aktualisieren |
+In diesem Kapitel siehst du drei Wege, um deine Quarto-Webseite für Studierende und Kolleginnen und Kollegen zugänglich zu machen. Quarto-Pub ist am einfachsten und in 5 Minuten erledigt, die Daten landen bei der Non-Profit Organisation hinter Quarto. Eine Speicherbegrenzung ist nicht bekannt, aber es wäre schön deren Wohlwollen nicht zu missbrauchen und auch privat etwas zu spenden.  Github Pages ist von Microsoft und primär für Programmierer gedacht, es bietet also mehr Möglichkeiten und Komplexität. Auch das Einbinden in Ilias als HTML funktioniert, aber bei jeder Änderung muss die Webseite manuell neu hochgeladen werden.
+
+| Service | Vorteile | Aufwand beim Aktualisieren |
 |---|---|---|
-| **Quarto Pub** | Sehr einfach, direkter Upload aus Positron/RStudio; schöne URL | Neu rendern und erneut veröffentlichen |
-| **GitHub Pages** | Kostenlos, öffentlich erreichbar; guter Standardweg fürs Web | Neu rendern, Dateien erneut in GitHub hochladen |
-| **ILIAS (HTML-Objekt)** | Intern in ILIAS verfügbar | Neu rendern, ZIP neu hochladen (kein „Push“) |
+| **Quarto Pub** | Einfach zu bedienen, schnell | sehr gering|
+| **GitHub Pages** | Versionskontrolle, komplizierter zu bedienen | sehr gering |
+| **ILIAS (HTML-Objekt)** | Intern in ILIAS verfügbar | hoch |
 
 Hinweis: Mit deiner **@phbern.ch**-Adresse bekommst du in der Regel Zugang zu einer **Campus-/Education-Version** bei GitHub (zusätzliche Vorteile). Falls etwas nicht klappt, wende dich an den IT-Support der PHBern.
 
