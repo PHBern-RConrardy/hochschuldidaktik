@@ -1,3 +1,14 @@
+:::{.callout-note}
+## Lernziele
+
+Nach diesem Kapitel verstehst du:
+
+- wie du deine Webseite gratis und werbefrei online bringst, so dass andere sie übers Internet anschauen können.
+- wie du deine Webseite auf Ilias veröffentlichst, so dass nur eingeloggte User sie anschauen können.
+
+:::
+
+
 # Zotero: automatischer Export nach .bib und Einbindung in Quarto
 
 In diesem Kapitel richtest du Zotero so ein, dass deine Literatur **automatisch** als `.bib`-Datei exportiert wird und in Quarto korrekt zitiert wird – ideal für wissenschaftliches Arbeiten. Du brauchst keine Vorkenntnisse in LaTeX oder BibTeX.

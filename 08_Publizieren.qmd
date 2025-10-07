@@ -5,16 +5,15 @@
 
 Nach diesem Kapitel verstehst du:
 
-- wie du deine Webseite gratis und werbefrei online bringst, so dass andere sie übers Internet anschauen können
+- wie du deine Webseite gratis und werbefrei online bringst, so dass andere sie übers Internet anschauen können.
+- wie du deine Webseite auf Ilias veröffentlichst, so dass nur eingeloggte User sie anschauen können.
 
 :::
 
 
-
-
 ## Überblick: Welche Option passt?
 
-In diesem Kapitel siehst du drei Wege, um deine Quarto-Webseite für Studierende und Kolleginnen und Kollegen zugänglich zu machen. Quarto-Pub ist am einfachsten und in 5 Minuten erledigt, die Daten landen bei der Non-Profit Organisation hinter Quarto. Eine Speicherbegrenzung ist nicht bekannt, aber es wäre schön deren Wohlwollen nicht zu missbrauchen und auch privat etwas zu spenden.  Github Pages ist von Microsoft und primär für Programmierer gedacht, es bietet also mehr Möglichkeiten und Komplexität. Auch das Einbinden in Ilias als HTML funktioniert, aber bei jeder Änderung muss die Webseite manuell neu hochgeladen werden.
+In diesem Kapitel siehst du zwei Wege, um deine Quarto-Webseite für Studierende und Kolleginnen und Kollegen zugänglich zu machen. Quarto-Pub ist am einfachsten und in 5 Minuten erledigt, die Daten landen bei der Non-Profit Organisation hinter Quarto. Eine Speicherbegrenzung ist nicht bekannt, aber es wäre schön deren Wohlwollen nicht zu missbrauchen und auch privat etwas zu spenden.  Auch das Einbinden in Ilias als HTML funktioniert, aber bei jeder Änderung muss die Webseite manuell neu hochgeladen werden, dafür ist deine Webseite aber lediglich zugänglich für Personen welche in Ilias eingeloggt sind.
 
 | Service | Vorteile | Aufwand beim Aktualisieren |
 |---|---|---|
@@ -22,110 +21,56 @@ In diesem Kapitel siehst du drei Wege, um deine Quarto-Webseite für Studierende
 | **GitHub Pages** | Versionskontrolle, komplizierter zu bedienen | sehr gering |
 | **ILIAS (HTML-Objekt)** | Intern in ILIAS verfügbar | hoch |
 
-Hinweis: Mit deiner **@phbern.ch**-Adresse bekommst du in der Regel Zugang zu einer **Campus-/Education-Version** bei GitHub (zusätzliche Vorteile). Falls etwas nicht klappt, wende dich an den IT-Support der PHBern.
+## Terminal
 
+Unten in RStudio hat es ein `Terminal`, eine Befehlszeile. Bitte nichts verwechseln mit der `Console`. Das Terminal gibt dem Betriebssystem Befehle, die Console gibt der Programmiersprache `R` Befehle.
 
-## Vorbereitung (für alle Wege)
+Gib im Termin den Befehl `quarto --version` ein. Es sollte dir deine installierte Quartoversion ausgeben.
 
-1. Öffne dein Projekt (z. B. die Website aus dem Kapitel „Webseite organisieren“).  
-2. Klicke auf **Render**.  
-3. Die fertigen Dateien liegen im Ordner **`_site/`** (Startseite: `index.html`).
+![](){}
 
-> Tipp: Teste lokal, indem du die `index.html` aus `_site/` im Browser öffnest.
+## Quarto Pub
 
+Erstelle auf [https://quartopub.com](https://quartopub.com) einen Account.
 
-## A) Veröffentlichen mit Quarto Pub (sehr einfach)
-
-**Ohne Terminal**, direkt aus Positron:
-
-1. Öffne das Projekt in **Positron**.  
-2. Öffne die **Command Palette** (z. B. `Ctrl+Shift+P` / `Cmd+Shift+P`).  
-3. Wähle **„Quarto: Publish“**.  
-4. Ziel: **Quarto Pub**.  
-5. Melde dich an (einmalig Konto erstellen).  
-6. Bestätige die Veröffentlichung. Quarto Pub erstellt die Seite und zeigt dir den Link.
-
-Optional (falls du lieber die Kommandozeile nutzt):
-
+Schreib im Terminal: 
 ```bash
 quarto publish quarto-pub
 ```
 
-Du wirst einmalig gefragt, dich anzumelden. Danach kannst du mit einem Klick bzw. Befehl neu veröffentlichen.
+Du erhältst einen Hinweis im Terminal, dass du in deinem Standardbrowser eingeloggt sein musst. Falls du den Account oben mit deinem Standardbrowser (Edge, Safari, Chrome, Firefox, ...) erstellt hast, bist du bereits eingeloggt. Du bist aufgefordert im Terminal zu bestätigen, schreibe `Y` und drücke `Enter`.
+
+Bestätige jetzt noch im Browser, dass Quarto auf deinen Account zugreifen darf.
+
+Dann wirst du gefragt unter welchem Namen die Webseite publiziert werden soll, dieser name wird Teil der URL (Webadresse) später sein.
+
+Sobald ein kompletter Rendervorgang abgeschlossen ist, wird die gesamte Webseite nun angezeigt auf: `https://deinusername.quarto.pub/webseitennamen/`. Wenn du etwas umändern möchtest, kannst du `quarto publish` im Terminal eingeben und es wieder auf Quartopub publizieren.
 
 
-## B) Veröffentlichen mit GitHub Pages (ohne Git-Kenntnisse)
+## Ilias
 
-Du brauchst ein kostenloses **GitHub-Konto**. Mit der @phbern.ch-Adresse erhältst du in der Regel **Education-/Campus-Vorteile**.
+So bringst du die Seite in einen ILIAS-Kurs, ohne externe Veröffentlichung:
 
-**Schritt 1: Repository anlegen**  
-1. Auf github.com anmelden.  
-2. Oben rechts **„+“ → New repository“**.  
-3. Name vergeben (z. B. `meine-quarto-webseite`).  
-4. Sichtbarkeit: **Public** (für offenen Zugang) oder **Private** (nur für dich/Team).  
-5. **Create repository**.
+### Schritt 1: ZIP erstellen
 
-**Schritt 2: Fertige Website-Dateien hochladen**  
-1. Öffne deinen neuen Repository-Startbildschirm.  
-2. Klicke **„Add file → Upload files“**.  
-3. Wechsle lokal in deinen Projektordner **`_site/`**.  
-4. Markiere **alle Inhalte von `_site/`** (nicht den Ordner selbst) und **ziehe** sie ins Upload-Feld.  
-5. Scrolle nach unten und klicke **„Commit changes“**.
+Stelle sicher, dass die gesamte Webseite gerendert ist indem du im Termin `quarto render` eingibst, dies wird jede Quartodatei auf der Webseite neu rendern.
 
-**Schritt 3: GitHub Pages aktivieren**  
-1. Im Repo auf **„Settings“** klicken.  
-2. Links **„Pages“** auswählen.  
-3. Unter **„Build and deployment“** wähle **„Deploy from a branch“**.  
-4. **Branch:** `main` — **Folder:** `/ (root)` (Root-Ebene).  
-5. Speichern. GitHub baut die Seite und zeigt nach kurzer Zeit den Link an.
+Nun kannst du in deinem üblichen Fileexplorer (Finder für MacOS-Personen) den Ordner `_site` ausfindig machen und ihn als `.zip`-Datei komprimieren.
 
-**Aktualisieren**  
-- Lokal neu **Rendern** → Ordner **`_site/`** → wieder **„Add file → Upload files“** → alle Dateien ersetzen → **Commit changes**.  
-- Git muss dafür nicht installiert sein; du nutzt nur die GitHub-Weboberfläche.
+Geh nun auf Ilias und erstelle ein Objekt `Lernmodul HTML`.
 
+Lade die Zip-Datei des Site Ordners hoch.
 
-## C) In ILIAS als HTML-Objekt bereitstellen
+Entzippe den Ordner.
 
-So bringst du die Seite in einen ILIAS-Kurs – ohne externe Veröffentlichung.
+Leg die `index.html` Datei als Startdatei fest.
 
-**Schritt 1: ZIP erstellen**  
-1. Öffne den Ordner **`_site/`**.  
-2. Wähle **alle Inhalte** von `_site/` aus (nicht den Ordner selbst).  
-3. Erstelle daraus ein **ZIP** (z. B. Rechtsklick → „Senden an → ZIP“).
+Nun kannst du das Iliasobjekt öffnen, und siehe da, eine Webseite erscheint. 
 
-**Schritt 2: In ILIAS hochladen**  
-1. Im gewünschten ILIAS-Kurs: **Neues Objekt** hinzufügen.  
-2. Wähle **„HTML-Lernmodul“** (Bezeichnung kann je nach ILIAS-Version leicht abweichen).  
-3. Lade die **ZIP-Datei** hoch.  
-4. Speichern/Veröffentlichen.
+Falls du etwas an der Seite ändern möchtest, löscht du normalerweise das komplette Objekt oder alle Dateien darin und startest den Prozess oben neu.
 
-**Wichtig zum Aktualisieren**  
-- Für jede Änderung: lokal neu **Rendern**, **neues ZIP** aus den Inhalten von `_site/` erstellen und in ILIAS **neu hochladen**.  
-- Es gibt **kein direktes „Push“/Synchronisieren** wie bei Quarto Pub oder GitHub.
+## Github
 
+Man kann die Webseite auch auf Github hosten, der Prozess ist nur geringfügig komplizierter und lohnt sich, wenn man eh an Git (Versionsverwaltungsprogramm) interessiert ist.
 
-## Kurzer Exkurs: Was ist Git/GitHub? (optional)
-
-- **Git** ist ein Versionierungssystem: Es merkt sich Änderungen an Dateien.  
-- **GitHub** ist ein Online-Dienst, der Git-Projekte hostet und Websites (GitHub Pages) bereitstellt.  
-- Für dieses Kapitel brauchst du **kein Git-Programm** – die GitHub-Weboberfläche reicht.  
-- Später lohnt es sich, Git zu lernen (bessere Zusammenarbeit, schnellere Updates).
-
-Wenn du Git irgendwann nutzen möchtest, können wir ein extra Kapitel mit der **minimalen Praxis** (3–4 Befehle) schreiben.
-
-
-## Typische Fehlerquellen und Lösungen
-
-- **Leere/weiße Seite**: Prüfe, ob wirklich die **Inhalte von `_site/`** hochgeladen wurden (nicht der Ordner).  
-- **Falsche Links/Bilder**: Verwende relative Pfade (z. B. `images/logo.png`) und achte auf exakte Dateinamen.  
-- **Navigation kaputt**: YAML-Einrückungen in `_quarto.yml` kontrollieren (nur Leerzeichen, gleiche Ebene).  
-- **GitHub Pages-Link fehlt**: In den Repo-**Settings → Pages** prüfen; ggf. noch einmal auf **„Save“** klicken und kurz warten.
-
-
-## Zusammenfassung
-
-- **Quarto Pub**: Schnellster Weg, sehr einfach.  
-- **GitHub Pages**: Kostenlos, ideal fürs öffentliche Web. Upload per Browser reicht.  
-- **ILIAS**: Für interne Nutzung; Updates erfordern neues ZIP.  
-
-Bei Fragen zur Campus-/Education-Nutzung mit **@phbern.ch** unterstützt dich der **PHBern-IT-Support**.
+Für ein Tutorial verweise ich auf den offizielle [Quarto Guide](https://quarto.org/docs/publishing/github-pages.html).
