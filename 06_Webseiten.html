@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./07_Layouten.html" rel="next">
+<link href="./08_Publizieren.html" rel="next">
 <link href="./05_Tabellen.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -74,10 +74,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -183,38 +186,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_Layouten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07_Layouten.html</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./08_Publizieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Publizieren: Quarto Pub, GitHub Pages und ILIAS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Publizieren: Quarto Pub, GitHub Pages und ILIAS</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Zitieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zotero: automatischer Export nach .bib und Einbindung in Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lernziele</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_Divs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Callouts, Figures und weitere <code>:::-</code> Elemente</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Callouts, Figures und weitere <code>:::-</code> Elemente</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_Mermaid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diagramme mit Mermaid.js in Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagramme mit Mermaid.js in Quarto</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_Quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span></span></a>
   </div>
 </li>
     </ul>
@@ -228,14 +225,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#projektstruktur-anlegen" id="toc-projektstruktur-anlegen" class="nav-link active" data-scroll-target="#projektstruktur-anlegen"><span class="header-section-number">6.1</span> Projektstruktur anlegen</a></li>
-  <li><a href="#die-zentrale-datei-_quarto.yml" id="toc-die-zentrale-datei-_quarto.yml" class="nav-link" data-scroll-target="#die-zentrale-datei-_quarto.yml"><span class="header-section-number">6.2</span> Die zentrale Datei _quarto.yml</a></li>
+  <li><a href="#einstellungen-vornehmen-_quarto.yml" id="toc-einstellungen-vornehmen-_quarto.yml" class="nav-link" data-scroll-target="#einstellungen-vornehmen-_quarto.yml"><span class="header-section-number">6.2</span> Einstellungen vornehmen _quarto.yml</a></li>
   <li><a href="#seiten-anlegen-und-verlinken" id="toc-seiten-anlegen-und-verlinken" class="nav-link" data-scroll-target="#seiten-anlegen-und-verlinken"><span class="header-section-number">6.3</span> Seiten anlegen und verlinken</a></li>
-  <li><a href="#navigation-steuern" id="toc-navigation-steuern" class="nav-link" data-scroll-target="#navigation-steuern"><span class="header-section-number">6.4</span> Navigation steuern</a></li>
-  <li><a href="#einstellungen-pro-seite" id="toc-einstellungen-pro-seite" class="nav-link" data-scroll-target="#einstellungen-pro-seite"><span class="header-section-number">6.5</span> Einstellungen pro Seite</a></li>
-  <li><a href="#aussehen-anpassen" id="toc-aussehen-anpassen" class="nav-link" data-scroll-target="#aussehen-anpassen"><span class="header-section-number">6.6</span> Aussehen anpassen</a></li>
-  <li><a href="#webseite-bauen-und-anschauen" id="toc-webseite-bauen-und-anschauen" class="nav-link" data-scroll-target="#webseite-bauen-und-anschauen"><span class="header-section-number">6.7</span> Webseite bauen und anschauen</a></li>
-  <li><a href="#häufige-fragen" id="toc-häufige-fragen" class="nav-link" data-scroll-target="#häufige-fragen"><span class="header-section-number">6.8</span> Häufige Fragen</a></li>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">6.9</span> Zusammenfassung</a></li>
+  <li><a href="#listings" id="toc-listings" class="nav-link" data-scroll-target="#listings"><span class="header-section-number">6.4</span> Listings</a></li>
+  <li><a href="#navigation-steuern" id="toc-navigation-steuern" class="nav-link" data-scroll-target="#navigation-steuern"><span class="header-section-number">6.5</span> Navigation steuern</a></li>
+  <li><a href="#einstellungen-pro-seite" id="toc-einstellungen-pro-seite" class="nav-link" data-scroll-target="#einstellungen-pro-seite"><span class="header-section-number">6.6</span> Einstellungen pro Seite</a></li>
+  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">6.7</span> Styling</a>
+  <ul class="collapse">
+  <li><a href="#brand" id="toc-brand" class="nav-link" data-scroll-target="#brand"><span class="header-section-number">6.7.1</span> Brand</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">6.7.2</span> Themes</a></li>
+  <li><a href="#quarto.yml" id="toc-quarto.yml" class="nav-link" data-scroll-target="#quarto.yml"><span class="header-section-number">6.7.3</span> Quarto.yml</a></li>
+  <li><a href="#css" id="toc-css" class="nav-link" data-scroll-target="#css"><span class="header-section-number">6.7.4</span> CSS</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -261,8 +262,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In diesem Kapitel lernst du, wie du eine einfache Quarto-Webseite strukturierst: Ordner anlegen, Seiten verknüpfen, Navigation steuern und das Aussehen festlegen. Alles ohne Terminal.</p>
-<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach diesem Kapitel verstehst du:</p>
+<ul>
+<li>wie du ein Quartoprojekt aufsetzt.</li>
+<li>wie du Einstellungen vornimmst.</li>
+<li>welche Vorteile ein Projekt gegenüber Einzeldateien hat.</li>
+</ul>
+</div>
+</div>
 <section id="projektstruktur-anlegen" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="projektstruktur-anlegen"><span class="header-section-number">6.1</span> Projektstruktur anlegen</h2>
 <p>Für eine kleine Webseite genügt eine überschaubare Struktur:</p>
@@ -284,12 +301,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>styles.css</code>: Eigene Gestaltung (optional)</li>
 <li><code>_quarto.yml</code>: Zentrale Steuerdatei für die ganze Webseite</li>
 </ul>
-<p>📸 Screenshot: Explorer mit den Dateien und Ordnern</p>
-<hr>
+<p>Du kannst die Ordnerstruktur händisch anlegen, aber dein Textprogramm, z.B. Rstudio kann es auch für dich anlegen.</p>
+<p>Klicke dafür auf <code>file</code>-&gt; <code>new project</code> -&gt; <code>new directory</code> und wähle einen Ordner an einem passenden Ort auf deinem Festspeicher.</p>
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_new_project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;6.1: Wähle hier “new website”"><img src="screenshots/rstudio_new_project.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.1: Wähle hier “new website”
+</figcaption>
+</figure>
+</div>
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_new_project_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;6.2: Die Einstellungen kannst du so lassen"><img src="screenshots/rstudio_new_project_2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.2: Die Einstellungen kannst du so lassen
+</figcaption>
+</figure>
+</div>
+<p>Jetzt hast du alles notwendigen Dateien mit ein paar Voreinstellungen im gewählten Ordner drin.</p>
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_new_project_3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;6.3: Wähle rechts unten das Tab “Files”, dann behältst du den Überblick"><img src="screenshots/rstudio_new_project_3.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.3: Wähle rechts unten das Tab “Files”, dann behältst du den Überblick
+</figcaption>
+</figure>
+</div>
+<p>Wenn du jetzt <code>render</code>klickst, dann erhältst du im “Viewer”-Tab die Webseite!</p>
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_new_project_4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Abbildung&nbsp;6.4: Rechts die Webseite mit Menü oben und Hyperlink in blau"><img src="screenshots/rstudio_new_project_4.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.4: Rechts die Webseite mit Menü oben und Hyperlink in blau
+</figcaption>
+</figure>
+</div>
+<p>In deinen Files ist ein neuer Order <code>_site</code> hinzugekommen. Darin enthalten ist deine Webseite. Viele Webseite, sogenannte statische Webseiten, sind nichts weiter als ein Ordner voll mit Textdateien (html-Dateien), welche von deinem Internet-Browser angezeigt werden können. Später kannst du genau diese Webseite mühelos vom Internet aus zugänglich machen.</p>
+<div id="fig-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_new_project_4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Abbildung&nbsp;6.5: Der neue _site Ordner enthält deine Webseite"><img src="screenshots/rstudio_new_project_4.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.5: Der neue _site Ordner enthält deine Webseite
+</figcaption>
+</figure>
+</div>
+<p>Du kannst auch die <code>html</code>-Dateien mit R-Studio öffnen, dann siehst du den Quellcode. Ist interessant, aber hilft uns jetzt nicht.</p>
 </section>
-<section id="die-zentrale-datei-_quarto.yml" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="die-zentrale-datei-_quarto.yml"><span class="header-section-number">6.2</span> Die zentrale Datei _quarto.yml</h2>
-<p>In dieser Datei sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:</p>
+<section id="einstellungen-vornehmen-_quarto.yml" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="einstellungen-vornehmen-_quarto.yml"><span class="header-section-number">6.2</span> Einstellungen vornehmen _quarto.yml</h2>
+<p>In Quarto ist alles über Text eingestellt. In einzelnen Dateien hast du oben das <code>Yaml</code> geschrieben. In Projekten, wie z.B. deine Webseite, gibt es eine zentrale <code>Yaml</code>-Datei, die sich automatisch auf alle Quarto-Dokumente auswirkt.</p>
+<p>In der <code>_quarto.yml</code> sagst du Quarto, dass es sich um eine Webseite handelt und wie Navigation und Design aussehen. Beispiel:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -315,115 +387,271 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">             # Inhaltsverzeichnis rechts</span></span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span><span class="co">       # Optional eigene CSS-Datei</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Hinweise: - <code>project.type: website</code> macht aus dem Ordner eine Webseite. - <code>website.navbar</code> steuert die Menüleiste oben. - <code>format.html</code> definiert Aussehen und Optionen für alle Seiten.</p>
-<p>📸 Screenshot: _quarto.yml in Positron geöffnet</p>
-<hr>
+<div id="fig-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_yaml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Abbildung&nbsp;6.6: Die Yaml Datei in Rstudio"><img src="screenshots/rstudio_yaml.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.6: Die Yaml Datei in Rstudio
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vorsicht
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Benenne <code>_quarto.yml</code> und <code>index.qmd</code> nicht um. Deine Homepage, also die Startsteite, muss immer <code>index.qmd</code>heissen, sonst erhältst du einen Fehler.</p>
+</div>
+</div>
 </section>
 <section id="seiten-anlegen-und-verlinken" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="seiten-anlegen-und-verlinken"><span class="header-section-number">6.3</span> Seiten anlegen und verlinken</h2>
 <p>Beispiel für eine Startseite <code>index.qmd</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Willkommen"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Was dich erwartet</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Hier findest du Materialien, Hinweise und Termine zum Unterricht.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Meine_Kurswebseite"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> intrinsische Motivation für Extrinsiker</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Richard Conrardy</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Über mich</span><span class="co">](about.qmd)</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Materialien</span><span class="co">](material/index.qmd)</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Beispiel für eine Material-Übersicht <code>material/index.qmd</code> mit automatischem Listing:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Materialien"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: .</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  type: default</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>Hier erscheinen automatisch die Unterseiten in diesem Ordner.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Tipp: Neue Seiten einfach mit <code>File → New File → Quarto Document…</code> erstellen und an passender Stelle speichern.</p>
-<p>📸 Screenshot: Neues Quarto-Dokument anlegen</p>
-<hr>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Herzlich Willkommen im Kurs</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Freut mich, dass du hier bist.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thema 1</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>Informationen über mich findest auf <span class="co">[</span><span class="ot">hier</span><span class="co">](about.qmd)</span>.</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thema 2</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_beispiel_hoempage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Abbildung&nbsp;6.7: Und so sieht die Index-Page aus"><img src="screenshots/rstudio_beispiel_hoempage.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.7: Und so sieht die Index-Page aus
+</figcaption>
+</figure>
+</div>
+<p>Nun ist das Datum noch auf Englisch eingestellt. Da du vermutlich global, also auf der gesamten Webseite, die Sprache auf Deutsch haben möchtest, änderst du die Einstellung in <code>_quarto.yml</code> und fügt an der <strong>richtigen Stelle</strong> <code>lang: de</code> hinzu. Achte auch auf die genauen Abstände.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    lang: de</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    theme:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>cosmo</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>brand</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Render die <code>index.qmd</code> neu und das Datum wird auf Deutsch angezeigt. Magst du das Datumformat nicht, kein Problem, füge noch ein <code>dateformat</code> hinzu:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">    lang: de</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">    date-format: "DD.MM.YYYY"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Möchtest du im Dokument <code>index.qmd</code> ein spezifisches Datum angeben, musst du es im Iso-Format angeben:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Meine_Kurswebseite"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> intrinsische Motivation für Extrinsiker</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Richard Conrardy</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2025-10-31</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="navigation-steuern" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="navigation-steuern"><span class="header-section-number">6.4</span> Navigation steuern</h2>
+<section id="listings" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="listings"><span class="header-section-number">6.4</span> Listings</h2>
+<p>Du kannst selbstverständlich deine Seiten im Menü anzeigen lassen. Aber vielleicht ist es auch ganz praktisch eine Tabelle zu haben mit deinen Lerngelegenheiten.</p>
+<p>Erstelle zuerst einen Ordner mit den Namen “lerngelegenheiten”, erstelle im Ordner mehrere <code>.qmd</code>-Files mit Titel.</p>
+<p>Im Yaml-Header der <code>index.qmd</code>-Datei kannst du nun Folgendes hinzufügen:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Materialien"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: lerngelegenheiten/*.qmd</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">  type: table</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Nun hast du eine tabellarische Liste mit allen <code>qmd</code>-Dateien im Ordner <code>lerngelegenheiten</code>.</p>
+<div id="fig-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_listings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Abbildung&nbsp;6.8: Links das Yaml, rechts die Webseite mit Tabelle, unten die Ordnerstruktur"><img src="screenshots/rstudio_listings.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.8: Links das Yaml, rechts die Webseite mit Tabelle, unten die Ordnerstruktur
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="navigation-steuern" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="navigation-steuern"><span class="header-section-number">6.5</span> Navigation steuern</h2>
 <p>Die Reihenfolge im Menü bestimmst du in <code>_quarto.yml</code> unter <code>website.navbar.left</code>. Alles, was dort steht, erscheint oben. Unterpunkte legst du mit <code>menu:</code> an (siehe Beispiel oben).</p>
 <p>Optional kannst du statt einer Top-Navigation links eine Seitenleiste nutzen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"docked"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"Materialien"</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> material/index.qmd</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> material/arbeitsblatt.qmd</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"docked"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lerngelegenheiten"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> lerngelegenheiten/lg1.qmd</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> lerngelegenheiten/lg2.qmd</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Nur eine der beiden Varianten gleichzeitig verwenden (Navbar oder Sidebar), sonst wirkt es unruhig.</p>
-<p>📸 Screenshot: Darstellung mit Sidebar</p>
-<hr>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_navigation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Abbildung&nbsp;6.9: Yaml mit gerenderter index.qmd Seite"><img src="screenshots/rstudio_navigation.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.9: Yaml mit gerenderter index.qmd Seite
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="einstellungen-pro-seite" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="einstellungen-pro-seite"><span class="header-section-number">6.5</span> Einstellungen pro Seite</h2>
+<section id="einstellungen-pro-seite" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="einstellungen-pro-seite"><span class="header-section-number">6.6</span> Einstellungen pro Seite</h2>
+<p>Globale Voreinstellungen werden in der <code>_quarto.yml</code>-Datei festgehalten. In einzelnen Dateien kann ich jedoch die Voreinstellungen übersteuern und umändern.</p>
 <p>Jede <code>.qmd</code>-Seite kann eigene Optionen im Kopfbereich bekommen, zum Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Arbeitsblatt Prozentrechnung"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> article</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Hier steht der Inhalt.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Häufig genutzte Einstellungen: - <code>title</code>: Seitentitel in der Kopfzeile und im Browser-Tab - <code>toc: true</code>: Inhaltsverzeichnis auf der Seite - <code>page-layout</code>: z. B. <code>article</code>, <code>full</code>, <code>custom</code></p>
-<hr>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Arbeitsblatt Prozentrechnung"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> article</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Hier steht der Inhalt.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Neben der offiziellen <a href="https://quarto.org/docs/guide/">Quarto-Tutorial-Seite</a> gibt es auch eine (mehrheitlich) <a href="https://quarto.org/docs/reference/formats/html.html">komplette Referenzliste</a>, mit allen möglichen Einstellungen.</p>
+<p>Hier sieht man nun auch den Unterschied zwischen Textbasierten Programmen und Programmen mit Menüführung. Im Menü sieht man übersichtlich seine Optionen, aber die Optionen müssen andererseits so eingeschränkt werden, dass man sie übersichtlich in einem Menü unterbringt. Bei textbasierten Programmen hat man keine Einschränkung an der Anzahl und am Detaillierungsgrad der Optionen, der Nutzer muss jedoch die Befehle kennen; die häufigsten kennt er auswendig, den Rest schaut er im Handbuch nach.</p>
 </section>
-<section id="aussehen-anpassen" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="aussehen-anpassen"><span class="header-section-number">6.6</span> Aussehen anpassen</h2>
-<p>Du kannst ein Thema und eigenes CSS kombinieren. Im Beispiel oben verwenden wir <code>theme: cosmo</code> und zusätzlich <code>styles.css</code>.</p>
-<p>Beispiel für <code>styles.css</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Überschriften etwas größer */</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>h1 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">2.0</span><span class="dt">rem</span><span class="op">;</span> }</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>h2 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.6</span><span class="dt">rem</span><span class="op">;</span> }</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* Maximale Breite für bessere Lesbarkeit */</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.quarto-container</span> { <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">980</span><span class="dt">px</span><span class="op">;</span> }</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>📸 Screenshot: Browseransicht mit angepasstem Stil</p>
-<hr>
-</section>
-<section id="webseite-bauen-und-anschauen" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="webseite-bauen-und-anschauen"><span class="header-section-number">6.7</span> Webseite bauen und anschauen</h2>
-<p>Ohne Terminal, direkt in Positron oder RStudio:</p>
+<section id="styling" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="styling"><span class="header-section-number">6.7</span> Styling</h2>
+<p>Die Webseite sieht jetzt im gleich aus. Vielleicht möchtest du das Styling anpassen. Auch das Styling wird textbasiert festgehalten, dazu gibt es drei Optionen welche du auch parallel oder komplementär benutzen kannst. Mehrere Lösungen für das gleiche Problem ist nicht immer optimal, wenn du an einem Ort sagst die Schrift soll schwarz sein, am nächsten sie soll blau sein und am dritten, sie soll rot sein, ist unklar was du erhältst. Somit die allgemeine Empfehlung, nutze vorwiegend eine Option.</p>
+<section id="brand" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="brand"><span class="header-section-number">6.7.1</span> Brand</h3>
+<p>Die einzige Möglichkeit mehrere Ausgabeformate (z.B. html, revealjs und pdf) gleichzeitig zu stylen ist die neuere Entwicklung <code>_brand.yml</code>. Es handelt sich um eine eigene Datei mit einem <a href="https://posit-dev.github.io/brand-yml/">spezifischen Definitionsschema</a> in der Yaml-Syntax.</p>
+<p>In dieser Datei definierst du deine Farbpalette und was welche Farbe bekommt:</p>
 <ol type="1">
-<li>Öffne <code>index.qmd</code>.</li>
-<li>Klicke oben rechts auf <strong>Render</strong>.</li>
-<li>Quarto baut die gesamte Seite und legt die Ergebnisse im Ordner <code>_site/</code> ab.</li>
-<li>Die Startseite öffnet sich im Browser.</li>
+<li>Erstelle eine neue Datei mit dem Namen <code>_brand.yml</code> neben der Datei <code>_quarto.yml</code> im Ordner deiner Webseite.</li>
+<li>Schreib in die Datei z.B. rein:</li>
 </ol>
-<p>Wenn du später nur eine Seite änderst, genügt erneut <strong>Render</strong>. Quarto aktualisiert die Webseite.</p>
-<p>📸 Screenshot: Render-Button und fertige Seite im Browser</p>
-<hr>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="an">color:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  palette:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    black: "#1A1A1A"</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    white: "#F9F9F9"</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    orange: "#FF6F20"</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    pink: "#FF3D7F"</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  foreground: black</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  background: white</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  primary: orange</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  danger: pink</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>typography:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  headings:</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    color: primary</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>logo: </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  medium: https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Falls du die Datei richtig benannt und am richtigen Ort hast, wird sie automatisch auf die Webseite angewandt. Falls du keine einzelne Dateien anders steuern möchtest, kannst du <code>brand: dateiname.yml</code> in der Yaml-Kopfzeile deines Dokuments angeben.</p>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_brand.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Abbildung&nbsp;6.10: _brand.yml mit neu gerenderter index.qmd Datei"><img src="screenshots/rstudio_brand.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.10: <code>_brand.yml</code> mit neu gerenderter <code>index.qmd</code> Datei
+</figcaption>
+</figure>
+</div>
+<p>Die Einstellung wird nun für einige Ausgabeformate funktionieren:</p>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_brand_revealjs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Abbildung&nbsp;6.11: Brand mit revealjs-Slides"><img src="screenshots/rstudio_brand_revealjs.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.11: Brand mit revealjs-Slides
+</figcaption>
+</figure>
+</div>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_brand_typst.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Abbildung&nbsp;6.12: Brand mit revealjs-Slides"><img src="screenshots/rstudio_brand_typst.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.12: Brand mit revealjs-Slides
+</figcaption>
+</figure>
+</div>
+<p>Stand 2025 werden noch keine anderen Ausgabeformate wie <code>docx</code> oder <code>pptx</code> unterstützt.</p>
+<p><strong>Hinweis:</strong> Damit es nicht zu Überschneidungen kommt, wird die <code>_brand.yml</code>-Datei für die weiteren Ausführungen gelöscht.</p>
 </section>
-<section id="häufige-fragen" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="häufige-fragen"><span class="header-section-number">6.8</span> Häufige Fragen</h2>
-<p><strong>Wo liegen die fertigen Dateien?</strong><br>
-Im Ordner <code>_site/</code>. Dort befindet sich eine <code>index.html</code> und alle zugehörigen Dateien.</p>
-<p><strong>Wie bekomme ich die Seite ins Netz?</strong><br>
-Einfacher Start: Den gesamten Ordner <code>_site/</code> auf deinen Webspace kopieren. Fortgeschrittene Möglichkeiten sind Quarto Pub oder GitHub Pages. Für den Einstieg reicht lokales Testen und ggf. ein Webspace-Upload.</p>
-<p><strong>Was mache ich bei Fehlern in der Navigation?</strong><br>
-Prüfe Schreibweisen der Dateinamen und die Einrückungen in <code>_quarto.yml</code>. YAML reagiert empfindlich auf Einrückungen mit Leerzeichen.</p>
-<hr>
+<section id="themes" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="themes"><span class="header-section-number">6.7.2</span> Themes</h3>
+<p>Es gibt auch vorgefertigte “Themes”, z.B. kannst du eine Präsentationen im Dark-Mode (weisse Schrift auf schwarzem Hintergrund) erstellen mit</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Presentation"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: darkly</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_theme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Abbildung&nbsp;6.13: Theme Darkly auf der Index-Seite"><img src="screenshots/rstudio_theme.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.13: Theme Darkly auf der Index-Seite
+</figcaption>
+</figure>
+</div>
+<p>Es gibt diverse Themes, diese sind je nach Theme gültig für ein oder mehrere Formate. Themes für Revealjs-Slides findest du in der <a href="https://quarto.org/docs/presentations/revealjs/themes.html">Dokumentation</a>. Quarto ermöglicht beliebige Erweiterungen zu schreiben, so gibt es auch Erweiterungen mit weiteren Themes, wie z.B. das <a href="https://github.com/beatrizmilz/quarto-rladies-theme"><em>R-Ladies</em>-Theme</a>.</p>
 </section>
-<section id="zusammenfassung" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">6.9</span> Zusammenfassung</h2>
-<ul>
-<li>Mit <code>_quarto.yml</code> steuerst du Navigation, Titel und Design der gesamten Webseite.</li>
-<li>Jede Seite ist eine <code>.qmd</code>-Datei mit optionalen Seiteneinstellungen im Kopfbereich.</li>
-<li>Ordne Inhalte in Ordnern wie <code>material/</code> und <code>images/</code>.</li>
-<li>Mit <strong>Render</strong> baust du die komplette Webseite, die im Ordner <code>_site/</code> landet.</li>
-</ul>
+<section id="quarto.yml" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="quarto.yml"><span class="header-section-number">6.7.3</span> Quarto.yml</h3>
+<p>Du kannst auch den Style direkt in der <code>_quarto.yml</code>-Datei einstellen. Alle möglichen Optionen findest du in der <a href="https://quarto.org/docs/reference/projects/websites.html">offiziellen Referenzliste</a>.</p>
+<p>Ergänze deine <code>_quarto.yml</code>-Datei um folgende Einträge:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="an">website:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  sidebar:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    background: blue</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    backgroundcolor: red</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_styling_yml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Abbildung&nbsp;6.14: Styling über quarto.yml"><img src="screenshots/rstudio_styling_yml.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.14: Styling über quarto.yml
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="css" class="level3" data-number="6.7.4">
+<h3 data-number="6.7.4" class="anchored" data-anchor-id="css"><span class="header-section-number">6.7.4</span> CSS</h3>
+<p>Cascading Style Sheets (CSS-Dateien) werden in html genutzt um Webseiten zu stylen. Es handelt sich um eine eigene Computersprache unabhängig von Quarto. Hier werden ein paar Beispiele gezeigt; KI-Chatbots können dir auch gut weiterhelfen die korrekte Syntax zu schreiben.</p>
+<p>Quarto hat für deine Webseite bereits eine leere <code>styles.css</code>-Datei angelegt und sie für html auch in <code>_quarto.yml</code> explizit angegeben mit <code>css: styles.css</code>. Öffne letztere und schreib:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>h1 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">4.0</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>h2 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">2.0</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#800020</span> <span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-nav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/rstudio_css.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Abbildung&nbsp;6.15: Überschriften in Bordeau-Rot und grösser"><img src="screenshots/rstudio_css.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.15: Überschriften in Bordeau-Rot und grösser
+</figcaption>
+</figure>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -834,12 +1062,44 @@ Prüfe Schreibweisen der Dateinamen und die Einrückungen in <code>_quarto.yml</
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07_Layouten.html" class="pagination-link" aria-label="07_Layouten.html">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07_Layouten.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08_Publizieren.html" class="pagination-link" aria-label="Publizieren: Quarto Pub, GitHub Pages und ILIAS">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Publizieren: Quarto Pub, GitHub Pages und ILIAS</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
