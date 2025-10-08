@@ -20,6 +20,7 @@ book:
     - 12_Quiz.qmd
 
 bibliography: references.bib
+csl: apa.csl
 
 format:
   html:
