@@ -27,7 +27,7 @@ Unten in RStudio hat es ein `Terminal`, eine Befehlszeile. Bitte nichts verwechs
 
 Gib im Termin den Befehl `quarto --version` ein. Es sollte dir deine installierte Quartoversion ausgeben.
 
-![](){}
+![Abfrage der Quarto-Version übers Terminal](screenshots/rstudio_terminal_version.png){#fig-ver}
 
 ## Quarto Pub
 
@@ -38,39 +38,42 @@ Schreib im Terminal:
 quarto publish quarto-pub
 ```
 
+![Publishen übers Terminal](screenshots/rstudio_publish_pub.png){#fig-ver}
+
 Du erhältst einen Hinweis im Terminal, dass du in deinem Standardbrowser eingeloggt sein musst. Falls du den Account oben mit deinem Standardbrowser (Edge, Safari, Chrome, Firefox, ...) erstellt hast, bist du bereits eingeloggt. Du bist aufgefordert im Terminal zu bestätigen, schreibe `Y` und drücke `Enter`.
 
 Bestätige jetzt noch im Browser, dass Quarto auf deinen Account zugreifen darf.
+
+![Im Browser muss die Verbindung akzeptiert werden](screenshots/rstudio_publish_pub_accept.png){#fig-ver}
 
 Dann wirst du gefragt unter welchem Namen die Webseite publiziert werden soll, dieser name wird Teil der URL (Webadresse) später sein.
 
 Sobald ein kompletter Rendervorgang abgeschlossen ist, wird die gesamte Webseite nun angezeigt auf: `https://deinusername.quarto.pub/webseitennamen/`. Wenn du etwas umändern möchtest, kannst du `quarto publish` im Terminal eingeben und es wieder auf Quartopub publizieren.
 
+![Beim Hochladen werden alle Seiten neu gerendert und der Fortschritt angezeigt](screenshots/rstudio_knitted.png){#fig-ver}
 
 ## Ilias
 
-So bringst du die Seite in einen ILIAS-Kurs, ohne externe Veröffentlichung:
+Du kannst die Webseite auch auf Ilias als Lernmodul HTML hochladen. Die Webseite ist dann ausschliesslich für eingeloggte User einsehbar.
 
-### Schritt 1: ZIP erstellen
-
-Stelle sicher, dass die gesamte Webseite gerendert ist indem du im Termin `quarto render` eingibst, dies wird jede Quartodatei auf der Webseite neu rendern.
+Stelle dazu sicher, dass die gesamte Webseite gerendert ist indem du im Terminal `quarto render` eingibst, dies wird jede Quartodatei auf der Webseite neu rendern.
 
 Nun kannst du in deinem üblichen Fileexplorer (Finder für MacOS-Personen) den Ordner `_site` ausfindig machen und ihn als `.zip`-Datei komprimieren.
 
 Geh nun auf Ilias und erstelle ein Objekt `Lernmodul HTML`.
 
-Lade die Zip-Datei des Site Ordners hoch.
+Lade die Zip-Datei des Site Ordners hoch und entzippe den Ordner.
 
-Entzippe den Ordner.
+![Der Ordner kann über das Ausklappmenü entzippt werden.](screenshots/ilias_entzippen.png){#fig-ver}
 
 Leg die `index.html` Datei als Startdatei fest.
 
-Nun kannst du das Iliasobjekt öffnen, und siehe da, eine Webseite erscheint. 
+![Die Startdatei wird über das Ausklappmenü bestimmt.](screenshots/ilias_startdatei.png){#fig-ver}
 
-Falls du etwas an der Seite ändern möchtest, löscht du normalerweise das komplette Objekt oder alle Dateien darin und startest den Prozess oben neu.
+Nun kannst du das Iliasobjekt öffnen deine Webseite anschauen. Falls du etwas an der Seite ändern möchtest, löscht du das komplette Objekt oder alle Dateien darin und startest den Prozess oben neu. Das ist leider nicht praktisch, falls du häufig Informationen ändern möchtest.
 
 ## Github
 
-Man kann die Webseite auch auf Github hosten, der Prozess ist nur geringfügig komplizierter und lohnt sich, wenn man eh an Git (Versionsverwaltungsprogramm) interessiert ist.
+Man kann die Webseite auch auf Github hosten, der Prozess ist nur geringfügig komplizierter als Quartopub und lohnt sich, wenn man eh an Git (Versionsverwaltungsprogramm) interessiert ist.
 
 Für ein Tutorial verweise ich auf den offizielle [Quarto Guide](https://quarto.org/docs/publishing/github-pages.html).

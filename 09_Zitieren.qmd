@@ -3,28 +3,51 @@
 
 Nach diesem Kapitel verstehst du:
 
-- wie du deine Webseite gratis und werbefrei online bringst, so dass andere sie übers Internet anschauen können.
-- wie du deine Webseite auf Ilias veröffentlichst, so dass nur eingeloggte User sie anschauen können.
+- in beliebigen Formaten (Webseiten, Slides, PDFs, ...) nach APA7 zitieren kannst. 
+- deine Bibliographie automatisch aus Zotero updatest.
+- auf revealjs die Zitate stylst.
 
 :::
 
 
-# Zotero: automatischer Export nach .bib und Einbindung in Quarto
+# Zotero
 
-In diesem Kapitel richtest du Zotero so ein, dass deine Literatur **automatisch** als `.bib`-Datei exportiert wird und in Quarto korrekt zitiert wird – ideal für wissenschaftliches Arbeiten. Du brauchst keine Vorkenntnisse in LaTeX oder BibTeX.
+Zotero ist ein Literaturverwaltungsprogramm. PHBern Mitarbeiter erhalten (Stand 2025) uneingeschränken Cloudspeicher. Zotero hat Plugins für Textverarbeitungsprogramme. Quarto braucht für sein Literaturverzeichnis alle Quellen in einem BibTex-Format und Quarto (sowie vermutlich alle Literaturverwaltungsprogramme) kann dies generieren, es kann es sogar automatisch neu generieren, falls Literatur hinzukommt.
+
+::: {#lst-code}
+```bibtex
+@misc{2023a,
+  title = {Analyzing a Meta-Analysis of Flipped Learning},
+  year = {2023},
+  month = feb,
+  journal = {Robert Talbert, Ph.D.},
+  urldate = {2023-02-24},
+  abstract = {Some additional thoughts on a recent EdSurge article and a critical piece on flipped learning},
+  howpublished = {http://rtalbert.org/analyzing-a-meta-analysis-of-flipped-learning/},
+  langid = {english}
+}
+```
+Beispiel eines Items in einer BibTex-Datei
+:::
 
 
-## Zielbild
 
-- Zotero verwaltet deine Quellen.
-- Eine Datei `refs/references.bib` wird **automatisch aktuell gehalten**.
-- Quarto nutzt diese `.bib`-Datei und erzeugt Zitate im Text und ein Literaturverzeichnis am Ende.
+## Citation-Key
+
+In Quarto wirst du später die Quellen mit einem `Citation Key` zitieren. Du schreibst z.B. im Text `@talbert2023`oder `@talbert_analyzing_202`. Wie dieser Key aussieht, entscheidest du. Kürzere Keys kann man schneller schreiben, aber manche Autoren haben im gleichen Jahr mehrere Papers rausgebracht, und dann muss ich nachschauen welches `talbert2023_1` und welches `tablert2023_2` ist.
+
+Installiere das Zotero-Plugin (übers Menü) `Better BibTex for Zotero`. 
+
+Stelle die Citation Keys in den Settings (Einstellungen) von Zotero, unter BetterBibtex ein. 
+
+![Einstellungen von Citation Keys in Zotero](screenshots/zotero_bibtex.png){#fig-ver}
+
+Eine komplette Erklärung zu allen möglichen Citation Keys findest du auf [jeweiligen Wiki](https://deepwiki.com/retorquere/zotero-better-bibtex/3.1-citation-key-format-syntax).
 
 
-## Voraussetzungen
+## Export
 
-- Zotero ist installiert.
-- Empfohlen: **Better BibTeX (BBT)**-Erweiterung für Zotero (für stabile Zitier-Keys und Auto-Export).
+Exportiere nun deine gesamte Library über Zotero, achte dabei darauf, dass du "keep updated" aktiviert hast. Speicher sie in den gleichen Ordner wie deine Webseite ab.
 
 
 ## Schritt A: Automatischen Export aus Zotero einrichten
