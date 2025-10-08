@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Lernziele – Quarto für die PHBern</title>
+<title>8&nbsp; Zitieren – Quarto für die PHBern</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -121,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_Zitieren.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lernziele</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_Zitieren.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Zitieren</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -151,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Was ist Quarto</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Zitieren.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lernziele</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Zitieren</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -214,6 +234,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Referenzen</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -228,22 +254,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#citation-key" id="toc-citation-key" class="nav-link" data-scroll-target="#citation-key"><span class="header-section-number">9.1</span> Citation-Key</a></li>
   <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export"><span class="header-section-number">9.2</span> Export</a></li>
-  <li><a href="#schritt-a-automatischen-export-aus-zotero-einrichten" id="toc-schritt-a-automatischen-export-aus-zotero-einrichten" class="nav-link" data-scroll-target="#schritt-a-automatischen-export-aus-zotero-einrichten"><span class="header-section-number">9.3</span> Schritt A: Automatischen Export aus Zotero einrichten</a>
-  <ul class="collapse">
-  <li><a href="#weg-1-export-direkt-auf-einer-sammlung" id="toc-weg-1-export-direkt-auf-einer-sammlung" class="nav-link" data-scroll-target="#weg-1-export-direkt-auf-einer-sammlung"><span class="header-section-number">9.3.1</span> Weg 1: Export direkt auf einer Sammlung</a></li>
-  <li><a href="#weg-2-zentral-in-den-betterbibtexeinstellungen" id="toc-weg-2-zentral-in-den-betterbibtexeinstellungen" class="nav-link" data-scroll-target="#weg-2-zentral-in-den-betterbibtexeinstellungen"><span class="header-section-number">9.3.2</span> Weg 2: Zentral in den Better‑BibTeX‑Einstellungen</a></li>
   </ul></li>
-  <li><a href="#schritt-b-quarto-für-literatur-konfigurieren" id="toc-schritt-b-quarto-für-literatur-konfigurieren" class="nav-link" data-scroll-target="#schritt-b-quarto-für-literatur-konfigurieren"><span class="header-section-number">9.4</span> Schritt B: Quarto für Literatur konfigurieren</a>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">10</span> Quarto</a>
   <ul class="collapse">
-  <li><a href="#global-für-website-oder-book-empfohlen" id="toc-global-für-website-oder-book-empfohlen" class="nav-link" data-scroll-target="#global-für-website-oder-book-empfohlen"><span class="header-section-number">9.4.1</span> Global (für Website oder Book empfohlen)</a></li>
-  <li><a href="#pro-seite-im-kopf-der-.qmd-datei" id="toc-pro-seite-im-kopf-der-.qmd-datei" class="nav-link" data-scroll-target="#pro-seite-im-kopf-der-.qmd-datei"><span class="header-section-number">9.4.2</span> Pro Seite (im Kopf der .qmd-Datei)</a></li>
-  </ul></li>
-  <li><a href="#schritt-c-zitieren-im-text" id="toc-schritt-c-zitieren-im-text" class="nav-link" data-scroll-target="#schritt-c-zitieren-im-text"><span class="header-section-number">9.5</span> Schritt C: Zitieren im Text</a></li>
-  <li><a href="#option-literaturverzeichnis-sortieren-und-steuern" id="toc-option-literaturverzeichnis-sortieren-und-steuern" class="nav-link" data-scroll-target="#option-literaturverzeichnis-sortieren-und-steuern"><span class="header-section-number">9.6</span> Option: Literaturverzeichnis sortieren und steuern</a></li>
-  <li><a href="#arbeitsweise-in-der-praxis" id="toc-arbeitsweise-in-der-praxis" class="nav-link" data-scroll-target="#arbeitsweise-in-der-praxis"><span class="header-section-number">9.7</span> Arbeitsweise in der Praxis</a></li>
-  <li><a href="#typische-probleme-und-lösungen" id="toc-typische-probleme-und-lösungen" class="nav-link" data-scroll-target="#typische-probleme-und-lösungen"><span class="header-section-number">9.8</span> Typische Probleme und Lösungen</a></li>
-  <li><a href="#beispiel-miniprojekt-struktur" id="toc-beispiel-miniprojekt-struktur" class="nav-link" data-scroll-target="#beispiel-miniprojekt-struktur"><span class="header-section-number">9.9</span> Beispiel-Miniprojekt (Struktur)</a></li>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">9.10</span> Zusammenfassung</a></li>
+  <li><a href="#einbinden" id="toc-einbinden" class="nav-link" data-scroll-target="#einbinden"><span class="header-section-number">10.1</span> Einbinden</a></li>
+  <li><a href="#zitieren-im-text" id="toc-zitieren-im-text" class="nav-link" data-scroll-target="#zitieren-im-text"><span class="header-section-number">10.2</span> Zitieren im Text</a></li>
+  <li><a href="#literaturverzeichnis-sortieren-und-steuern" id="toc-literaturverzeichnis-sortieren-und-steuern" class="nav-link" data-scroll-target="#literaturverzeichnis-sortieren-und-steuern"><span class="header-section-number">10.3</span> Literaturverzeichnis sortieren und steuern</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -253,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lernziele</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Zitieren</span></h1>
 </div>
 
 
@@ -276,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hinweis
+<span class="screen-reader-only">Hinweis</span>Lernziele
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -312,7 +328,7 @@ Listing&nbsp;9.1: Beispiel eines Items in einer BibTex-Datei
 </div>
 <section id="citation-key" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="citation-key"><span class="header-section-number">9.1</span> Citation-Key</h2>
-<p>In Quarto wirst du später die Quellen mit einem <code>Citation Key</code> zitieren. Du schreibst z.B. im Text <code>@talbert2023</code>oder <code>@talbert_analyzing_202</code>. Wie dieser Key aussieht, entscheidest du. Kürzere Keys kann man schneller schreiben, aber manche Autoren haben im gleichen Jahr mehrere Papers rausgebracht, und dann muss ich nachschauen welches <code>talbert2023_1</code> und welches <code>tablert2023_2</code> ist.</p>
+<p>In Quarto wirst du später die Quellen mit einem <code>Citation Key</code> zitieren. Du schreibst z.B. im Text <code>@talbert2023</code>oder <code>@talbert_analyzing_2023</code>. Wie dieser Key aussieht, entscheidest du. Kürzere Keys kann man schneller schreiben, aber manche Autoren haben im gleichen Jahr mehrere Papers rausgebracht, und dann muss ich nachschauen welches <code>talbert2023_1</code> und welches <code>talbert2023_2</code> ist.</p>
 <p>Installiere das Zotero-Plugin (übers Menü) <code>Better BibTex for Zotero</code>.</p>
 <p>Stelle die Citation Keys in den Settings (Einstellungen) von Zotero, unter BetterBibtex ein.</p>
 <div id="fig-ver" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -329,51 +345,38 @@ Abbildung&nbsp;9.1: Einstellungen von Citation Keys in Zotero
 </section>
 <section id="export" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="export"><span class="header-section-number">9.2</span> Export</h2>
+<div id="fig-zot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-zot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/zotero_export.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;9.2: Exportiere deine gesamte Library"><img src="screenshots/zotero_export.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.2: Exportiere deine gesamte Library
+</figcaption>
+</figure>
+</div>
 <p>Exportiere nun deine gesamte Library über Zotero, achte dabei darauf, dass du “keep updated” aktiviert hast. Speicher sie in den gleichen Ordner wie deine Webseite ab.</p>
-</section>
-<section id="schritt-a-automatischen-export-aus-zotero-einrichten" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="schritt-a-automatischen-export-aus-zotero-einrichten"><span class="header-section-number">9.3</span> Schritt A: Automatischen Export aus Zotero einrichten</h2>
-<p>Es gibt zwei einfache Wege. Nutze den, der dir besser liegt.</p>
-<section id="weg-1-export-direkt-auf-einer-sammlung" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="weg-1-export-direkt-auf-einer-sammlung"><span class="header-section-number">9.3.1</span> Weg 1: Export direkt auf einer Sammlung</h3>
-<ol type="1">
-<li>Öffne Zotero.<br>
-</li>
-<li>Rechtsklick auf die <strong>gewünschte Sammlung</strong> (z. B. „Masterarbeit“).<br>
-</li>
-<li><strong>„Export Library…“</strong> wählen.<br>
-</li>
-<li><strong>Format:</strong> <em>Better BibTeX</em> auswählen.<br>
-</li>
-<li><strong>Häkchen setzen:</strong> <em>Keep updated</em> (automatisch aktuell halten).<br>
-</li>
-<li><strong>Speicherort wählen:</strong> in deinem Quarto-Projekt, z. B. <code>refs/references.bib</code>.<br>
-</li>
-<li><strong>OK</strong>. Fertig.</li>
-</ol>
-<p>Jede Änderung in der Sammlung landet nun automatisch in <code>references.bib</code>.</p>
-</section>
-<section id="weg-2-zentral-in-den-betterbibtexeinstellungen" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="weg-2-zentral-in-den-betterbibtexeinstellungen"><span class="header-section-number">9.3.2</span> Weg 2: Zentral in den Better‑BibTeX‑Einstellungen</h3>
-<ol type="1">
-<li>Zotero → <strong>Einstellungen</strong> → <strong>Better BibTeX</strong>.<br>
-</li>
-<li>Reiter <strong>Automatic export</strong>.<br>
-</li>
-<li><strong>„+“</strong> klicken, die Sammlung wählen und als <strong>Zielpfad</strong> <code>refs/references.bib</code> angeben.<br>
-</li>
-<li><strong>On change</strong> aktivieren (bei Änderungen automatisch exportieren).</li>
-</ol>
-<blockquote class="blockquote">
-<p>Tipp: Lege im Projekt einen Ordner <strong><code>refs/</code></strong> an und speichere alle Literatur-Dateien (z. B. <code>references.bib</code>, <code>style.csl</code>) dort.</p>
-</blockquote>
+<div id="fig-zot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-zot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="screenshots/zotero_updated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;9.3: Wähle “keep updated”"><img src="screenshots/zotero_updated.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.3: Wähle “keep updated”
+</figcaption>
+</figure>
+</div>
+<p>In den Einstellungen in Zotero, unter Better BibTex ist typischerweise voreingestellt, dass die Library bei jeder Änderung aktualisiert wird.</p>
+<p>##&nbsp;Zitationsstil</p>
+<p>Es gibt etliche Zitationsstile (APA 7, Chicago, Harvard, …), diese Stile sind eindeutig in einer <code>.csl</code>-Datei beschrieben. Zotero hat ein <a href="https://www.zotero.org/styles?q=id%3Aapa">Verzeichnis mit allen gängigen Zitationsstilen</a> und ihren jeweiligen <code>.csl</code>-Dateien, bzw. dem Link zur Datei.</p>
+<p>Die aktuelle APA-Version (Apa7) kann man unter folgendem Link runterladen: <code>https://www.zotero.org/styles/apa</code>.</p>
 </section>
 </section>
-<section id="schritt-b-quarto-für-literatur-konfigurieren" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="schritt-b-quarto-für-literatur-konfigurieren"><span class="header-section-number">9.4</span> Schritt B: Quarto für Literatur konfigurieren</h2>
-<p>Du kannst die Literatur <strong>global</strong> in <code>_quarto.yml</code> oder <strong>pro Seite/Document</strong> im YAML‑Kopf einstellen.</p>
-<section id="global-für-website-oder-book-empfohlen" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="global-für-website-oder-book-empfohlen"><span class="header-section-number">9.4.1</span> Global (für Website oder Book empfohlen)</h3>
+<section id="quarto" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Quarto</h1>
+<p>Jetzt ist Zotero vorbereitet und im Verzeichnis deiner Webseite liegt eine Datei welche typischerweise <code>references.bib</code> heisst.</p>
+<section id="einbinden" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="einbinden"><span class="header-section-number">10.1</span> Einbinden</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -381,119 +384,67 @@ Abbildung&nbsp;9.1: Einstellungen von Citation Keys in Zotero
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> refs/references.bib</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> refs/apa.csl</span><span class="co">        # optional: Zitationsstil (z. B. APA 7)</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">     # verlinkt Zitate mit dem Literaturverzeichnis</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> https://www.zotero.org/styles/apa</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Selbstverständlich kannst du die <code>.csl</code>-Datei auch herunterladen und auf die Datei im gleichen Verzeichnis verweisen. Falls du deine Bibliographie in einem Unterordner haben möchtest, geht das natürlich auch, z.B. <code>Bibliographie/library_richard.bib</code>.</p>
 </section>
-<section id="pro-seite-im-kopf-der-.qmd-datei" class="level3" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="pro-seite-im-kopf-der-.qmd-datei"><span class="header-section-number">9.4.2</span> Pro Seite (im Kopf der .qmd-Datei)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Methode"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> refs/references.bib</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> refs/apa.csl</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Wenn du keinen <code>csl</code> angibst, nutzt Quarto einen Standardstil. Mit einer <code>.csl</code>-Datei (z. B. <code>apa.csl</code>, <code>chicago-author-date.csl</code>) bestimmst du den genauen Zitationsstil. Lege die Datei in <code>refs/</code> ab.</p>
-</section>
-</section>
-<section id="schritt-c-zitieren-im-text" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="schritt-c-zitieren-im-text"><span class="header-section-number">9.5</span> Schritt C: Zitieren im Text</h2>
-<p>Verwende die <strong>Zitier-Keys</strong> aus Zotero (Better BibTeX erzeugt sie automatisch, z. B. <code>müller2021lernen</code>).</p>
+<section id="zitieren-im-text" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="zitieren-im-text"><span class="header-section-number">10.2</span> Zitieren im Text</h2>
+<p>Verwende die <strong>Zitier-Keys</strong> aus Zotero (Better BibTeX erzeugt sie automatisch, z. B. <code>zhang2024</code>).</p>
 <p>Grundformen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">Nachweis im Fließtext:</span><span class="co"> @mueller2021lernen zeigt, dass …</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Klammernachweis: … wie mehrfach gezeigt wurde <span class="co">[</span><span class="ot">@mueller2021lernen</span><span class="co">]</span>.</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Mehrere Quellen: <span class="co">[</span><span class="ot">@mueller2021lernen; @meier2020; @smith2019</span><span class="co">]</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Seitenzahlen: <span class="co">[</span><span class="ot">@mueller2021lernen, S. 23–25</span><span class="co">]</span>  # „p.“/„S.“ ist nur Text</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>Präfix/Suffix: Vgl. @mueller2021lernen, siehe auch <span class="co">[</span><span class="ot">@smith2019, Kap. 3</span><span class="co">]</span>.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Beim <strong>Rendern</strong> erzeugt Quarto die korrekten Zitate und am Dokumentende automatisch das <strong>Literaturverzeichnis</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">Nachweis im Fliesstext:</span><span class="co"> @zhang2024 zeigt, dass …</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Klammernachweis: … wie mehrfach gezeigt wurde <span class="co">[</span><span class="ot">@zhang2024</span><span class="co">]</span>.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Mehrere Quellen: <span class="co">[</span><span class="ot">@zhang2024; @zendler2018a; @greene2017</span><span class="co">]</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Seitenzahlen: <span class="co">[</span><span class="ot">@zhang2024, S. 23–25</span><span class="co">]</span>  # „p.“/„S.“ ist nur Text</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Präfix/Suffix: <span class="co">[</span><span class="ot">Vgl. @zhang2024</span><span class="co">]</span>, <span class="co">[</span><span class="ot">siehe auch @greene2017, Kap. 3</span><span class="co">]</span>.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Nachweis im Fliesstext: <span class="citation" data-cites="zhang2024">Zhang et al. (<a href="09_Zitieren.html#ref-zhang2024" role="doc-biblioref">2024</a>)</span> zeigt, dass …</p>
+<p>Klammernachweis: … wie mehrfach gezeigt wurde <span class="citation" data-cites="zhang2024">(<a href="09_Zitieren.html#ref-zhang2024" role="doc-biblioref">Zhang et al., 2024</a>)</span>.</p>
+<p>Mehrere Quellen: <span class="citation" data-cites="zhang2024 zendler2018a greene2017">(<a href="09_Zitieren.html#ref-greene2017" role="doc-biblioref">Greene &amp; Schunk, 2017</a>; <a href="09_Zitieren.html#ref-zendler2018a" role="doc-biblioref">Zendler, 2018</a>; <a href="09_Zitieren.html#ref-zhang2024" role="doc-biblioref">Zhang et al., 2024</a>)</span></p>
+<p>Seitenzahlen: <span class="citation" data-cites="zhang2024">(<a href="09_Zitieren.html#ref-zhang2024" role="doc-biblioref">Zhang et al., 2024, S. 23–25</a>)</span> # „p.“/„S.“ ist nur Text</p>
+<p>Präfix/Suffix: <span class="citation" data-cites="zhang2024">(Vgl. <a href="09_Zitieren.html#ref-zhang2024" role="doc-biblioref">Zhang et al., 2024</a>)</span>, <span class="citation" data-cites="greene2017">(siehe auch <a href="09_Zitieren.html#ref-greene2017" role="doc-biblioref">Greene &amp; Schunk, 2017, Kapitel 3</a>)</span>.</p>
+<p>Beim Rendern erzeugt Quarto die korrekten Zitate und am Dokumentende automatisch das Literaturverzeichnis.</p>
 </section>
-<section id="option-literaturverzeichnis-sortieren-und-steuern" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="option-literaturverzeichnis-sortieren-und-steuern"><span class="header-section-number">9.6</span> Option: Literaturverzeichnis sortieren und steuern</h2>
-<ul>
-<li>Die Sortierung und Formatierung übernimmt der <strong>CSL‑Stil</strong> (Datei <code>*.csl</code>).<br>
-</li>
-<li>Falls du Quellen im Verzeichnis <strong>aufführen, aber nicht zitieren</strong> willst, nutze <code>nocite</code> im YAML‑Kopf:</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">nocite:</span><span class="co"> |</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">  @mueller2021lernen, @smith2019</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="arbeitsweise-in-der-praxis" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="arbeitsweise-in-der-praxis"><span class="header-section-number">9.7</span> Arbeitsweise in der Praxis</h2>
-<ol type="1">
-<li>Quellen <strong>in Zotero sammeln</strong> (PDFs, DOIs, Webseiten).<br>
-</li>
-<li>Sicherstellen, dass der <strong>Auto‑Export</strong> aktiv ist (Ziel: <code>refs/references.bib</code>).<br>
-</li>
-<li>In Quarto <strong><code>bibliography</code></strong> (und optional <code>csl</code>) setzen.<br>
-</li>
-<li>Mit <strong><span class="citation" data-cites="key">(<a href="index.html#ref-key" role="doc-biblioref"><strong>key?</strong></a>)</span></strong> im Text zitieren.<br>
-</li>
-<li><strong>Rendern</strong> → Zitate und Literaturverzeichnis erscheinen automatisch.</li>
-</ol>
-</section>
-<section id="typische-probleme-und-lösungen" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="typische-probleme-und-lösungen"><span class="header-section-number">9.8</span> Typische Probleme und Lösungen</h2>
-<ul>
-<li><strong>„Missing citation“ / Key wird nicht gefunden</strong>
-<ul>
-<li>Stimmt der <strong>Pfad</strong> zu <code>refs/references.bib</code>?<br>
-</li>
-<li>Liegt die <code>.bib</code> wirklich <strong>im Projekt</strong> und heißt so wie im YAML?<br>
-</li>
-<li>Wurde Zotero <strong>gerade aktualisiert</strong> (Auto‑Export lief schon durch)? Notfalls in Zotero <strong>„Refresh“</strong> bzw. einmal manuell exportieren.</li>
-</ul></li>
-<li><strong>Falscher Zitierstil</strong>
-<ul>
-<li>CSL‑Datei prüfen (liegt sie in <code>refs/</code>?), Pfad in <code>_quarto.yml</code> korrekt?<br>
-</li>
-<li>Nach Änderung an <code>csl</code> <strong>neu rendern</strong>.</li>
-</ul></li>
-<li><strong>Umlaute/Zeichensatz</strong>
-<ul>
-<li>In Zotero Datensätze sauber pflegen (Autoren, Titel).<br>
-</li>
-<li>Better BibTeX sorgt normalerweise für korrekte Unicode‑Ausgabe.</li>
-</ul></li>
-<li><strong>Unklare Zitier-Keys</strong>
-<ul>
-<li>In Zotero (BBT) kannst du den Key <strong>pinnen</strong>: Rechtsklick auf Eintrag → <em>Better BibTeX → Pin Citation Key</em> (ändert sich dann nicht mehr).</li>
-</ul></li>
-</ul>
-</section>
-<section id="beispiel-miniprojekt-struktur" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="beispiel-miniprojekt-struktur"><span class="header-section-number">9.9</span> Beispiel-Miniprojekt (Struktur)</h2>
-<pre><code>mein-projekt/
-├─ _quarto.yml
-├─ index.qmd
-├─ text.qmd
-└─ refs/
-   ├─ references.bib
-   └─ apa.csl</code></pre>
-<p>In <code>index.qmd</code> zitierst du z. B. so:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Beispiel"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> refs/references.bib</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> refs/apa.csl</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>Ein klassisches Ergebnis ist @smith2019. Für Details siehe <span class="co">[</span><span class="ot">@mueller2021lernen, S. 45</span><span class="co">]</span>.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="zusammenfassung" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">9.10</span> Zusammenfassung</h2>
-<ul>
-<li>Richte in Zotero (mit Better BibTeX) einen <strong>Auto‑Export</strong> deiner Sammlung nach <code>refs/references.bib</code> ein.<br>
-</li>
-<li>Verweise in Quarto per <code>bibliography:</code> (und optional <code>csl:</code>) auf diese Dateien.<br>
-</li>
-<li>Zitiere mit <strong><span class="citation" data-cites="key">(<a href="index.html#ref-key" role="doc-biblioref"><strong>key?</strong></a>)</span></strong> – Quarto erzeugt Zitate und Literaturverzeichnis automatisch.</li>
-</ul>
+<section id="literaturverzeichnis-sortieren-und-steuern" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="literaturverzeichnis-sortieren-und-steuern"><span class="header-section-number">10.3</span> Literaturverzeichnis sortieren und steuern</h2>
+<p>Das Literaturverzeichnis wird automatisch am Schluss des Dokuments erstellt.</p>
+<p>Du kannst jedoch auch den Ort manuell bestimmen, in dem du folgenden Shortcode im Text angibst:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Falls du für eine Vorlesung ein Literaturliste erstellen möchtest, erstellt du eigentlich ein Literaturverzeichnis, aber die Quellen werden im Text nie erwähnt. Du kannst folgendes im Yaml-Header reinschreiben:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  @granic2019, @grabinger2011</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-greene2017" class="csl-entry" role="listitem">
+Greene, J. A., &amp; Schunk, D. H. (Eds.). (2017). <em>Handbook of
+<span>Self-Regulation</span> of <span>Learning</span> and
+<span>Performance</span></em> (2nd ed.). Routledge. <a href="https://doi.org/10.4324/9781315697048">https://doi.org/10.4324/9781315697048</a>
+</div>
+<div id="ref-kapur2014" class="csl-entry" role="listitem">
+Kapur, M. (2014). Productive <span>Failure</span> in <span>Learning
+Math</span>. <em>Cognitive Science</em>, <em>38</em>(5), 1008–1022. <a href="https://doi.org/10.1111/cogs.12107">https://doi.org/10.1111/cogs.12107</a>
+</div>
+<div id="ref-zendler2018a" class="csl-entry" role="listitem">
+Zendler, A. (Ed.). (2018). <em><span>Unterrichtsmethoden
+f<span>ü</span>r den Informatikunterricht: mit praktischen Beispielen
+f<span>ü</span>r prozess- und ergebnisorientiertes Lehren</span></em>.
+Springer Vieweg.
+</div>
+<div id="ref-zhang2024" class="csl-entry" role="listitem">
+Zhang, Y., Li, T., Xu, J., Chen, S., Lu, L., &amp; Wang, L. (2024). More
+homework improve mathematics achievement? <span>Differential</span>
+effects of homework time on different facets of students’ mathematics
+achievement: <span>A</span> longitudinal study in <span>China</span>.
+<em>British Journal of Educational Psychology</em>, <em>94</em>(1),
+181–197. <a href="https://doi.org/10.1111/bjep.12640">https://doi.org/10.1111/bjep.12640</a>
+</div>
+</div>
 
 
 </section>
