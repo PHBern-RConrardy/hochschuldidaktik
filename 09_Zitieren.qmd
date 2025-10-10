@@ -1,8 +1,6 @@
 ---
 title: Zitieren
 format: html
-bibliography: references.bib
-csl: apa.csl
 link-citations: true
 ---
 
@@ -18,7 +16,7 @@ Nach diesem Kapitel verstehst du:
 :::
 
 
-# Zotero
+## Zotero
 
 Zotero ist ein Literaturverwaltungsprogramm. PHBern Mitarbeiter erhalten (Stand 2025) uneingeschränken Cloudspeicher. Zotero hat Plugins für Textverarbeitungsprogramme. Quarto braucht für sein Literaturverzeichnis alle Quellen in einem BibTex-Format und Quarto (sowie vermutlich alle Literaturverwaltungsprogramme) kann dies generieren, es kann es sogar automatisch neu generieren, falls Literatur hinzukommt.
 
@@ -141,3 +139,8 @@ nocite: |
   @granic2019, @grabinger2011
 ---
 ```
+
+## Bibliographie
+
+::: {#refs}
+:::

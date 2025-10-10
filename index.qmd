@@ -1,5 +1,5 @@
 ---
-lightbox: true
+title: Was ist Quarto?
 ---
 
 # Was ist Quarto?
@@ -134,8 +134,7 @@ csl: apa.csl
 
 > Qualitative Inhaltsanalyse stellt eine Auswertungsmethode dar, [@Mayring2022, S.691]
 
-::: {#refs}
-:::
+## Bibliographie
 ````
 Die Quelle [@Mayring2022, S.691] wird automatisch als Fussnote bzw. Literaturangabe eingefügt, sofern sie in der Datei `literatur.bib` vorhanden ist. Die `apa.csl` defniert den Zitationsstil (APA7, Chigago, ...). 
 

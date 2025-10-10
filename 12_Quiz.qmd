@@ -1,86 +1,31 @@
-# Quiz-Fragen mit Autokorrektur (ohne Programmierkenntnisse)
-
-In diesem Kapitel bekommst du **fertige Bausteine** für kleine Quizfragen mit **Autokorrektur** in Quarto. Du musst nichts programmieren – kopiere die Beispiele und tausche nur Text und Antwortoptionen aus. Außerdem zeigen wir kurz, wie du **H5P** (z. B. in ILIAS) oder **Google/Microsoft Forms** einbindest.
-
-
-## Wie einfügen?
-
-1. Öffne deine `.qmd`-Seite.
-2. Kopiere einen der Bausteine in den Text.
-3. Ersetze die Beispieltexte (Frage, Antworten).
-4. **Render** klicken – fertig.
-
-
+---
+title: Quiz
+format:
+  html:
+    include-after-body: quiz.js
 ---
 
-## Baustein 1: Single-Choice (eine richtige Antwort)
+:::{.callout-note}
+## Lernziele
 
-Dieser Block zeigt sofort, ob die Antwort richtig ist.
+Nach diesem Kapitel verstehst du:
 
-```{=html}
-<div class="quiz mcq" data-correct="b">
-  <p><strong>Frage:</strong> Welcher Begriff passt am besten zu „produktives Scheitern“?</p>
-  <label><input type="radio" name="q1" value="a"> Zufällige Fehler ohne Auswertung</label><br>
-  <label><input type="radio" name="q1" value="b"> Bewusst schwierige Aufgabe vor der Instruktion</label><br>
-  <label><input type="radio" name="q1" value="c"> Reines Auswendiglernen vor der Prüfung</label><br>
-  <button class="quiz-check">Prüfen</button>
-  <span class="quiz-feedback" aria-live="polite"></span>
-</div>
-```
+- wie du ein Quiz in html und revealjs einbinden kannst.
+- welchen Mehrwert dir html und revealjs gegenüber `docx` und `pptx` bieten.
+- wie du Quarto-Erweiterungen installieren kannst.
 
-**Anpassen:**  
-- `data-correct="b"` legt die **richtige Option** fest (`a`, `b`, `c` …).  
-- Texte in `<p>` und `<label>` austauschen.
+:::
 
+## Quiz
 
----
+Zuerst lernen wir wie man einen Quiz in html-basierten Dokumenten einfügt. Dazu nutzen wir die 3 Websprachen: html, javascript (kurz: js) und css. Alle drei Sprachen zusammen definieren statische Webseiten, welche also keine Userdaten speichern und einbauen, jegliche Interaktion (z.B. Anzeige richtig/falsch) wird vom Computer des Nutzers berechnet, nicht von einem Server. 
 
-## Baustein 2: Multiple-Choice (mehrere richtige Antworten)
+### Javascript
+Zuerst definieren wir in Javascript alle notwendigen Funktionen und Klassen für den Fragebogen. Dieser Code kann ohne grosse Probleme von einer KI (LLM) deiner Wahl erstellt werden.
 
-Wähle alle richtigen Aussagen; die Auswertung vergleicht exakt mit der Lösung.
+Füge folgenden Code in den Body (nicht ins YAML) des `.qmd`-Dokuments ein:
 
-```{=html}
-<div class="quiz mcq-multi" data-correct="a,c">
-  <p><strong>Frage:</strong> Welche Aussagen zu „Flipped Classroom“ treffen zu?</p>
-  <label><input type="checkbox" value="a"> Vorwissen wird zu Hause aktiviert.</label><br>
-  <label><input type="checkbox" value="b"> Präsenzzeit ist primär für Hausaufgaben gedacht.</label><br>
-  <label><input type="checkbox" value="c"> Unterrichtszeit dient vertiefender Anwendung/Interaktion.</label><br>
-  <button class="quiz-check">Prüfen</button>
-  <span class="quiz-feedback" aria-live="polite"></span>
-</div>
-```
-
-**Anpassen:**  
-- `data-correct="a,c"` enthält alle **richtigen Buchstaben**, kommasepariert.  
-- Aussagen anpassen.
-
-
----
-
-## Baustein 3: Kurzantwort (exakte Lösung oder Variantenliste)
-
-Die Antwort wird mit einer Liste möglicher Lösungen verglichen (Groß-/Kleinschreibung wird ignoriert).
-
-```{=html}
-<div class="quiz short-answer" data-answers="productive failure; produktives scheitern">
-  <p><strong>Frage:</strong> Wie heißt das didaktische Prinzip, bei dem Lernende zunächst an herausfordernden Problemen arbeiten und erst danach eine Instruktion erhalten?</p>
-  <input type="text" class="quiz-input" placeholder="Antwort eingeben">
-  <button class="quiz-check">Prüfen</button>
-  <span class="quiz-feedback" aria-live="polite"></span>
-</div>
-```
-
-**Anpassen:**  
-- In `data-answers` mehrere **gültige Lösungen** mit `;` trennen.  
-- Frage und Platzhalter anpassen.
-
-
----
-
-## Einmalige Einbindung: Mini-Skript für die Auswertung
-
-Füge dieses **eine Mal pro Seite** ganz unten ein (oder in ein eigenes Include). Es wertet alle Quiz-Blöcke oben aus.
-
+```` html
 ```{=html}
 <script>
 (function () {
@@ -122,9 +67,13 @@ Füge dieses **eine Mal pro Seite** ganz unten ein (oder in ein eigenes Include)
 })();
 </script>
 ```
+````
 
-Optional kannst du die Anzeige mit einfachem CSS minimal schöner machen:
+### CSS (optional)
 
+Damit es noch etwas schöner aussieht, kannst du noch das notwendige CSS hinzufügen
+
+```` html
 ```{=html}
 <style>
 .quiz { padding: .5rem .75rem; border: 1px solid #ddd; border-radius: .5rem; margin: 1rem 0; }
@@ -132,55 +81,159 @@ Optional kannst du die Anzeige mit einfachem CSS minimal schöner machen:
 .quiz .quiz-feedback { margin-left: .6rem; font-weight: 600; }
 </style>
 ```
+````
 
-> Hinweis: Die Bausteine funktionieren in **HTML-Ausgaben** (Website, RevealJS). In **DOCX/PDF** sind interaktive Elemente nicht verfügbar.
+Ach das gehört irgendwo in den Textteil rein und wird nicht als Text angezeigt. Falls du das Aussehen der Frage ändern möchtest, aber kein CSS schreibst, dann hilft dir KI (LLM-Chatbots) meist sehr kompetent deine Wünsche in korrekte Syntax zu übersehen.
+
+### Single-Choice
 
 
----
+Füge folgenden Block ein, wo der Single-Choice Frageblock erscheinen soll
 
-## H5P (z. B. in ILIAS) einbinden
+```` html
+```{=html}
+<div class="quiz mcq" data-correct="b">
+  <p><strong>Frage:</strong> Nach welchem Diagnosemanual werden Störungen von der EB im Kanton Bern diagnostiziert:</p>
+  <label><input type="radio" name="q1" value="a"> DSM 5</label><br>
+  <label><input type="radio" name="q1" value="b"> ICD 10</label><br>
+  <label><input type="radio" name="q1" value="c"> ICD 11</label><br>
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+```
+````
 
-Wenn du bereits **H5P-Inhalte** (z. B. Multiple Choice, Drag & Drop) in ILIAS erstellt hast, kannst du sie in Quarto **verlinken** oder **einbetten** (wenn ein Embed-Code verfügbar ist).
+```{=html}
+<div class="quiz mcq" data-correct="b">
+  <p><strong>Frage:</strong> Nach welchem Diagnosemanual werden Störungen von der EB im Kanton Bern diagnostiziert:</p>
+  <label><input type="radio" name="q1" value="a"> DSM 5</label><br>
+  <label><input type="radio" name="q1" value="b"> ICD 10</label><br>
+  <label><input type="radio" name="q1" value="c"> ICD 11</label><br>
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+```
 
-**Variante A: Link**  
+### Multiple-Choice Fragen
+
+Wähle alle richtigen Aussagen; die Auswertung vergleicht exakt mit der Lösung.
+````html
+```{=html}
+<div class="quiz mcq-multi" data-correct="a,c">
+  <p><strong>Frage:</strong> Welche Daten sind gemäss KDSG in Bern besonders schützenswert?</p>
+  <label><input type="checkbox" value="a"> Die weltanschauliche Ansicht.</label><br>
+  <label><input type="checkbox" value="b"> Pseudonymisierte Gesundheitsdaten einer Klasse.</label><br>
+  <label><input type="checkbox" value="c"> Diagnose einer Lernstörung.</label><br>
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+```
+````
+
+```{=html}
+<div class="quiz mcq-multi" data-correct="a,c">
+  <p><strong>Frage:</strong> Welche Aussagen zu „Flipped Classroom“ treffen zu?</p>
+  <label><input type="checkbox" value="a"> Vorwissen wird zu Hause aktiviert.</label><br>
+  <label><input type="checkbox" value="b"> Präsenzzeit ist primär für Hausaufgaben gedacht.</label><br>
+  <label><input type="checkbox" value="c"> Unterrichtszeit dient vertiefender Anwendung/Interaktion.</label><br>
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+```
+## Kurzantwort
+
+Die Antwort wird mit einer Liste möglicher Lösungen verglichen (Gross-/Kleinschreibung wird ignoriert).
+
+```{=html}
+<div class="quiz short-answer" data-answers="productive failure; produktives scheitern">
+  <p><strong>Frage:</strong> Wie heißt das didaktische Prinzip, bei dem Lernende zunächst an herausfordernden Problemen arbeiten und erst danach eine Instruktion erhalten?</p>
+  <input type="text" class="quiz-input" placeholder="Antwort eingeben">
+  <button class="quiz-check">Prüfen</button>
+  <span class="quiz-feedback" aria-live="polite"></span>
+</div>
+```
+
+In `data-answers` werden mehrere gültige Lösungen mit `;` getrennt.
+
+## Einbinden per Yaml
+
+Selbstverständlich ist es lästig in jeder `.qmd`-Datei das jeweilige JS-Script und den CSS-Code einzufügen. Du kannst auch in deiner `_quarto.yml`-Datei die jeweiligen Blöcke immer einfügen lassen:
+
+Speichere das JS-Script in einer Datei `quiz.js` in deinen Webseitenordner (neben `_quarto.yml`). Füge nun in `_quarto.yml` folgendes hinzu (oder ergänze, falls ein Teil bereits da steht)_
+
+```yml
+format:
+  html:
+    css: styles.css
+    include-after-body: quiz.js
+  revealjs:
+    css: styles.css
+    include-after-body: quiz.js    
+```
+
+Den CSS-Code kannst du direkt in die bestehende `styles.css`-Datei einfügen, diese sollte bereits 
+
+## Extensions
+
+Das tolle an Quarto gegenüber von anderen Programmen ist die Erweiterbarkeit; strenggenommen ist es nicht Quarto zu verdanken sondern dem Dateiformat html (css und js), welches über revealjs (eine JS-Library) auch für Slideshows eingesetzt werden kann.
+
+Jeder kann Erweiterungen für Quarto schreiben und gratis zur Verfügung stellen. Du findest eine Liste von Erweiterungen auf der [Quarto Webseite](https://quarto.org/docs/extensions/listing-formats.html).
+
+Typischerweise ist der Code auf `github.com` abgelegt, wir schauen uns eine spezifische Erweiterung an, welche es einfacher macht QR-Codes einzubinden. Die Erweiterung heisst [Quarto-QRCode](https://github.com/jmbuhr/quarto-qrcode). Die schlicht gehaltene Seite erklärt kurz wie man die Erweiterung installiert und gibt ein Code-Beispiel sowie Weblinks mit mehr Code-Beispielen.
+
+Installiere nun die Extension in dem du im `Terminal` folgenden Befehl eingibst und Enter drückst.
+
+```
+quarto install extension jmbuhr/quarto-qrcode
+```
+
+Du wirst im Terminal zweimal gefragt ob es installiert werden soll, du kannst es mit der Eingabe `Y`und Enter bestätigen. Nun ist in deinem Webseitenordner ein neues Verzeichnis namens `_extensions` Erstellt worden. Erweiterungen sind also lediglich Dateien in einem Ordner, sie werden nicht wirklich auf dem Betriebssystem installiert.
+
+Teste nun auch die Extension mit folgendem Code (wichtig, entferne zuerst die Leertaste zwischen beiden geschwungenen Klammern am Anfang):
+
+```
+{{{< qrcode https://phbern.ch width=100 height=100 >}}}
+```
+
+{{< qrcode https://phbern.ch width=100 height=100 >}}
+
+## Externe Inhalte einbinden
+
+Wie (früher) auch Ilias, kannst du auch in Quarto externe Inhalte über `iframes` einbinden.
+
+### Youtube
+
+Youtube-Videos kannst du über einen speziellen Shortcode einfügen:
+
 ```markdown
-Weitere Übungen findest du im ILIAS-Kurs: [H5P-Aufgaben](https://…).
+{{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}}
 ```
 
-**Variante B: Einbetten per iframe**  
-```{=html}
-<iframe src="https://…/h5p/embed/ID" width="100%" height="480" frameborder="0" allowfullscreen></iframe>
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+### Iframe
+
+Switchtube kannst du über folgenden Code einfügen
+
+```html
+<iframe width="640" height="360" src="https://tube.switch.ch/embed/LuZnVBJhxW" frameborder="0" allow="fullscreen"></iframe>
 ```
 
-- Vorteil: **Automatische Auswertung** und ggf. **Tracking** bleiben bei H5P/ILIAS.  
-- Nachteil: Inhalte liegen **außerhalb** deiner Quarto-Seite.
+<iframe width="640" height="360" src="https://tube.switch.ch/embed/LuZnVBJhxW" frameborder="0" allow="fullscreen"></iframe>
 
 
----
+Ebenfalls kannst du H5P Dokumente welche woanders gehostet sind in Quarto einbetten:
 
-## Google Forms oder Microsoft Forms einbetten
-
-Beide bieten **Selbstkorrektur** und automatische Auswertung. Erstelle dein Formular und nutze den **Einbettungs‑Code**.
-
-```{=html}
-<iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" width="100%" height="800" frameborder="0">Wird geladen…</iframe>
+```html
+<iframe src="https://h5p.org/h5p/embed/617" width="1090" height="675" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Interactive Video"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
 ```
 
-- Vorteil: Sehr einfach, automatische Auswertung/Tabellen.  
-- Nachteil: Externe Plattform, Design passt nicht immer perfekt.
+<iframe src="https://h5p.org/h5p/embed/617" width="1090" height="675" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Interactive Video"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
 
+Selbstverständlich kann man auch Umfragen einbetten, auch in revealjs-Präsentationsslides:
 
----
+```html
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=zwAKJW1LckaxbMo0bk4R5VfPrF0Zps1KgKhjsB14s1xUOE1TU0tQWktJRVdYV1NaQ0FHTTBJSVVURi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+```
 
-## Praxisempfehlung
-
-- Für **kleine, schnelle Checks** in einer Quarto‑Seite: nutze die **Bausteine oben** (Single‑Choice, Multiple‑Choice, Kurzantwort).  
-- Für **umfangreiche Übungssets mit Noten/Tracking**: nutze **H5P in ILIAS** oder **Forms** und **bette** die Inhalte ein.  
-- Teste die Seite im **Browser**, nicht nur in der Vorschau.
-
-
-## Zusammenfassung
-
-- Fertige, kopierbare Bausteine liefern **Autokorrektur** direkt in deiner Quarto‑Webseite.  
-- Für größere, auswertbare Quizze sind **H5P/ILIAS** oder **Forms** sinnvoll.  
-- Interaktive Elemente funktionieren nur in **HTML‑Ausgaben**.
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=zwAKJW1LckaxbMo0bk4R5VfPrF0Zps1KgKhjsB14s1xUOE1TU0tQWktJRVdYV1NaQ0FHTTBJSVVURi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>

@@ -1,11 +1,22 @@
-# Callouts, Figures und weitere `:::-` Elemente
+---
+title: Divs
+---
 
-In diesem Kapitel lernst du die wichtigsten „Baukasten“-Elemente mit `:::` kennen: **Callouts** (Hinweisboxen), **Figures** (Bilder mit Beschriftung), **Columns** (Inhalte nebeneinander), **Tabsets** (Reiter) und **eigene Divs**. Du brauchst dafür keine HTML-Kenntnisse.
+:::{.callout-note}
+## Lernziele
 
+Nach diesem Kapitel verstehst du:
 
-## Grundprinzip: Divs mit `:::` öffnen und schliessen
+- wie Callouts mit `:::`-Notation aufgerufen werden.
+- wie Abbildungen definiert werden.
+- wie Spalten (Columns) definiert werden.
+- wie Reiter definiert werden.
 
-Viele erweiterte Elemente beginnen mit `:::` und enden mit `:::`. Die **Art** des Elements steuerst du mit einer **Klasse** in geschweiften Klammern:
+:::
+
+# Grundprinzip von Divs
+
+Viele erweiterte Elemente beginnen mit `:::` und enden mit `:::`. Die *Art* des Elements steuerst du mit einer *Klasse* in geschweiften Klammern:
 
 ```markdown
 ::: {.meine-klasse}
@@ -13,8 +24,7 @@ Inhalt hier …
 :::
 ```
 
-Quarto erkennt an der Klasse (z. B. `.callout-note`), was daraus werden soll.
-
+Quarto erkennt an der Klasse (z. B. `.meine-klasse`), was daraus werden soll. Viele Klassen sind bereits vordefiniert und erhalten ein einheitlichen Aussehen, egal ob in html-Dateien oder Revealjs-Präsentationsslides; auch in anderen Dateiformaten sollten sie ähnlich aussehen.
 
 ## Callouts (Hinweisboxen)
 
@@ -39,65 +49,115 @@ Hier bitte genau lesen, sonst klappt es nicht.
 
 Du kannst Überschriften weglassen oder kürzer schreiben – wichtig ist die Klasse `.callout-…`.
 
-📸 Screenshot: Drei Callouts nebeneinander/untereinander
+::: {.callout-note}
+### Hinweis
+So fügst du eine kurze Erklärung ein.
+:::
+
+::: {.callout-tip}
+### Tipp
+Das ist besonders praktisch beim Erklären von Arbeitsschritten.
+:::
+
+::: {.callout-warning}
+### Achtung
+Hier bitte genau lesen, sonst klappt es nicht.
+:::
 
 
 ## Figures (Bilder mit Bildunterschrift, Grösse, Ausrichtung)
 
-Es gibt zwei bequeme Wege. Wähle einen und bleibe dabei konsistent.
+Bilder, genau wie Tabellen vorher, werden typischerweise mit aufzählender Schreibweise "Abbildung ..." untertitelt. 
+Dazu hast du zwei Optionen:
 
-### Weg 1: Markdown-Bild mit Bildunterschrift und Attributen
+### Attribute einzeln steuern
 
 ```markdown
-![Bildunterschrift: Logo PHBern](images/phbern-logo.png){fig-align="center" width="50%"}
+![Bildunterschrift: Logo Linux](images/Tux.svg){fig-align="center" width="15%"}
 ```
 
-- `fig-align="center"` zentriert das Bild.  
-- `width="50%"` skaliert die Breite relativ zur Seite.
+![Bildunterschrift: Logo Linux](images/Tux.svg){fig-align="center" width="15%"}
 
-### Weg 2: Div mit `figure`-Rolle
+`fig-align="center"` zentriert das Bild.  
+`width="50%"` skaliert die Breite relativ zur Seite.
+
+Diese möglichen Attribute stammen aus der Sprace `CSS` welche bereits im Kapitel Formatieren angesprochen wurde.
+
+
+### Automatische Steuerung
+
+In wissenschaftlichen Texten werden jedoch Bilder meist als *Abbildung* beschriftet, weise ihr dazu ein *ID* zu mit `#fig-...`, z.B. `#fig-tux`.
+
+```markdown
+![Bildunterschrift: Logo Linux](images/Tux.svg){#fig-tux width="15%"}
+``` 
+![Logo Linux](images/Tux.svg){#fig-tux width="15%"}
+
+Eine etwas längere Syntax mit Divs führt zum g leichen Ergebnis.
+
+```markdown
+::: {#fig-logo}
+![Alternativtext](images/Tux.svg){width="15%"}
+
+Logo von Linux
+:::
+``` 
 
 ::: {#fig-logo}
-![Logo PHBern](screenshots/gui_projekt.png){width="45%"}
+![ein Pinguin](images/Tux.svg){width="15%"}
 
-*Logo der PHBern*
+Logo von Linux
 :::
 
-```markdown
-::: {#fig-logo phbern .figure}
-![Logo PHBern](screenshots/gui_projekt.png){width="45%"}
-
-*Logo der PHBern*
-:::
-```
-
-- Die letzte Zeile ist die Bildunterschrift (kursiv).  
-- Mit einer ID wie `{#fig-logo}` kannst du **verweisen**: *siehe @fig-logo*.
+Mit einer ID wie `{#fig-logo}` kannst du auf diese Objekte referenzieren: siehe @fig-tux, schreibe dazu `@fig-tux`. Falls du nicht referenziert, spielt es keine Rolle ob die ID mehrfach vergeben ist.
 
 
-## Columns (Inhalte nebeneinander)
+## Spalten (Inhalte nebeneinander)
 
-Mit Columns kannst du Text und Bild oder zwei Texte **nebeneinander** darstellen.
+Mit Columns kannst mehrere Teile nebeneinander in Spalten darstellen.
 
 ```markdown
 ::: {.columns}
-::: {.column width="60%"}
+::: {.column width="50%"}
 **Text links:** Hier steht der Hauptinhalt. Du kannst Überschriften, Listen und Bilder verwenden.
 :::
 ::: {.column width="40%"}
 **Rechts:** Ein Bild oder eine Liste.
-![Logo](screenshots/gui_projekt.png){width="80%"}
+![Logo](images/Tux.svg){#fig-tux}
 :::
 :::
 ```
 
-- Die Summe der Breiten sollte ungefähr 100 % ergeben.  
-- Ohne `width` teilt Quarto den Platz automatisch.
+::: {.columns}
+::: {.column width="50%"}
+**Text links:** Hier steht der Hauptinhalt. Du kannst Überschriften, Listen und Bilder verwenden.
+:::
+::: {.column width="40%"}
+**Rechts:** Ein Bild oder eine Liste.
+
+![Logo](images/Tux.svg){#fig-tux width="15%"}
+:::
+:::
+
+Ohne `width` teilt Quarto den Platz gleich auf.
+
+Um die Divs (`:::`) übersichtlicher zu gesalten, kannst du auch mehr als drei Doppelpunkte nutzen, es funktioniert gleich wie Klammern:
 
 
-## Tabsets (Reiter)
+```markdown
+::::: {.columns}
+::: {.column width="50%"}
+Text links
+:::
+::: {.column width="40%"}
+Text rechts
+:::
+:::::
+```
 
-Tabsets sind nützlich, wenn du Varianten oder Beispiele trennen willst (z. B. zwei Lösungswege).
+## Reiter
+
+Reiter (Tabsets) sind nützlich, wenn du Varianten oder Beispiele trennen willst. Zum Beispiel um in Präsentationsslides mehrere Definitionen in je einem Reiter zu haben.
 
 ```markdown
 ::: {.panel-tabset}
@@ -112,8 +172,18 @@ Antworten zu typischen Rückfragen.
 :::
 ```
 
-- Jede **Überschrift der Ebene 2** (`##`) wird zu einem Tab.  
-- Du kannst innerhalb der Tabs ganz normalen Markdown verwenden.
+::: {.panel-tabset}
+## Variante A
+Kurze Erklärung für die erste Variante.
+
+## Variante B
+Alternative Darstellung mit anderem Beispiel.
+
+## Häufige Fragen
+Antworten zu typischen Rückfragen.
+:::
+
+Jede Überschrift der Ebene 2 (`##`) wird zu einem Tab. Du kannst innerhalb der Tabs ganz normalen Markdown verwenden.
 
 
 ## Eigene Divs für Gestaltung oder Logik
@@ -129,80 +199,3 @@ Wenn du später mit CSS arbeitest oder Abschnitte gezielt ansprechen willst, kan
 ```
 
 Später könntest du `.lernziel` in `styles.css` gestalten (z. B. Rahmen, Hintergrund).
-
-
-## Kombinationen
-
-Elemente lassen sich kombinieren – zum Beispiel ein Callout **mit** Columns:
-
-```markdown
-::: {.callout-note}
-### Beispiel mit zwei Spalten
-
-::: {.columns}
-::: {.column}
-- Punkt A
-- Punkt B
-:::
-::: {.column}
-![Skizze](screenshots/gui_projekt.png){width="90%"}
-:::
-:::
-:::
-```
-
-Achte beim Verschachteln auf die **Reihenfolge** und schließe jedes `:::`.
-
-
-## Häufige Fehler und Lösungen
-
-- **„Unerwartetes Ende“ oder komisches Layout**: Meist fehlt ein schließendes `:::`. Zähle die Blöcke und schließe sie von innen nach außen.  
-- **Klasse wirkt nicht**: Stimmt die Schreibweise? (`.callout-tip`, `.panel-tabset`, `.columns`, `.column`)  
-- **Bilder zu groß/klein**: Mit `width="…"` anpassen (z. B. `width="60%"`).  
-- **Verweise auf Figures** funktionieren nicht: Verwende eine **ID** (z. B. `{#fig-logo}`) und verweise mit `@fig-logo`.
-
-
-## Mini-Vorlage zum Kopieren
-
-```markdown
-# Titel
-
-Einführungstext …
-
-::: {.callout-tip}
-### Tipp
-Kurzer Hinweis für die Studierenden.
-:::
-
-## Beispiel mit Bild
-
-![Beispielbild](screenshots/gui_positron_inception.png){fig-align="center" width="60%"}
-
-## Zwei Spalten
-
-::: {.columns}
-::: {.column width="55%"}
-Text hier …
-:::
-::: {.column width="45%"}
-![Grafik](screenshots/gui_positron_inception.png){width="90%"}
-:::
-:::
-
-## Varianten im Tabset
-
-::: {.panel-tabset}
-### Variante 1
-Erklärung …
-
-### Variante 2
-Alternative …
-:::
-```
-
-
-## Zusammenfassung
-
-- `:::` eröffnet/endet einen **Div-Block** – die Klasse in `{…}` steuert die Art.  
-- **Callouts** für Hinweise, **Figures** für Bilder mit Beschriftungen, **Columns** für zwei Spalten, **Tabsets** für Reiter.  
-- Saubere Verschachtelung und korrekte Klassen sind entscheidend.

@@ -1,3 +1,6 @@
+---
+title: Schreibumgebung
+---
 # Quarto starten ohne Terminal
 
 :::{.callout-note}
